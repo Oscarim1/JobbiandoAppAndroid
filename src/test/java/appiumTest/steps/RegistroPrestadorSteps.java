@@ -8,7 +8,6 @@ import io.appium.java_client.MobileElement;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import pages.RegistroPrestadorPage;
-import cucumber.api.junit.Cucumber;
 
 public class RegistroPrestadorSteps extends AppiumTest {
 	
