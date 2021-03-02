@@ -30,11 +30,11 @@ public class RegistroPrestadorSteps extends AppiumTest {
 	
 	@And("Ir al registro del Prestador")
 	public void ir_al_registro_del_prestador() throws InterruptedException {
-		//navegamos a la aplicacion
+		
 
 	    page = new RegistroPrestadorPage(driver);
 	    
-	    //hacemos click en "Quiero ser jobber"
+	    
 	    page.clickQuieroSerJobber();
 	    
 	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
