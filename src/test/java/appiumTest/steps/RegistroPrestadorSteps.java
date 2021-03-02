@@ -3,8 +3,6 @@ package appiumTest.steps;
 import java.util.concurrent.TimeUnit;
 
 import appiumtests.AppiumTest;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import pages.RegistroPrestadorPage;

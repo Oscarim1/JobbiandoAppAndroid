@@ -12,13 +12,7 @@ public class AppiumTest {
 	public static AppiumDriver<MobileElement> driver;
 	
 	public static void main(String[] args) {
-		/*try {
-		openAppPrestador();
-		}catch(Exception exp) {
-			System.out.println(exp.getCause());
-			System.out.println(exp.getMessage());
-			exp.printStackTrace();
-			}*/
+	
 			
 	}
 	
