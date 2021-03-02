@@ -34,7 +34,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Nicolas/.m2/repository/io/cucumber/cucumber-java/6.9.1/cucumber-java-6.9.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Nicolas/.m2/repository/org/apache/ant/ant/1.10.3/ant-1.10.3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
