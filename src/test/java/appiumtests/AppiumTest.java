@@ -9,7 +9,7 @@ import io.appium.java_client.MobileElement;
 
 public class AppiumTest {
 	
-	static AppiumDriver<MobileElement> driver;
+	public static AppiumDriver<MobileElement> driver;
 	
 	public static void main(String[] args) {
 		/*try {
@@ -26,10 +26,10 @@ public class AppiumTest {
 		
 		DesiredCapabilities cap= new DesiredCapabilities();
 		
-		cap.setCapability("deviceName","V2027");
-		cap.setCapability("udid","8a5f1748");
-		cap.setCapability("platformName","Android");
-		cap.setCapability("platformVersion","10");
+		cap.setCapability("deviceName", "AOSP on IA Emulator");
+		cap.setCapability("udid", "emulator-5554");
+		cap.setCapability("platformName", "Android");
+		cap.setCapability("platformVersion", "9");
 		
 		cap.setCapability("appPackage","com.easyjobprestador");
 		cap.setCapability("appActivity","com.easyjobprestador.MainActivity");

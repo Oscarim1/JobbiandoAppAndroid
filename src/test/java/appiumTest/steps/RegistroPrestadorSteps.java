@@ -9,6 +9,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import pages.RegistroPrestadorPage;
 
+
 public class RegistroPrestadorSteps extends AppiumTest {
 	
 	RegistroPrestadorPage page=null;
