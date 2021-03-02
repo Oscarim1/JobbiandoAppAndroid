@@ -19,7 +19,6 @@ public class CalculatorTest {
 			openCalculator();
 			
 		}catch(Exception exp) {
-			System.out.println(exp.getCause());
 			System.out.println(exp.getMessage());
 			exp.printStackTrace();
 		}
