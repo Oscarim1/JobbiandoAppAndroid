@@ -1,7 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
 
 import appiumtests.AppiumTest;
 import io.appium.java_client.AppiumDriver;
