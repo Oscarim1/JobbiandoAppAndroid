@@ -20,8 +20,14 @@ public class RegistroPrestadorSteps extends BaseTest {
 	AppiumDriver<MobileElement> driver=null;
 	@Given("Abrir app")
 	public void abrir_navegador() throws Throwable {
-	 openApp();
-	
+	 
+	 try{
+		 openApp();
+
+     }catch(Exception exp) {
+         System.out.println(exp.getMessage());
+         exp.printStackTrace();
+     }
 	}
 
 	@And("Ir al registro del Prestador")
