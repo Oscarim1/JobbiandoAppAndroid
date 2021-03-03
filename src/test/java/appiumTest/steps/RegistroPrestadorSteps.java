@@ -5,6 +5,8 @@ package appiumTest.steps;
 
 
 
+import java.util.concurrent.TimeUnit;
+
 import appiumTest.BaseTest;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -39,7 +41,7 @@ public class RegistroPrestadorSteps extends BaseTest {
 		page = new RegistroPrestadorPage(elemento);
 		Thread.sleep(5000);
 	    page.clickQuieroSerJobber();
-	    Thread.sleep(5000);
+	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 	}
 
 	@When("Completar el formulario de registro del prestador")
@@ -48,21 +50,44 @@ public class RegistroPrestadorSteps extends BaseTest {
 		Thread.sleep(5000);
 		page=new RegistroPrestadorPage(elemento);
 	    Thread.sleep(4000);
-	    page.enterNombres("DAVID");
+	    page.enterNombres("ENRIC");
 	    Thread.sleep(4000);
 	   
-	    page.enterApellidos("ALGUÉ TRANCHO");
+	    page.enterApellidos("PARRAMON FLORES");
+	    Thread.sleep(4000);
+	    
+	    page.enterFechaNacimiento("12 de 05 de 1995");
 	    Thread.sleep(4000);
 	   
-	    page.enterCorreo("randomail256@gmailnator.com");
+	    page.enterCorreo("randomail250@gmailnator.com");
 	    Thread.sleep(4000);
-	  
+	    
+	    page.enterContrasena("Hola123");
+	    Thread.sleep(4000);
+	    
+	    page.clickCedulaDeIdentidad("637106066");
+	    Thread.sleep(4000);
+	    
+	    page.enterIdentificador("618513922");
+	    Thread.sleep(4000);
+	    
+	    page.enterCalle("Sin calle");
+	    Thread.sleep(4000);
+	    
+	    page.enterDireccion("L-331, Colbun, Colbún, Maule, Chile");
+	    Thread.sleep(4000);
+	    
+	    page.enterNombreDireccion("Casa");
+	    Thread.sleep(4000);
+	    
+	    page.enterReferencia("Sin referencia");
+	    Thread.sleep(4000);
 	 
 	}
 
 	@And("hacer click en boton registrar")
 	public void hacer_click_en_boton_registrar() throws Throwable {
-	    
+		
 	}
 
 	@Then("Ir a sitio de login")

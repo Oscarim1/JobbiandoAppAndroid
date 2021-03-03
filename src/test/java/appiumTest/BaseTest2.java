@@ -9,9 +9,9 @@ import io.appium.java_client.MobileElement;
 
 
 public class BaseTest2 {
-	static AppiumDriver <MobileElement> driver;
+	public static AppiumDriver <MobileElement> driver;
 
-	public static void openApp() throws Exception {
+	public static void openApp2() throws Exception {
 		
 		DesiredCapabilities cap = new DesiredCapabilities();
 		
