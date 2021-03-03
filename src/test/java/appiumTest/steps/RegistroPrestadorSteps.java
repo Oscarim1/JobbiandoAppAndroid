@@ -3,8 +3,7 @@ package appiumTest.steps;
 
 import java.util.concurrent.TimeUnit;
 
-
-import appiumtests.BaseTest;
+import appiumTest.BaseTest;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
