@@ -2,9 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 
-
-
-import appiumtests.BaseTest;
+import appiumTest.BaseTest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
