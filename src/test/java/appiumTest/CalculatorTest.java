@@ -1,7 +1,7 @@
 package appiumTest;
 
 import java.net.URL;
-import java.net.MalformedURLException;
+
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.appium.java_client.AppiumDriver;
