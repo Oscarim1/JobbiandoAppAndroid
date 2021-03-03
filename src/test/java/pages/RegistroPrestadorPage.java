@@ -3,11 +3,12 @@ package pages;
 import org.openqa.selenium.By;
 
 
-import appiumtests.AppiumTest;
+
+import appiumtests.BaseTest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
-public class RegistroPrestadorPage extends AppiumTest {
+public class RegistroPrestadorPage extends BaseTest {
 	AppiumDriver<MobileElement> driver=null; 
 	By btnQuieroSerJobber = By.linkText("Quiero ser Prestador");
 	
