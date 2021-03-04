@@ -42,7 +42,7 @@ public class RegistroPrestadorPage extends BaseTest {
 	}
 	///////////////////////////////////////////////////////////
 	public void enterNombres(String nombres) 
-	{
+	{	driver.findElement(txtNombres).click();
 		driver.findElement(txtNombres).sendKeys(nombres);
 	}
 	
