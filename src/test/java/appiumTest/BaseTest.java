@@ -19,7 +19,7 @@ public class BaseTest {
 	
 	static ConfigFileReader configFileReader= new ConfigFileReader();
 	
-	public static void openApp() throws Exception {
+	public static void openApp(String rol1,String rol2) throws Exception {
 		
 		DesiredCapabilities cap= new DesiredCapabilities();
 		
@@ -29,8 +29,8 @@ public class BaseTest {
 		cap.setCapability("platformName", configFileReader.getPlatformName());
 		cap.setCapability("platformVersion", configFileReader.getPlatformVersion());
 		
-		cap.setCapability("appPackage","com.easyjobprestador");
-		cap.setCapability("appActivity","com.easyjobprestador.MainActivity");
+		cap.setCapability("appPackage",rol1);
+		cap.setCapability("appActivity",rol2);
 		
 		
 		URL url=new URL(configFileReader.getApplicationUrl());	
@@ -38,25 +38,7 @@ public class BaseTest {
 		System.out.println("Aplicacion iniciada...");
 		
 	}
-		public static void openAppSolicitante() throws Exception {
 		
-		DesiredCapabilities cap= new DesiredCapabilities();
-		
-		
-		cap.setCapability("deviceName", configFileReader.getDeviceName());
-		cap.setCapability("udid", configFileReader.getUdid());
-		cap.setCapability("platformName", configFileReader.getPlatformName());
-		cap.setCapability("platformVersion", configFileReader.getPlatformVersion());
-		
-		cap.setCapability("appPackage","com.easyjob");
-		cap.setCapability("appActivity","com.easyjob.MainActivity");
-		
-		
-		URL url=new URL(configFileReader.getApplicationUrl());	
-		driver = new AppiumDriver<MobileElement>(url,cap);
-		System.out.println("Aplicacion iniciada...");
-		
-	}
 	
 	public void funcionScrollUp() throws InterruptedException {
 		driver.manage().window().getSize();

@@ -25,7 +25,7 @@ public class RegistroPrestadorSteps extends BaseTest {
 	public void abrir_navegador() throws Throwable {
 	 
 	 try{
-		 openAppSolicitante();
+		 openApp("com.easyjobprestador","com.easyjobprestador.MainActivity");
 
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
