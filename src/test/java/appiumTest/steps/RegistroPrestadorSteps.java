@@ -1,22 +1,26 @@
 package appiumTest.steps;
 
 
+
+
+
+
 import java.util.concurrent.TimeUnit;
 
 import appiumTest.BaseTest;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import io.appium.java_client.AppiumDriver;
+import cucumber.api.java.en.When;
 import io.appium.java_client.MobileElement;
-import io.cucumber.java.en.When;
+
 import pages.RegistroPrestadorPage;
 
 
 public class RegistroPrestadorSteps extends BaseTest {
 	
 	RegistroPrestadorPage page=null;
-	AppiumDriver<MobileElement> driver=null;
+	MobileElement elemento=null;
 	@Given("Abrir app")
 	public void abrir_navegador() throws Throwable {
 	 
@@ -26,21 +30,36 @@ public class RegistroPrestadorSteps extends BaseTest {
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
          exp.printStackTrace();
+         Thread.sleep(5000);
+         
      }
 	}
 
 	@And("Ir al registro del Prestador")
 	public void ir_al_registro_del_Prestador() throws Throwable {
-		page = new RegistroPrestadorPage(driver);
-	    
+		Thread.sleep(5000);
+		page = new RegistroPrestadorPage(elemento);
+		Thread.sleep(5000);
 	    page.clickQuieroSerJobber();
-	    
 	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 	}
 
 	@When("Completar el formulario de registro del prestador")
 	public void completar_el_formulario_de_registro_del_prestador() throws Throwable {
-	    
+		
+		Thread.sleep(5000);
+		page=new RegistroPrestadorPage(elemento);
+	    Thread.sleep(4000);
+	    page.enterNombres("DAVID");
+	    Thread.sleep(4000);
+	   
+	    page.enterApellidos("ALGUÉ TRANCHO");
+	    Thread.sleep(4000);
+	   
+	    page.enterCorreo("randomail256@gmailnator.com");
+	    Thread.sleep(4000);
+	  
+	 
 	}
 
 	@And("hacer click en boton registrar")
