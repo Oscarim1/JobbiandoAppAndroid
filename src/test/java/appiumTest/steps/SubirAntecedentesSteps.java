@@ -28,28 +28,45 @@ public class SubirAntecedentesSteps extends BaseTest{
 	     }
 		 
 		    page = new SubirAntecedentesPage(elemento);
-		    page.enterCorreo("randomail256@gmailnator.com");
+		    page.enterCorreo("randomail259@gmailnator.com");
 		    Thread.sleep(2000);
 		    page.enterContrasena("Hola1234");
 		    Thread.sleep(2000);
-	    
+		    page.clickEntrar();
+		    Thread.sleep(2000);
 	}
 
 	@And("Hacer click en pestana Enviar Antecedentes")
 	public void hacer_click_en_pestana_Enviar_Antecedentes() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    
+
+	    page = new SubirAntecedentesPage(elemento);
+	    page.clickAntecedentes(); 	
+	    Thread.sleep(2000);
+	    page.clickTipoDocumento(); 
+	    Thread.sleep(2000);
+	    page.clickDocumento();
+	    Thread.sleep(2000);
+		
+ 
 	}
 
 	@When("Hacer click en Selecionar Imagen")
 	public void hacer_click_en_Selecionar_Imagen() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    
+		page = new SubirAntecedentesPage(elemento);
+		page.clickImagen(); 
+		Thread.sleep(2000);
+		page.clickFuenteImagen();
+		Thread.sleep(2000);
+		page.clickTomarFoto();
+		Thread.sleep(2000);
 	}
 
 	@Then("Hacer click en boton Subir Antecedentes")
 	public void hacer_click_en_boton_Subir_Antecedentes() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
+		page = new SubirAntecedentesPage(elemento);
+		page.clickAceptar(); 
+		page.clickSubirAntecedentes(); 
+		
 	    
 	}
 
