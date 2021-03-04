@@ -14,56 +14,71 @@ public class ConfigFileReader {
  
  
  public ConfigFileReader(){
- BufferedReader reader;
- try {
- reader = new BufferedReader(new FileReader(propertyFilePath));
- properties = new Properties();
- try {
- properties.load(reader);
- reader.close();
- } catch (IOException e) {
- e.printStackTrace();
+	 BufferedReader reader;
+	 try {
+		 reader = new BufferedReader(new FileReader(propertyFilePath));
+		 properties = new Properties();
+	 try {
+		 properties.load(reader);
+		 reader.close();
+	 } catch (IOException e) {
+		 e.printStackTrace();
+	 }
+	 } catch (FileNotFoundException e) {
+		 e.printStackTrace();
+		 throw new RuntimeException("No se a encontrado el archivo Configuration.properties en " + propertyFilePath);
+	 } 
  }
- } catch (FileNotFoundException e) {
- e.printStackTrace();
- throw new RuntimeException("Configuration.properties not found at " + propertyFilePath);
- } 
- }
+ 
  //SE OBTIENE EL NOMBRE DEL DISPOSITIVO
  public String getDeviceName(){
- String deviceName = properties.getProperty("deviceName");
- if(deviceName!= null) return deviceName;
- else throw new RuntimeException("deviceName not specified in the Configuration.properties file."); 
+	 String deviceName = properties.getProperty("deviceName");
+	 if(deviceName!= null) 
+		 return deviceName;
+	 else 
+		 throw new RuntimeException("deviceName no esta especificado en Configuration.properties."); 
+	 }
+	 //SE OBTIENE LA URL
+	 public String getApplicationUrl() {
+	 String url = properties.getProperty("url");
+	 if(url != null) 
+		 return url;
+	 else 
+		 throw new RuntimeException("url no esta especificado en Configuration.properties.");
  }
- //SE OBTIENE LA URL
- public String getApplicationUrl() {
- String url = properties.getProperty("url");
- if(url != null) return url;
- else throw new RuntimeException("url not specified in the Configuration.properties file.");
- }
+	 
  //SE OBTIENE EL ID DEL DISPOSITIVO
  public String getUdid() {
- String udid = properties.getProperty("udid");
- if(udid != null) return udid;
- else throw new RuntimeException("udid not specified in the Configuration.properties file.");
+	 String udid = properties.getProperty("udid");
+	 if(udid != null) 
+		 return udid;
+	 else 
+		 throw new RuntimeException("udid no esta especificado en Configuration.properties.");
  }
+ 
  //SE OBTIENE EL NOMBRE DE LA PLATAFORMA
  public String getPlatformName() {
- String platformName = properties.getProperty("platformName");
- if(platformName != null) return platformName;
- else throw new RuntimeException("platformName not specified in the Configuration.properties file.");
+	 String platformName = properties.getProperty("platformName");
+	 if(platformName != null) 
+		 return platformName;
+	 else 
+		 throw new RuntimeException("platformName no esta especificado en Configuration.properties.");
  }
  //SE OBTIENE LA VERSION DE LA PLATAFORMA
  public String getPlatformVersion() {
 	 String platformVersion = properties.getProperty("platformVersion");
-	 if(platformVersion != null) return platformVersion;
-	 else throw new RuntimeException("platformVersion not specified in the Configuration.properties file.");
+	 if(platformVersion != null) 
+		 return platformVersion;
+	 else 
+		 throw new RuntimeException("platformVersion no esta especificado en Configuration.properties.");
 	 }
  
  public long getImplicitlyWait() { 
 	 String implicitlyWait = properties.getProperty("implicitlyWait");
-	 if(implicitlyWait != null) return Long.parseLong(implicitlyWait);
-	 else throw new RuntimeException("implicitlyWait not specified in the Configuration.properties file."); 
+	 if(implicitlyWait != null) 
+		 return Long.parseLong(implicitlyWait);
+	 else 
+		 throw new RuntimeException("implicitlyWait no esta especificado en Configuration.properties."); 
 	 }
  
 }
