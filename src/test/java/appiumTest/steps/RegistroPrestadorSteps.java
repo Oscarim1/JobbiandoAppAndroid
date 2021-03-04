@@ -41,7 +41,7 @@ public class RegistroPrestadorSteps extends BaseTest {
 		page = new RegistroPrestadorPage(elemento);
 		Thread.sleep(5000);
 	    page.clickQuieroSerJobber();
-	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+	    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	}
 
 	@When("Completar el formulario de registro del prestador")
@@ -87,7 +87,11 @@ public class RegistroPrestadorSteps extends BaseTest {
 
 	@And("hacer click en boton registrar")
 	public void hacer_click_en_boton_registrar() throws Throwable {
+		Thread.sleep(5000);
+		page = new RegistroPrestadorPage(elemento);
 		
+	    page.clickCrearCuenta();
+	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 	}
 
 	@Then("Ir a sitio de login")
