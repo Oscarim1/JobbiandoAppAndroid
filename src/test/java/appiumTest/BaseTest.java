@@ -22,8 +22,7 @@ public class BaseTest {
 	public static void openApp() throws Exception {
 		
 		DesiredCapabilities cap= new DesiredCapabilities();
-		
-		//esto debe ir en un file de configuración
+
 		cap.setCapability("deviceName", configFileReader.getDeviceName());
 		cap.setCapability("udid", configFileReader.getUdid());
 		cap.setCapability("platformName", configFileReader.getPlatformName());

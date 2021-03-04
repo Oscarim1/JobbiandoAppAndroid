@@ -32,7 +32,7 @@ public class RegistroPrestadorPage extends BaseTest {
 	By txtDireccion= By.xpath("//*[@resource-id=\"mat-input-9\"]");
 	By txtNombreDireccion= By.xpath("//*[@resource-id=\"mat-input-10\"]");
 	By txtReferencia= By.xpath("//*[@resource-id=\"mat-input-11\"]");
-	By btnRegistrar= By.xpath("//*[@resource-id=\"btnGoBack\"]");
+	By btnRegistrar= By.xpath("//*[@resource-id=\"btnSaveRegistro\"]"); //btnSaveRegistro
 	
 	public RegistroPrestadorPage(MobileElement elemento) 
 	{
@@ -116,8 +116,9 @@ public class RegistroPrestadorPage extends BaseTest {
 	}
 	
 	public void clickCrearCuenta() throws InterruptedException {
-		//para finalizar el registro hay que cambiar el btnRegistrar
+		
 		driver.findElement(btnRegistrar).click();
+		System.out.println("AQUIII");
 		Thread.sleep(5000);
 	}
 	
