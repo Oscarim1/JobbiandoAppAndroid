@@ -21,8 +21,8 @@ public class RegistroPrestadorSteps extends BaseTest {
 	
 	RegistroPrestadorPage page=null;
 	MobileElement elemento=null;
-	@Given("Abrir app")
-	public void abrir_navegador() throws Throwable {
+	@Given("Abrir app prestador")
+	public void abrir_app_prestador() throws Throwable {
 	 
 	 try{
 		 openApp("com.easyjobprestador","com.easyjobprestador.MainActivity");
@@ -85,8 +85,8 @@ public class RegistroPrestadorSteps extends BaseTest {
 	 
 	}
 
-	@And("hacer click en boton registrar")
-	public void hacer_click_en_boton_registrar() throws Throwable {
+	@And("hacer click en boton registrar prestador")
+	public void hacer_click_en_boton_registrar_prestador() throws Throwable {
 		Thread.sleep(5000);
 		page = new RegistroPrestadorPage(elemento);
 		
@@ -94,8 +94,8 @@ public class RegistroPrestadorSteps extends BaseTest {
 	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 	}
 
-	@Then("Ir a sitio de login")
-	public void ir_a_sitio_de_login() throws Throwable {
+	@Then("Ir a sitio de login del prestador")
+	public void ir_a_sitio_de_login_prestador() throws Throwable {
 	    
 	}
 }

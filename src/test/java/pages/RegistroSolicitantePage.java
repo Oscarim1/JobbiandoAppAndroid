@@ -30,7 +30,7 @@ public class RegistroSolicitantePage extends BaseTest {
 	By txtDireccion= By.xpath("//*[@resource-id=\"mat-input-9\"]");
 	By txtNombreDireccion= By.xpath("//*[@resource-id=\"mat-input-10\"]");
 	By txtReferencia= By.xpath("//*[@resource-id=\"mat-input-11\"]");
-	By btnRegistrar= By.xpath("//*[@resource-id=\"btnSave\"]");
+	By btnRegistrar= By.xpath("//*[@resource-id=\"btnSaveRegistro\"]");
 	
 	public RegistroSolicitantePage(MobileElement elemento) 
 	{

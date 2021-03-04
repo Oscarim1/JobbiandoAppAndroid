@@ -17,8 +17,8 @@ public class RegistroSolicitanteSteps extends BaseTest {
 	
 	RegistroPrestadorPage page=null;
 	MobileElement elemento=null;
-	@Given("Abrir app")
-	public void abrir_navegador() throws Throwable {
+	@Given("Abrir app solicitante")
+	public void abrir_app_solicitante() throws Throwable {
 	 
 	 try{
 		 //Se abre aplicación solicitante
@@ -83,12 +83,12 @@ public class RegistroSolicitanteSteps extends BaseTest {
 	}
 
 	@And("hacer click en boton registrar")
-	public void hacer_click_en_boton_registrar() throws Throwable {
+	public void hacer_click_en_boton_registrar_solicitante() throws Throwable {
 		
 	}
 
-	@Then("Ir a sitio de login")
-	public void ir_a_sitio_de_login() throws Throwable {
+	@Then("Ir a sitio de login solicitante")
+	public void ir_a_sitio_de_login_solicitante() throws Throwable {
 	    
 	}
 }
