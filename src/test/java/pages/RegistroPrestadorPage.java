@@ -19,6 +19,8 @@ public class RegistroPrestadorPage extends BaseTest {
 	By txtNombres=By.xpath("//*[@resource-id=\"mat-input-0\"]");
 	By txtApellidos=By.xpath("//*[@resource-id=\"mat-input-1\"]");
 	By txtFechaNacimiento=By.xpath("//*[@resource-id=\"fecha_nacimiento\"]");
+	//By btnCalendario = By.xpath("//*[@text=\"Open calendar\"]");
+	By btnFormulario = By.xpath("//*[@resource-id=\"register-form\"]");
 	By txtCorreo=By.xpath("//*[@resource-id=\"mat-input-3\"]");
 	By txtContrasena=By.xpath("//*[@resource-id=\"password\"]");
 	By txtContrasena2=By.xpath("//*[@resource-id=\"mat-input-5\"]");
@@ -51,9 +53,19 @@ public class RegistroPrestadorPage extends BaseTest {
 		driver.findElement(txtApellidos).sendKeys(apellidos);
 	}
 	
-	public void enterFechaNacimiento(String fechaNacimiento) 
+	public void enterFechaNacimiento(String fechaNacimiento) throws InterruptedException 
 	{
 		driver.findElement(txtFechaNacimiento).sendKeys(fechaNacimiento);
+		Thread.sleep(3000);
+		driver.findElement(txtFechaNacimiento).click();
+		Thread.sleep(3000);
+		
+		//funcion scroll
+		
+		this.funcionScrollUp();
+		
+		driver.findElement(btnFormulario).click();
+		Thread.sleep(3000);
 	}
 	
 	public void enterCorreo(String correo) 
@@ -63,20 +75,8 @@ public class RegistroPrestadorPage extends BaseTest {
 	
 	public void enterContrasena(String contrasena) throws InterruptedException 
 	{
-		driver.manage().window().getSize();
-		Dimension dimension = driver.manage().window().getSize();
-		int start_x = (int) (dimension.width * 0.5);
-		int start_y = (int) (dimension.height * 0.8);
 		
-		int end_x = (int) (dimension.width * 0.5);
-		int end_y = (int) (dimension.height * 0.6);
-		
-		TouchAction touch = new TouchAction(driver);
-		touch.press(PointOption.point(start_x, start_y))
-		.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
-		.moveTo(PointOption.point(end_x, end_y)).release().perform();
-		Thread.sleep(3000);
-		
+		this.funcionScrollDown();
 		driver.findElement(txtContrasena).sendKeys(contrasena);
 		driver.findElement(txtContrasena2).sendKeys(contrasena);
 	}
@@ -87,14 +87,15 @@ public class RegistroPrestadorPage extends BaseTest {
 		driver.findElement(txtNumeroIdentificador).sendKeys(numeroIdentificador);
 	}
 	
-	public void enterIdentificador(String numeroSerie) 
+	public void enterIdentificador(String numeroSerie) throws InterruptedException 
 	{
-		
+		funcionScrollDown();
 		driver.findElement(txtNumeroSerie).sendKeys(numeroSerie);
 	}
 	
-	public void enterCalle(String calle) 
+	public void enterCalle(String calle) throws InterruptedException 
 	{
+		funcionScrollDown();
 		driver.findElement(txtCalle).sendKeys(calle);
 	}
 	
@@ -108,77 +109,17 @@ public class RegistroPrestadorPage extends BaseTest {
 		driver.findElement(txtNombreDireccion).sendKeys(nombreDireccion);
 	}
 	
-	public void enterReferencia(String referencia) 
+	public void enterReferencia(String referencia) throws InterruptedException 
 	{
+		funcionScrollDown();
 		driver.findElement(txtReferencia).sendKeys(referencia);
 	}
 	
 	public void clickCrearCuenta() throws InterruptedException {
+		//para finalizar el registro hay que cambiar el btnRegistrar
 		driver.findElement(btnRegistrar).click();
 		Thread.sleep(5000);
 	}
-	
-	/*
-	public void clickFechaNacimiento() {
-		driver.findElement(btnFechaNacimiento).click();
-		driver.findElement(btnFechaNacimientoAño).click();
-		driver.findElement(btnFechaNacimientoMes).click();
-		driver.findElement(btnFechaNacimientoDia).click();
-	}
-	
-	
-	public void enterCorreo(String correo) 
-	{
-		driver.findElement(txtCorreo).sendKeys(correo);
-	}
-	
-	public void enterContrasena(String contrasena) 
-	{
-		driver.findElement(txtContrasena).sendKeys(contrasena);
-	}
-	
-	public void enterConfirmarContrasena(String confirmarContrasena) 
-	{
-		driver.findElement(txtConfirmarContrasena).sendKeys(confirmarContrasena);
-	}
-	
-	public void clickCedulaDeIdentidad() {
-		driver.findElement(btnCedulaDeIdentidad).click();
-		driver.findElement(btnCedulaDeIdentidadOpcion0).click();
-	}
-	
-	public void enterIdentificador(String identificador) 
-	{
-		driver.findElement(txtIdentificador).sendKeys(identificador);
-	}
-	
-	public void enterNumeroSerie(String numeroSerie) 
-	{
-		driver.findElement(txtNumeroSerie).sendKeys(numeroSerie);
-	}
-	
-	public void enterDireccion(String direccion) 
-	{
-		driver.findElement(txtDireccion).sendKeys(direccion);
-	}
-	
-	public void enterAsignaleUnNombre(String asignaleUnNombre) 
-	{
-		driver.findElement(txtAsignaleUnNombre).sendKeys(asignaleUnNombre);
-	}
-	
-	public void enterAsignaleUnaReferencia(String asignaleUnaReferencia) 
-	{
-		driver.findElement(txtAsignaleUnaReferencia).sendKeys(asignaleUnaReferencia);
-	}
-
-	
-	public void clickCrearCuenta() {
-		driver.findElement(btnCrearCuenta).click();
-	}
-
-	
-	*/
 	
 }
 

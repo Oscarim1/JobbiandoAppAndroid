@@ -62,7 +62,7 @@ public class RegistroPrestadorSteps extends BaseTest {
 	    page.enterCorreo("randomail250@gmailnator.com");
 	    Thread.sleep(4000);
 	    
-	    page.enterContrasena("Hola123");
+	    page.enterContrasena("Hola1234");
 	    Thread.sleep(4000);
 	    
 	    page.clickCedulaDeIdentidad("637106066");
