@@ -1,4 +1,4 @@
-Feature: Verificar funcionalidad de registro de Prestador
+Feature: Validar la funcionalidad de registro de Prestador
 
   Scenario: Validar registro de Prestador
     Given Abrir app
