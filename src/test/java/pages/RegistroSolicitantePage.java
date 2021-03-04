@@ -10,7 +10,7 @@ import appiumTest.BaseTest;
 import io.appium.java_client.MobileElement;
 
 
-public class RegistroPrestadorPage extends BaseTest {
+public class RegistroSolicitantePage extends BaseTest {
 	MobileElement elemento=null; 
 	By btnQuieroSerJobber = By.xpath("//*[@text=\"crear cuenta aquí\"]");
 	
@@ -32,7 +32,7 @@ public class RegistroPrestadorPage extends BaseTest {
 	By txtReferencia= By.xpath("//*[@resource-id=\"mat-input-11\"]");
 	By btnRegistrar= By.xpath("//*[@resource-id=\"btnGoBack\"]");
 	
-	public RegistroPrestadorPage(MobileElement elemento) 
+	public RegistroSolicitantePage(MobileElement elemento) 
 	{
 		this.elemento=elemento;
 	}
@@ -120,6 +120,3 @@ public class RegistroPrestadorPage extends BaseTest {
 	}
 	
 }
-
-	
-	

@@ -23,7 +23,7 @@ public class BaseTest {
 		
 		DesiredCapabilities cap= new DesiredCapabilities();
 		
-		//esto debe ir en un file de configuración
+		
 		cap.setCapability("deviceName", configFileReader.getDeviceName());
 		cap.setCapability("udid", configFileReader.getUdid());
 		cap.setCapability("platformName", configFileReader.getPlatformName());
@@ -31,6 +31,25 @@ public class BaseTest {
 		
 		cap.setCapability("appPackage","com.easyjobprestador");
 		cap.setCapability("appActivity","com.easyjobprestador.MainActivity");
+		
+		
+		URL url=new URL(configFileReader.getApplicationUrl());	
+		driver = new AppiumDriver<MobileElement>(url,cap);
+		System.out.println("Aplicacion iniciada...");
+		
+	}
+		public static void openAppSolicitante() throws Exception {
+		
+		DesiredCapabilities cap= new DesiredCapabilities();
+		
+		
+		cap.setCapability("deviceName", configFileReader.getDeviceName());
+		cap.setCapability("udid", configFileReader.getUdid());
+		cap.setCapability("platformName", configFileReader.getPlatformName());
+		cap.setCapability("platformVersion", configFileReader.getPlatformVersion());
+		
+		cap.setCapability("appPackage","com.easyjob");
+		cap.setCapability("appActivity","com.easyjob.MainActivity");
 		
 		
 		URL url=new URL(configFileReader.getApplicationUrl());	
