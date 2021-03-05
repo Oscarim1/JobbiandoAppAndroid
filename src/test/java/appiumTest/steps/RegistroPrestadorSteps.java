@@ -12,20 +12,21 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import dataProviders.ConfigFileReader;
 import io.appium.java_client.MobileElement;
 
 import pages.RegistroPrestadorPage;
 
 
 public class RegistroPrestadorSteps extends BaseTest {
-	
+	static ConfigFileReader configFileReader= new ConfigFileReader();
 	RegistroPrestadorPage page=null;
 	MobileElement elemento=null;
 	@Given("Abrir app prestador")
 	public void abrir_app_prestador() throws Throwable {
 	 
 	 try{
-		 openApp("com.easyjobprestador","com.easyjobprestador.MainActivity");
+		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 
      }catch(Exception exp) {
          System.out.println(exp.getMessage());

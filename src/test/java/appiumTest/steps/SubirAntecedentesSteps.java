@@ -5,10 +5,12 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import dataProviders.ConfigFileReader;
 import io.appium.java_client.MobileElement;
 import pages.SubirAntecedentesPage;
 
 public class SubirAntecedentesSteps extends BaseTest{
+	static ConfigFileReader configFileReader= new ConfigFileReader();
 	SubirAntecedentesPage page=null;
 	MobileElement elemento=null;
 	
@@ -17,7 +19,7 @@ public class SubirAntecedentesSteps extends BaseTest{
 
 		 try{
 			 
-			 openApp("com.easyjobprestador","com.easyjobprestador.MainActivity");
+			 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 			 Thread.sleep(8000);
 
 	     }catch(Exception exp) {
@@ -28,9 +30,9 @@ public class SubirAntecedentesSteps extends BaseTest{
 	     }
 		 
 		    page = new SubirAntecedentesPage(elemento);
-		    page.enterCorreo("randomail259@gmailnator.com");
+		    page.enterCorreo(this.emailPrestador);
 		    Thread.sleep(2000);
-		    page.enterContrasena("Hola1234");
+		    page.enterContrasena(this.passPrestador);
 		    Thread.sleep(2000);
 		    page.clickEntrar();
 		    Thread.sleep(2000);

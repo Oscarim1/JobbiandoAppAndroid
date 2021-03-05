@@ -19,6 +19,11 @@ public class BaseTest {
 	
 	static ConfigFileReader configFileReader= new ConfigFileReader();
 	
+	public String emailPrestador="randomail259@gmailnator.com";
+	public String passPrestador="Hola1234";
+	
+	
+	
 	public static void openApp(String rol1,String rol2) throws Exception {
 		
 		DesiredCapabilities cap= new DesiredCapabilities();
@@ -69,5 +74,7 @@ public class BaseTest {
 		.moveTo(PointOption.point(end_x, end_y)).release().perform();
 		Thread.sleep(3000);
 	}
+	
+	
 	
 }
