@@ -72,6 +72,38 @@ public class ConfigFileReader {
 	 else 
 		 throw new RuntimeException("platformVersion no esta especificado en Configuration.properties.");
 	 }
+
+ public String getappPackagePrestador() {
+	 String appPackagePrestador = properties.getProperty("appPackagePrestador");
+	 if(appPackagePrestador != null) 
+		 return appPackagePrestador;
+	 else 
+		 throw new RuntimeException("appPackagePrestador no esta especificado en Configuration.properties.");
+	 }
+ 
+ public String getappActivityPrestador() {
+	 String appActivityPrestador = properties.getProperty("appActivityPrestador");
+	 if(appActivityPrestador != null) 
+		 return appActivityPrestador;
+	 else 
+		 throw new RuntimeException("appPackagePrestador no esta especificado en Configuration.properties.");
+	 }
+ 
+ public String getappPackageSolicitante() {
+	 String appPackagePrestador = properties.getProperty("appPackagePrestador");
+	 if(appPackagePrestador != null) 
+		 return appPackagePrestador;
+	 else 
+		 throw new RuntimeException("appPackagePrestador no esta especificado en Configuration.properties.");
+	 }
+ 
+ public String getappActivitySolicitante() {
+	 String appActivityPrestador = properties.getProperty("appActivityPrestador");
+	 if(appActivityPrestador != null) 
+		 return appActivityPrestador;
+	 else 
+		 throw new RuntimeException("appPackagePrestador no esta especificado en Configuration.properties.");
+	 }
  
  public long getImplicitlyWait() { 
 	 String implicitlyWait = properties.getProperty("implicitlyWait");

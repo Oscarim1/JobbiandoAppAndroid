@@ -19,7 +19,12 @@ public class BaseTest {
 	
 	static ConfigFileReader configFileReader= new ConfigFileReader();
 	
-	public static void openApp() throws Exception {
+	public String emailPrestador="randomail259@gmailnator.com";
+	public String passPrestador="Hola1234";
+	
+	
+	
+	public static void openApp(String rol1,String rol2) throws Exception {
 		
 		DesiredCapabilities cap= new DesiredCapabilities();
 
@@ -28,8 +33,8 @@ public class BaseTest {
 		cap.setCapability("platformName", configFileReader.getPlatformName());
 		cap.setCapability("platformVersion", configFileReader.getPlatformVersion());
 		
-		cap.setCapability("appPackage","com.easyjobprestador");
-		cap.setCapability("appActivity","com.easyjobprestador.MainActivity");
+		cap.setCapability("appPackage",rol1);
+		cap.setCapability("appActivity",rol2);
 		
 		
 		URL url=new URL(configFileReader.getApplicationUrl());	
@@ -88,5 +93,7 @@ public class BaseTest {
 		.moveTo(PointOption.point(end_x, end_y)).release().perform();
 		Thread.sleep(3000);
 	}
+	
+	
 	
 }

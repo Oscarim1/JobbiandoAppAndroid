@@ -1,10 +1,6 @@
 package appiumTest.steps;
 
 
-
-
-
-
 import java.util.concurrent.TimeUnit;
 
 import appiumTest.BaseTest;
@@ -18,15 +14,16 @@ import io.appium.java_client.MobileElement;
 import pages.RegistroPrestadorPage;
 
 
-public class RegistroPrestadorSteps extends BaseTest {
+public class RegistroSolicitanteSteps extends BaseTest {
 	static ConfigFileReader configFileReader= new ConfigFileReader();
 	RegistroPrestadorPage page=null;
 	MobileElement elemento=null;
-	@Given("Abrir app prestador")
-	public void abrir_app_prestador() throws Throwable {
+	@Given("Abrir app solicitante")
+	public void abrir_app_solicitante() throws Throwable {
 	 
 	 try{
-		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
+		 //Se abre aplicación solicitante
+		 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
 
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
@@ -36,17 +33,17 @@ public class RegistroPrestadorSteps extends BaseTest {
      }
 	}
 
-	@And("Ir al registro del Prestador")
-	public void ir_al_registro_del_Prestador() throws Throwable {
+	@And("Ir al registro del Solicitante")
+	public void ir_al_registro_del_Solicitante() throws Throwable {
 		Thread.sleep(5000);
 		page = new RegistroPrestadorPage(elemento);
 		Thread.sleep(5000);
 	    page.clickQuieroSerJobber();
-	    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 	}
 
-	@When("Completar el formulario de registro del prestador")
-	public void completar_el_formulario_de_registro_del_prestador() throws Throwable {
+	@When("Completar el formulario de registro del solicitante")
+	public void completar_el_formulario_de_registro_del_solicitante() throws Throwable {
 		
 		Thread.sleep(5000);
 		page=new RegistroPrestadorPage(elemento);
@@ -86,17 +83,13 @@ public class RegistroPrestadorSteps extends BaseTest {
 	 
 	}
 
-	@And("hacer click en boton registrar prestador")
-	public void hacer_click_en_boton_registrar_prestador() throws Throwable {
-		Thread.sleep(5000);
-		page = new RegistroPrestadorPage(elemento);
+	@And("hacer click en boton registrar")
+	public void hacer_click_en_boton_registrar_solicitante() throws Throwable {
 		
-	    page.clickCrearCuenta();
-	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 	}
 
-	@Then("Ir a sitio de login del prestador")
-	public void ir_a_sitio_de_login_prestador() throws Throwable {
+	@Then("Ir a sitio de login solicitante")
+	public void ir_a_sitio_de_login_solicitante() throws Throwable {
 	    
 	}
 }

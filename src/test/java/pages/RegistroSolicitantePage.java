@@ -10,7 +10,7 @@ import appiumTest.BaseTest;
 import io.appium.java_client.MobileElement;
 
 
-public class RegistroPrestadorPage extends BaseTest {
+public class RegistroSolicitantePage extends BaseTest {
 	MobileElement elemento=null; 
 	By btnQuieroSerJobber = By.xpath("//*[@text=\"crear cuenta aquí\"]");
 	
@@ -30,9 +30,9 @@ public class RegistroPrestadorPage extends BaseTest {
 	By txtDireccion= By.xpath("//*[@resource-id=\"mat-input-9\"]");
 	By txtNombreDireccion= By.xpath("//*[@resource-id=\"mat-input-10\"]");
 	By txtReferencia= By.xpath("//*[@resource-id=\"mat-input-11\"]");
-	By btnRegistrar= By.xpath("//*[@resource-id=\"btnSaveRegistro\"]"); //btnSaveRegistro
+	By btnRegistrar= By.xpath("//*[@resource-id=\"btnSaveRegistro\"]");
 	
-	public RegistroPrestadorPage(MobileElement elemento) 
+	public RegistroSolicitantePage(MobileElement elemento) 
 	{
 		this.elemento=elemento;
 	}
@@ -114,13 +114,9 @@ public class RegistroPrestadorPage extends BaseTest {
 	}
 	
 	public void clickCrearCuenta() throws InterruptedException {
-		
+		//para finalizar el registro hay que cambiar el btnRegistrar
 		driver.findElement(btnRegistrar).click();
-		System.out.println("AQUIII");
 		Thread.sleep(5000);
 	}
 	
 }
-
-	
-	
