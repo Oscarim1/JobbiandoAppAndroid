@@ -8,24 +8,28 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import dataProviders.ConfigFileReader;
 import io.appium.java_client.MobileElement;
-import pages.RegistroPrestadorPage;
+
 import pages.ValidarAntecedentesPage;
 
 
 public class ValidarAntecedentesSteps extends BaseTest {
 	
+	static ConfigFileReader configFileReader= new ConfigFileReader();
 	ValidarAntecedentesPage page=null;
 	MobileElement elemento=null;
 	@Given("Abrir el navegador")
 	public void abrir_navegador() throws Throwable {
 	 
 	 try{
-		 openNavegator();
+		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 		 Thread.sleep(3000);
 		 page = new ValidarAntecedentesPage(elemento);
 		 Thread.sleep(4000);
 		 page.iniciarSesion();
+		 page.enterUsernameAdmin(emailAdmin);
+		 page.enterPassAdmin(passAdmin);
 
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
@@ -39,12 +43,12 @@ public class ValidarAntecedentesSteps extends BaseTest {
 	@And("Ir a revisar antecedentes")
 	public void ir_a_revisar_antecedentes() throws Throwable {
 		
+		
 		Thread.sleep(5000);
 		page=new ValidarAntecedentesPage(elemento);
-		
+		page.BarraLateral();
 	    Thread.sleep(4000);
-	    page.enterUrl("app.jobbiando.cl/login");
-	    Thread.sleep(4000);
+	    
 	   
 	    
 	}

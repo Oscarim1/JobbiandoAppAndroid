@@ -21,6 +21,9 @@ public class BaseTest {
 	
 	public String emailPrestador="randomail259@gmailnator.com";
 	public String passPrestador="Hola1234";
+	public String emailAdmin="camilatoro200@gmail.com";
+	public String passAdmin="190858111";
+	
 	
 	
 	
@@ -52,8 +55,8 @@ public class BaseTest {
 		cap.setCapability("platformName", configFileReader.getPlatformName());
 		cap.setCapability("platformVersion", configFileReader.getPlatformVersion());
 		
-		cap.setCapability("appPackage","com.android.chrome");
-		cap.setCapability("appActivity","com.google.android.apps.chrome.Main");
+		//cap.setCapability("appPackage","com.android.chrome");
+		//cap.setCapability("appActivity","com.google.android.apps.chrome.Main");
 		
 		
 		URL url=new URL(configFileReader.getApplicationUrl());	
