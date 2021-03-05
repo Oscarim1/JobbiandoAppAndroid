@@ -1,6 +1,6 @@
 package pages;
 import org.openqa.selenium.By;
-import org.openqa.selenium.By.ByClassName;
+
 
 import appiumTest.BaseTest;
 import io.appium.java_client.MobileElement;

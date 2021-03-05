@@ -7,12 +7,14 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
 import io.appium.java_client.MobileElement;
+import pages.LoginPage;
 import pages.SubirAntecedentesPage;
 
 public class SubirAntecedentesSteps extends BaseTest{
 	static ConfigFileReader configFileReader= new ConfigFileReader();
 	SubirAntecedentesPage page=null;
 	MobileElement elemento=null;
+	LoginPage log=new LoginPage();
 	
 	@Given("Completar login y entrar")
 	public void completar_login_y_entrar() throws Throwable {
@@ -29,13 +31,10 @@ public class SubirAntecedentesSteps extends BaseTest{
 	         
 	     }
 		 
-		    page = new SubirAntecedentesPage(elemento);
-		    page.enterCorreo(this.emailPrestador);
-		    Thread.sleep(2000);
-		    page.enterContrasena(this.passPrestador);
-		    Thread.sleep(2000);
-		    page.clickEntrar();
-		    Thread.sleep(2000);
+		  log.enterCorreo(emailPrestador);
+		  Thread.sleep(5000);
+		  log.enterContrasena(passPrestador);
+		  Thread.sleep(5000);
 	}
 
 	@And("Hacer click en pestana Enviar Antecedentes")
