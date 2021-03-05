@@ -43,6 +43,25 @@ public class BaseTest {
 		
 	}
 	
+	public static void openNavegator() throws Exception {
+		
+		DesiredCapabilities cap= new DesiredCapabilities();
+
+		cap.setCapability("deviceName", configFileReader.getDeviceName());
+		cap.setCapability("udid", configFileReader.getUdid());
+		cap.setCapability("platformName", configFileReader.getPlatformName());
+		cap.setCapability("platformVersion", configFileReader.getPlatformVersion());
+		
+		cap.setCapability("appPackage","com.android.chrome");
+		cap.setCapability("appActivity","com.google.android.apps.chrome.Main");
+		
+		
+		URL url=new URL(configFileReader.getApplicationUrl());	
+		driver = new AppiumDriver<MobileElement>(url,cap);
+		System.out.println("Aplicacion iniciada...");
+		
+	}
+	
 	public void funcionScrollUp() throws InterruptedException {
 		driver.manage().window().getSize();
 		Dimension dimension = driver.manage().window().getSize();
