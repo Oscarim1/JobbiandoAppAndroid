@@ -36,6 +36,15 @@ public class SubirAntecedentesSteps extends BaseTest{
 		  log.enterContrasena(passPrestador);
 		  Thread.sleep(5000);
 	}
+	@And("Hacer click en pestana Cuenta")
+	public void hacer_click_en_pestana_Cuenta() throws Throwable{
+		page = new SubirAntecedentesPage(elemento);
+		if(page.clickPermitirUbicacion() != null) {
+		page.clickPermitirUbicacion();
+		Thread.sleep(2000);
+		}
+		
+	}
 
 	@And("Hacer click en pestana Enviar Antecedentes")
 	public void hacer_click_en_pestana_Enviar_Antecedentes() throws Throwable {
@@ -60,6 +69,11 @@ public class SubirAntecedentesSteps extends BaseTest{
 		Thread.sleep(2000);
 		page.clickTomarFoto();
 		Thread.sleep(2000);
+	}
+	@And("Hacer click en Subir Imagen ")
+	public void hacer_click_en_Subir_Imagen() throws Throwable{
+		
+		
 	}
 
 	@Then("Hacer click en boton Subir Antecedentes")

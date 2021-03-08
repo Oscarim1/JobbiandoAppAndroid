@@ -12,6 +12,7 @@ public class SubirAntecedentesPage extends BaseTest {
 	By txtCorreo =By.xpath("//*[@text=\"Email\"]");
 	By txtContrasena =By.xpath("//*[@text=\"Contraseña\"]");
 	By btnEntrar =By.xpath("//*[@text=\"LOGIN\"]");
+	By btnPermitirUbicacion=By.xpath("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]");
 	By btnEntrarCuenta =By.xpath("//*[@text=\"CUENTA\"]");
 	By btnAntecedentes =By.xpath("//*[@text=\"Antecedentes de la cuenta\"]");	
 	By btnTipoDocumento =By.xpath("//*[@resource-id=\"android:id/text1\"]");
@@ -43,6 +44,10 @@ public class SubirAntecedentesPage extends BaseTest {
 		driver.findElement(btnEntrar).click();
 	}
 	
+	public void clickPermitirUbicacion() {
+		driver.findElement(btnPermitirUbicacion).click();
+		
+	}
 	public void clickPerfil() 
 	{
 		driver.findElement(btnEntrarCuenta).click();
