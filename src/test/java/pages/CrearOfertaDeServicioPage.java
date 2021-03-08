@@ -8,8 +8,12 @@ import io.appium.java_client.MobileElement;
 public class CrearOfertaDeServicioPage extends BaseTest {
 	MobileElement elemento=null; 
 	
-	By btnServicioPestana=By.xpath("");
-	By btnAgregarServicio=By.xpath("");
+	By txtCorreo =By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.EditText");
+	By txtContrasena =By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.EditText");
+	By btnEntrar = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]");
+	
+	By btnServicioPestana=By.xpath("//*[@text='SERVICIOS']");
+	By btnAgregarServicio=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView");
 	By txtDescripcion=By.xpath("");
 	By btnCategoria=By.xpath("");
 	By btnSeleccionarCategoria=By.xpath("");
@@ -35,6 +39,25 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 	public CrearOfertaDeServicioPage(MobileElement elemento) 
 	{
 		this.elemento=elemento;
+	}
+	
+	public void correoPrestador(String correoPrestador) throws InterruptedException {
+		System.out.println(correoPrestador);
+		
+		
+		Thread.sleep(5000);
+		driver.findElement(txtCorreo).sendKeys(correoPrestador);
+		
+		Thread.sleep(5000);
+		
+	}
+	
+	public void passPrestador(String passPrestador) throws InterruptedException {
+		driver.findElement(txtContrasena).sendKeys(passPrestador);
+		Thread.sleep(5000);
+		driver.findElement(btnEntrar).click();
+		Thread.sleep(5000);
+		
 	}
 	
 	public void clickPestanaServicios() {

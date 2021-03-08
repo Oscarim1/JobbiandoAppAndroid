@@ -1,25 +1,44 @@
 package appiumTest.steps;
 
+
+import java.util.concurrent.TimeUnit;
+
 import appiumTest.BaseTest;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import dataProviders.ConfigFileReader;
 import io.appium.java_client.MobileElement;
+
 import pages.CrearOfertaDeServicioPage;
-import pages.LoginPage;
+
 
 public class CrearOfertaDeServicioSteps extends BaseTest {
 	
-	LoginPage log=new LoginPage();
-	MobileElement elemento=null;
+	static ConfigFileReader configFileReader= new ConfigFileReader();
 	CrearOfertaDeServicioPage page=null;
+	MobileElement elemento=null;
 	@Given("Completar login prestador y entrar")
 	public void completar_login_prestador_y_entrar() throws Throwable {
-		log.enterCorreo(emailPrestador);
-		  Thread.sleep(5000);
-		  log.enterContrasena(passPrestador);
-		  Thread.sleep(5000);
+	 
+	 try{
+		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
+		 Thread.sleep(3000);
+		 page = new CrearOfertaDeServicioPage(elemento);
+		 
+		 Thread.sleep(3000);
+		 page.correoPrestador(emailPrestador);
+		 Thread.sleep(3000);
+		 page.passPrestador(passPrestador);
+
+     }catch(Exception exp) {
+         System.out.println(exp.getMessage());
+         exp.printStackTrace();
+         Thread.sleep(5000);
+         
+     }
+	 
 	}
 	@And("Hacer click en pestana Servicios")
 	public void hacer_click_en_pestana_Servicios() throws Throwable {
