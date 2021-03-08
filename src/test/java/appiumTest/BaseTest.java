@@ -97,7 +97,18 @@ public class BaseTest {
 		Thread.sleep(3000);
 	}
 	
-	
+	 public MobileElement elementExist(String xpath)
+     {
+         try
+         {
+             return driver.findElementByXPath(xpath);
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
 	
 	
 	

@@ -6,24 +6,28 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.appium.java_client.MobileElement;
+
 import pages.CrearOfertaDeServicioPage;
-import pages.LoginPage;
+
 
 public class CrearOfertaDeServicioSteps extends BaseTest {
 	
-	LoginPage log=new LoginPage();
+	
 	MobileElement elemento=null;
 	CrearOfertaDeServicioPage page=null;
 	@Given("Completar login prestador y entrar")
 	public void completar_login_prestador_y_entrar() throws Throwable {
-		log.enterCorreo(emailPrestador);
+		  page=new CrearOfertaDeServicioPage(elemento);
+		  page.enterCorreo(emailPrestador);
 		  Thread.sleep(5000);
-		  log.enterContrasena(passPrestador);
+		  page.enterContrasena(passPrestador);
 		  Thread.sleep(5000);
+		  page.clickEntrar();
+		  Thread.sleep(25000);
 	}
 	@And("Hacer click en pestana Servicios")
 	public void hacer_click_en_pestana_Servicios() throws Throwable {
-		   page=new CrearOfertaDeServicioPage(elemento);
+		    page=new CrearOfertaDeServicioPage(elemento);
 		    page.clickPestanaServicios();
 		    Thread.sleep(5000);
 	}

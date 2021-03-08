@@ -8,6 +8,9 @@ import io.appium.java_client.MobileElement;
 public class CrearOfertaDeServicioPage extends BaseTest {
 	MobileElement elemento=null; 
 	
+	By txtCorreo =By.xpath("//*[@text=\"Email\"]");
+	By txtContrasena =By.xpath("//*[@text=\"Contraseña\"]");
+	By btnEntrar =By.xpath("//*[@text=\"LOGIN\"]");
 	By btnServicioPestana=By.xpath("");
 	By btnAgregarServicio=By.xpath("");
 	By txtDescripcion=By.xpath("");
@@ -35,6 +38,20 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 	public CrearOfertaDeServicioPage(MobileElement elemento) 
 	{
 		this.elemento=elemento;
+	}
+	public void enterCorreo(String correo) 
+	{
+		driver.findElement(txtCorreo).sendKeys(correo);
+	}
+	
+	public void enterContrasena(String contrasena) 
+	{
+		driver.findElement(txtContrasena).sendKeys(contrasena);
+	}
+	
+	public void clickEntrar() 
+	{
+		driver.findElement(btnEntrar).click();
 	}
 	
 	public void clickPestanaServicios() {
