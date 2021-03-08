@@ -40,7 +40,7 @@ public class RegistroPrestadorSteps extends BaseTest {
 	public void ir_al_registro_del_Prestador() throws Throwable {
 		Thread.sleep(5000);
 		page = new RegistroPrestadorPage(elemento);
-		Thread.sleep(5000);
+		Thread.sleep(36000);
 	    page.clickQuieroSerJobber();
 	    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	}
@@ -48,14 +48,14 @@ public class RegistroPrestadorSteps extends BaseTest {
 	@When("Completar el formulario de registro del prestador")
 	public void completar_el_formulario_de_registro_del_prestador() throws Throwable {
 		
-		Thread.sleep(5000);
+		Thread.sleep(9000);
 		page=new RegistroPrestadorPage(elemento);
-	    Thread.sleep(4000);
+	    Thread.sleep(9000);
 	    page.enterNombres("ENRIC");
-	    Thread.sleep(4000);
+	    Thread.sleep(9000);
 	   
 	    page.enterApellidos("PARRAMON FLORES");
-	    Thread.sleep(4000);
+	    Thread.sleep(9000);
 	    
 	    page.enterFechaNacimiento("12 de 05 de 1995");
 	    Thread.sleep(4000);
