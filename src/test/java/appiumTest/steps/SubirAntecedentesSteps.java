@@ -31,11 +31,11 @@ public class SubirAntecedentesSteps extends BaseTest{
 	         
 	     }
 		 
-		 page=new SubirAntecedentesPage(elemento);
-		  page.enterCorreo(emailPrestador);
-		  Thread.sleep(5000);
+		  page=new SubirAntecedentesPage(elemento);
+		  page.enterCorreo("randomail259@gmailnator.com");
+		  Thread.sleep(1000);
 		  page.enterContrasena(passPrestador);
-		  Thread.sleep(5000);
+		  Thread.sleep(4000);
 		  page.clickOcultarTeclado();
 		  Thread.sleep(5000);
 		  page.clickEntrar();
