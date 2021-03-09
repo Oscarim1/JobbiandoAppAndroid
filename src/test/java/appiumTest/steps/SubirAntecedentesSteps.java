@@ -18,45 +18,35 @@ public class SubirAntecedentesSteps extends BaseTest{
 	
 	@Given("Completar login y entrar")
 	public void completar_login_y_entrar() throws Throwable {
-
-		 try{
-			 
+		 try{			 
 			 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
-			 Thread.sleep(28000);
-
+			 Thread.sleep(15000);
 	     }catch(Exception exp) {
 	         System.out.println(exp.getMessage());
 	         exp.printStackTrace();
-	         Thread.sleep(1000);
-	         
+	         Thread.sleep(1000);         
 	     }
-		 
 		  page=new SubirAntecedentesPage(elemento);
 		  page.enterCorreo("randomail259@gmailnator.com");
-		  Thread.sleep(1000);
-		  page.enterContrasena(passPrestador);
-		  Thread.sleep(4000);
-		  page.clickOcultarTeclado();
-		  Thread.sleep(5000);
+		  
+		  page.enterContrasena(passPrestador);		 
+		  page.clickOcultarTeclado();		 
 		  page.clickEntrar();
-		  Thread.sleep(25000);
+		  
 		  
 	}
 	@And("Hacer click en pestana Cuenta")
 	public void hacer_click_en_pestana_Cuenta() throws Throwable{
 		page = new SubirAntecedentesPage(elemento);
-		if(elementExist("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]") != null) {
-		page.clickPermitirUbicacion();
-		Thread.sleep(2000);
+		if(elementExist("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]") != null ) {
+		page.clickPermitirUbicacion();			
 		}else {}
+	page.clickPerfil();
 		
-		page.clickPerfil();
-		Thread.sleep(2000);
 	}
 
 	@And("Hacer click en pestana Enviar Antecedentes")
 	public void hacer_click_en_pestana_Enviar_Antecedentes() throws Throwable {
-
 	    page = new SubirAntecedentesPage(elemento);
 	    page.clickAntecedentes(); 	
 	    Thread.sleep(2000);
@@ -64,8 +54,6 @@ public class SubirAntecedentesSteps extends BaseTest{
 	    Thread.sleep(2000);
 	    page.clickDocumento();
 	    Thread.sleep(2000);
-		
- 
 	}
 
 	@When("Hacer click en Selecionar Imagen")
@@ -75,19 +63,28 @@ public class SubirAntecedentesSteps extends BaseTest{
 		Thread.sleep(2000);
 		page.clickFuenteImagen();
 		Thread.sleep(2000);
+		if(elementExist("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]") != null ) {
+			page.clickPermitirImagen();				
+			}else {}
+		if(elementExist("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]") != null) {
+				page.clickPermitirImagenCamara();					
+				}else {}
+		if(elementExist("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]") != null) {
+				page.clickPermitirImagenCamara();					
+				}else {}
 		//////////////falta cargar imagen//////////////////
 	}
 	@And("Hacer click en Subir Imagen ")
 	public void hacer_click_en_Subir_Imagen() throws Throwable{
 		page.clickAceptar(); 
-		Thread.sleep(2000);
+		
 	}
 
 	@Then("Hacer click en boton Subir Antecedentes")
 	public void hacer_click_en_boton_Subir_Antecedentes() throws Throwable {
 		page = new SubirAntecedentesPage(elemento);
 		page.clickSubirAntecedentes(); 
-		Thread.sleep(2000);
+		
 	    
 	}
 
