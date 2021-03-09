@@ -5,38 +5,46 @@ import appiumTest.BaseTest;
 import io.appium.java_client.MobileElement;
 
 public class AgregarCategoriaPage extends BaseTest {
-	MobileElement elemento=null; 
+	MobileElement elemento=null; 	
+	By txtCorreo =By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.EditText");
+	By txtContrasena =By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.EditText");
+	By btnEntrar = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]");
 	By btnAgregar=By.xpath("");
 	By btnAgregarCategoria=By.xpath("");
-	By txtCorreo =By.xpath("//*[@text=\"Email\"]");
-	By txtContrasena =By.xpath("//*[@text=\"Contraseña\"]");
-	By btnEntrar =By.xpath("//*[@text=\"LOGIN\"]");
+	
 	public AgregarCategoriaPage(MobileElement elemento) 
 	{
 		this.elemento=elemento;
 	}
 	
-	public void enterCorreo(String correo) 
+	public void enterCorreo(String correo) throws InterruptedException
 	{
 		driver.findElement(txtCorreo).sendKeys(correo);
+		Thread.sleep(5000);
 	}
 	
-	public void enterContrasena(String contrasena) 
+	public void enterContrasena(String contrasena) throws InterruptedException
 	{
 		driver.findElement(txtContrasena).sendKeys(contrasena);
+		Thread.sleep(5000);
 	}
 	
-	public void clickEntrar() 
+	public void clickEntrar() throws InterruptedException
 	{
 		driver.findElement(btnEntrar).click();
+		Thread.sleep(5000);
 	}
 	
-	public void clickAgregar() {
+	public void clickAgregar() throws InterruptedException 
+	{
 		driver.findElement(btnAgregar).click();
+		Thread.sleep(5000);
 		
 	}
-	public void clickAgregarCategoria() {
+	public void clickAgregarCategoria() throws InterruptedException 
+	{
 		driver.findElement(btnAgregarCategoria).click();
+		Thread.sleep(5000);
 	}
 	
 }
