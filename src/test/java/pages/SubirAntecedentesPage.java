@@ -23,8 +23,8 @@ public class SubirAntecedentesPage extends BaseTest {
 	By btnPermitirImagenCamara=By.xpath("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]");
 	///////////////////////editar///////////////////////////////////
 	By btnElegirFuenteImagen =By.xpath("//*[@text=\"Tomar una Foto\"]");
-	By btnTomarFoto =By.xpath("//*[@resource-id=\"com.android.camera:id/shutter_button\"]");
-	By btnAceptar =By.xpath("//*[@text=\"ACEPTAR\"]");
+	By btnTomarFoto =By.xpath("//*[@resource-id=\"com.android.camera2:id/shutter_button\"]");
+	By btnAceptar =By.xpath("//*[@resource-id=\"com.android.camera2:id/done_button\"]");
 	By btnSubirAntecedentes =By.xpath("//*[@text=\"SUBIR ANTECEDENTES\"]");
 	
 	
@@ -58,7 +58,7 @@ public class SubirAntecedentesPage extends BaseTest {
 	
 	public void clickPermitirUbicacion()throws InterruptedException {
 		driver.findElement(btnPermitirUbicacionE).click();
-		Thread.sleep(5000);
+		Thread.sleep(9000);
 		
 	}
 	
@@ -78,47 +78,47 @@ public class SubirAntecedentesPage extends BaseTest {
 	public void clickTipoDocumento() throws InterruptedException
 	{
 		driver.findElement(btnTipoDocumento).click();
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 		
 	}
 	
 	public void clickDocumento() throws InterruptedException
 	{
 		driver.findElement(btnDocumento).click();
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 	}
 	
 	public void clickImagen() throws InterruptedException
 	{
 		driver.findElement(btnImagen).click();
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 	}
 	
 	public void clickFuenteImagen() throws InterruptedException
 	{
 		driver.findElement(btnElegirFuenteImagen).click();
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 	}
 	public void clickPermitirImagen() throws InterruptedException
 	{
 		driver.findElement(btnPermitirImagen).click();
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 	}
 	public void clickPermitirImagenCamara() throws InterruptedException
 	{
 		driver.findElement(btnPermitirImagenCamara).click();
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 	}
 	public void clickTomarFoto() throws InterruptedException
 	{
 		driver.findElement(btnTomarFoto).click();
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 	}
 	
 	public void clickAceptar() throws InterruptedException
 	{
 		driver.findElement(btnAceptar).click();
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 	}
 	
 	public void clickSubirAntecedentes() throws InterruptedException

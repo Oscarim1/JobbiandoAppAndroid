@@ -20,7 +20,7 @@ public class SubirAntecedentesSteps extends BaseTest{
 	public void completar_login_y_entrar() throws Throwable {
 		 try{			 
 			 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
-			 Thread.sleep(15000);
+			 Thread.sleep(35000);
 	     }catch(Exception exp) {
 	         System.out.println(exp.getMessage());
 	         exp.printStackTrace();
@@ -72,6 +72,8 @@ public class SubirAntecedentesSteps extends BaseTest{
 		if(elementExist("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]") != null) {
 				page.clickPermitirImagenCamara();					
 				}else {}
+		page.clickTomarFoto();
+		
 		//////////////falta cargar imagen//////////////////
 	}
 	@And("Hacer click en Subir Imagen ")
@@ -83,7 +85,7 @@ public class SubirAntecedentesSteps extends BaseTest{
 	@Then("Hacer click en boton Subir Antecedentes")
 	public void hacer_click_en_boton_Subir_Antecedentes() throws Throwable {
 		page = new SubirAntecedentesPage(elemento);
-		page.clickSubirAntecedentes(); 
+		//page.clickSubirAntecedentes(); 
 		
 	    
 	}
