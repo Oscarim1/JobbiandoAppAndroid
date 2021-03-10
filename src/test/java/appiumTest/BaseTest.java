@@ -24,6 +24,7 @@ public class BaseTest {
 	public String emailAdmin="camilatoro200@gmail.com";
 	public String passAdmin="190858111";
 	public String precio = "10000";
+	public String emailPrestador52="randomail52@gmailnator.com";
 	
 	
 	
@@ -104,6 +105,22 @@ public class BaseTest {
 		Dimension dimension = driver.manage().window().getSize();
 		int start_x = (int) (dimension.width * 0.5);
 		int start_y = (int) (dimension.height * 0.4);
+		
+		int end_x = (int) (dimension.width * 0.5);
+		int end_y = (int) (dimension.height * 0.1);
+		
+		TouchAction touch = new TouchAction(driver);
+		touch.press(PointOption.point(start_x, start_y))
+		.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
+		.moveTo(PointOption.point(end_x, end_y)).release().perform();
+		Thread.sleep(3000);
+	}
+	
+	public void funcionScrollDownFull() throws InterruptedException {
+		driver.manage().window().getSize();
+		Dimension dimension = driver.manage().window().getSize();
+		int start_x = (int) (dimension.width * 0.5);
+		int start_y = (int) (dimension.height * 0.9);
 		
 		int end_x = (int) (dimension.width * 0.5);
 		int end_y = (int) (dimension.height * 0.1);
