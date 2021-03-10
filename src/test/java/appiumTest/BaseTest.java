@@ -24,9 +24,12 @@ public class BaseTest {
 	public String emailAdmin="camilatoro200@gmail.com";
 	public String passAdmin="190858111";
 	public String precio = "10000";
+	public String emailSolicitante="randomail1@gmailnator.com";
+	public String passSolicitante="Hola1234";
 	
 	
-	
+	public String emailSolicitantePrueba="randomail13@gmailnator.com";
+	public String emailPrestadorPrueba="randomail14@gmailnator.com";
 	
 	public static void openApp(String rol1,String rol2) throws Exception {
 		
