@@ -68,9 +68,9 @@ public class IniciaTrabajosSolicitudServicioSteps extends BaseTest {
 	@And("Hacer click en avanzar de estado a ejecutando servicios")
 	public void hacer_click_en_avanzar_de_estado_a_ejecutando_servicios() throws Throwable {
 		page=new IniciaTrabajosSolicitudServicioPage(elemento);
-		page.inputServicio();
-		Thread.sleep(5000);
 		page.clickAvanzarEstadoEjecutandoServicios();
+		Thread.sleep(5000);
+		page.inputServicio();
 		Thread.sleep(5000);
 	}
 
