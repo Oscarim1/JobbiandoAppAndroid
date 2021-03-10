@@ -43,8 +43,11 @@ public class CrearOfertaDeServicioSteps extends BaseTest {
 	@And("Hacer click en pestana Servicios")
 	public void hacer_click_en_pestana_Servicios() throws Throwable {
 		   page=new CrearOfertaDeServicioPage(elemento);
-		    page.clickPestanaServicios();
-		    Thread.sleep(5000);
+		   Thread.sleep(5000);
+		   page.permisosDeny();
+		   Thread.sleep(5000);
+		   page.clickPestanaServicios();
+		   Thread.sleep(5000);
 	}
 
 	@When("Hacer click en boton agregar servicio")
@@ -57,12 +60,36 @@ public class CrearOfertaDeServicioSteps extends BaseTest {
 
 	@And("Ingresar datos del servicio")
 	public void ingresar_datos_del_servicio() throws Throwable {
-	    
+		page=new CrearOfertaDeServicioPage(elemento);
+	    page.enterDescripcion("Esta es una descripcion");
+	    Thread.sleep(5000);
+	    page.clickCategoria();
+	    Thread.sleep(5000);
+	    page.clickSeleccionarCategoria();
+	    Thread.sleep(5000);
+	    page.clickSubCategoria();
+	    Thread.sleep(5000);
+	    page.clickSeleccionarSubCategoria();
+	    Thread.sleep(5000);
+	    page.enterPrecio(precio);
+	    Thread.sleep(5000);
+	    page.clickCalendario();
+	    Thread.sleep(5000);
+	    page.clickJornada();
+	    Thread.sleep(5000);
+	    page.clickSiguiente();
+	    Thread.sleep(5000);
+	    page.clickDiasEntregaServicio();
+	    Thread.sleep(5000);
+	    page.clickUbicacion();
+	    Thread.sleep(5000);
 	}
 
 	@Then("Hacer click en boton registrar servicio")
 	public void hacer_click_en_boton_registrar_servicio() throws Throwable {
-	    
+		page=new CrearOfertaDeServicioPage(elemento);
+	    page.clickPublicar();
+	     Thread.sleep(5000);
 	}
 
 }
