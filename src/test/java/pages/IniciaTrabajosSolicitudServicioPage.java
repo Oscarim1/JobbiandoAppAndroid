@@ -15,6 +15,10 @@ public class IniciaTrabajosSolicitudServicioPage extends BaseTest{
 	
 	By btnDeny = By.xpath("//*[@text='DENY']");
 	By btnAllow = By.xpath("//*[@text='ALLOW']");
+	By btnServicioPestana=By.xpath("//*[@text='SERVICIOS']");
+	By btnPeticiones=By.xpath("//*[@text='Peticiones']");
+	By btnEspera=By.xpath("//*[@text='ESPERA']");
+	By btnAceptar = By.xpath("//*[@text='ACEPTAR']");
 	By btnSolicitudPestana=By.xpath("//*[@text='SOLICITUD']");
 	By btnSolicitudAceptada = By.xpath("//*[@text='SOLICITUD ACEPTADA']");
 	By btnActualizarEstadoEnCamino = By.xpath("//*[@text='ACTUALIZAR ESTADO A EN CAMINO']");
@@ -72,6 +76,23 @@ public class IniciaTrabajosSolicitudServicioPage extends BaseTest{
 		
 	}
 	
+	public void clickServicio() throws InterruptedException{
+		
+		driver.findElement(btnServicioPestana).click();
+		Thread.sleep(5000);
+		driver.findElement(btnPeticiones).click();
+		Thread.sleep(5000);
+		driver.findElement(btnEspera).click();
+		Thread.sleep(5000);
+		this.funcionScrollDownFull();
+		Thread.sleep(2000);
+		driver.findElement(btnAceptar).click();
+		Thread.sleep(5000);
+		driver.findElement(btnAceptar).click();
+		Thread.sleep(5000);
+		driver.findElement(btnOk).click();
+	}
+	
 	public void clickSolicitud() throws InterruptedException{
 		
 		driver.findElement(btnSolicitudPestana).click();
@@ -80,10 +101,15 @@ public class IniciaTrabajosSolicitudServicioPage extends BaseTest{
 	
 	public void clickSeleccionaSolicitud() throws InterruptedException{
 		
+		while(btnExist(btnSolicitudAceptada) == null) {
+			this.funcionScrollDown();
+		}
 		driver.findElement(btnSolicitudAceptada).click();
 		Thread.sleep(5000);
 		this.funcionScrollDownFull();
 		Thread.sleep(2000);
+		
+		
 	}
 	
 	public void clickAvanzarEstadoEnCamino() throws InterruptedException{

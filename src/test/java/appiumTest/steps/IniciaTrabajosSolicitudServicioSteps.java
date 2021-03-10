@@ -40,11 +40,20 @@ public class IniciaTrabajosSolicitudServicioSteps extends BaseTest {
      }
 	 
 	}
-	@And("Ingresar a pestana Solicitud")
-	public void ingresar_a_pestana_Solicitud() throws Throwable {
+	
+	@And("Ingresar a asignar Servicio")
+	public void ingresar_a_asignar_Servicio() throws Throwable {
 		   page=new IniciaTrabajosSolicitudServicioPage(elemento);
 		   Thread.sleep(5000);
 		   page.permisosDeny();
+		   Thread.sleep(5000);
+		   page.clickServicio();
+		   Thread.sleep(5000);
+	}
+	
+	@And("Ingresar a pestana Solicitud")
+	public void ingresar_a_pestana_Solicitud() throws Throwable {
+		   page=new IniciaTrabajosSolicitudServicioPage(elemento);
 		   Thread.sleep(5000);
 		   page.clickSolicitud();
 		   Thread.sleep(5000);

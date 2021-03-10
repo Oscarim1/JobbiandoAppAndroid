@@ -3,6 +3,7 @@ package appiumTest;
 import java.net.URL;
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -137,6 +138,70 @@ public class BaseTest {
          try
          {
              return driver.findElementByXPath(xpath);
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
+	 
+	 public MobileElement btnExist(By btnSolicitudAceptada)
+     {
+         try
+         {
+             return driver.findElement(btnSolicitudAceptada);
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
+	 
+	 public MobileElement permisoDeny(By btnDeny)
+     {
+         try
+         {
+             return driver.findElement(btnDeny);
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
+	 
+	 public MobileElement permisoDontAskAgain(By btnDontAskAgain)
+     {
+         try
+         {
+             return driver.findElement(btnDontAskAgain);
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
+	 
+	 public MobileElement permisoAllow(By btnAllow)
+     {
+         try
+         {
+             return driver.findElement(btnAllow);
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
+	 public MobileElement btnEjecutandoServicio(By btnEjecutandoServicio)
+     {
+         try
+         {
+             return driver.findElement(btnEjecutandoServicio);
          }
          catch (Exception e)
          {
