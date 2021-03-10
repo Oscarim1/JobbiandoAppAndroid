@@ -66,10 +66,10 @@ public class RealizarPagoSolicitudDesdePeticionPage extends BaseTest {
 	public void clickPagarServicio() throws InterruptedException
 	{
 		driver.findElement(btnPagarServicio).click();
-		Thread.sleep(10000);
-		this.funcionScrollDown();
+		Thread.sleep(20000);
+		this.funcionScrollDown(0.3);
 		driver.findElement(btnPagarServicio2).click();
-		Thread.sleep(10000);
+		Thread.sleep(15000);
 		
 	}
 	public void enterEmailPagador(String emailPagador) throws InterruptedException
@@ -80,22 +80,22 @@ public class RealizarPagoSolicitudDesdePeticionPage extends BaseTest {
 	public void clickContinuar() throws InterruptedException
 	{
 		driver.findElement(btnContinuar).click();
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 	}
-	 public void enterDatosUsuario() throws InterruptedException{
-		driver.findElement(txtIdUsuario).click();
+	 public void enterDatosUsuario(String id,String clave) throws InterruptedException{
+		driver.findElement(txtIdUsuario).sendKeys(id);
 		Thread.sleep(3000);
-		driver.findElement(txtClaveUsuario).click();
+		driver.findElement(txtClaveUsuario).sendKeys(clave);
 		Thread.sleep(3000);
 		driver.findElement(btnSeguir).click();
-		Thread.sleep(3000);	
+		Thread.sleep(9000);	
 	 }
 	
 	 public void enterAutorizacion(String auth) throws InterruptedException{
 		driver.findElement(txtAutorizacion).sendKeys(auth);
 		Thread.sleep(3000);	
 		driver.findElement(btnSeguir2).click();
-		Thread.sleep(3000);	
+		Thread.sleep(9000);	
 	 }
 	 public void clickTerminar() throws InterruptedException{
 			driver.findElement(btnTerminar).click();

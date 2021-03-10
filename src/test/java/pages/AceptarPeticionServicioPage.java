@@ -61,10 +61,11 @@ public class AceptarPeticionServicioPage extends BaseTest {
 		Thread.sleep(5000);
 	}
 	public void clickAceptarPeticion() throws InterruptedException
-	{	this.funcionScrollDown();
+	{	this.funcionScrollDown(0.6);
 		driver.findElement(btnAceptarPeticion).click();
 		Thread.sleep(5000);
-		
+		driver.findElement(btnAceptar).click();
+		Thread.sleep(5000);
 	}
 	
 	

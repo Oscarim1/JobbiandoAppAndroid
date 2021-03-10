@@ -86,14 +86,14 @@ public class BaseTest {
 		Thread.sleep(3000);
 	}
 	
-	public void funcionScrollDown() throws InterruptedException {
+	public void funcionScrollDown(Double num) throws InterruptedException {
 		driver.manage().window().getSize();
 		Dimension dimension = driver.manage().window().getSize();
 		int start_x = (int) (dimension.width * 0.5);
 		int start_y = (int) (dimension.height * 0.8);
 		
 		int end_x = (int) (dimension.width * 0.5);
-		int end_y = (int) (dimension.height * 0.6);
+		int end_y = (int) (dimension.height * num);
 		
 		TouchAction touch = new TouchAction(driver);
 		touch.press(PointOption.point(start_x, start_y))
@@ -116,6 +116,7 @@ public class BaseTest {
 		.moveTo(PointOption.point(end_x, end_y)).release().perform();
 		Thread.sleep(3000);
 	}
+	
 	
 	public void funcionScrollDownCrearPeticionServicio() throws InterruptedException {
 		driver.manage().window().getSize();

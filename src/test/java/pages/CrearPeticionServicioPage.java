@@ -101,7 +101,7 @@ public class CrearPeticionServicioPage extends BaseTest{
 	
 	
 	public void clickSolicitarServicio() throws InterruptedException {
-		this.funcionScrollDown();
+		this.funcionScrollDown(0.4);
 		Thread.sleep(5000);
 		driver.findElement(btnSolicitarServicio).click();
 		Thread.sleep(5000);
