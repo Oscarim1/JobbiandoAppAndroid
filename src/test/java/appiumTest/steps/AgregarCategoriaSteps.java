@@ -16,12 +16,9 @@ public class AgregarCategoriaSteps extends BaseTest {
 	@Given("Para categorias Completar Login y entrar")
 	public void para_categorias_Completar_Login_y_entrar() throws Throwable {
 	  page=new AgregarCategoriaPage(elemento);
-	  page.enterCorreo(emailPrestador);
-	  Thread.sleep(5000);
-	  page.enterContrasena(passPrestador);
-	  Thread.sleep(5000);
-	  page.clickEntrar();
-	  Thread.sleep(5000);
+	  page.enterCorreo(emailPrestador);	  
+	  page.enterContrasena(passPrestador);	  
+	  page.clickEntrar();	  
 	}
 
 	@When("Hacer click en Agregar")

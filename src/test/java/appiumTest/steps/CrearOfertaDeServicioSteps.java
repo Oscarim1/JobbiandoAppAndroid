@@ -24,7 +24,7 @@ public class CrearOfertaDeServicioSteps extends BaseTest {
 	 
 	 try{
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
-		 Thread.sleep(3000);
+		 Thread.sleep(15000);
 		 page = new CrearOfertaDeServicioPage(elemento);
 		 
 		 Thread.sleep(3000);
