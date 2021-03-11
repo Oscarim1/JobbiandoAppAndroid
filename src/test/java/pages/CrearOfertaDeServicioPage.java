@@ -35,10 +35,12 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 	By btnDiasEntregaServicioMiercoles=By.xpath("//*[@text='' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[@text='Miercoles']]]");
 	By btnDiasEntregaServicioJueves=By.xpath("//*[@text='' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[@text='Jueves']]]");
 	By btnDiasEntregaServicioViernes=By.xpath("//*[@text='' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[@text='Viernes']]]");
+	By btnDiasEntregaServicioSabado=By.xpath("//*[@text='' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[@text='Sabado']]]");
+	By btnDiasEntregaServicioDomingo=By.xpath("//*[@text='' and ./parent::*[(./preceding-sibling::* | ./following-sibling::*)[@text='Domingo']]]");
 	By btnUbicacion=By.id("android:id/text1");
 	By btnUbicacionUsuario=By.xpath("//*[@text='Casa']");
 	
-	By inputImagen=By.xpath("android.widget.ImageView");
+	By inputImagen=By.xpath("//*[@class='android.widget.ImageView']");
 	By btnTomarImagen=By.xpath("//*[@text='Tomar una Foto']");
 	By btnTake = By.xpath("//*[@resource-id=\"com.android.camera2:id/shutter_button\"]");
 	By btnDone = By.xpath("//*[@resource-id=\"com.android.camera2:id/done_button\"]");
@@ -140,15 +142,18 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 	
 	public void clickDiasEntregaServicio() throws InterruptedException {
 		driver.findElement(btnDiasEntregaServicioLunes).click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		driver.findElement(btnDiasEntregaServicioMartes).click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		driver.findElement(btnDiasEntregaServicioMiercoles).click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		driver.findElement(btnDiasEntregaServicioJueves).click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		driver.findElement(btnDiasEntregaServicioViernes).click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
+		driver.findElement(btnDiasEntregaServicioSabado).click();
+		Thread.sleep(2000);
+		driver.findElement(btnDiasEntregaServicioDomingo).click();
 		clickSiguiente();
 		
 	}

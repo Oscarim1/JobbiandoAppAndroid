@@ -19,11 +19,11 @@ public class CrearPeticionServicioSteps extends BaseTest {
 	 
 	 try{
 		 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
-		 Thread.sleep(15000);
+		 Thread.sleep(20000);
 		 page = new CrearPeticionServicioPage(elemento);		
-		 page.correoSolicitante(emailSolicitantePrueba);
+		// page.correoSolicitante(emailSolicitante);
 		 page.clickOcultarTeclado();		
-		 page.passSolicitante(passSolicitante);
+		 //page.passSolicitante(passSolicitante);
 		 page.clickOcultarTeclado();
 		 page.clickEntrar();
      }catch(Exception exp) {
@@ -40,9 +40,9 @@ public class CrearPeticionServicioSteps extends BaseTest {
 		if(elementExist("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]") != null ) {
 			page.clickPermitirUbicacion();			
 			}else {}
-		//page.clickSeleccionarUbicacion();
-		//page.clickUbicacion();
-		page.clickFiltroServicios();	
+		page.clickSeleccionarUbicacion();
+		page.clickUbicacion();
+		
 	}
 
 	@And("Hacer click en un servicio")
@@ -72,7 +72,7 @@ public class CrearPeticionServicioSteps extends BaseTest {
 	@Then("Generar peticion de servicio")
 	public void generar_peticion_de_servicio() throws Throwable {
 		page=new CrearPeticionServicioPage(elemento);
-		page.clickGenerarPeticion();
+		//page.clickGenerarPeticion();
 	    
 	}
 

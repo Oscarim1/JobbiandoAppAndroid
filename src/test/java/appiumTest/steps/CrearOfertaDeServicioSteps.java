@@ -83,6 +83,8 @@ public class CrearOfertaDeServicioSteps extends BaseTest {
 	    Thread.sleep(5000);
 	    page.clickUbicacion();
 	    Thread.sleep(5000);
+	    page.clickImagen();
+	    Thread.sleep(5000);
 	}
 
 	@Then("Hacer click en boton registrar servicio")

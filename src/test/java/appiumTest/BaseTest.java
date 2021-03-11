@@ -3,6 +3,7 @@ package appiumTest;
 import java.net.URL;
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -24,12 +25,10 @@ public class BaseTest {
 	public String emailAdmin="camilatoro200@gmail.com";
 	public String passAdmin="190858111";
 	public String precio = "10000";
-	public String emailSolicitante="randomail1@gmailnator.com";
-	public String passSolicitante="Hola1234";
+	public String emailPrestador52="randomail52@gmailnator.com";
 	
 	
-	public String emailSolicitantePrueba="randomail13@gmailnator.com";
-	public String emailPrestadorPrueba="randomail14@gmailnator.com";
+	
 	
 	public static void openApp(String rol1,String rol2) throws Exception {
 		
@@ -86,14 +85,14 @@ public class BaseTest {
 		Thread.sleep(3000);
 	}
 	
-	public void funcionScrollDown(Double num) throws InterruptedException {
+	public void funcionScrollDown() throws InterruptedException {
 		driver.manage().window().getSize();
 		Dimension dimension = driver.manage().window().getSize();
 		int start_x = (int) (dimension.width * 0.5);
 		int start_y = (int) (dimension.height * 0.8);
 		
 		int end_x = (int) (dimension.width * 0.5);
-		int end_y = (int) (dimension.height * num);
+		int end_y = (int) (dimension.height * 0.6);
 		
 		TouchAction touch = new TouchAction(driver);
 		touch.press(PointOption.point(start_x, start_y))
@@ -101,22 +100,6 @@ public class BaseTest {
 		.moveTo(PointOption.point(end_x, end_y)).release().perform();
 		Thread.sleep(3000);
 	}
-	public void funcionScrollDownEvaluacion() throws InterruptedException {
-		driver.manage().window().getSize();
-		Dimension dimension = driver.manage().window().getSize();
-		int start_x = (int) (dimension.width * 0.5);
-		int start_y = (int) (dimension.height * 0.8);
-		
-		int end_x = (int) (dimension.width * 0.5);
-		int end_y = (int) (dimension.height * 0.4);
-		
-		TouchAction touch = new TouchAction(driver);
-		touch.press(PointOption.point(start_x, start_y))
-		.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
-		.moveTo(PointOption.point(end_x, end_y)).release().perform();
-		Thread.sleep(3000);
-	}
-	
 	
 	public void funcionScrollDownCrearPeticionServicio() throws InterruptedException {
 		driver.manage().window().getSize();
@@ -134,11 +117,91 @@ public class BaseTest {
 		Thread.sleep(3000);
 	}
 	
+	public void funcionScrollDownFull() throws InterruptedException {
+		driver.manage().window().getSize();
+		Dimension dimension = driver.manage().window().getSize();
+		int start_x = (int) (dimension.width * 0.5);
+		int start_y = (int) (dimension.height * 0.9);
+		
+		int end_x = (int) (dimension.width * 0.5);
+		int end_y = (int) (dimension.height * 0.1);
+		
+		TouchAction touch = new TouchAction(driver);
+		touch.press(PointOption.point(start_x, start_y))
+		.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
+		.moveTo(PointOption.point(end_x, end_y)).release().perform();
+		Thread.sleep(3000);
+	}
+	
 	 public MobileElement elementExist(String xpath)
      {
          try
          {
              return driver.findElementByXPath(xpath);
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
+	 
+	 public MobileElement btnExist(By btnSolicitudAceptada)
+     {
+         try
+         {
+             return driver.findElement(btnSolicitudAceptada);
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
+	 
+	 public MobileElement permisoDeny(By btnDeny)
+     {
+         try
+         {
+             return driver.findElement(btnDeny);
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
+	 
+	 public MobileElement permisoDontAskAgain(By btnDontAskAgain)
+     {
+         try
+         {
+             return driver.findElement(btnDontAskAgain);
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
+	 
+	 public MobileElement permisoAllow(By btnAllow)
+     {
+         try
+         {
+             return driver.findElement(btnAllow);
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
+	 public MobileElement btnEjecutandoServicio(By btnEjecutandoServicio)
+     {
+         try
+         {
+             return driver.findElement(btnEjecutandoServicio);
          }
          catch (Exception e)
          {
