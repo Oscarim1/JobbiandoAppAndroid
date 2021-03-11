@@ -1,8 +1,5 @@
 package appiumTest.steps;
 
-
-import java.util.concurrent.TimeUnit;
-
 import appiumTest.BaseTest;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
