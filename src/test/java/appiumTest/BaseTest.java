@@ -27,8 +27,9 @@ public class BaseTest {
 	public String precio = "10000";
 	public String emailPrestador52="randomail52@gmailnator.com";
 	
-	
-	
+	public String emailPrestadorPrueba="randomail14@gmailnator.com";
+	public String emailSolicitantePrueba="randomail13@gmailnator.com";
+	public String passSolicitante="Hola1234";
 	
 	public static void openApp(String rol1,String rol2) throws Exception {
 		
@@ -202,6 +203,22 @@ public class BaseTest {
          try
          {
              return driver.findElement(btnEjecutandoServicio);
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
+	 
+	 
+	 public String elementExistSolicitud(Integer n)
+     {
+         try
+         {	By elemento=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup["+n+"]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[1]");
+         String catServicio= driver.findElement(elemento).getAttribute("text");
+             return catServicio;
+             
          }
          catch (Exception e)
          {

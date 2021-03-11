@@ -131,7 +131,7 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 		driver.findElement(btnJornada).click();
 		Thread.sleep(5000);
 		driver.findElement(btnJornadaSeleccionada).click();
-		this.funcionScrollDown(0.4);
+		this.funcionScrollDownFull();
 	}
 	
 	public void clickSiguiente() throws InterruptedException {

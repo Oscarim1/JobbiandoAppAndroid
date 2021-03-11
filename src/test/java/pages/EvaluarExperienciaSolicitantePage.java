@@ -65,7 +65,7 @@ MobileElement elemento=null;
 	{
 		driver.findElement(btnEvaluarExperiencia).click();
 		Thread.sleep(10000);
-		this.funcionScrollDownEvaluacion();
+		this.funcionScrollDownFull();
 		Thread.sleep(3000);
 		driver.findElement(btnEvaluarExperiencia2).click();
 		Thread.sleep(10000);

@@ -74,7 +74,7 @@ public class RegistroPrestadorPage extends BaseTest {
 	public void enterContrasena(String contrasena) throws InterruptedException 
 	{
 		
-		this.funcionScrollDown(0.6);
+		this.funcionScrollDown();
 		driver.findElement(txtContrasena).sendKeys(contrasena);
 		driver.findElement(txtContrasena2).sendKeys(contrasena);
 	}
@@ -87,13 +87,13 @@ public class RegistroPrestadorPage extends BaseTest {
 	
 	public void enterIdentificador(String numeroSerie) throws InterruptedException 
 	{
-		funcionScrollDown(0.6);
+		funcionScrollDown();
 		driver.findElement(txtNumeroSerie).sendKeys(numeroSerie);
 	}
 	
 	public void enterCalle(String calle) throws InterruptedException 
 	{
-		funcionScrollDown(0.6);
+		funcionScrollDown();
 		driver.findElement(txtCalle).sendKeys(calle);
 	}
 	
@@ -109,7 +109,7 @@ public class RegistroPrestadorPage extends BaseTest {
 	
 	public void enterReferencia(String referencia) throws InterruptedException 
 	{
-		funcionScrollDown(0.6);
+		funcionScrollDown();
 		driver.findElement(txtReferencia).sendKeys(referencia);
 	}
 	
