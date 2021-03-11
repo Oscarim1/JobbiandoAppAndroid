@@ -210,7 +210,17 @@ public class BaseTest {
 
      }
 	 
-	
-	
+	 public MobileElement btnEvaluarExperiencia(By btnEvaluarExperiencia)
+     {
+         try
+         {
+             return driver.findElement(btnEvaluarExperiencia);
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
 	
 }
