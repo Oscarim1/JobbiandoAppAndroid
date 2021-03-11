@@ -20,13 +20,14 @@ public class BaseTest {
 	
 	static ConfigFileReader configFileReader= new ConfigFileReader();
 	
-	public String emailPrestador="randomail259@gmailnator.com";
-	public String passPrestador="Hola1234";
-	public String emailAdmin="camilatoro200@gmail.com";
-	public String passAdmin="190858111";
+	public String emailPrestador  ="randomail259@gmailnator.com";
+	public String passPrestador ="Hola1234";
+	public String emailAdmin ="camilatoro200@gmail.com";
+	public String passAdmin ="190858111";
 	public String precio = "10000";
-	public String emailPrestador52="randomail52@gmailnator.com";
-	
+	public String emailPrestador52 = "randomail52@gmailnator.com";
+	public String emailSolicitante51 = "randomail51@gmailnator.com";
+	public String passSolicitante51 = "Hola1234";
 	
 	
 	
@@ -215,6 +216,45 @@ public class BaseTest {
          try
          {
              return driver.findElement(btnEvaluarExperiencia);
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
+	 
+	 public MobileElement btnSolicitudesTerminadas(By btnSolicitudesTerminadas)
+     {
+         try
+         {
+             return driver.findElement(btnSolicitudesTerminadas);
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
+	 
+	 public MobileElement btnSolicitudFinalizada(By btnSolicitudFinalizada)
+     {
+         try
+         {
+             return driver.findElement(btnSolicitudFinalizada);
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
+	 
+	 public MobileElement btnArticulosPerdidos(By btnArticulosPerdidos)
+     {
+         try
+         {
+             return driver.findElement(btnArticulosPerdidos);
          }
          catch (Exception e)
          {
