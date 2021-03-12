@@ -18,7 +18,7 @@ public class FinalizaTrabajosSolicitudServicioSteps extends BaseTest {
 	FinalizaTrabajosSolicitudServicioPage page=null;
 	MobileElement elemento=null;
 	@Given("Rellena el formulario de login y entrar")
-	public void rellena_el_formulario_de_kilogin_y_entrar() throws Throwable {
+	public void rellena_el_formulario_de_login_y_entrar() throws Throwable {
 	 
 	 try{
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());

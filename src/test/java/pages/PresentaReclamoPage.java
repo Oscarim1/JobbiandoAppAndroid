@@ -6,7 +6,7 @@ import appiumTest.BaseTest;
 import io.appium.java_client.MobileElement;
 
 
-public class FinalizaTrabajosSolicitudServicioPage extends BaseTest{
+public class PresentaReclamoPage extends BaseTest{
 	MobileElement elemento=null; 
 	
 	By txtCorreo =By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.EditText");
@@ -15,36 +15,30 @@ public class FinalizaTrabajosSolicitudServicioPage extends BaseTest{
 	By btnDontAskAgain = By.id("com.android.packageinstaller:id/do_not_ask_checkbox");
 	By btnDeny = By.xpath("//*[@text='DENY']");
 	By btnAllow = By.xpath("//*[@text='ALLOW']");
-	By btnSolicitudPestana=By.xpath("//*[@text='SOLICITUD']");
-	By btnEjecutandoServicio = By.xpath("//*[@text='EJECUTANDO SERVICIO']");
-	By btnActualizarEstadoTerminado = By.xpath("//*[@text='ACTUALIZAR ESTADO A TERMINADO']");
-	By btnActualizarEstadoTerminar = By.xpath("//*[@text='ACTUALIZAR ESTADO A TERMINAR']");
-	By btnActualizar = By.xpath("//*[@text='ACTUALIZAR']");
+	By btnCuenta=By.xpath("//*[@text='CUENTA']");
+	By btnSolicitudesTerminadas = By.xpath("//*[@text='Solicitudes terminadas']");
+	By btnSolicitudFinalizada = By.xpath("//*[@text='SOLICITUD FINALIZADA']");
+	By btnArticulosPerdidos = By.xpath("//*[@text='Artículos perdidos']");
+	By inputDetalle=By.xpath("//*[@text='ingrese descripcion aqui']");
+	By btnEnviar = By.xpath("//*[@text='ENVIAR']");
 	By btnOk = By.xpath("//*[@text='OK']");
 	
-	
-	By inputImagen=By.xpath("//*[@class='android.widget.ImageView']");
-	By btnTomarImagen=By.xpath("//*[@text='Tomar una Foto']");
-	By btnTake = By.xpath("//*[@resource-id=\"com.android.camera2:id/shutter_button\"]");
-	By btnDone = By.xpath("//*[@resource-id=\"com.android.camera2:id/done_button\"]");
-	By btnPublicar = By.xpath("//*[@text='Publicar']");
-	
-	public FinalizaTrabajosSolicitudServicioPage(MobileElement elemento) 
+	public PresentaReclamoPage(MobileElement elemento) 
 	{
 		this.elemento=elemento;
 	}
 	
-	public void correoPrestador(String correoPrestador) throws InterruptedException {
-		System.out.println(correoPrestador);
+	public void correoSolicitante(String correoSolicitante51) throws InterruptedException {
+		System.out.println(correoSolicitante51);
 		
 		
 		Thread.sleep(5000);
-		driver.findElement(txtCorreo).sendKeys(correoPrestador);
+		driver.findElement(txtCorreo).sendKeys(correoSolicitante51);
 		
 	}
 	
-	public void passPrestador(String passPrestador) throws InterruptedException {
-		driver.findElement(txtContrasena).sendKeys(passPrestador);
+	public void passSolicitante(String emailSolicitante51) throws InterruptedException {
+		driver.findElement(txtContrasena).sendKeys(emailSolicitante51);
 		Thread.sleep(5000);
 		driver.findElement(btnEntrar).click();
 		Thread.sleep(5000);
@@ -61,64 +55,60 @@ public class FinalizaTrabajosSolicitudServicioPage extends BaseTest{
 		
 	}
 		
-	public void clickSolicitud() throws InterruptedException{		
+	public void clickCuenta() throws InterruptedException{		
 		
 		if(exist(btnDontAskAgain) != null) {
 			
 			driver.findElement(btnDontAskAgain).click();
 			Thread.sleep(5000);
 			driver.findElement(btnDeny).click();
+			Thread.sleep(5000);
+			driver.findElement(btnCuenta).click();
 			
 		}else {
 			
-			driver.findElement(btnSolicitudPestana).click();
+			driver.findElement(btnCuenta).click();
 			Thread.sleep(5000);
 		}
-	}
+	} 
 	
-	public void clickSeleccionaSolicitud() throws InterruptedException{
+	public void clickSolicitudesTermiandas() throws InterruptedException{
 		
-		while(exist(btnEjecutandoServicio) == null) {
+		while(exist(btnSolicitudesTerminadas) == null) {
 			this.funcionScrollDown();
 		}
-		driver.findElement(btnEjecutandoServicio).click();
+		driver.findElement(btnSolicitudesTerminadas).click();
 		Thread.sleep(5000);
 	}
 	
-	public void clickAvanzarEstadoTerminado() throws InterruptedException{
+	public void clickSolicitudFinalizada() throws InterruptedException{
 		
-		this.funcionScrollDownFull();
-		driver.findElement(btnActualizarEstadoTerminado).click();
+		while(exist(btnSolicitudFinalizada) == null) {
+			this.funcionScrollDown();
+		}
+		driver.findElement(btnSolicitudFinalizada).click();
 		Thread.sleep(5000);
-		driver.findElement(inputImagen).click();
+	}
+		 
+	
+	public void clickReclamo() throws InterruptedException{
+		
+		while(exist(btnArticulosPerdidos) == null) {
+			this.funcionScrollDown();
+		}
+		driver.findElement(btnArticulosPerdidos).click();
 		Thread.sleep(5000);
-		camara();
-		driver.findElement(btnActualizarEstadoTerminar).click();
-		Thread.sleep(5000);
-		driver.findElement(btnActualizar).click();
+	} 
+	
+	public void clickEnviar(String descripcion) throws InterruptedException{
+		
+		driver.findElement(inputDetalle).sendKeys(descripcion);
+		Thread.sleep(2000);
+		driver.findElement(btnEnviar).click();
 		Thread.sleep(5000);
 		driver.findElement(btnOk).click();
 		Thread.sleep(5000);
 		
-	}
-	
-	
-	
-	public void camara() throws InterruptedException{
-		
-		driver.findElement(btnTomarImagen).click();
-		Thread.sleep(5000);
-		driver.findElement(btnAllow).click();
-		Thread.sleep(5000);
-		driver.findElement(btnAllow).click();
-		Thread.sleep(5000);
-		driver.findElement(btnTake).click();
-		Thread.sleep(5000);
-		driver.findElement(btnDone).click();
-		Thread.sleep(5000);
 		
 	}
-	
-	
-	
 }

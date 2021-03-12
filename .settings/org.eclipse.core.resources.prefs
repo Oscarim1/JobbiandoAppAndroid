@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/test/java/pages/CrearOfertaDeServicioPage.java=UTF-8
+encoding//src/test/java/pages/EvaluarExperienciaPrestadorPage.java=UTF-8
 encoding//src/test/java/pages/FinalizaTrabajosSolicitudServicioPage.java=UTF-8
 encoding//src/test/java/pages/IniciaTrabajosSolicitudServicioPage.java=UTF-8
+encoding//src/test/java/pages/PresentaReclamoPage.java=UTF-8

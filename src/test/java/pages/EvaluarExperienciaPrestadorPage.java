@@ -6,7 +6,7 @@ import appiumTest.BaseTest;
 import io.appium.java_client.MobileElement;
 
 
-public class FinalizaTrabajosSolicitudServicioPage extends BaseTest{
+public class EvaluarExperienciaPrestadorPage extends BaseTest{
 	MobileElement elemento=null; 
 	
 	By txtCorreo =By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.EditText");
@@ -16,20 +16,16 @@ public class FinalizaTrabajosSolicitudServicioPage extends BaseTest{
 	By btnDeny = By.xpath("//*[@text='DENY']");
 	By btnAllow = By.xpath("//*[@text='ALLOW']");
 	By btnSolicitudPestana=By.xpath("//*[@text='SOLICITUD']");
-	By btnEjecutandoServicio = By.xpath("//*[@text='EJECUTANDO SERVICIO']");
-	By btnActualizarEstadoTerminado = By.xpath("//*[@text='ACTUALIZAR ESTADO A TERMINADO']");
-	By btnActualizarEstadoTerminar = By.xpath("//*[@text='ACTUALIZAR ESTADO A TERMINAR']");
-	By btnActualizar = By.xpath("//*[@text='ACTUALIZAR']");
+	By btnEvaluarExperiencia = By.xpath("//*[@text='EVALUAR EXPERIENCIA']");
 	By btnOk = By.xpath("//*[@text='OK']");
 	
 	
-	By inputImagen=By.xpath("//*[@class='android.widget.ImageView']");
-	By btnTomarImagen=By.xpath("//*[@text='Tomar una Foto']");
-	By btnTake = By.xpath("//*[@resource-id=\"com.android.camera2:id/shutter_button\"]");
-	By btnDone = By.xpath("//*[@resource-id=\"com.android.camera2:id/done_button\"]");
-	By btnPublicar = By.xpath("//*[@text='Publicar']");
+	By inputDetalle = By.xpath("//*[@class='android.widget.EditText']");
+	//By inputDetalle=By.xpath("//*[@class='android.widget.ImageView']");
+	By btnEnviarEvaluacion=By.xpath("//*[@text='ENVIAR EVALUACIÓN']");
 	
-	public FinalizaTrabajosSolicitudServicioPage(MobileElement elemento) 
+	
+	public EvaluarExperienciaPrestadorPage(MobileElement elemento) 
 	{
 		this.elemento=elemento;
 	}
@@ -68,6 +64,8 @@ public class FinalizaTrabajosSolicitudServicioPage extends BaseTest{
 			driver.findElement(btnDontAskAgain).click();
 			Thread.sleep(5000);
 			driver.findElement(btnDeny).click();
+			Thread.sleep(5000);
+			driver.findElement(btnSolicitudPestana).click();
 			
 		}else {
 			
@@ -76,49 +74,31 @@ public class FinalizaTrabajosSolicitudServicioPage extends BaseTest{
 		}
 	}
 	
-	public void clickSeleccionaSolicitud() throws InterruptedException{
+	public void clickSeleccionaSolicitudEvaluar() throws InterruptedException{
 		
-		while(exist(btnEjecutandoServicio) == null) {
+		while(exist(btnEvaluarExperiencia) == null) {
 			this.funcionScrollDown();
 		}
-		driver.findElement(btnEjecutandoServicio).click();
+		driver.findElement(btnEvaluarExperiencia).click();
 		Thread.sleep(5000);
 	}
 	
-	public void clickAvanzarEstadoTerminado() throws InterruptedException{
+	public void clickEvaluarExperiencia() throws InterruptedException{
 		
 		this.funcionScrollDownFull();
-		driver.findElement(btnActualizarEstadoTerminado).click();
+		driver.findElement(btnEvaluarExperiencia).click();
 		Thread.sleep(5000);
-		driver.findElement(inputImagen).click();
-		Thread.sleep(5000);
-		camara();
-		driver.findElement(btnActualizarEstadoTerminar).click();
-		Thread.sleep(5000);
-		driver.findElement(btnActualizar).click();
+		
+	}
+	public void EvaluarExperiencia(String descripcion) throws InterruptedException{
+		
+		this.funcionScrollDownFull();
+		driver.findElement(inputDetalle).sendKeys(descripcion);
+		Thread.sleep(2000);
+		driver.findElement(btnEnviarEvaluacion).click();
 		Thread.sleep(5000);
 		driver.findElement(btnOk).click();
 		Thread.sleep(5000);
 		
 	}
-	
-	
-	
-	public void camara() throws InterruptedException{
-		
-		driver.findElement(btnTomarImagen).click();
-		Thread.sleep(5000);
-		driver.findElement(btnAllow).click();
-		Thread.sleep(5000);
-		driver.findElement(btnAllow).click();
-		Thread.sleep(5000);
-		driver.findElement(btnTake).click();
-		Thread.sleep(5000);
-		driver.findElement(btnDone).click();
-		Thread.sleep(5000);
-		
-	}
-	
-	
-	
 }
