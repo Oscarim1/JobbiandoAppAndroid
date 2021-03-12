@@ -16,7 +16,7 @@ public class AceptarPeticionServicioPage extends BaseTest {
 	By btnPestanapeticiones=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]");
 	By btnPeticion=By.xpath("//*[@text='ESPERA']");
 	By btnAceptarPeticion=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[13]/android.view.ViewGroup[2]");
-	By btnAceptar=By.xpath("");
+	By btnAceptar=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView");
 	public AceptarPeticionServicioPage(MobileElement elemento) throws InterruptedException
 	{
 		this.elemento=elemento;
@@ -61,7 +61,7 @@ public class AceptarPeticionServicioPage extends BaseTest {
 		Thread.sleep(5000);
 	}
 	public void clickAceptarPeticion() throws InterruptedException
-	{	this.funcionScrollDownFull();
+	{	this.funcionScrollDown(0.9,0.1);
 		driver.findElement(btnAceptarPeticion).click();
 		Thread.sleep(5000);
 		driver.findElement(btnAceptar).click();

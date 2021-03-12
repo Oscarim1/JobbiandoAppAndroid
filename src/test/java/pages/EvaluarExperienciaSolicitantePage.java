@@ -65,7 +65,7 @@ public class EvaluarExperienciaSolicitantePage extends BaseTest {
 	{
 		driver.findElement(btnEvaluarExperiencia).click();
 		Thread.sleep(10000);
-		this.funcionScrollDownFull();
+		this.funcionScrollDown(0.9,0.1);
 		Thread.sleep(3000);
 		driver.findElement(btnEvaluarExperiencia2).click();
 		Thread.sleep(10000);
@@ -93,7 +93,7 @@ public class EvaluarExperienciaSolicitantePage extends BaseTest {
 	}
 	public void clickEnviarEvaluacion() throws InterruptedException
 	{
-		//driver.findElement(btnEnviarEvaluacion).click();
+		driver.findElement(btnEnviarEvaluacion).click();
 		Thread.sleep(5000);
 	}
 	

@@ -1,8 +1,6 @@
 package appiumTest.steps;
 
 
-import java.util.concurrent.TimeUnit;
-
 import appiumTest.BaseTest;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -25,11 +23,8 @@ public class IniciaTrabajosSolicitudServicioSteps extends BaseTest {
 	 try{
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 		 Thread.sleep(15000);
-		 page = new IniciaTrabajosSolicitudServicioPage(elemento);
-		 
-		 Thread.sleep(3000);
-		 page.correoPrestador(emailPrestador52);
-		 Thread.sleep(3000);
+		 page = new IniciaTrabajosSolicitudServicioPage(elemento);	
+		 page.correoPrestador(emailPrestador52);	
 		 page.passPrestador(passPrestador);
 
      }catch(Exception exp) {
@@ -44,26 +39,21 @@ public class IniciaTrabajosSolicitudServicioSteps extends BaseTest {
 	@And("Ingresar a asignar Servicio")
 	public void ingresar_a_asignar_Servicio() throws Throwable {
 		   page=new IniciaTrabajosSolicitudServicioPage(elemento);
-		   Thread.sleep(5000);
+		  
 		   page.permisosDeny();
-		   Thread.sleep(5000);
 		   page.clickServicio();
-		   Thread.sleep(5000);
 	}
 	
 	@And("Ingresar a pestana Solicitud")
 	public void ingresar_a_pestana_Solicitud() throws Throwable {
 		   page=new IniciaTrabajosSolicitudServicioPage(elemento);
-		   Thread.sleep(5000);
 		   page.clickSolicitud();
-		   Thread.sleep(5000);
 	}
 
 	@When("Seleccione una solicitud")
 	public void seleccione_una_solicitud() throws Throwable {
 		page=new IniciaTrabajosSolicitudServicioPage(elemento);
 		page.clickSeleccionaSolicitud();
-		Thread.sleep(5000);
 	    
 	}
 
@@ -71,16 +61,13 @@ public class IniciaTrabajosSolicitudServicioSteps extends BaseTest {
 	public void hacer_click_en_boton_avanzar_de_estado_a_en_camino() throws Throwable {
 		page=new IniciaTrabajosSolicitudServicioPage(elemento);
 		page.clickAvanzarEstadoEnCamino();
-		Thread.sleep(5000);
 	}
 
 	@And("Hacer click en avanzar de estado a ejecutando servicios")
 	public void hacer_click_en_avanzar_de_estado_a_ejecutando_servicios() throws Throwable {
 		page=new IniciaTrabajosSolicitudServicioPage(elemento);
 		page.clickAvanzarEstadoEjecutandoServicios();
-		Thread.sleep(5000);
 		page.inputServicio();
-		Thread.sleep(5000);
 	}
 
 }

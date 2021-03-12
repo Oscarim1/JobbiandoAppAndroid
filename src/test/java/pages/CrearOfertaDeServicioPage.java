@@ -79,6 +79,7 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 	public void clickPestanaServicios() throws InterruptedException {
 		
 		driver.findElement(btnServicioPestana).click();
+		Thread.sleep(9000);
 		
 	}
 	public void clickAgregarServicio() throws InterruptedException {
@@ -88,50 +89,54 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 		driver.findElement(btnDontAskAgain).click();
 		Thread.sleep(5000);
 		driver.findElement(btnDeny).click();
-		
+		Thread.sleep(9000);
 		
 	}
 	
-	public void enterDescripcion(String descripcion) 
+	public void enterDescripcion(String descripcion) throws InterruptedException
 	{
 		driver.findElement(txtDescripcion).sendKeys(descripcion);
+		Thread.sleep(9000);
 	}
 	
-	public void clickCategoria() {
+	public void clickCategoria() throws InterruptedException{
 		driver.findElement(btnCategoria).click();
-	
+		Thread.sleep(9000);
 	}
 	
-	public void clickSeleccionarCategoria() {
+	public void clickSeleccionarCategoria() throws InterruptedException{
 		driver.findElement(btnSeleccionarCategoria).click();
-	
+		Thread.sleep(9000);
 	}
 	
-	public void clickSubCategoria() {
+	public void clickSubCategoria() throws InterruptedException{
 		driver.findElement(btnSubCategoria).click();
-	
+		Thread.sleep(9000);
 	}
 	
-	public void clickSeleccionarSubCategoria() {
+	public void clickSeleccionarSubCategoria()throws InterruptedException {
 		driver.findElement(btnSeleccionarSubCategoria).click();
-	
+		Thread.sleep(9000);
 	}
 	
-	public void enterPrecio(String precio) {
+	public void enterPrecio(String precio)throws InterruptedException {
 		driver.findElement(txtPrecio).sendKeys(precio);
+		Thread.sleep(9000);
 	}
 	
 	public void clickCalendario() throws InterruptedException {
 		driver.findElement(btnFechaCalendario).click();
 		Thread.sleep(5000);
 		driver.findElement(btnFechaDesdeAceptar).click();
+		Thread.sleep(9000);
 	}
 	
 	public void clickJornada() throws InterruptedException {
 		driver.findElement(btnJornada).click();
 		Thread.sleep(5000);
 		driver.findElement(btnJornadaSeleccionada).click();
-		this.funcionScrollDownFull();
+		this.funcionScrollDown(0.9,0.1);
+		Thread.sleep(9000);
 	}
 	
 	public void clickSiguiente() throws InterruptedException {
@@ -155,6 +160,7 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 		Thread.sleep(2000);
 		driver.findElement(btnDiasEntregaServicioDomingo).click();
 		clickSiguiente();
+		Thread.sleep(9000);
 		
 	}
 
@@ -163,7 +169,7 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 		Thread.sleep(5000);
 		driver.findElement(btnUbicacionUsuario).click();
 		Thread.sleep(5000);
-		this.funcionScrollDownCrearPeticionServicio();
+		this.funcionScrollDown(0.4,0.1);
 		clickSiguiente();
 		Thread.sleep(5000);
 	}

@@ -58,9 +58,10 @@ public class AceptarSolicitudServicioPage extends BaseTest {
 		}else {}
 		
 		String catPrestador= driver.findElement(txtCategoriaPrestador).getAttribute("text");
+		
 		int n=1;
 		do {
-			this.funcionScrollDown();
+			this.funcionScrollDown(0.8,0.6);
 			n++;
 			System.out.println("Categoria del prestador: "+catPrestador);
 			System.out.println("Categoria de la solicitud: "+elementExistSolicitud(n));
@@ -72,7 +73,7 @@ public class AceptarSolicitudServicioPage extends BaseTest {
 	}
 	
 	public void clickRealizarSolicitud()throws InterruptedException{
-		this.funcionScrollDownFull();
+		this.funcionScrollDown(0.9,0.1);
 		driver.findElement(btnRealizarSolicitud).click();
 		Thread.sleep(5000);
 	}

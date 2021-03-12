@@ -76,7 +76,7 @@ public class RealizarPagoSolicitudDesdePeticionPage extends BaseTest {
 	{
 		driver.findElement(btnPagarServicio).click();
 		Thread.sleep(20000);
-		this.funcionScrollDownFull();
+		this.funcionScrollDown(0.9,0.1);
 		driver.findElement(btnPagarServicio2).click();
 		Thread.sleep(15000);
 		

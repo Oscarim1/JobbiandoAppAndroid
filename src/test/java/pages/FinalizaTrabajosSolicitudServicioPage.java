@@ -79,7 +79,7 @@ public class FinalizaTrabajosSolicitudServicioPage extends BaseTest{
 	public void clickSeleccionaSolicitud() throws InterruptedException{
 		
 		while(btnEjecutandoServicio(btnEjecutandoServicio) == null) {
-			this.funcionScrollDown();
+			this.funcionScrollDown(0.9,0.1);
 		}
 		driver.findElement(btnEjecutandoServicio).click();
 		Thread.sleep(5000);
@@ -87,7 +87,7 @@ public class FinalizaTrabajosSolicitudServicioPage extends BaseTest{
 	
 	public void clickAvanzarEstadoTerminado() throws InterruptedException{
 		
-		this.funcionScrollDownFull();
+		this.funcionScrollDown(0.9,0.1);
 		driver.findElement(btnActualizarEstadoTerminado).click();
 		Thread.sleep(5000);
 		driver.findElement(inputImagen).click();

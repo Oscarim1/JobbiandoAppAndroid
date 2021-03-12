@@ -40,32 +40,32 @@ public class RealizarPagoSolicitudDesdePeticionSteps extends BaseTest{
 
 	@And("Entrar en pestana En Proceso")
 	public void entrar_en_pestana_En_Proceso() throws Throwable {
-		page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
+		 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
 		 page.clickPestanaEnProceso();
 	}
 
 	@And("Hacer click en una solicitud en espera de pago")
 	public void hacer_click_en_una_solicitud_en_espera_de_pago() throws Throwable {
-		page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
+		 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
 		 page.clickPestanaEnProceso();
 	}
 
 	@When("Ingresar datos de pago")
 	public void ingresar_datos_de_pago() throws Throwable {
-		page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
-		page.clickPagarServicio();
-		page.enterEmailPagador(emailSolicitantePrueba);
-		page.clickContinuar();
-		page.enterDatosUsuario("9.123.845-4","1234");
-		//page.clickContinuar();
-		page.enterAutorizacion("11 22 33");
+		 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
+		 page.clickPagarServicio();
+		 page.enterEmailPagador(emailSolicitantePrueba);
+		 page.clickContinuar();
+		 page.enterDatosUsuario("9.123.845-4","1234");
+		 page.clickContinuar();
+		 page.enterAutorizacion("11 22 33");
 		
 		
 	}
 
 	@Then("Realizar el pago de la solicitud")
 	public void realizar_el_pago_de_la_solicitud() throws Throwable {
-		page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
-		page.clickTerminar();
+		 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
+		 page.clickTerminar();
 	}
 }

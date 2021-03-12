@@ -72,7 +72,7 @@ public class CrearPeticionServicioSteps extends BaseTest {
 	@Then("Generar peticion de servicio")
 	public void generar_peticion_de_servicio() throws Throwable {
 		page=new CrearPeticionServicioPage(elemento);
-		//page.clickGenerarPeticion();
+		page.clickGenerarPeticion();
 	    
 	}
 

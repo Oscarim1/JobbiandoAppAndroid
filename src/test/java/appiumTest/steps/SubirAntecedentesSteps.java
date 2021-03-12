@@ -49,20 +49,15 @@ public class SubirAntecedentesSteps extends BaseTest{
 	public void hacer_click_en_pestana_Enviar_Antecedentes() throws Throwable {
 	    page = new SubirAntecedentesPage(elemento);
 	    page.clickAntecedentes(); 	
-	    Thread.sleep(2000);
 	    page.clickTipoDocumento(); 
-	    Thread.sleep(2000);
 	    page.clickDocumento();
-	    Thread.sleep(2000);
 	}
 
 	@When("Hacer click en Selecionar Imagen")
 	public void hacer_click_en_Selecionar_Imagen() throws Throwable {
 		page = new SubirAntecedentesPage(elemento);
 		page.clickImagen(); 
-		Thread.sleep(2000);
 		page.clickFuenteImagen();
-		Thread.sleep(2000);
 		if(elementExist("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]") != null ) {
 			page.clickPermitirImagen();				
 			}else {}
@@ -73,21 +68,16 @@ public class SubirAntecedentesSteps extends BaseTest{
 				page.clickPermitirImagenCamara();					
 				}else {}
 		page.clickTomarFoto();
-		
-		//////////////falta cargar imagen//////////////////
+	
 	}
 	@And("Hacer click en Subir Imagen ")
 	public void hacer_click_en_Subir_Imagen() throws Throwable{
-		page.clickAceptar(); 
-		
+		page.clickAceptar(); 		
 	}
-
 	@Then("Hacer click en boton Subir Antecedentes")
 	public void hacer_click_en_boton_Subir_Antecedentes() throws Throwable {
 		page = new SubirAntecedentesPage(elemento);
-		//page.clickSubirAntecedentes(); 
-		
-	    
+		page.clickSubirAntecedentes(); 	    
 	}
 
 }

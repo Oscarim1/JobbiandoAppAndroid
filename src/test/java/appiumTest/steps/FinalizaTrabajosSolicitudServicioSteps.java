@@ -23,13 +23,9 @@ public class FinalizaTrabajosSolicitudServicioSteps extends BaseTest {
 	 try{
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 		 Thread.sleep(15000);
-		 page = new FinalizaTrabajosSolicitudServicioPage(elemento);
-		 
-		 Thread.sleep(3000);
-		 page.correoPrestador(emailPrestador52);
-		 Thread.sleep(3000);
+		 page = new FinalizaTrabajosSolicitudServicioPage(elemento);	 
+		 page.correoPrestador(emailPrestador52);	
 		 page.passPrestador(passPrestador);
-
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
          exp.printStackTrace();
@@ -41,22 +37,16 @@ public class FinalizaTrabajosSolicitudServicioSteps extends BaseTest {
 	
 	@And("Ingresar pestana Solicitud")
 	public void ingresar_pestana_Solicitud() throws Throwable {
-		   page=new FinalizaTrabajosSolicitudServicioPage(elemento);
-		   Thread.sleep(5000);
-		   page.permisosDeny();
-		   Thread.sleep(5000);
-		   page.clickSolicitud();
-		   Thread.sleep(5000);
+		   page=new FinalizaTrabajosSolicitudServicioPage(elemento);		
+		   page.permisosDeny();		   
+		   page.clickSolicitud();		   
 	}
 		
 	@When("click solicitud a finalizar")
 	public void click_solicitud_a_finalizar() throws Throwable {
-		   page=new FinalizaTrabajosSolicitudServicioPage(elemento);
-		   Thread.sleep(5000);
-		   page.permisosDeny();
-		   Thread.sleep(5000);
+		   page=new FinalizaTrabajosSolicitudServicioPage(elemento);		  
+		   page.permisosDeny();		  
 		   page.clickSeleccionaSolicitud();
-		   Thread.sleep(5000);
 	}
 
 
@@ -64,7 +54,6 @@ public class FinalizaTrabajosSolicitudServicioSteps extends BaseTest {
 	public void hacer_click_en_boton_avanzar_a_terminado() throws Throwable {
 		page=new FinalizaTrabajosSolicitudServicioPage(elemento);
 		page.clickAvanzarEstadoTerminado();
-		Thread.sleep(5000);
 	}
 
 }

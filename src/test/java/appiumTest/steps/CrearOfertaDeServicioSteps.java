@@ -1,7 +1,7 @@
 package appiumTest.steps;
 
 
-import java.util.concurrent.TimeUnit;
+
 
 import appiumTest.BaseTest;
 import cucumber.api.java.en.And;
@@ -26,10 +26,7 @@ public class CrearOfertaDeServicioSteps extends BaseTest {
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 		 Thread.sleep(15000);
 		 page = new CrearOfertaDeServicioPage(elemento);
-		 
-		 Thread.sleep(3000);
-		 page.correoPrestador(emailPrestador);
-		 Thread.sleep(3000);
+		 page.correoPrestador(emailPrestador); 
 		 page.passPrestador(passPrestador);
 
      }catch(Exception exp) {
@@ -43,55 +40,39 @@ public class CrearOfertaDeServicioSteps extends BaseTest {
 	@And("Hacer click en pestana Servicios")
 	public void hacer_click_en_pestana_Servicios() throws Throwable {
 		   page=new CrearOfertaDeServicioPage(elemento);
-		   Thread.sleep(5000);
-		   page.permisosDeny();
-		   Thread.sleep(5000);
-		   page.clickPestanaServicios();
-		   Thread.sleep(5000);
+		   page.permisosDeny();		   
+		   page.clickPestanaServicios();		  
 	}
 
 	@When("Hacer click en boton agregar servicio")
 	public void hacer_click_en_boton_agregar_servicio() throws Throwable {
 		page=new CrearOfertaDeServicioPage(elemento);
-	    page.clickAgregarServicio();
-	    Thread.sleep(5000);
-	    
+	    page.clickAgregarServicio();        
 	}
 
 	@And("Ingresar datos del servicio")
 	public void ingresar_datos_del_servicio() throws Throwable {
 		page=new CrearOfertaDeServicioPage(elemento);
-	    page.enterDescripcion("Esta es una descripcion");
-	    Thread.sleep(5000);
+	    page.enterDescripcion("Esta es una descripcion");	   
 	    page.clickCategoria();
-	    Thread.sleep(5000);
-	    page.clickSeleccionarCategoria();
-	    Thread.sleep(5000);
-	    page.clickSubCategoria();
-	    Thread.sleep(5000);
-	    page.clickSeleccionarSubCategoria();
-	    Thread.sleep(5000);
-	    page.enterPrecio(precio);
-	    Thread.sleep(5000);
-	    page.clickCalendario();
-	    Thread.sleep(5000);
-	    page.clickJornada();
-	    Thread.sleep(5000);
-	    page.clickSiguiente();
-	    Thread.sleep(5000);
-	    page.clickDiasEntregaServicio();
-	    Thread.sleep(5000);
-	    page.clickUbicacion();
-	    Thread.sleep(5000);
+	    page.clickSeleccionarCategoria();	    
+	    page.clickSubCategoria();    
+	    page.clickSeleccionarSubCategoria();	    
+	    page.enterPrecio(precio);	    
+	    page.clickCalendario();	    
+	    page.clickJornada();	    
+	    page.clickSiguiente();	    
+	    page.clickDiasEntregaServicio();	    
+	    page.clickUbicacion();	    
 	    page.clickImagen();
-	    Thread.sleep(5000);
+	    
 	}
 
 	@Then("Hacer click en boton registrar servicio")
 	public void hacer_click_en_boton_registrar_servicio() throws Throwable {
 		page=new CrearOfertaDeServicioPage(elemento);
 	    page.clickPublicar();
-	     Thread.sleep(5000);
+	   
 	}
 
 }

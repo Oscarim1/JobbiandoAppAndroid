@@ -80,7 +80,7 @@ public class ValidarAntecedentesPage extends BaseTest {
 		
 		driver.findElement(btnBarraLateral).click();
 		Thread.sleep(3000);
-		this.funcionScrollDownFull();
+		this.funcionScrollDown(0.9,0.1);
 		Thread.sleep(3000);
 		driver.findElement(btnRevisarAntecedentes).click();
 		Thread.sleep(3000);
