@@ -24,15 +24,13 @@ public class AgregarCategoriaSteps extends BaseTest {
 	@When("Hacer click en Agregar")
 	public void hacer_click_en_Agregar() throws Throwable {
 	    page=new AgregarCategoriaPage(elemento);
-	    page.clickAgregar();
-	    Thread.sleep(5000);
+	    page.clickAgregar();    
 	}
 
 	@Then("Seleccionar una categoria")
 	public void seleccionar_una_categoria() throws Throwable {
 		page=new AgregarCategoriaPage(elemento);
-	    page.clickAgregarCategoria();
-	    Thread.sleep(5000);
+	    page.clickAgregarCategoria();  
 	}
 	
 }

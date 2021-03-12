@@ -21,13 +21,10 @@ public class ValidarAntecedentesSteps extends BaseTest {
 	 
 	 try{
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
-		 Thread.sleep(3000);
+		 Thread.sleep(15000);
 		 page = new ValidarAntecedentesPage(elemento);
-		 Thread.sleep(4000);
 		 page.iniciarSesion();
-		 Thread.sleep(3000);
 		 page.enterUsernameAdmin(emailAdmin);
-		 Thread.sleep(3000);
 		 page.enterPassAdmin(passAdmin);
 
      }catch(Exception exp) {
@@ -42,31 +39,20 @@ public class ValidarAntecedentesSteps extends BaseTest {
 	@And("Ir a revisar antecedentes")
 	public void ir_a_revisar_antecedentes() throws Throwable {
 		
-		
-		Thread.sleep(5000);
 		page=new ValidarAntecedentesPage(elemento);
-		page.barraLateral();
-	    Thread.sleep(4000);
-	    
-	   
-	    
+		page.barraLateral();	    	   	 
 	}
 
 	@When("Seleccionar al usuario al que se le validaran los antecedentes")
 	public void seleccionar_al_usuario_al_que_se_le_validaran_los_antecedentes() throws Throwable {
-		
-	
 		page=new ValidarAntecedentesPage(elemento);	    
-	    Thread.sleep(4000);
 		page.filtroNombre("Enric Parramon Flores");
 	 
 	}
 
 	@And("hacer click en validar antecedentes")
 	public void hacer_click_en_validar_antecedentes() throws Throwable {
-		
 		page=new ValidarAntecedentesPage(elemento);	    
-	    Thread.sleep(4000);
 	    page.validarAntecedente();
 	}
 

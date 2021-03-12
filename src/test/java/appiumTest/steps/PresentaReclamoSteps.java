@@ -26,9 +26,9 @@ public class PresentaReclamoSteps extends BaseTest {
 		 page = new  PresentaReclamoPage(elemento);
 		 
 		 Thread.sleep(3000);
-		 page.correoSolicitante(emailSolicitante51);
+		 page.correoSolicitante(emailSolicitante);
 		 Thread.sleep(3000);
-		 page.passSolicitante(passSolicitante51);
+		 page.passSolicitante(passSolicitante);
  
      }catch(Exception exp) {
          System.out.println(exp.getMessage());

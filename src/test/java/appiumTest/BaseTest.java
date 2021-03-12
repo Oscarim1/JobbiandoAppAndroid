@@ -20,16 +20,16 @@ public class BaseTest {
 	
 	static ConfigFileReader configFileReader= new ConfigFileReader();
 	
-	public String emailPrestador  ="randomail259@gmailnator.com";
-	public String passPrestador ="Hola1234";
-	public String emailAdmin ="camilatoro200@gmail.com";
-	public String passAdmin ="190858111";
+	
+	public String passPrestador="Hola1234";
+	public String emailAdmin="camilatoro200@gmail.com";
+	public String passAdmin="190858111";
 	public String precio = "10000";
-	public String emailPrestador52 = "randomail52@gmailnator.com";
-	public String emailSolicitante51 = "randomail51@gmailnator.com";
-	public String passSolicitante51 = "Hola1234";
+	public String emailPrestador52="randomail52@gmailnator.com";
 	
-	
+	public String emailPrestador="randomail14@gmailnator.com";
+	public String emailSolicitante="randomail13@gmailnator.com";
+	public String passSolicitante="Hola1234";
 	
 	public static void openApp(String rol1,String rol2) throws Exception {
 		
@@ -86,14 +86,14 @@ public class BaseTest {
 		Thread.sleep(3000);
 	}
 	
-	public void funcionScrollDown() throws InterruptedException {
+	public void funcionScrollDown(Double height_start,Double height_end ) throws InterruptedException {
 		driver.manage().window().getSize();
 		Dimension dimension = driver.manage().window().getSize();
 		int start_x = (int) (dimension.width * 0.5);
-		int start_y = (int) (dimension.height * 0.8);
+		int start_y = (int) (dimension.height * height_start);
 		
 		int end_x = (int) (dimension.width * 0.5);
-		int end_y = (int) (dimension.height * 0.6);
+		int end_y = (int) (dimension.height * height_end);
 		
 		TouchAction touch = new TouchAction(driver);
 		touch.press(PointOption.point(start_x, start_y))
@@ -102,37 +102,6 @@ public class BaseTest {
 		Thread.sleep(3000);
 	}
 	
-	public void funcionScrollDownCrearPeticionServicio() throws InterruptedException {
-		driver.manage().window().getSize();
-		Dimension dimension = driver.manage().window().getSize();
-		int start_x = (int) (dimension.width * 0.5);
-		int start_y = (int) (dimension.height * 0.4);
-		
-		int end_x = (int) (dimension.width * 0.5);
-		int end_y = (int) (dimension.height * 0.1);
-		
-		TouchAction touch = new TouchAction(driver);
-		touch.press(PointOption.point(start_x, start_y))
-		.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
-		.moveTo(PointOption.point(end_x, end_y)).release().perform();
-		Thread.sleep(3000);
-	}
-	
-	public void funcionScrollDownFull() throws InterruptedException {
-		driver.manage().window().getSize();
-		Dimension dimension = driver.manage().window().getSize();
-		int start_x = (int) (dimension.width * 0.5);
-		int start_y = (int) (dimension.height * 0.9);
-		
-		int end_x = (int) (dimension.width * 0.5);
-		int end_y = (int) (dimension.height * 0.1);
-		
-		TouchAction touch = new TouchAction(driver);
-		touch.press(PointOption.point(start_x, start_y))
-		.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1)))
-		.moveTo(PointOption.point(end_x, end_y)).release().perform();
-		Thread.sleep(3000);
-	}
 	
 	 public MobileElement elementExist(String xpath)
      {
@@ -159,5 +128,23 @@ public class BaseTest {
          }
 
      }
+	 
+	 public String elementExistSolicitud(Integer n)
+     {
+         try
+         {	By elemento=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup["+n+"]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView[1]");
+         String catServicio= driver.findElement(elemento).getAttribute("text");
+             return catServicio;
+             
+         }
+         catch (Exception e)
+         {
+             return null;
+         }
+
+     }
+	 
+	
+	
 	
 }

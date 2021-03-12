@@ -37,18 +37,23 @@ public class RegistroSolicitantePage extends BaseTest {
 		this.elemento=elemento;
 	}
 	
-	public void clickQuieroSerJobber() {
+	public void clickQuieroSerJobber() throws InterruptedException {
 		driver.findElement(btnQuieroSerJobber).click();
+		Thread.sleep(15000);
 	}
 	///////////////////////////////////////////////////////////
-	public void enterNombres(String nombres) 
-	{	driver.findElement(txtNombres).click();
+	public void enterNombres(String nombres) throws InterruptedException 
+	{	
+		driver.findElement(txtNombres).click();
+		Thread.sleep(5000);
 		driver.findElement(txtNombres).sendKeys(nombres);
+		Thread.sleep(5000);
 	}
 	
-	public void enterApellidos(String apellidos) 
+	public void enterApellidos(String apellidos) throws InterruptedException 
 	{
 		driver.findElement(txtApellidos).sendKeys(apellidos);
+		Thread.sleep(5000);
 	}
 	
 	public void enterFechaNacimiento(String fechaNacimiento) throws InterruptedException 
@@ -58,62 +63,78 @@ public class RegistroSolicitantePage extends BaseTest {
 		driver.findElement(txtFechaNacimiento).click();
 		Thread.sleep(3000);
 		this.funcionScrollUp();
-		
+		Thread.sleep(5000);
 		driver.findElement(btnFormulario).click();
 		Thread.sleep(3000);
 	}
 	
-	public void enterCorreo(String correo) 
+	public void enterCorreo(String correo) throws InterruptedException 
 	{
 		driver.findElement(txtCorreo).sendKeys(correo);
+		Thread.sleep(5000);
 	}
 	
 	public void enterContrasena(String contrasena) throws InterruptedException 
 	{
 		
-		this.funcionScrollDown();
+		this.funcionScrollDown(0.8,0.6);
+	    Thread.sleep(5000);
 		driver.findElement(txtContrasena).sendKeys(contrasena);
+		Thread.sleep(5000);
 		driver.findElement(txtContrasena2).sendKeys(contrasena);
+		Thread.sleep(5000);
 	}
 	
-	public void clickCedulaDeIdentidad(String numeroIdentificador) {
+	public void clickCedulaDeIdentidad(String numeroIdentificador)throws InterruptedException  {
 		driver.findElement(btnTipoDocumento).click();
+		Thread.sleep(5000);
 		driver.findElement(btnCedulaDeIdentidadOpcion0).click();
+		Thread.sleep(5000);
 		driver.findElement(txtNumeroIdentificador).sendKeys(numeroIdentificador);
+		Thread.sleep(5000);
 	}
 	
 	public void enterIdentificador(String numeroSerie) throws InterruptedException 
 	{
-		funcionScrollDown();
+		funcionScrollDown(0.8,0.6);
+		Thread.sleep(5000);
 		driver.findElement(txtNumeroSerie).sendKeys(numeroSerie);
+		Thread.sleep(5000);
 	}
 	
 	public void enterCalle(String calle) throws InterruptedException 
 	{
-		funcionScrollDown();
+		funcionScrollDown(0.8,0.6);
+		Thread.sleep(5000);
 		driver.findElement(txtCalle).sendKeys(calle);
+		Thread.sleep(5000);
 	}
 	
-	public void enterDireccion(String direccion) 
+	public void enterDireccion(String direccion) throws InterruptedException 
 	{
 		driver.findElement(txtDireccion).sendKeys(direccion);
+		Thread.sleep(5000);
 	}
 	
-	public void enterNombreDireccion(String nombreDireccion) 
+	public void enterNombreDireccion(String nombreDireccion) throws InterruptedException 
 	{
 		driver.findElement(txtNombreDireccion).sendKeys(nombreDireccion);
+		Thread.sleep(5000);
 	}
 	
 	public void enterReferencia(String referencia) throws InterruptedException 
 	{
-		funcionScrollDown();
+		funcionScrollDown(0.8,0.6);
+		Thread.sleep(5000);
 		driver.findElement(txtReferencia).sendKeys(referencia);
+		Thread.sleep(5000);
 	}
 	
 	public void clickCrearCuenta() throws InterruptedException {
-		//para finalizar el registro hay que cambiar el btnRegistrar
 		driver.findElement(btnRegistrar).click();
+		System.out.println("AQUIII");
 		Thread.sleep(5000);
+		
 	}
 	
 }
