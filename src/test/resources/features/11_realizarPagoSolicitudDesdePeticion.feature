@@ -1,3 +1,4 @@
+@Ciclo1
 Feature: Verificar funcionalidad de pago solicitud desde una peticion
 
   Scenario: Validar realizar pago solicitud desde una peticion
