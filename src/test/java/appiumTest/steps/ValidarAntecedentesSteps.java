@@ -46,7 +46,7 @@ public class ValidarAntecedentesSteps extends BaseTest {
 	@When("Seleccionar al usuario al que se le validaran los antecedentes")
 	public void seleccionar_al_usuario_al_que_se_le_validaran_los_antecedentes() throws Throwable {
 		page=new ValidarAntecedentesPage(elemento);	    
-		page.filtroNombre("Enric Parramon Flores");
+		page.filtroNombre("JORDI");
 	 
 	}
 

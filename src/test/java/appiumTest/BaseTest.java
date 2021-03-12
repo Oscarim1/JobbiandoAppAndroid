@@ -20,15 +20,13 @@ public class BaseTest {
 	
 	static ConfigFileReader configFileReader= new ConfigFileReader();
 	
-	
-	public String passPrestador="Hola1234";
 	public String emailAdmin="camilatoro200@gmail.com";
 	public String passAdmin="190858111";
 	public String precio = "10000";
 	public String emailPrestador52="randomail52@gmailnator.com";
-	
-	public String emailPrestador="randomail14@gmailnator.com";
-	public String emailSolicitante="randomail13@gmailnator.com";
+	public String emailPrestador="randomail214@gmailnator.com";
+	public String passPrestador="Hola1234";
+	public String emailSolicitante="randomail276@gmailnator.com";
 	public String passSolicitante="Hola1234";
 	
 	public static void openApp(String rol1,String rol2) throws Exception {

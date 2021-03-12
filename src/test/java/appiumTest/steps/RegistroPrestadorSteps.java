@@ -38,28 +38,25 @@ public class RegistroPrestadorSteps extends BaseTest {
 	@When("Completar el formulario de registro del prestador")
 	public void completar_el_formulario_de_registro_del_prestador() throws Throwable {	
 		page=new RegistroPrestadorPage(elemento);
-	    page.enterNombres("ENRIC");	   
-	    page.enterApellidos("PARRAMON FLORES");	    
+	    page.enterNombres("LLUÍS");	   
+	    page.enterApellidos("ZAMBUDIO FIGULS");	    
 	    page.enterFechaNacimiento("12 de 05 de 1995");	   
-	    page.enterCorreo("randomail250@gmailnator.com");    
+	    page.enterCorreo("randomail215@gmailnator.com");    
 	    page.enterContrasena("Hola1234");    
-	    page.clickCedulaDeIdentidad("637106066");    
-	    page.enterIdentificador("618513922");	    
+	    page.clickCedulaDeIdentidad("980631966");    
+	    page.enterIdentificador("232218529");	    
 	    page.enterCalle("Sin calle");	    
 	    page.enterDireccion("L-331, Colbun, Colbún, Maule, Chile");	    
 	    page.enterNombreDireccion("Casa");    
 	    page.enterReferencia("Sin referencia"); 
 	}
 
-	@And("hacer click en boton registrar prestador")
-	public void hacer_click_en_boton_registrar_prestador() throws Throwable {
+	@Then("click en boton registrar prestador")
+	public void click_en_boton_registrar_prestador() throws Throwable {
 		page = new RegistroPrestadorPage(elemento);	
 	    page.clickCrearCuenta();
 	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 	}
 
-	@Then("Ir a sitio de login del prestador")
-	public void ir_a_sitio_de_login_prestador() throws Throwable {
-	    
-	}
+	
 }
