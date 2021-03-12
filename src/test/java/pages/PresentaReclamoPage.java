@@ -75,7 +75,7 @@ public class PresentaReclamoPage extends BaseTest{
 	public void clickSolicitudesTermiandas() throws InterruptedException{
 		
 		while(exist(btnSolicitudesTerminadas) == null) {
-			this.funcionScrollDown();
+			this.funcionScrollDown(0.8,0.6);
 		}
 		driver.findElement(btnSolicitudesTerminadas).click();
 		Thread.sleep(5000);
@@ -84,7 +84,7 @@ public class PresentaReclamoPage extends BaseTest{
 	public void clickSolicitudFinalizada() throws InterruptedException{
 		
 		while(exist(btnSolicitudFinalizada) == null) {
-			this.funcionScrollDown();
+			this.funcionScrollDown(0.8,0.6);
 		}
 		driver.findElement(btnSolicitudFinalizada).click();
 		Thread.sleep(5000);
@@ -94,7 +94,7 @@ public class PresentaReclamoPage extends BaseTest{
 	public void clickReclamo() throws InterruptedException{
 		
 		while(exist(btnArticulosPerdidos) == null) {
-			this.funcionScrollDown();
+			this.funcionScrollDown(0.8,0.6);
 		}
 		driver.findElement(btnArticulosPerdidos).click();
 		Thread.sleep(5000);

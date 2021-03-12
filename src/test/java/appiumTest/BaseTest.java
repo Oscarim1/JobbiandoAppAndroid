@@ -20,7 +20,7 @@ public class BaseTest {
 	
 	static ConfigFileReader configFileReader= new ConfigFileReader();
 	
-	public String emailPrestador="randomail259@gmailnator.com";
+	
 	public String passPrestador="Hola1234";
 	public String emailAdmin="camilatoro200@gmail.com";
 	public String passAdmin="190858111";
@@ -116,11 +116,11 @@ public class BaseTest {
 
      }
 	 
-	 public MobileElement btnExist(By btnSolicitudAceptada)
+	 public MobileElement exist(By element)
      {
          try
          {
-             return driver.findElement(btnSolicitudAceptada);
+             return driver.findElement(element);
          }
          catch (Exception e)
          {
@@ -128,58 +128,6 @@ public class BaseTest {
          }
 
      }
-	 
-	 public MobileElement permisoDeny(By btnDeny)
-     {
-         try
-         {
-             return driver.findElement(btnDeny);
-         }
-         catch (Exception e)
-         {
-             return null;
-         }
-
-     }
-	 
-	 public MobileElement permisoDontAskAgain(By btnDontAskAgain)
-     {
-         try
-         {
-             return driver.findElement(btnDontAskAgain);
-         }
-         catch (Exception e)
-         {
-             return null;
-         }
-
-     }
-	 
-	 public MobileElement permisoAllow(By btnAllow)
-     {
-         try
-         {
-             return driver.findElement(btnAllow);
-         }
-         catch (Exception e)
-         {
-             return null;
-         }
-
-     }
-	 public MobileElement btnEjecutandoServicio(By btnEjecutandoServicio)
-     {
-         try
-         {
-             return driver.findElement(btnEjecutandoServicio);
-         }
-         catch (Exception e)
-         {
-             return null;
-         }
-
-     }
-	 
 	 
 	 public String elementExistSolicitud(Integer n)
      {

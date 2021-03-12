@@ -84,7 +84,7 @@ public class ResuelveReclamoPage extends BaseTest {
 		
 		driver.findElement(btnBarraLateral).click();
 		Thread.sleep(3000);
-		this.funcionScrollDown();
+		this.funcionScrollDown(0.8,0.6);
 		Thread.sleep(3000);
 		driver.findElement(btnFiltrarReclamo).click();
 		Thread.sleep(3000);
@@ -112,7 +112,7 @@ public class ResuelveReclamoPage extends BaseTest {
 	
 public void registrar(String resolucion) throws InterruptedException {
 		
-		this.funcionScrollDownFull();
+		this.funcionScrollDown(0.9,0.1);
 		driver.findElement(btnTipoSolucion).click();
 		Thread.sleep(3000);
 		driver.findElement(btnOpcion).click();
