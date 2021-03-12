@@ -52,7 +52,7 @@ public class FinalizaTrabajosSolicitudServicioPage extends BaseTest{
 	}
 	 
 	public void permisosDeny() throws InterruptedException{
-		if(permisoDeny(btnDeny) != null) {
+		if(exist(btnDeny) != null) {
 
 			driver.findElement(btnDeny).click();
 			Thread.sleep(5000);
@@ -63,7 +63,7 @@ public class FinalizaTrabajosSolicitudServicioPage extends BaseTest{
 		
 	public void clickSolicitud() throws InterruptedException{		
 		
-		if(permisoDontAskAgain(btnDontAskAgain) != null) {
+		if(exist(btnDontAskAgain) != null) {
 			
 			driver.findElement(btnDontAskAgain).click();
 			Thread.sleep(5000);
@@ -78,7 +78,7 @@ public class FinalizaTrabajosSolicitudServicioPage extends BaseTest{
 	
 	public void clickSeleccionaSolicitud() throws InterruptedException{
 		
-		while(btnEjecutandoServicio(btnEjecutandoServicio) == null) {
+		while(exist(btnEjecutandoServicio) == null) {
 			this.funcionScrollDown();
 		}
 		driver.findElement(btnEjecutandoServicio).click();

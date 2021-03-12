@@ -101,7 +101,7 @@ public class IniciaTrabajosSolicitudServicioPage extends BaseTest{
 	
 	public void clickSeleccionaSolicitud() throws InterruptedException{
 		
-		while(btnExist(btnSolicitudAceptada) == null) {
+		while(exist(btnSolicitudAceptada) == null) {
 			this.funcionScrollDown();
 		}
 		driver.findElement(btnSolicitudAceptada).click();

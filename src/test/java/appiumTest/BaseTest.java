@@ -147,114 +147,11 @@ public class BaseTest {
 
      }
 	 
-	 public MobileElement btnExist(By btnSolicitudAceptada)
+	 public MobileElement exist(By element)
      {
          try
          {
-             return driver.findElement(btnSolicitudAceptada);
-         }
-         catch (Exception e)
-         {
-             return null;
-         }
-
-     }
-	 
-	 public MobileElement permisoDeny(By btnDeny)
-     {
-         try
-         {
-             return driver.findElement(btnDeny);
-         }
-         catch (Exception e)
-         {
-             return null;
-         }
-
-     }
-	 
-	 public MobileElement permisoDontAskAgain(By btnDontAskAgain)
-     {
-         try
-         {
-             return driver.findElement(btnDontAskAgain);
-         }
-         catch (Exception e)
-         {
-             return null;
-         }
-
-     }
-	 
-	 public MobileElement permisoAllow(By btnAllow)
-     {
-         try
-         {
-             return driver.findElement(btnAllow);
-         }
-         catch (Exception e)
-         {
-             return null;
-         }
-
-     }
-	 public MobileElement btnEjecutandoServicio(By btnEjecutandoServicio)
-     {
-         try
-         {
-             return driver.findElement(btnEjecutandoServicio);
-         }
-         catch (Exception e)
-         {
-             return null;
-         }
-
-     }
-	 
-	 public MobileElement btnEvaluarExperiencia(By btnEvaluarExperiencia)
-     {
-         try
-         {
-             return driver.findElement(btnEvaluarExperiencia);
-         }
-         catch (Exception e)
-         {
-             return null;
-         }
-
-     }
-	 
-	 public MobileElement btnSolicitudesTerminadas(By btnSolicitudesTerminadas)
-     {
-         try
-         {
-             return driver.findElement(btnSolicitudesTerminadas);
-         }
-         catch (Exception e)
-         {
-             return null;
-         }
-
-     }
-	 
-	 public MobileElement btnSolicitudFinalizada(By btnSolicitudFinalizada)
-     {
-         try
-         {
-             return driver.findElement(btnSolicitudFinalizada);
-         }
-         catch (Exception e)
-         {
-             return null;
-         }
-
-     }
-	 
-	 public MobileElement btnArticulosPerdidos(By btnArticulosPerdidos)
-     {
-         try
-         {
-             return driver.findElement(btnArticulosPerdidos);
+             return driver.findElement(element);
          }
          catch (Exception e)
          {

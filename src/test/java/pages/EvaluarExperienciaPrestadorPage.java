@@ -48,7 +48,7 @@ public class EvaluarExperienciaPrestadorPage extends BaseTest{
 	}
 	 
 	public void permisosDeny() throws InterruptedException{
-		if(permisoDeny(btnDeny) != null) {
+		if(exist(btnDeny) != null) {
 
 			driver.findElement(btnDeny).click();
 			Thread.sleep(5000);
@@ -59,7 +59,7 @@ public class EvaluarExperienciaPrestadorPage extends BaseTest{
 		
 	public void clickSolicitud() throws InterruptedException{		
 		
-		if(permisoDontAskAgain(btnDontAskAgain) != null) {
+		if(exist(btnDontAskAgain) != null) {
 			
 			driver.findElement(btnDontAskAgain).click();
 			Thread.sleep(5000);
@@ -76,7 +76,7 @@ public class EvaluarExperienciaPrestadorPage extends BaseTest{
 	
 	public void clickSeleccionaSolicitudEvaluar() throws InterruptedException{
 		
-		while(btnEvaluarExperiencia(btnEvaluarExperiencia) == null) {
+		while(exist(btnEvaluarExperiencia) == null) {
 			this.funcionScrollDown();
 		}
 		driver.findElement(btnEvaluarExperiencia).click();

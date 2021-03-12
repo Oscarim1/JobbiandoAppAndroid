@@ -46,7 +46,7 @@ public class PresentaReclamoPage extends BaseTest{
 	}
 	 
 	public void permisosDeny() throws InterruptedException{
-		if(permisoDeny(btnDeny) != null) {
+		if(exist(btnDeny) != null) {
 
 			driver.findElement(btnDeny).click();
 			Thread.sleep(5000);
@@ -57,7 +57,7 @@ public class PresentaReclamoPage extends BaseTest{
 		
 	public void clickCuenta() throws InterruptedException{		
 		
-		if(permisoDontAskAgain(btnDontAskAgain) != null) {
+		if(exist(btnDontAskAgain) != null) {
 			
 			driver.findElement(btnDontAskAgain).click();
 			Thread.sleep(5000);
@@ -74,7 +74,7 @@ public class PresentaReclamoPage extends BaseTest{
 	
 	public void clickSolicitudesTermiandas() throws InterruptedException{
 		
-		while(btnSolicitudesTerminadas(btnSolicitudesTerminadas) == null) {
+		while(exist(btnSolicitudesTerminadas) == null) {
 			this.funcionScrollDown();
 		}
 		driver.findElement(btnSolicitudesTerminadas).click();
@@ -83,7 +83,7 @@ public class PresentaReclamoPage extends BaseTest{
 	
 	public void clickSolicitudFinalizada() throws InterruptedException{
 		
-		while(btnSolicitudFinalizada(btnSolicitudFinalizada) == null) {
+		while(exist(btnSolicitudFinalizada) == null) {
 			this.funcionScrollDown();
 		}
 		driver.findElement(btnSolicitudFinalizada).click();
@@ -93,7 +93,7 @@ public class PresentaReclamoPage extends BaseTest{
 	
 	public void clickReclamo() throws InterruptedException{
 		
-		while(btnArticulosPerdidos(btnArticulosPerdidos) == null) {
+		while(exist(btnArticulosPerdidos) == null) {
 			this.funcionScrollDown();
 		}
 		driver.findElement(btnArticulosPerdidos).click();
