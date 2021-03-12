@@ -27,8 +27,8 @@ public class BaseTest {
 	public String precio = "10000";
 	public String emailPrestador52="randomail52@gmailnator.com";
 	
-	public String emailPrestadorPrueba="randomail14@gmailnator.com";
-	public String emailSolicitantePrueba="randomail13@gmailnator.com";
+	public String emailPrestador="randomail14@gmailnator.com";
+	public String emailSolicitante="randomail13@gmailnator.com";
 	public String passSolicitante="Hola1234";
 	
 	public static void openApp(String rol1,String rol2) throws Exception {

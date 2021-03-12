@@ -19,8 +19,8 @@ public class EvaluarExperienciaSolicitanteSteps extends BaseTest {
 			 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
 			 Thread.sleep(20000);
 			 page = new EvaluarExperienciaSolicitantePage(elemento);		
-			 page.enterCorreo(emailSolicitantePrueba);
-			 page.clickOcultarTeclado();		
+			 page.enterCorreo(emailSolicitante);
+			 page.clickOcultarTeclado();	
 			 page.enterContrasena(passSolicitante);
 			 page.clickOcultarTeclado();
 			 page.clickEntrar();

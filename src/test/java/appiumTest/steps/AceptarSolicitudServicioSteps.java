@@ -21,7 +21,7 @@ public class AceptarSolicitudServicioSteps extends BaseTest{
 			 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 			 Thread.sleep(15000);
 			 page = new AceptarSolicitudServicioPage(elemento);
-			 page.enterCorreo(emailPrestadorPrueba);
+			 page.enterCorreo(emailPrestador);
 			 page.clickOcultarTeclado();
 			 page.enterContrasena(passPrestador);
 			 page.clickOcultarTeclado();

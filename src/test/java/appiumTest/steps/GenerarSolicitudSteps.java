@@ -20,7 +20,7 @@ public class GenerarSolicitudSteps extends BaseTest{
 			 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
 			 Thread.sleep(20000);
 			 page = new GenerarSolicitudPage(elemento);		
-			 page.enterCorreo(emailSolicitantePrueba);
+			 page.enterCorreo(emailSolicitante);
 			 page.clickOcultarTeclado();		
 			 page.enterContrasena(passSolicitante);
 			 page.clickOcultarTeclado();

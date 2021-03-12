@@ -20,7 +20,7 @@ public class RealizarPagoSolicitudDesdePeticionSteps extends BaseTest{
 			 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
 			 Thread.sleep(20000);
 			 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);		
-			 page.enterCorreo(emailSolicitantePrueba);
+			 page.enterCorreo(emailSolicitante);
 			 page.clickOcultarTeclado();		
 			 page.enterContrasena(passSolicitante);
 			 page.clickOcultarTeclado();
@@ -54,7 +54,7 @@ public class RealizarPagoSolicitudDesdePeticionSteps extends BaseTest{
 	public void ingresar_datos_de_pago() throws Throwable {
 		 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
 		 page.clickPagarServicio();
-		 page.enterEmailPagador(emailSolicitantePrueba);
+		 page.enterEmailPagador(emailSolicitante);
 		 page.clickContinuar();
 		 page.enterDatosUsuario("9.123.845-4","1234");
 		 page.clickContinuar();

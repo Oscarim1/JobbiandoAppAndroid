@@ -21,7 +21,7 @@ public class CrearPeticionServicioSteps extends BaseTest {
 		 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
 		 Thread.sleep(20000);
 		 page = new CrearPeticionServicioPage(elemento);		
-		 page.correoSolicitante(emailSolicitantePrueba);
+		 page.correoSolicitante(emailSolicitante);
 		 page.clickOcultarTeclado();		
 		 page.passSolicitante(passSolicitante);
 		 page.clickOcultarTeclado();
