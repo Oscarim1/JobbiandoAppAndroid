@@ -1,3 +1,4 @@
+@Ciclo1
 Feature: Definir perfil y categorías del prestador
   Escenarios Categorías Libres
 

@@ -1,3 +1,4 @@
+@Ciclo1
 Feature: Verificar la funcionalidad de validar antecedentes
 
   Scenario: Validar Antecedentes

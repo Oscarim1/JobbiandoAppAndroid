@@ -22,7 +22,7 @@ public class SubirAntecedentesPage extends BaseTest {
 	By btnImagen =By.className("android.widget.ImageView");
 	By btnPermitirImagen=By.xpath("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]");
 	By btnPermitirImagenCamara=By.xpath("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]");
-	///////////////////////editar///////////////////////////////////
+	
 	By btnElegirFuenteImagen =By.xpath("//*[@text=\"Tomar una Foto\"]");
 	By btnTomarFoto =By.xpath("//*[@resource-id=\"com.android.camera:id/shutter_button\"]");
 	By btnAceptar =By.xpath("//*[@resource-id=\"com.android.camera:id/done_button\"]");

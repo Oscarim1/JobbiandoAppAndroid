@@ -10,6 +10,7 @@ public class PresentaReclamoPage extends BaseTest{
 	MobileElement elemento=null; 
 	
 	By txtCorreo =By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.EditText");
+
 	By txtContrasena =By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.EditText");
 	By btnEntrar = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]");
 	By btnDontAskAgain = By.id("com.android.packageinstaller:id/do_not_ask_checkbox");
@@ -30,11 +31,8 @@ public class PresentaReclamoPage extends BaseTest{
 	
 	public void correoSolicitante(String correoSolicitante51) throws InterruptedException {
 		System.out.println(correoSolicitante51);
-		
-		
-		Thread.sleep(5000);
 		driver.findElement(txtCorreo).sendKeys(correoSolicitante51);
-		
+		Thread.sleep(5000);
 	}
 	
 	public void passSolicitante(String emailSolicitante51) throws InterruptedException {

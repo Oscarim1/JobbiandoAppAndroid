@@ -68,6 +68,8 @@ public class FinalizaTrabajosSolicitudServicioPage extends BaseTest{
 			driver.findElement(btnDontAskAgain).click();
 			Thread.sleep(5000);
 			driver.findElement(btnDeny).click();
+			driver.findElement(btnSolicitudPestana).click();
+			Thread.sleep(5000);
 			
 		}else {
 			

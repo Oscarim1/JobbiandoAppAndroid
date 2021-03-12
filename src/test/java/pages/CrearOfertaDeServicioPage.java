@@ -71,9 +71,12 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 	}
 	 
 	public void permisosDeny() throws InterruptedException{
-		
-		driver.findElement(btnDeny).click();
-		Thread.sleep(5000);
+		if(exist(btnDeny) != null) {
+
+			driver.findElement(btnDeny).click();
+			Thread.sleep(5000);
+		}else {
+		}
 		
 	}
 	public void clickPestanaServicios() throws InterruptedException {
@@ -83,12 +86,20 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 	}
 	public void clickAgregarServicio() throws InterruptedException {
 		
-		driver.findElement(btnAgregarServicio).click();
-		Thread.sleep(5000);
-		driver.findElement(btnDontAskAgain).click();
-		Thread.sleep(5000);
-		driver.findElement(btnDeny).click();
-		
+		if(exist(btnDontAskAgain) != null) {
+			
+			driver.findElement(btnDontAskAgain).click();
+			Thread.sleep(5000);
+			driver.findElement(btnDeny).click();
+			Thread.sleep(5000);
+			driver.findElement(btnAgregarServicio).click();
+			Thread.sleep(5000);
+			
+		}else {
+			
+			driver.findElement(btnAgregarServicio).click();
+			Thread.sleep(5000);
+		}
 		
 	}
 	

@@ -5,10 +5,10 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(
- features = "Feature"
- ,glue={"stepDefinition"}
- )
+@CucumberOptions(features="src/test/resources/features",
+glue = {"appiumTest.steps"},
+tags = "@Ciclo1")
+
 public class TestRunner {
 
 }

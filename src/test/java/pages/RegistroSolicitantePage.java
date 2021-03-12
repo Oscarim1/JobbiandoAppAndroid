@@ -57,9 +57,6 @@ public class RegistroSolicitantePage extends BaseTest {
 		Thread.sleep(3000);
 		driver.findElement(txtFechaNacimiento).click();
 		Thread.sleep(3000);
-		
-		//funcion scroll
-		
 		this.funcionScrollUp();
 		
 		driver.findElement(btnFormulario).click();

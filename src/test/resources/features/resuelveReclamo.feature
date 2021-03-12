@@ -1,3 +1,4 @@
+@Ciclo1
 Feature: Verificar funcionalidad resuelve reclamo
 
   Scenario: Validar resuelve reclamo

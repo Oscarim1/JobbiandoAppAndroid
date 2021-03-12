@@ -30,7 +30,7 @@ public class RegistroPrestadorPage extends BaseTest {
 	By txtDireccion= By.xpath("//*[@resource-id=\"mat-input-9\"]");
 	By txtNombreDireccion= By.xpath("//*[@resource-id=\"mat-input-10\"]");
 	By txtReferencia= By.xpath("//*[@resource-id=\"mat-input-11\"]");
-	By btnRegistrar= By.xpath("//*[@resource-id=\"btnSaveRegistro\"]"); //btnSaveRegistro
+	By btnRegistrar= By.xpath("//*[@resource-id=\"btnSaveRegistro\"]"); 
 	
 	public RegistroPrestadorPage(MobileElement elemento) 
 	{
@@ -40,7 +40,7 @@ public class RegistroPrestadorPage extends BaseTest {
 	public void clickQuieroSerJobber() {
 		driver.findElement(btnQuieroSerJobber).click();
 	}
-	///////////////////////////////////////////////////////////
+	
 	public void enterNombres(String nombres) 
 	{	driver.findElement(txtNombres).click();
 		driver.findElement(txtNombres).sendKeys(nombres);
@@ -57,11 +57,7 @@ public class RegistroPrestadorPage extends BaseTest {
 		Thread.sleep(3000);
 		driver.findElement(txtFechaNacimiento).click();
 		Thread.sleep(3000);
-		
-		//funcion scroll
-		
 		this.funcionScrollUp();
-		
 		driver.findElement(btnFormulario).click();
 		Thread.sleep(3000);
 	}

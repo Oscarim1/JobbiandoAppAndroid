@@ -1,3 +1,4 @@
+@Ciclo1
 Feature: Verificar funcionalidad de registro de Solicitante
 
   Scenario: Validar registro de Solicitante

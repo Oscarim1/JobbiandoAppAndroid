@@ -28,7 +28,7 @@ public class IniciaTrabajosSolicitudServicioPage extends BaseTest{
 	By inputLlegada = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ImageView");
 	By inputSolicitante = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView");	
 	By inputTrabajo = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.ImageView");
-	
+	By btnDontAskAgain = By.id("com.android.packageinstaller:id/do_not_ask_checkbox");
 	By btnSubCategoria = By.xpath("//*[@class='android.widget.Spinner' and ./*[@text='sub-Categoria : ']]");
 	By btnSeleccionarSubCategoria = By.xpath("//*[@text='clases de matematicas']");	
 	By txtPrecio = By.xpath("//*[@text='precio']");
@@ -70,27 +70,52 @@ public class IniciaTrabajosSolicitudServicioPage extends BaseTest{
 	}
 	 
 	public void permisosDeny() throws InterruptedException{
-		
-		driver.findElement(btnDeny).click();
-		Thread.sleep(5000);
+		if(exist(btnDeny) != null) {
+
+			driver.findElement(btnDeny).click();
+			Thread.sleep(5000);
+		}else {
+		}
 		
 	}
 	
 	public void clickServicio() throws InterruptedException{
 		
-		driver.findElement(btnServicioPestana).click();
-		Thread.sleep(5000);
-		driver.findElement(btnPeticiones).click();
-		Thread.sleep(5000);
-		driver.findElement(btnEspera).click();
-		Thread.sleep(5000);
-		this.funcionScrollDownFull();
-		Thread.sleep(2000);
-		driver.findElement(btnAceptar).click();
-		Thread.sleep(5000);
-		driver.findElement(btnAceptar).click();
-		Thread.sleep(5000);
-		driver.findElement(btnOk).click();
+		if(exist(btnDontAskAgain) != null) {
+			
+			driver.findElement(btnDontAskAgain).click();
+			Thread.sleep(5000);
+			driver.findElement(btnDeny).click();
+			driver.findElement(btnServicioPestana).click();
+			Thread.sleep(5000);
+			driver.findElement(btnPeticiones).click();
+			Thread.sleep(5000);
+			driver.findElement(btnEspera).click();
+			Thread.sleep(5000);
+			this.funcionScrollDownFull();
+			Thread.sleep(2000);
+			driver.findElement(btnAceptar).click();
+			Thread.sleep(5000);
+			driver.findElement(btnAceptar).click();
+			Thread.sleep(5000);
+			driver.findElement(btnOk).click();
+			
+		}else {
+			
+			driver.findElement(btnServicioPestana).click();
+			Thread.sleep(5000);
+			driver.findElement(btnPeticiones).click();
+			Thread.sleep(5000);
+			driver.findElement(btnEspera).click();
+			Thread.sleep(5000);
+			this.funcionScrollDownFull();
+			Thread.sleep(2000);
+			driver.findElement(btnAceptar).click();
+			Thread.sleep(5000);
+			driver.findElement(btnAceptar).click();
+			Thread.sleep(5000);
+			driver.findElement(btnOk).click();
+		}
 	}
 	
 	public void clickSolicitud() throws InterruptedException{
