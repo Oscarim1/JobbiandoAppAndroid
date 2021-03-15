@@ -3,7 +3,8 @@ package pages;
 
 
 import org.openqa.selenium.By;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import appiumTest.BaseTest;
 
@@ -31,6 +32,7 @@ public class RegistroPrestadorPage extends BaseTest {
 	By txtNombreDireccion= By.xpath("//*[@resource-id=\"mat-input-10\"]");
 	By txtReferencia= By.xpath("//*[@resource-id=\"mat-input-11\"]");
 	By btnRegistrar= By.xpath("//*[@resource-id=\"btnSaveRegistro\"]"); 
+	
 	
 	public RegistroPrestadorPage(MobileElement elemento) 
 	{
@@ -119,6 +121,9 @@ public class RegistroPrestadorPage extends BaseTest {
 	{
 		driver.findElement(txtDireccion).sendKeys(direccion);
 		Thread.sleep(5000);
+		driver.findElement(txtDireccion).click();
+		Thread.sleep(5000);
+
 	}
 	
 	public void enterNombreDireccion(String nombreDireccion) throws InterruptedException
