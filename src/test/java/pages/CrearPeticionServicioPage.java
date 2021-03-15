@@ -12,8 +12,9 @@ public class CrearPeticionServicioPage extends BaseTest{
 	By txtContrasena =By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.EditText");
 	By btnOcultarTeclado=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ImageView");
 	By btnEntrar = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]");
-	By btnPermitirUbicacion=By.xpath("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]");
-	By btnSeleccionarUbicacion=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]");
+	By btnAllow = By.xpath("//*[@text='ALLOW']");	
+	By btnInicio = By.xpath("//*[@text='INICIO']");
+	By btnSeleccionarUbicacion=By.xpath("//*[@text='Tu ubicación :']");
 	By btnUbicacion=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup");
 	/////////////////////////////////////Elegir Servicio/////////////////////////////////////////////
 	By btnFiltroServicios=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]");
@@ -61,10 +62,19 @@ public class CrearPeticionServicioPage extends BaseTest{
 		driver.findElement(btnEntrar).click();
 		Thread.sleep(30000);
 	}
-	public void clickPermitirUbicacion()throws InterruptedException {
-		driver.findElement(btnPermitirUbicacion).click();
-		Thread.sleep(9000);
+	public void permisosAllow() throws InterruptedException{
+		if(exist(btnAllow) != null) {
+
+			driver.findElement(btnAllow).click();
+			Thread.sleep(15000);
+		}else {
+		}
 		
+	}
+	public void clickInicio() throws InterruptedException
+	{
+		driver.findElement(btnInicio).click();
+		Thread.sleep(5000);
 	}
 	public void clickSeleccionarUbicacion()throws InterruptedException {
 		driver.findElement(btnSeleccionarUbicacion).click();

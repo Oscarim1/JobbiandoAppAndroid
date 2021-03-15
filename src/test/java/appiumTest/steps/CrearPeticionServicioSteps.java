@@ -19,7 +19,7 @@ public class CrearPeticionServicioSteps extends BaseTest {
 	 
 	 try{
 		 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
-		 Thread.sleep(20000);
+		 Thread.sleep(25000);
 		 page = new CrearPeticionServicioPage(elemento);		
 		 page.correoSolicitante(emailSolicitante);
 		 page.clickOcultarTeclado();		
@@ -37,9 +37,8 @@ public class CrearPeticionServicioSteps extends BaseTest {
 	@And("Buscar servicio en inicio")
 	public void buscar_servicio_en_inicio() throws Throwable {
 		page = new CrearPeticionServicioPage(elemento);
-		if(elementExist("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]") != null ) {
-			page.clickPermitirUbicacion();			
-			}else {}
+		page.permisosAllow();
+		page.clickInicio();
 		page.clickSeleccionarUbicacion();
 		page.clickUbicacion();
 		

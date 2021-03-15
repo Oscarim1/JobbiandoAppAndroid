@@ -24,11 +24,13 @@ public class CrearOfertaDeServicioSteps extends BaseTest {
 	 
 	 try{
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
-		 Thread.sleep(15000);
+		 Thread.sleep(25000);
 		 page = new CrearOfertaDeServicioPage(elemento);
 		 page.correoPrestador(emailPrestador); 
+		 page.clickOcultarTeclado();
 		 page.passPrestador(passPrestador);
-
+		 page.clickOcultarTeclado();
+		 page.clickEntrar();
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
          exp.printStackTrace();
