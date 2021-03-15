@@ -1,5 +1,5 @@
 @Ciclo1
-Feature: Definir perfil y categorías del prestador
+Feature: Definir perfil y categorias del prestador
 
   Scenario: Definir Categorias Prestador
     Given Para categorias Completar Login y entrar

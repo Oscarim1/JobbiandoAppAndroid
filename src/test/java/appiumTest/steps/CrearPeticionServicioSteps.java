@@ -42,6 +42,7 @@ public class CrearPeticionServicioSteps extends BaseTest {
 			}else {}
 		page.clickSeleccionarUbicacion();
 		page.clickUbicacion();
+		page.clickFiltroServicios();
 		
 	}
 
