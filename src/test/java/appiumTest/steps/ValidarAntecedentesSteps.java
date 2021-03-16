@@ -21,8 +21,10 @@ public class ValidarAntecedentesSteps extends BaseTest {
 	public void abrir_navegador() throws Throwable {
 	 
 	 try{
-		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
+		 openNavegator(configFileReader.getappPackageNavegator(),configFileReader.getappActivityNavegator());
 		 Thread.sleep(15000);
+		 /*openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
+		 Thread.sleep(15000);*/
 		 RegistroData.dataAdministrador();
 		 page = new ValidarAntecedentesPage(elemento);
 		 page.iniciarSesion();

@@ -50,7 +50,7 @@ public class RegistroSolicitanteSteps extends BaseTest {
 	    page.enterFechaNacimiento("12 de 05 de 1995");	   
 	    page.enterCorreo(RegistroData.emailSolicitante);	    
 	    page.enterContrasena(RegistroData.passSolicitante);	    
-	    page.clickCedulaDeIdentidad(RegistroData.runSolicitanteNew);	    
+	    page.clickCedulaDeIdentidad(RegistroData.runPrestadorNuevo);	    
 	    page.enterIdentificador(RegistroData.numSerieSolicitante);	    
 	    page.enterCalle(RegistroData.calleSolicitante);	    
 	    page.enterDireccion(RegistroData.ubicacionSolicitante);	    

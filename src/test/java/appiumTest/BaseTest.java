@@ -48,7 +48,7 @@ public class BaseTest {
 		
 	}
 	
-	public static void openNavegator() throws Exception {
+	public static void openNavegator(String rol1,String rol2) throws Exception {
 		
 		DesiredCapabilities cap= new DesiredCapabilities();
 
@@ -56,10 +56,11 @@ public class BaseTest {
 		cap.setCapability("udid", configFileReader.getUdid());
 		cap.setCapability("platformName", configFileReader.getPlatformName());
 		cap.setCapability("platformVersion", configFileReader.getPlatformVersion());
+		cap.setCapability("chromedriverExecutable","C:/Users/Oscar/eclipse-workspace/GitRakidwamAppium/src/test/resources/drivers/chromedriver.exe");
+		cap.setCapability("appPackage",rol1);
+		cap.setCapability("appActivity",rol2);
 		
-		cap.setCapability("appPackage","com.android.chrome");
-		cap.setCapability("appActivity","com.google.android.apps.chrome.Main");
-		driver.get("https://app.jobbiando.cl/login");
+		//driver.get("https://app.jobbiando.cl/login");
 		
 		URL url=new URL(configFileReader.getApplicationUrl());	
 		driver = new AppiumDriver<MobileElement>(url,cap);
