@@ -17,6 +17,8 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 import utils.PropertyLoader;
 
 public class BaseTest {
@@ -32,6 +34,14 @@ public class BaseTest {
 	public String device = System.getProperty("device");
 	public PropertyLoader loadproperty = new PropertyLoader();
 	
+	
+	//HARDCODE VALUES
+	public String emailAdmin="camilatoro200@gmail.com";
+	public String passAdmin="190858111";
+	public String precio = "10000";
+	public String emailPrestador52="randomail52@gmailnator.com";
+	public String emailSolicitante="randomail13@gmailnator.com";
+	public String passSolicitante="Hola1234";
 	
 	public void openApp(String rol1,String rol2) throws Exception {
 		 
