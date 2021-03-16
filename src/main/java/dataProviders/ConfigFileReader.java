@@ -89,17 +89,17 @@ public class ConfigFileReader {
 	 }
  
  public String getappPackageSolicitante() {
-	 String appPackagePrestador = properties.getProperty("appPackagePrestador");
-	 if(appPackagePrestador != null) 
-		 return appPackagePrestador;
+	 String appPackageSolicitante = properties.getProperty("appPackageSolicitante");
+	 if(appPackageSolicitante != null) 
+		 return appPackageSolicitante;
 	 else 
-		 throw new RuntimeException("appPackagePrestador no esta especificado en Configuration.properties.");
+		 throw new RuntimeException("appPackageSolicitante no esta especificado en Configuration.properties.");
 	 }
  
  public String getappActivitySolicitante() {
-	 String appActivityPrestador = properties.getProperty("appActivityPrestador");
-	 if(appActivityPrestador != null) 
-		 return appActivityPrestador;
+	 String appActivitySolicitante = properties.getProperty("appActivitySolicitante");
+	 if(appActivitySolicitante != null) 
+		 return appActivitySolicitante;
 	 else 
 		 throw new RuntimeException("appPackagePrestador no esta especificado en Configuration.properties.");
 	 }

@@ -8,7 +8,7 @@ import appiumTest.BaseTest;
 import io.appium.java_client.MobileElement;
 
 
-public class ValidarAntecedentesPage extends BaseTest {
+public class ResuelveReclamoPage extends BaseTest {
 	MobileElement elemento=null; 
 	By btnOlvideContrasena = By.xpath("//*[@text=\"Olvidaste tu contraseña?\"]");
 	By btnGoBackLogin = By.xpath("//*[@text=\"Go back to login\"]");
@@ -17,16 +17,19 @@ public class ValidarAntecedentesPage extends BaseTest {
 	By btnEntrar  = By.xpath("//*[@resource-id=\"btnEntrar\"]");	
 
 	By btnBarraLateral = By.className("android.widget.Button");
-	By btnRevisarAntecedentes = By.xpath("//*[@text=\"Revisar antecedentes\"]");	
-	By btnFiltro = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View[3]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[3]/android.widget.EditText\r\n");
-	By btnAntecedentes = By.xpath("//*[@text=\"Certificado de antecedentes\"]");
-	By btnAntecedenteUsuario = By.xpath("//*[@text=\"Revisar Antecedente!\"]");
+	By btnFiltrarReclamo = By.xpath("//*[@text=\"Filtrar Reclamos\"]");	
+	By btnFiltro = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View[3]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[3]/android.widget.EditText");
+	By btnReclamo = By.xpath("//*[@text=\"Me robó herramientas.\"]");
+	By btnResolverReclamo = By.xpath("//*[@resource-id='btnResolver0']");
 	By btnRevisarAntecedenteUsuario = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View[3]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[5]/android.widget.GridView/android.view.View[3]/android.view.View/android.view.View/android.widget.Button");
 	
-	By btnVerificarAntecedente = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.app.Dialog/android.widget.Button[1]");
-	By btnYes = By.xpath("//*[@resource-id='btnYes']");
+	By btnTipoSolucion = By.xpath("//*[@resource-id='selectTipo']");
+	By btnOpcion = By.xpath("//*[@resource-id='option0']");
+	By btnDescripcion = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View[3]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View/android.view.View[17]/android.view.View/android.view.View[1]/android.view.View[3]/android.view.View/android.view.View/android.widget.EditText");	
+	By btnRegistrar = By.xpath("//*[@resource-id='btnRegistrar']");
 	
-	public ValidarAntecedentesPage(MobileElement elemento) 
+
+	public ResuelveReclamoPage(MobileElement elemento) 
 	{
 		
 		this.elemento=elemento;
@@ -60,9 +63,9 @@ public class ValidarAntecedentesPage extends BaseTest {
 		
 		driver.findElement(btnBarraLateral).click();
 		Thread.sleep(3000);
-		this.funcionScrollDown(0.9,0.1);
+		this.funcionScrollDown(0.8,0.6);
 		Thread.sleep(3000);
-		driver.findElement(btnRevisarAntecedentes).click();
+		driver.findElement(btnFiltrarReclamo).click();
 		Thread.sleep(3000);
 	}
 	
@@ -73,21 +76,32 @@ public class ValidarAntecedentesPage extends BaseTest {
 		driver.findElement(btnFiltro).sendKeys(nombre);
 		Thread.sleep(3000);
 		
+		
 
 	}
 	
-	public void validarAntecedente() throws InterruptedException {
+	public void resuelveReclamo() throws InterruptedException {
 		
-		driver.findElement(btnAntecedentes).click();
+		driver.findElement(btnReclamo).click();
 		Thread.sleep(5000);
-		driver.findElement(btnRevisarAntecedenteUsuario).click();
-		Thread.sleep(5000);
-		driver.findElement(btnVerificarAntecedente).click();
+		driver.findElement(btnResolverReclamo).click();
+		Thread.sleep(5000);	
+		
+	}
+	
+public void registrar(String resolucion) throws InterruptedException {
+		
+		this.funcionScrollDown(0.9,0.1);
+		driver.findElement(btnTipoSolucion).click();
 		Thread.sleep(3000);
-		driver.findElement(btnYes).click();
+		driver.findElement(btnOpcion).click();
+		Thread.sleep(3000);
+		driver.findElement(btnDescripcion).sendKeys(resolucion);
+		Thread.sleep(3000);
+		driver.findElement(btnRegistrar).click();
 		Thread.sleep(3000);
 		
-
+		
 	}
 		
 }

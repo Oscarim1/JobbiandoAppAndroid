@@ -34,14 +34,14 @@ public class BaseTest {
 	
 	public void openApp(String rol1,String rol2) throws Exception {
 		 
-	        // Recuperaci�n del fichero de propiedades de la ruta y nombre de la aplicaci�n m�vil
+	        // Recuperaci?n del fichero de propiedades de la ruta y nombre de la aplicaci?n m?vil
 	        String ipApp=loadproperty.loadProperties(appiumON).getProperty("AppiumServerIP");
 
-	        // Generaci�n de las capabilites a nivel del servicio de Appium
+	        // Generaci?n de las capabilites a nivel del servicio de Appium
 	        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 	        desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
 
-	        // Generaci�n de las capabilites a nivel de driver
+	        // Generaci?n de las capabilites a nivel de driver
 	        DesiredCapabilities clientCapabilities = new DesiredCapabilities();
 	        clientCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 	        clientCapabilities.setCapability(MobileCapabilityType.UDID, device);
@@ -82,11 +82,11 @@ public class BaseTest {
 			
 			String ipApp=loadproperty.loadProperties(appiumON).getProperty("AppiumServerIP");
 
-	        // Generaci�n de las capabilites a nivel del servicio de Appium
+	        // Generaci?n de las capabilites a nivel del servicio de Appium
 	        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 	        desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
 
-	        // Generaci�n de las capabilites a nivel de driver
+	        // Generaci?n de las capabilites a nivel de driver
 	        DesiredCapabilities clientCapabilities = new DesiredCapabilities();
 	        clientCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 	        clientCapabilities.setCapability(MobileCapabilityType.UDID, device);
