@@ -26,6 +26,7 @@ public class AceptarPeticionServicioSteps extends BaseTest{
 			 page.enterContrasena(passPrestador);
 			 page.clickOcultarTeclado();
 			 page.clickEntrar();
+			 
 
 	     }catch(Exception exp) {
 	         System.out.println(exp.getMessage());
@@ -38,6 +39,7 @@ public class AceptarPeticionServicioSteps extends BaseTest{
 	@And("Ingresar a pestana Servicios")
 	public void ingresar_a_pestana_Servicios() throws Throwable {
 		 page = new AceptarPeticionServicioPage(elemento);
+		 page.permisosDeny();
 		 page.clickPestanaServicios();
 	}
 

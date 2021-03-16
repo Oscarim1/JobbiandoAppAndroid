@@ -2,6 +2,7 @@ package appiumTest;
 
 import java.net.URL;
 import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -15,9 +16,7 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class BaseTest {
 	
-	 
 	public static AppiumDriver<MobileElement> driver;
-	
 	
 	static ConfigFileReader configFileReader= new ConfigFileReader();
 	
@@ -157,6 +156,4 @@ public class BaseTest {
          }
 
      }	
-	 
-
 }

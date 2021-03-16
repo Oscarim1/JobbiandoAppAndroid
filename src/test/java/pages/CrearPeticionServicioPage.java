@@ -19,20 +19,24 @@ public class CrearPeticionServicioPage extends BaseTest{
 	/////////////////////////////////////Elegir Servicio/////////////////////////////////////////////
 	By btnFiltroServicios=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]");
 	By btnFiltroCategoria=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.Spinner[1]");
-	By btnCategoria=By.xpath("//*[@text=\"Jardineria\"]");
+	By btnCategoria=By.xpath("//*[@text=\"Servicios de cuidado personal y bienestar\"]");
 	By btnFiltroSubCategoria=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.Spinner[2]");
-	By btnSubCategoria=By.xpath("//*[@text=\"Cortar Césped\"]");
+	By btnSubCategoria=By.xpath("//*[@text=\"Masajes\"]");
 	By btnAplicarFiltro=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[7]");
 	/////////////////////////////////////Elegir Servicio/////////////////////////////////////////////
 	By btnSeleccionarServicio=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView[2]/android.view.ViewGroup/android.view.ViewGroup");
-	By btnSolicitarServicio=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[11]");
-	By txtDescripcion=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.EditText");	
-	By btnSeleccionarFecha=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[2]");	
-	By btnAceptarFecha=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]");
-	By btnSeleccionarDireccion=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.widget.Spinner");
-	By btnDireccion=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[2]");
+	By btnSolicitarServicio=By.xpath("//*[@text=\"SOLICITAR SERVICIO\"]");	
+	
+	By txtDescripcion=By.xpath("//*[@text=\"ingrese descripcion aqui\"]");	
+	By btnSeleccionarFecha=By.xpath("//*[@text=\"Seleccione fecha para el servicio\"]");
+	By btnOk = By.xpath("//*[@resource-id=\"android:id/button1\"]");
+	
+	//By btnAceptarFecha=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]");
+	By btnSeleccionarDireccion = By.xpath("//*[@resource-id=\"android:id/text1\"]");
+	By btnDireccion=By.xpath("//*[@text=\"Casa\"]");
 	By btnOcultarTeclado2=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout[2]");
-	By btnGenerarPeticion=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]");
+	By btnSolicitarPeticion=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]");
+	
 	public CrearPeticionServicioPage(MobileElement elemento) throws InterruptedException
 	{
 		this.elemento=elemento;
@@ -91,7 +95,10 @@ public class CrearPeticionServicioPage extends BaseTest{
 		driver.findElement(btnFiltroServicios).click();
 		Thread.sleep(9000);	
 		driver.findElement(btnFiltroCategoria).click();
-		Thread.sleep(4000);	
+		Thread.sleep(4000);
+		while(exist(btnCategoria)==null) {
+			this.funcionScrollDown(0.8, 0.4);
+		}
 		driver.findElement(btnCategoria).click();
 		Thread.sleep(4000);	
 		driver.findElement(btnFiltroSubCategoria).click();
@@ -104,6 +111,9 @@ public class CrearPeticionServicioPage extends BaseTest{
 		
 	}
 	public void clickSeleccionarServicio() throws InterruptedException {
+		
+		this.funcionScrollHorizontal(0.6, 0.1);
+		
 		driver.findElement(btnSeleccionarServicio).click();
 		Thread.sleep(9000);	
 	}
@@ -126,7 +136,7 @@ public class CrearPeticionServicioPage extends BaseTest{
 		Thread.sleep(9000);	
 	}
 	public void clickAceptarFecha() throws InterruptedException {
-		driver.findElement(btnAceptarFecha).click();
+		driver.findElement(btnOk).click();
 		Thread.sleep(9000);	
 	}
 	public void clickSeleccionarDireccion() throws InterruptedException {
@@ -139,8 +149,12 @@ public class CrearPeticionServicioPage extends BaseTest{
 	}
 	
 	public void clickGenerarPeticion() throws InterruptedException {		
-		driver.findElement(btnOcultarTeclado2).click();
-		driver.findElement(btnGenerarPeticion).click();
+		if(exist(btnOcultarTeclado2)!=null) {
+			driver.findElement(btnOcultarTeclado2).click();
+			Thread.sleep(3000);	
+		}		
+		
+		driver.findElement(btnSolicitarPeticion).click();
 		Thread.sleep(9000);	
 	}
 }

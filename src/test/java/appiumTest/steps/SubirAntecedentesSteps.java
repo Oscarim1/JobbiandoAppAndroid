@@ -20,14 +20,14 @@ public class SubirAntecedentesSteps extends BaseTest{
 	public void completar_login_y_entrar() throws Throwable {
 		 try{			 
 			 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
-			 Thread.sleep(35000);
+			 Thread.sleep(15000);
 	     }catch(Exception exp) {
 	         System.out.println(exp.getMessage());
 	         exp.printStackTrace();
 	         Thread.sleep(1000);         
 	     }
 		  page=new SubirAntecedentesPage(elemento);
-		  page.enterCorreo("randomail259@gmailnator.com");
+		  page.enterCorreo(emailPrestador);
 		  
 		  page.enterContrasena(passPrestador);		 
 		  page.clickOcultarTeclado();		 
@@ -70,7 +70,7 @@ public class SubirAntecedentesSteps extends BaseTest{
 		page.clickTomarFoto();
 	
 	}
-	@And("Hacer click en Subir Imagen ")
+	@And("Hacer click en Subir Imagen")
 	public void hacer_click_en_Subir_Imagen() throws Throwable{
 		page.clickAceptar(); 		
 	}
