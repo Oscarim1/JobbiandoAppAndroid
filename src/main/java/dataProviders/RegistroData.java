@@ -2,11 +2,16 @@ package dataProviders;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.services.sheets.v4.Sheets;
+import com.google.api.services.sheets.v4.model.AppendValuesResponse;
+import com.google.api.services.sheets.v4.model.ClearValuesRequest;
+import com.google.api.services.sheets.v4.model.ClearValuesResponse;
+import com.google.api.services.sheets.v4.model.UpdateValuesResponse;
 import com.google.api.services.sheets.v4.model.ValueRange;
 
 
@@ -48,10 +53,10 @@ public class RegistroData extends SheetsQuickstart {
     	final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
     	Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT)).setApplicationName(APPLICATION_NAME).build();
         ValueRange response = service.spreadsheets().values().get(SPREEDSHEET_ID, range).execute();
-        
+      
         
         List<List<Object>> values = response.getValues();
-        
+       
         if(values == null || values.isEmpty()) {
         	n++;
         	m++;
@@ -75,6 +80,12 @@ public class RegistroData extends SheetsQuickstart {
  			    nombreDirPrestador=(String) row.get(9);
  			    refPrestador=(String) row.get(10);
  			    
+ 			   ClearValuesRequest requestBody = new ClearValuesRequest();
+ 			   Sheets sheetsService = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT)).setApplicationName(APPLICATION_NAME).build();
+ 			   Sheets.Spreadsheets.Values.Clear request =
+ 					  sheetsService.spreadsheets().values().clear(SPREEDSHEET_ID, range, requestBody);
+ 			   ClearValuesResponse response1 = request.execute();
+ 			   System.out.println(response1);
  			    
  				}
         	}
@@ -89,10 +100,10 @@ public class RegistroData extends SheetsQuickstart {
 			Integer n=2;
 			Integer m=2;
 			Integer a=null;
-			
+			String valueInputOption="RAW";
 		while(a==null){	
 			
-			final String range = "PrestadorData!A"+n+":K"+m+"";
+			final String range = "SolicitanteData!A"+n+":K"+m+"";
 	    	final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
 	    	Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT)).setApplicationName(APPLICATION_NAME).build();
 	        ValueRange response = service.spreadsheets().values().get(SPREEDSHEET_ID, range).execute();
@@ -108,10 +119,10 @@ public class RegistroData extends SheetsQuickstart {
 	        	a=1;
 	        	System.out.println(n);
 	        	System.out.println(m);
-	        	 System.out.println("Datos obtenidos correctamente =)");
+	        	System.out.println("Datos obtenidos correctamente =)");
 	             for (int i = 0; i < values.size(); i++) {
 	            	 List<Object> row = values.get(i);
-	            	 nombresSolicitante=(String) row.get(0);
+	            	 nombresSolicitante=(String) row.get(0);       	 
 	            	 apellidosSolicitante=(String) row.get(1);
 	            	 emailSolicitante=(String) row.get(3);
 	            	 passSolicitante=(String) row.get(4);
@@ -121,12 +132,42 @@ public class RegistroData extends SheetsQuickstart {
 	            	 ubicacionSolicitante=(String) row.get(8);
 	            	 nombreDirSolicitante=(String) row.get(9);
 	            	 refPrestador=(String) row.get(10);
-	 			    
-	 			    
+	            	 
+	            	 
+	            	 List<List<Object>> valuesCrear = Arrays.asList(
+	            		        Arrays.asList(
+	            		        		
+	            		        )
+);
+	            		ValueRange body = new ValueRange()
+	            		        .setValues(valuesCrear);
+	            		UpdateValuesResponse result =
+	            		        service.spreadsheets().values().update(SPREEDSHEET_ID, range, body)
+	            		                .setValueInputOption(valueInputOption)
+	            		                .execute();
+	            		System.out.printf("%d cells updated.", result.getUpdatedCells());
+	            	 
+	            		
+	            		
+	            	 ClearValuesRequest requestBody = new ClearValuesRequest();
+	            	 Sheets sheetsService = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT)).setApplicationName(APPLICATION_NAME).build();
+	            	 Sheets.Spreadsheets.Values.Clear request =
+	            	 sheetsService.spreadsheets().values().clear(SPREEDSHEET_ID, range, requestBody);
+	            	 ClearValuesResponse response1 = request.execute();
+	            	 System.out.println(response1);
+	            	
 	 			}
+	           
+	            	 
 	        }
 		}         
-	}
+	
+		
+		}
+		
 }
+		
+		
+
 	           
 
