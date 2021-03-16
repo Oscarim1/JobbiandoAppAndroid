@@ -21,9 +21,12 @@ import java.security.GeneralSecurityException;
 import java.util.Collections;
 import java.util.List;
 public class SheetsQuickstart {
-
+		private static String sheetsService;
 		protected static final String APPLICATION_NAME = "Google Sheets API Java Quickstart";
-	    protected static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
+	    public static String SPREEDSHEET_ID = "1zXWlJbvdTUX82ahfUdTzjh1i-JlXPQua43gyg_5YX7E";
+		
+
+		protected static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 	    private static final String TOKENS_DIRECTORY_PATH = "tokens";
 	    private static final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS_READONLY);
 	    private static final String CREDENTIALS_FILE_PATH = "/credentials.json";
@@ -46,6 +49,8 @@ public class SheetsQuickstart {
 	        LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8888).build();
 	        return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
 	    }
+	    
+	    
 
 	  
 	
