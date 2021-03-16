@@ -10,8 +10,7 @@ import java.util.Properties;
 public class ConfigFileReader {
  
  private Properties properties;
- private final String propertyFilePath= "configs//Configuration.properties";
- 
+ public String propertyFilePath= "src//test//resources//configs//Configuration.properties";
  
  public ConfigFileReader(){
 	 BufferedReader reader;
@@ -71,6 +70,38 @@ public class ConfigFileReader {
 		 return platformVersion;
 	 else 
 		 throw new RuntimeException("platformVersion no esta especificado en Configuration.properties.");
+	 }
+
+ public String getappPackagePrestador() {
+	 String appPackagePrestador = properties.getProperty("appPackagePrestador");
+	 if(appPackagePrestador != null) 
+		 return appPackagePrestador;
+	 else 
+		 throw new RuntimeException("appPackagePrestador no esta especificado en Configuration.properties.");
+	 }
+ 
+ public String getappActivityPrestador() {
+	 String appActivityPrestador = properties.getProperty("appActivityPrestador");
+	 if(appActivityPrestador != null) 
+		 return appActivityPrestador;
+	 else 
+		 throw new RuntimeException("appPackagePrestador no esta especificado en Configuration.properties.");
+	 }
+ 
+ public String getappPackageSolicitante() {
+	 String appPackagePrestador = properties.getProperty("appPackagePrestador");
+	 if(appPackagePrestador != null) 
+		 return appPackagePrestador;
+	 else 
+		 throw new RuntimeException("appPackagePrestador no esta especificado en Configuration.properties.");
+	 }
+ 
+ public String getappActivitySolicitante() {
+	 String appActivityPrestador = properties.getProperty("appActivityPrestador");
+	 if(appActivityPrestador != null) 
+		 return appActivityPrestador;
+	 else 
+		 throw new RuntimeException("appPackagePrestador no esta especificado en Configuration.properties.");
 	 }
  
  public long getImplicitlyWait() { 

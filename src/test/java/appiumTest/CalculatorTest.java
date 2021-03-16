@@ -38,7 +38,6 @@ public class CalculatorTest {
 		
 		URL url = new URL("http://127.0.0.1:4723/wd/hub");
 		 
-		driver = new AppiumDriver<MobileElement>(url, cap);
 		
 		
 		System.out.println("Aplicacion inciada....");

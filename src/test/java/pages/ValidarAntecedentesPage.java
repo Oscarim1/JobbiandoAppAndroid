@@ -9,8 +9,7 @@ import appiumTest.BaseTest;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.touch.WaitOptions;
-import io.appium.java_client.touch.offset.PointOption;
+
 
 public class ValidarAntecedentesPage extends BaseTest {
 	MobileElement elemento=null; 
@@ -19,7 +18,7 @@ public class ValidarAntecedentesPage extends BaseTest {
 	By btnNoThanks = By.xpath("//*[@resource-id=\"com.android.chrome:id/negative_button\"]");
 	By btnBuscador = By.xpath("//*[@resource-id=\"com.android.chrome:id/search_box_text\"]");
 	By btnUrlBar = By.xpath("//*[@resource-id=\"com.android.chrome:id/url_bar\"]");
-	
+	By btnIr = By.xpath("//*[/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.TextView[2]]");
 
 	
 	public ValidarAntecedentesPage(MobileElement elemento) 
@@ -48,8 +47,9 @@ public class ValidarAntecedentesPage extends BaseTest {
 		Thread.sleep(5000);
 		System.out.println(url);
 		driver.findElement(btnUrlBar).sendKeys(url);
+		
 		Thread.sleep(3000);
-		//driver.findElement(btnBuscador).submit();
+		driver.findElement(btnIr).click();
 		Thread.sleep(3000);
 	}
 	

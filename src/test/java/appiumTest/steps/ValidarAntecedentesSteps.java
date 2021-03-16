@@ -4,6 +4,7 @@ package appiumTest.steps;
 import java.util.concurrent.TimeUnit;
 
 import appiumTest.BaseTest;
+import cucumber.api.CucumberOptions;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -12,7 +13,12 @@ import io.appium.java_client.MobileElement;
 import pages.RegistroPrestadorPage;
 import pages.ValidarAntecedentesPage;
 
-
+@CucumberOptions(
+		strict=true,
+		monochrome=true,
+		features="features/subirAntecedentes.feature",
+		plugin= {"pretty"}
+		)
 public class ValidarAntecedentesSteps extends BaseTest {
 	
 	ValidarAntecedentesPage page=null;
