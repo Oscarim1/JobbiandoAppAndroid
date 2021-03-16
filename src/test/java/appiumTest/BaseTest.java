@@ -57,12 +57,13 @@ public class BaseTest {
 		cap.setCapability("platformName", configFileReader.getPlatformName());
 		cap.setCapability("platformVersion", configFileReader.getPlatformVersion());
 		
-		//cap.setCapability("appPackage","com.android.chrome");
-		//cap.setCapability("appActivity","com.google.android.apps.chrome.Main");
-		
+		cap.setCapability("appPackage","com.android.chrome");
+		cap.setCapability("appActivity","com.google.android.apps.chrome.Main");
+		driver.get("https://app.jobbiando.cl/login");
 		
 		URL url=new URL(configFileReader.getApplicationUrl());	
 		driver = new AppiumDriver<MobileElement>(url,cap);
+		
 		System.out.println("Aplicacion iniciada...");
 		String time = driver.getDeviceTime();
 		System.out.println(time);

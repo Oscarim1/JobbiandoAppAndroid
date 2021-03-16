@@ -38,6 +38,10 @@ public class RegistroData extends SheetsQuickstart {
     public static String nombreDirSolicitante = "";
     public static String refSolicitante = "";
     
+    //DATOS ADMINISTRADOR
+    public static String correoAdministrador = "";
+    public static String passAdministrador = "";
+    
 	public static void dataRegistroPrestador(String... args) throws IOException, GeneralSecurityException {
     	
     	
@@ -59,8 +63,8 @@ public class RegistroData extends SheetsQuickstart {
 				List<Object> row = values.get(i);
 				nombresPrestador=(String) row.get(0);
 				apellidosPrestador=(String) row.get(1);
-				emailPrestador=(String) row.get(2);
-				passPrestador=(String) row.get(3);
+				emailPrestador=(String) row.get(3);
+				passPrestador=(String) row.get(4);
 				runPrestador=(String) row.get(4);
 				numSeriePrestador=(String) row.get(5);
 			    callePrestador=(String) row.get(6);
@@ -115,6 +119,34 @@ public class RegistroData extends SheetsQuickstart {
 	                System.out.println(nombreDirSolicitante);
 	                System.out.println(refSolicitante);
 	   
+				}
+	        }
+	    }
+		
+		public static void dataAdministrador(String... args) throws IOException, GeneralSecurityException {
+	    	
+	    	
+	        final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+	        
+	        final String range = "AdministradorData!A2:B2";
+	       
+	        Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT)).setApplicationName(APPLICATION_NAME).build();
+	        ValueRange response = service.spreadsheets().values().get(SPREEDSHEET_ID, range).execute();
+	        
+	        List<List<Object>> values = response.getValues();
+	        if (values == null || values.isEmpty()) {
+	        	
+	            System.out.println("No se han encontrado datos...");
+	        } else {
+	        	
+	            System.out.println("Datos obtenidos correctamente =)");
+	            for (int i = 0; i < values.size(); i++) {
+					List<Object> row = values.get(i);
+					correoAdministrador=(String) row.get(0);
+					passAdministrador=(String) row.get(1);
+					
+	                System.out.println(correoAdministrador);
+	                System.out.println(passAdministrador);	   
 				}
 	        }
 	    }
