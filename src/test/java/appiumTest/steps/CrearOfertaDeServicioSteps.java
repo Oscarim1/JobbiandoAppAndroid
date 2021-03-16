@@ -74,6 +74,7 @@ public class CrearOfertaDeServicioSteps extends BaseTest {
 	public void hacer_click_en_boton_registrar_servicio() throws Throwable {
 		page=new CrearOfertaDeServicioPage(elemento);
 	    page.clickPublicar();
+	    driver.quit();
 	   
 	}
 

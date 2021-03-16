@@ -60,13 +60,14 @@ public class GenerarSolicitudSteps extends BaseTest{
 		page.clickPosicion();
 		page.clickSeleccionarPosicion();
 		page.clickSiguiente2();
-		page.clickPublicar();
+		
 		
 		
 	}
 
 	@Then("Hacer click en publicar solicitud")
 	public void hacer_click_en_publicar_solicitud() throws Throwable {
-	    
+		page.clickPublicar();
+		driver.quit();
 	}
 }
