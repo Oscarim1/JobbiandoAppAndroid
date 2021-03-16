@@ -59,5 +59,6 @@ public class AceptarPeticionServicioSteps extends BaseTest{
 	public void hacer_click_en_boton_aceptar_peticion() throws Throwable {
 		 page = new AceptarPeticionServicioPage(elemento);
 		 page.clickAceptarPeticion();
+		 driver.quit();
 	}
 }

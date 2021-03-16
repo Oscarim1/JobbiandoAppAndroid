@@ -73,7 +73,7 @@ public class CrearPeticionServicioSteps extends BaseTest {
 	public void generar_peticion_de_servicio() throws Throwable {
 		page=new CrearPeticionServicioPage(elemento);
 		page.clickGenerarPeticion();
-	    
+		driver.quit();
 	}
 
 	

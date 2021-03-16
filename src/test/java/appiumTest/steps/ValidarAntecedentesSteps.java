@@ -58,6 +58,6 @@ public class ValidarAntecedentesSteps extends BaseTest {
 
 	@Then("Salir del navegador")
 	public void ir_a_sitio_de_login() throws Throwable {
-	    
+		driver.quit();
 	}
 }

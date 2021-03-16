@@ -67,5 +67,6 @@ public class RealizarPagoSolicitudDesdePeticionSteps extends BaseTest{
 	public void realizar_el_pago_de_la_solicitud() throws Throwable {
 		 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
 		 page.clickTerminar();
+		 driver.quit();
 	}
 }

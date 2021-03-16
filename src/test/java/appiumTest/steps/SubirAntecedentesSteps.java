@@ -77,7 +77,8 @@ public class SubirAntecedentesSteps extends BaseTest{
 	@Then("Hacer click en boton Subir Antecedentes")
 	public void hacer_click_en_boton_Subir_Antecedentes() throws Throwable {
 		page = new SubirAntecedentesPage(elemento);
-		page.clickSubirAntecedentes(); 	    
+		page.clickSubirAntecedentes(); 	
+		driver.quit();
 	}
 
 }

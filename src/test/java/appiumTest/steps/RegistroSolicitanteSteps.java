@@ -61,6 +61,7 @@ public class RegistroSolicitanteSteps extends BaseTest {
 		page = new RegistroSolicitantePage(elemento);	
 	    page.clickCrearCuenta();
 	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+	    driver.quit();
 	}
 
 	

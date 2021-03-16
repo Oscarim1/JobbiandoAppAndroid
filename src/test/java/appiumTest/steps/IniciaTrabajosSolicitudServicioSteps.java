@@ -68,6 +68,7 @@ public class IniciaTrabajosSolicitudServicioSteps extends BaseTest {
 		page=new IniciaTrabajosSolicitudServicioPage(elemento);
 		page.clickAvanzarEstadoEjecutandoServicios();
 		page.inputServicio();
+		driver.quit();
 	}
 
 }

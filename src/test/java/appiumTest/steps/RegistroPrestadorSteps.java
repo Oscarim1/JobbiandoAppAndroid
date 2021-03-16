@@ -21,8 +21,9 @@ public class RegistroPrestadorSteps extends BaseTest {
 	 
 	 try{
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());	
-		 RegistroData reg=new RegistroData();	
-		 reg.dataRegistroPrestador();
+		
+		 RegistroData.dataRegistroPrestador();
+		 
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
          exp.printStackTrace();
@@ -40,17 +41,18 @@ public class RegistroPrestadorSteps extends BaseTest {
 	@When("Completar el formulario de registro del prestador")
 	public void completar_el_formulario_de_registro_del_prestador() throws Throwable {	
 		page=new RegistroPrestadorPage(elemento);
-	    page.enterNombres("LLUÍS");	   
-	    page.enterApellidos("ZAMBUDIO FIGULS");	    
+		
+	    page.enterNombres(RegistroData.nombresPrestador);	   
+	    page.enterApellidos(RegistroData.apellidosPrestador);	    
 	    page.enterFechaNacimiento("12 de 05 de 1995");	   
-	    page.enterCorreo("randomail215@gmailnator.com");    
-	    page.enterContrasena("Hola1234");    
-	    page.clickCedulaDeIdentidad("980631966");    
-	    page.enterIdentificador("232218529");	    
-	    page.enterCalle("Sin calle");	    
-	    page.enterDireccion("L-331, Colbun, Colbún, Maule, Chile");	    
-	    page.enterNombreDireccion("Casa");    
-	    page.enterReferencia("Sin referencia"); 
+	    page.enterCorreo(RegistroData.emailPrestador);    
+	    page.enterContrasena(RegistroData.passPrestador);    
+	    page.clickCedulaDeIdentidad(RegistroData.runPrestadorNuevo);    
+	    page.enterIdentificador(RegistroData.numSeriePrestador);	    
+	    page.enterCalle(RegistroData.callePrestador);	    
+	    page.enterDireccion(RegistroData.ubicacionPrestador);	    
+	    page.enterNombreDireccion(RegistroData.nombreDirPrestador);    
+	    page.enterReferencia(RegistroData.refPrestador); 
 	}
 
 	@Then("click en boton registrar prestador")
@@ -58,6 +60,7 @@ public class RegistroPrestadorSteps extends BaseTest {
 		page = new RegistroPrestadorPage(elemento);	
 	    page.clickCrearCuenta();
 	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+	    driver.quit();
 	}
 
 	

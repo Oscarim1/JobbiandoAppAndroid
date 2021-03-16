@@ -75,6 +75,6 @@ public class ResuelveReclamoSteps extends BaseTest {
 		page=new ResuelveReclamoPage(elemento);	    
 	    Thread.sleep(4000);
 	    page.registrar("Se le devolvera el dinero en su totalidad.");
-		 
+	    driver.quit();
 	}
 }

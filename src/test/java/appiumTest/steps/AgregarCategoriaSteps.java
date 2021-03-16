@@ -45,7 +45,8 @@ public class AgregarCategoriaSteps extends BaseTest {
 	@Then("Seleccionar una categoria")
 	public void seleccionar_una_categoria() throws Throwable {
 		page=new AgregarCategoriaPage(elemento);
-	    page.clickAgregarCategoria();  
+	    page.clickAgregarCategoria(); 
+	    driver.quit();
 	}
 	
 }

@@ -63,5 +63,6 @@ public class EvaluarExperienciaSolicitanteSteps extends BaseTest {
 	public void click_en_Enviar_Evaluacion() throws Throwable {
 		page=new EvaluarExperienciaSolicitantePage(elemento);
 		page.clickEnviarEvaluacion();
+		driver.quit();
 	}
 }

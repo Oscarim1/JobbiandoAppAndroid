@@ -54,6 +54,7 @@ public class FinalizaTrabajosSolicitudServicioSteps extends BaseTest {
 	public void hacer_click_en_boton_avanzar_a_terminado() throws Throwable {
 		page=new FinalizaTrabajosSolicitudServicioPage(elemento);
 		page.clickAvanzarEstadoTerminado();
+		driver.quit();
 	}
 
 }

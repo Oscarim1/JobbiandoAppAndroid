@@ -71,6 +71,7 @@ public class PresentaReclamoSteps extends BaseTest {
 		page.clickReclamo();
 		Thread.sleep(5000);
 		page.clickEnviar("Este es un reclamo");
+		driver.quit();
 	}
 
 }

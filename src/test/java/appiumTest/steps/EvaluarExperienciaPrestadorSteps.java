@@ -73,6 +73,7 @@ public class EvaluarExperienciaPrestadorSteps extends BaseTest {
 		page=new EvaluarExperienciaPrestadorPage(elemento);
 		page.EvaluarExperiencia("Esta es una descripcion");
 		Thread.sleep(5000);
+		driver.quit();
 	}
 
 }
