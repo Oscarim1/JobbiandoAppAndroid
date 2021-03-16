@@ -7,6 +7,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
+import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
 
 import pages.RegistroPrestadorPage;
@@ -19,8 +20,9 @@ public class RegistroPrestadorSteps extends BaseTest {
 	public void abrir_app_prestador() throws Throwable {
 	 
 	 try{
-		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
-
+		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());	
+		 RegistroData reg=new RegistroData();	
+		 reg.dataRegistroPrestador();
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
          exp.printStackTrace();
