@@ -21,7 +21,8 @@ import java.security.GeneralSecurityException;
 import java.util.Collections;
 import java.util.List;
 public class SheetsQuickstart {
-		private static String sheetsService;
+		
+			
 		protected static final String APPLICATION_NAME = "Google Sheets API Java Quickstart";
 	    public static String SPREEDSHEET_ID = "1zXWlJbvdTUX82ahfUdTzjh1i-JlXPQua43gyg_5YX7E";
 		
