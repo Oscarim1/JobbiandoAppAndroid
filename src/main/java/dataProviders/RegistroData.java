@@ -35,6 +35,7 @@ public class RegistroData extends SheetsQuickstart {
     public static String emailSolicitante = "";
     public static String passSolicitante = "";
     public static String runSolicitante = "";
+    public static String runSolicitanteNuevo = "";
     public static String numSerieSolicitante = "";
     public static String calleSolicitante = "";  
     public static String ubicacionSolicitante = "";
@@ -80,7 +81,8 @@ public class RegistroData extends SheetsQuickstart {
  			    nombreDirPrestador=(String) row.get(9);
  			    refPrestador=(String) row.get(10);
  			    
- 			   ValueRange appendBody= new ValueRange().setValues(Arrays.asList(
+ 			   @SuppressWarnings("unchecked")
+			ValueRange appendBody= new ValueRange().setValues(Arrays.asList(
  		      			Arrays.<Object>asList(
  		      					""+nombresPrestador+"",
  		      					"",
@@ -127,10 +129,11 @@ public class RegistroData extends SheetsQuickstart {
 		while(a==null){	
 			
 			final String range = "SolicitanteData!A"+n+":K"+m+"";
+			final String rangeCrearDatos = "DatosUsadosSolicitante!A"+n+":K"+m+"";
 	    	final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
 	    	Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT)).setApplicationName(APPLICATION_NAME).build();
 	        ValueRange response = service.spreadsheets().values().get(SPREEDSHEET_ID, range).execute();
-	        String valueInputOption="RAW";
+	        
 	        
 	        List<List<Object>> values = response.getValues();
 	        
@@ -150,13 +153,35 @@ public class RegistroData extends SheetsQuickstart {
 	            	 emailSolicitante=(String) row.get(3);
 	            	 passSolicitante=(String) row.get(4);
 	            	 runSolicitante=(String) row.get(5);
+	            	 runSolicitanteNuevo=runSolicitante.replace("-","");
 	            	 numSerieSolicitante=(String) row.get(6);
 	            	 calleSolicitante=(String) row.get(7);
 	            	 ubicacionSolicitante=(String) row.get(8);
 	            	 nombreDirSolicitante=(String) row.get(9);
-	            	 refPrestador=(String) row.get(10);
+	            	 refSolicitante=(String) row.get(10);
 	            	 
-	            	
+	            	 @SuppressWarnings("unchecked")
+					ValueRange appendBody= new ValueRange().setValues(Arrays.asList(
+	  		      			Arrays.<Object>asList(
+	  		      					""+nombresSolicitante+"",
+	  		      					"",
+	  		      					""+apellidosSolicitante+"",
+	  		      					""+emailSolicitante+"",
+	  		      					""+passSolicitante+"",
+	  		      					""+runSolicitanteNuevo+"",
+	  		      					""+numSerieSolicitante+"",
+	  		      					""+calleSolicitante+"",
+	  		      					""+ubicacionSolicitante+"",
+	  		      					""+nombreDirSolicitante+"",
+	  		      					""+refSolicitante+""
+	  		      					)));
+	  			   
+	  			  Sheets sheetsServices = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT)).setApplicationName(APPLICATION_NAME).build();
+	  				  AppendValuesResponse appendResult = sheetsServices.spreadsheets().values().append(SPREEDSHEET_ID,rangeCrearDatos,appendBody)
+	  						  .setValueInputOption("RAW")
+	  						  .setInsertDataOption("INSERT_ROWS")
+	  						  .setIncludeValuesInResponse(true)
+	  						  .execute();
 
 	            	 ClearValuesRequest requestBody = new ClearValuesRequest();
 	            	 Sheets sheetsService = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT)).setApplicationName(APPLICATION_NAME).build();
