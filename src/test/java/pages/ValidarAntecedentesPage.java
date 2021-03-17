@@ -22,7 +22,7 @@ public class ValidarAntecedentesPage extends BaseTest {
 	By txtEmail  = By.xpath("//*[@resource-id=\"mat-input-0\"]");
 	By txtPass  = By.xpath("//*[@resource-id=\"mat-input-1\"]");
 	By btnEntrar  = By.xpath("//*[@resource-id=\"btnEntrar\"]");	
-
+	By btnBlock = By.xpath("//*[@resource-id=\"android:id/button2\"]");
 	By btnBarraLateral = By.className("android.widget.Button");
 	By btnRevisarAntecedentes = By.xpath("//*[@text=\"Revisar antecedentes\"]");	
 	By btnFiltro = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View[3]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[3]/android.widget.EditText\r\n");
@@ -81,6 +81,14 @@ public class ValidarAntecedentesPage extends BaseTest {
 	}
 	
 	public void barraLateral() throws InterruptedException {
+		if(exist(btnBlock)!=null) {
+			driver.findElement(btnBlock).click();
+			Thread.sleep(3000);
+		}
+		if(exist(btnCerrar)!=null) {
+			driver.findElement(btnCerrar).click();
+			Thread.sleep(3000);
+		}
 		
 		driver.findElement(btnBarraLateral).click();
 		Thread.sleep(3000);

@@ -71,8 +71,11 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 	}
 	public void clickOcultarTeclado() throws InterruptedException
 	{
-		driver.findElement(btnOcultarTeclado).click();
-		Thread.sleep(5000);
+		if(exist(btnOcultarTeclado)!=null) {
+			driver.findElement(btnOcultarTeclado).click();
+			Thread.sleep(5000);
+		}
+		
 	}
 	
 	public void clickEntrar() throws InterruptedException

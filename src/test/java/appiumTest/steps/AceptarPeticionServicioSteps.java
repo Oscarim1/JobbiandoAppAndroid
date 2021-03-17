@@ -6,6 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
+import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
 import pages.AceptarPeticionServicioPage;
 
@@ -21,9 +22,12 @@ public class AceptarPeticionServicioSteps extends BaseTest{
 			 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 			 Thread.sleep(15000);
 			 page = new AceptarPeticionServicioPage(elemento);
-			 page.enterCorreo(emailPrestador);
+			 RegistroData.dataRegistroPrestador();
+			 Thread.sleep(10000); 
+			 page.enterCorreo(RegistroData.emailPrestador);	  
+			   
 			 page.clickOcultarTeclado();
-			 page.enterContrasena(passPrestador);
+			 page.enterContrasena(RegistroData.passPrestador);	
 			 page.clickOcultarTeclado();
 			 page.clickEntrar();
 			 

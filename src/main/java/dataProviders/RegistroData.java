@@ -31,6 +31,7 @@ public class RegistroData extends SheetsQuickstart {
     public static String emailSolicitante = "";
     public static String passSolicitante = "";
     public static String runSolicitante = "";
+    public static String runSolicitanteNuevo = "";
     public static String numSerieSolicitante = "";
     public static String calleSolicitante = "";  
     public static String ubicacionSolicitante = "";
@@ -107,7 +108,7 @@ public class RegistroData extends SheetsQuickstart {
  			    ubicacionPrestador=(String) row.get(8);
  			    nombreDirPrestador=(String) row.get(9);
  			    refPrestador=(String) row.get(10);
- 			    
+ 			   System.out.println(refPrestador);
  			    
  				}
         	}
@@ -125,7 +126,7 @@ public class RegistroData extends SheetsQuickstart {
 			
 		while(a==null){	
 			
-			final String range = "PrestadorData!A"+n+":K"+m+"";
+			final String range = "SolicitanteData!A"+n+":K"+m+"";
 	    	final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
 	    	Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT)).setApplicationName(APPLICATION_NAME).build();
 	        ValueRange response = service.spreadsheets().values().get(SPREEDSHEET_ID, range).execute();
@@ -149,11 +150,12 @@ public class RegistroData extends SheetsQuickstart {
 	            	 emailSolicitante=(String) row.get(3);
 	            	 passSolicitante=(String) row.get(4);
 	            	 runSolicitante=(String) row.get(5);
+	            	 runSolicitanteNuevo=runSolicitante.replace("-","");
 	            	 numSerieSolicitante=(String) row.get(6);
 	            	 calleSolicitante=(String) row.get(7);
 	            	 ubicacionSolicitante=(String) row.get(8);
 	            	 nombreDirSolicitante=(String) row.get(9);
-	            	 refPrestador=(String) row.get(10);
+	            	 refSolicitante=(String) row.get(10);
 	 			    
 	 			    
 	 			}

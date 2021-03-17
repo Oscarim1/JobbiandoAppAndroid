@@ -6,6 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
+import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
 import pages.CrearPeticionServicioPage;
 
@@ -20,10 +21,12 @@ public class CrearPeticionServicioSteps extends BaseTest {
 	 try{
 		 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
 		 Thread.sleep(25000);
-		 page = new CrearPeticionServicioPage(elemento);		
-		 page.correoSolicitante(emailSolicitante);
+		 page = new CrearPeticionServicioPage(elemento);
+		 RegistroData.dataRegistroSolicitante();
+		 RegistroData.dataRegistroPrestador();
+		 page.correoSolicitante(RegistroData.emailSolicitante);
 		 page.clickOcultarTeclado();		
-		 page.passSolicitante(passSolicitante);
+		 page.passSolicitante(RegistroData.passSolicitante);
 		 page.clickOcultarTeclado();
 		 page.clickEntrar();
      }catch(Exception exp) {
@@ -48,7 +51,7 @@ public class CrearPeticionServicioSteps extends BaseTest {
 	@And("Hacer click en un servicio")
 	public void hacer_click_en_un_servicio() throws Throwable {
 		page = new CrearPeticionServicioPage(elemento);
-		page.clickSeleccionarServicio();
+		page.clickSeleccionarServicio(RegistroData.nombresPrestador+" "+RegistroData.apellidosPrestador);
 		
 	}
 

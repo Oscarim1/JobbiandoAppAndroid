@@ -121,8 +121,8 @@ public class RegistroPrestadorPage extends BaseTest {
 	{
 		driver.findElement(txtDireccion).sendKeys(direccion);
 		Thread.sleep(5000);
-		driver.findElement(txtDireccion).click();
-		Thread.sleep(5000);
+		//driver.findElement(txtDireccion).click();
+		//Thread.sleep(5000);
 
 	}
 	

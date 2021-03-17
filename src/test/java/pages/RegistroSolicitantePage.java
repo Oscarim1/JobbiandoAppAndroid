@@ -16,7 +16,7 @@ public class RegistroSolicitantePage extends BaseTest {
 	
 	By txtNombres=By.xpath("//*[@resource-id=\"mat-input-0\"]");
 	By txtApellidos=By.xpath("//*[@resource-id=\"mat-input-1\"]");
-	By txtFechaNacimiento=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View[3]/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[3]/android.view.View/android.view.View[1]/android.view.View[3]/android.view.View/android.view.View/android.widget.EditText");
+	By txtFechaNacimiento = By.xpath("//*[@resource-id=\"mat-input-2\"]");
 	By btnBlock = By.xpath("//*[@text=\"BLOCK\"]");
 	By btnFormulario = By.xpath("//*[@resource-id=\"register-form\"]");
 	By txtCorreo=By.xpath("//*[@resource-id=\"mat-input-3\"]");
@@ -25,7 +25,7 @@ public class RegistroSolicitantePage extends BaseTest {
 	By btnTipoDocumento = By.xpath("//*[@resource-id=\"selectTipo\"]");
 	By btnCedulaDeIdentidadOpcion0 = By.xpath("//*[@resource-id=\"selectTipo\"]");
 	By txtNumeroIdentificador= By.xpath("//*[@resource-id=\"mat-input-6\"]");
-	By txtNumeroSerie= By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View[3]/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[9]/android.view.View[1]/android.view.View[3]/android.view.View/android.view.View/android.widget.EditText");
+	By txtNumeroSerie= By.xpath("//*[@resource-id=\"mat-input-7\"]");
 	By txtCalle= By.xpath("//*[@resource-id=\"mat-input-8\"]");
 	By txtDireccion= By.xpath("//*[@resource-id=\"mat-input-9\"]");
 	By txtNombreDireccion= By.xpath("//*[@resource-id=\"mat-input-10\"]");
@@ -133,6 +133,7 @@ public class RegistroSolicitantePage extends BaseTest {
 		this.funcionScrollDown(0.9,0.1);
 		Thread.sleep(5000);
 		driver.findElement(txtReferencia).sendKeys(referencia);
+		System.out.println(referencia);
 		Thread.sleep(5000);
 	}
 	
