@@ -12,7 +12,10 @@ public class ConfigFileReader {
  private Properties properties;
  public String propertyFilePath= "src//test//resources//configs//Configuration.properties";
  
- public ConfigFileReader(){
+ public ConfigFileReader(String appium){
+	 if(appium!=null && appium.equals("S")) {
+		 propertyFilePath="configs//Configuration.properties";
+	 }
 	 BufferedReader reader;
 	 try {
 		 reader = new BufferedReader(new FileReader(propertyFilePath));

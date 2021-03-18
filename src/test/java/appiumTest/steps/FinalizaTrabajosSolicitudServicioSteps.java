@@ -14,7 +14,7 @@ import pages.FinalizaTrabajosSolicitudServicioPage;
 
 public class FinalizaTrabajosSolicitudServicioSteps extends BaseTest {
 	
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	FinalizaTrabajosSolicitudServicioPage page=null;
 	MobileElement elemento=null;
 	@Given("Rellena el formulario de login y entrar")

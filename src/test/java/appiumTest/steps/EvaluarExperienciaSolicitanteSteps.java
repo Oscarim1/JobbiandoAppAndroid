@@ -10,7 +10,7 @@ import io.appium.java_client.MobileElement;
 import pages.EvaluarExperienciaSolicitantePage;
 
 public class EvaluarExperienciaSolicitanteSteps extends BaseTest {
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	EvaluarExperienciaSolicitantePage page=null;
 	MobileElement elemento=null;
 	@Given("Completar login del Solicitante y entrar")

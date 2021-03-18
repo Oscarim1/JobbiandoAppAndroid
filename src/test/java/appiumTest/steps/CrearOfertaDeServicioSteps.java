@@ -16,7 +16,7 @@ import pages.CrearOfertaDeServicioPage;
 
 public class CrearOfertaDeServicioSteps extends BaseTest {
 	
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	CrearOfertaDeServicioPage page=null;
 	MobileElement elemento=null;
 	@Given("Completar login prestador y entrar")

@@ -11,7 +11,7 @@ import pages.CrearPeticionServicioPage;
 
 public class CrearPeticionServicioSteps extends BaseTest {
 	
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	CrearPeticionServicioPage page=null;
 	MobileElement elemento=null;
 	@Given("Completar login solicitante y entrar")

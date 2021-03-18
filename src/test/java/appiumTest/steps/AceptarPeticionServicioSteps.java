@@ -11,7 +11,7 @@ import pages.AceptarPeticionServicioPage;
 
 public class AceptarPeticionServicioSteps extends BaseTest{
 
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	AceptarPeticionServicioPage page=null;
 	MobileElement elemento=null;
 	

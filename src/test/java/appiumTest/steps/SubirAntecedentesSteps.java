@@ -11,7 +11,7 @@ import io.appium.java_client.MobileElement;
 import pages.SubirAntecedentesPage;
 
 public class SubirAntecedentesSteps extends BaseTest{
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	SubirAntecedentesPage page=null;
 	MobileElement elemento=null;
 	

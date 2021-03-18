@@ -30,7 +30,7 @@ public class BaseTest {
 	
 	public String emailPrestador="randomail259@gmailnator.com";
 	public String passPrestador="Hola1234";
-	public String appiumON = System.getProperty("appium");
+	public static String appiumON = System.getProperty("appium");
 	public String device = System.getProperty("device");
 	public PropertyLoader loadproperty = new PropertyLoader();
 	
@@ -57,6 +57,8 @@ public class BaseTest {
 	        clientCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 	        clientCapabilities.setCapability(MobileCapabilityType.UDID, device);
 	        clientCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
+	        clientCapabilities.setCapability("appPackage",rol1);
+	        clientCapabilities.setCapability("appActivity",rol2);
 
 	        try {
 	            if (appiumON!=null && appiumON.equals("S")) {
@@ -64,7 +66,7 @@ public class BaseTest {
 	                        loadproperty.loadProperties(appiumON).getProperty("AppiumServerPort") + "/wd/hub");
 	                driver = new AndroidDriver(url_appium, clientCapabilities);
 	            } else {
-	            	ConfigFileReader configFileReader= new ConfigFileReader();
+	            	ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 
 	            	DesiredCapabilities cap= new DesiredCapabilities();
 
@@ -102,6 +104,8 @@ public class BaseTest {
 	        clientCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 	        clientCapabilities.setCapability(MobileCapabilityType.UDID, device);
 	        clientCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
+	        clientCapabilities.setCapability("appPackage","com.android.chrome");
+	        clientCapabilities.setCapability("appActivity","com.google.android.apps.chrome.Main");
 	        
 	        
 			if (appiumON!=null && appiumON.equals("S")) {
@@ -109,7 +113,7 @@ public class BaseTest {
                         loadproperty.loadProperties(appiumON).getProperty("AppiumServerPort") + "/wd/hub");
                 driver = new AndroidDriver(url_appium, clientCapabilities);
             } else {
-            	ConfigFileReader configFileReader= new ConfigFileReader();
+            	ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 
         		DesiredCapabilities cap= new DesiredCapabilities();
 

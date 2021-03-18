@@ -9,8 +9,8 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.services.sheets.v4.Sheets;
 import com.google.api.services.sheets.v4.model.ValueRange;
 import com.google.common.util.concurrent.Service;
-
-public class RegistroData extends SheetsQuickstart {
+//
+public class RegistroData extends SheetsQuickstart{
     
 	//REGISTRO PRESTADOR
     public String nombresP = "";

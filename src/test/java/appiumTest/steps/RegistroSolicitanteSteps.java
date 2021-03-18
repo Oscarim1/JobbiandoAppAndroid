@@ -15,7 +15,7 @@ import pages.RegistroPrestadorPage;
 
 
 public class RegistroSolicitanteSteps extends BaseTest {
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	RegistroPrestadorPage page=null;
 	MobileElement elemento=null;
 	
@@ -51,7 +51,7 @@ public class RegistroSolicitanteSteps extends BaseTest {
 	    page.clickCedulaDeIdentidad("637106066");	    
 	    page.enterIdentificador("618513922");	    
 	    page.enterCalle("Sin calle");	    
-	    page.enterDireccion("L-331, Colbun, Colbún, Maule, Chile");	    
+	    page.enterDireccion("L-331, Colbun, Colbï¿½n, Maule, Chile");	    
 	    page.enterNombreDireccion("Casa");	    
 	    page.enterReferencia("Sin referencia");	 
 	}

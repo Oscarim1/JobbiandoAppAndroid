@@ -14,7 +14,7 @@ import pages.ResuelveReclamoPage;
 
 public class ResuelveReclamoSteps extends BaseTest {
 	
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	ResuelveReclamoPage page=null;
 	MobileElement elemento=null;
 	@Given("Rellena el formulario de login del admin y entrar")

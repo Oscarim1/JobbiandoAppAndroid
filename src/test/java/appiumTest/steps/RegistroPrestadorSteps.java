@@ -12,7 +12,7 @@ import io.appium.java_client.MobileElement;
 import pages.RegistroPrestadorPage;
 
 public class RegistroPrestadorSteps extends BaseTest {
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	RegistroPrestadorPage page=null;
 	MobileElement elemento=null;
 	@Given("Abrir app prestador")
@@ -31,6 +31,7 @@ public class RegistroPrestadorSteps extends BaseTest {
 	@And("Ir al registro del Prestador")
 	public void ir_al_registro_del_Prestador() throws Throwable {
 		page = new RegistroPrestadorPage(elemento);
+		Thread.sleep(7000);
 	    page.clickQuieroSerJobber();
 	    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	}
@@ -46,7 +47,7 @@ public class RegistroPrestadorSteps extends BaseTest {
 	    page.clickCedulaDeIdentidad("637106066");    
 	    page.enterIdentificador("618513922");	    
 	    page.enterCalle("Sin calle");	    
-	    page.enterDireccion("L-331, Colbun, Colbún, Maule, Chile");	    
+	    page.enterDireccion("L-331, Colbun, Colbï¿½n, Maule, Chile");	    
 	    page.enterNombreDireccion("Casa");    
 	    page.enterReferencia("Sin referencia"); 
 	}

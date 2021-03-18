@@ -19,7 +19,7 @@ import pages.ValidarAntecedentesPage;
 		)
 public class ValidarAntecedentesSteps extends BaseTest {
 	
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	ValidarAntecedentesPage page=null;
 	MobileElement elemento=null;
 	@Given("Abrir el navegador")

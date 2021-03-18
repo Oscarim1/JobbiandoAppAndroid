@@ -10,7 +10,7 @@ import io.appium.java_client.MobileElement;
 import pages.GenerarSolicitudPage;
 
 public class GenerarSolicitudSteps extends BaseTest{
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	GenerarSolicitudPage page=null;
 	MobileElement elemento=null;
 	

@@ -14,7 +14,7 @@ import pages.EvaluarExperienciaPrestadorPage;
 
 public class EvaluarExperienciaPrestadorSteps extends BaseTest {
 	
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	EvaluarExperienciaPrestadorPage page=null;
 	MobileElement elemento=null;
 	@Given("Rellena el formulario de login del prestador y entrar")

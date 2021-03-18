@@ -14,7 +14,7 @@ import pages.PresentaReclamoPage;
 
 public class PresentaReclamoSteps extends BaseTest {
 	
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	PresentaReclamoPage page=null;
 	MobileElement elemento=null;
 	@Given("Rellena el formulario de login del solicitante y entrar")

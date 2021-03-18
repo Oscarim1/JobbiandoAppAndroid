@@ -14,7 +14,7 @@ import pages.CrearOfertaDeServicioPage;
 public class AgregarCategoriaSteps extends BaseTest {
 	
 
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	AgregarCategoriaPage page=null;
 	MobileElement elemento=null;
 	@Given("Para categorias Completar Login y entrar")
