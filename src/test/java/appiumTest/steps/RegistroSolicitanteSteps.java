@@ -9,6 +9,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
+import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
 
 import pages.RegistroSolicitantePage;
@@ -24,6 +25,8 @@ public class RegistroSolicitanteSteps extends BaseTest {
 	 
 	 try{
 		 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
+		 RegistroData.datosSolicitantes();;
+		 
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
          exp.printStackTrace();
@@ -41,19 +44,18 @@ public class RegistroSolicitanteSteps extends BaseTest {
 
 	@When("Completar el formulario de registro del solicitante")
 	public void completar_el_formulario_de_registro_del_solicitante() throws Throwable {
-		
-		page=new RegistroSolicitantePage(elemento);
-	    page.enterNombres("BEGONYA");
-	    page.enterApellidos("ARPA MORENO");
-	    page.enterFechaNacimiento("12 de 05 de 1995");	   
-	    page.enterCorreo("randomail277@gmailnator.com");	    
-	    page.enterContrasena("Hola1234");	    
-	    page.clickCedulaDeIdentidad("79305167-0");	    
-	    page.enterIdentificador("413357819");	    
-	    page.enterCalle("Sin calle");	    
-	    page.enterDireccion("L-331, Colbun, Colbún, Maule, Chile");	    
-	    page.enterNombreDireccion("Casa");	    
-	    page.enterReferencia("Sin referencia");	 
+		 
+		  page.enterNombres(RegistroData.nombresSolicitante);	   
+		    page.enterApellidos(RegistroData.apellidosSolicitante);	    
+		    page.enterFechaNacimiento("12 de 05 de 1995");	   
+		    page.enterCorreo(RegistroData.emailSolicitante);    
+		    page.enterContrasena(RegistroData.passSolicitante);    
+		    page.clickCedulaDeIdentidad(RegistroData.runSolicitanteNuevo);    
+		    page.enterIdentificador(RegistroData.numSeriePrestador);	    
+		    page.enterCalle(RegistroData.calleSolicitante);	    
+		    page.enterDireccion(RegistroData.ubicacionSolicitante);	    
+		    page.enterNombreDireccion(RegistroData.nombreDirSolicitante);    
+		    page.enterReferencia(RegistroData.refSolicitante); 
 	}
 
 	@Then("hacer click en boton registrar")
