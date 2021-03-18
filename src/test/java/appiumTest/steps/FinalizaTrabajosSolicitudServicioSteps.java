@@ -15,7 +15,7 @@ import pages.FinalizaTrabajosSolicitudServicioPage;
 
 public class FinalizaTrabajosSolicitudServicioSteps extends BaseTest {
 	
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	FinalizaTrabajosSolicitudServicioPage page=null;
 	MobileElement elemento=null;
 	@Given("Rellena el formulario de login y entrar")
@@ -25,7 +25,7 @@ public class FinalizaTrabajosSolicitudServicioSteps extends BaseTest {
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 		 Thread.sleep(15000);
 		 page = new FinalizaTrabajosSolicitudServicioPage(elemento);	 
-		 RegistroData.datosPrestadores(false);
+		 RegistroData.datosPrestadores(appiumON,false);
 		 Thread.sleep(10000); 
 		 page.correoPrestador(RegistroData.emailPrestador);	  
 		 page.passPrestador(RegistroData.passPrestador);	

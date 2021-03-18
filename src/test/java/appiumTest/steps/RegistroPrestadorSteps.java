@@ -13,7 +13,7 @@ import io.appium.java_client.MobileElement;
 import pages.RegistroPrestadorPage;
 
 public class RegistroPrestadorSteps extends BaseTest {
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	RegistroPrestadorPage page=null;
 	MobileElement elemento=null;
 	@Given("Abrir app prestador")
@@ -21,7 +21,7 @@ public class RegistroPrestadorSteps extends BaseTest {
 	 
 	 try{
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());	
-		 RegistroData.datosPrestadores(false);
+		 RegistroData.datosPrestadores(appiumON,false);
 		 
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
@@ -33,6 +33,7 @@ public class RegistroPrestadorSteps extends BaseTest {
 	@And("Ir al registro del Prestador")
 	public void ir_al_registro_del_Prestador() throws Throwable {
 		page = new RegistroPrestadorPage(elemento);
+		Thread.sleep(7000);
 	    page.clickQuieroSerJobber();
 	    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	}

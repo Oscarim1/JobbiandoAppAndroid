@@ -15,7 +15,7 @@ import pages.PresentaReclamoPage;
 
 public class PresentaReclamoSteps extends BaseTest {
 	
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	PresentaReclamoPage page=null;
 	MobileElement elemento=null;
 	@Given("Rellena el formulario de login del solicitante y entrar")
@@ -25,8 +25,8 @@ public class PresentaReclamoSteps extends BaseTest {
 		 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
 		 Thread.sleep(15000);
 		 page = new  PresentaReclamoPage(elemento);
-		 RegistroData.datosSolicitantes(false);
-		 RegistroData.datosPrestadores(false);
+		 RegistroData.datosSolicitantes(appiumON,false);
+		 RegistroData.datosPrestadores(appiumON,false);
 		 page.correoSolicitante(RegistroData.emailSolicitante);
 		
 		 page.passSolicitante(RegistroData.passSolicitante);

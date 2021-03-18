@@ -11,7 +11,7 @@ import io.appium.java_client.MobileElement;
 import pages.EvaluarExperienciaSolicitantePage;
 
 public class EvaluarExperienciaSolicitanteSteps extends BaseTest {
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	EvaluarExperienciaSolicitantePage page=null;
 	MobileElement elemento=null;
 	@Given("Completar login del Solicitante y entrar")
@@ -20,8 +20,8 @@ public class EvaluarExperienciaSolicitanteSteps extends BaseTest {
 			 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
 			 Thread.sleep(20000);
 			 page = new EvaluarExperienciaSolicitantePage(elemento);		
-			 RegistroData.datosSolicitantes(false);
-			 RegistroData.datosPrestadores(false);
+			 RegistroData.datosSolicitantes(appiumON,false);
+			 RegistroData.datosPrestadores(appiumON,false);
 			 page.enterCorreo(RegistroData.emailSolicitante);
 			 page.clickOcultarTeclado();		
 			 page.enterContrasena(RegistroData.passSolicitante);

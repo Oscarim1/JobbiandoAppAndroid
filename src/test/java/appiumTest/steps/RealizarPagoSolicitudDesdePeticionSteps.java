@@ -11,7 +11,7 @@ import io.appium.java_client.MobileElement;
 import pages.RealizarPagoSolicitudDesdePeticionPage;
 
 public class RealizarPagoSolicitudDesdePeticionSteps extends BaseTest{
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	RealizarPagoSolicitudDesdePeticionPage page=null;
 	MobileElement elemento=null;
 	
@@ -21,7 +21,7 @@ public class RealizarPagoSolicitudDesdePeticionSteps extends BaseTest{
 			 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
 			 Thread.sleep(20000);
 			 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);		
-			 RegistroData.datosPrestadores(false);
+			 RegistroData.datosPrestadores(appiumON,false);
 			 page.enterCorreo(RegistroData.emailSolicitante);
 			 page.clickOcultarTeclado();		
 			 page.enterContrasena(RegistroData.passSolicitante);

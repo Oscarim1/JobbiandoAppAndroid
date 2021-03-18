@@ -15,7 +15,7 @@ import pages.ResuelveReclamoPage;
 
 public class ResuelveReclamoSteps extends BaseTest {
 	
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	ResuelveReclamoPage page=null;
 	MobileElement elemento=null;
 	@Given("Rellena el formulario de login del admin y entrar")
@@ -25,9 +25,9 @@ public class ResuelveReclamoSteps extends BaseTest {
 		 openNavegator(configFileReader.getappPackageNavegator(),configFileReader.getappActivityNavegator());
 		 Thread.sleep(3000);
 		 page = new ResuelveReclamoPage(elemento);
-		 RegistroData.dataAdministrador();
-		 RegistroData.datosPrestadores(true);
-		 RegistroData.datosSolicitantes(true);
+		 RegistroData.dataAdministrador(appiumON);
+		 RegistroData.datosPrestadores(appiumON,true);
+		 RegistroData.datosSolicitantes(appiumON,true);
 		 page.iniciarSesion();
 		 page.enterUsernameAdmin(RegistroData.correoAdministrador);
 		 page.enterPassAdmin(RegistroData.passAdministrador);

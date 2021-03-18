@@ -12,7 +12,7 @@ import pages.AceptarPeticionServicioPage;
 
 public class AceptarPeticionServicioSteps extends BaseTest{
 
-	static ConfigFileReader configFileReader= new ConfigFileReader();
+	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	AceptarPeticionServicioPage page=null;
 	MobileElement elemento=null;
 	
@@ -22,7 +22,7 @@ public class AceptarPeticionServicioSteps extends BaseTest{
 			 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 			 Thread.sleep(15000);
 			 page = new AceptarPeticionServicioPage(elemento);
-			 RegistroData.datosPrestadores(false);
+			 RegistroData.datosPrestadores(appiumON,false);
 			 Thread.sleep(10000); 
 			 page.enterCorreo(RegistroData.emailPrestador);	  
 			   

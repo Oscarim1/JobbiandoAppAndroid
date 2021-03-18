@@ -28,13 +28,16 @@ public class SheetsQuickstart {
 		
 		protected static final String APPLICATION_NAME = "Google Sheets API Java Quickstart";	
 		protected static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
-	    private static final String TOKENS_DIRECTORY_PATH = "tokens";
+	    private static String TOKENS_DIRECTORY_PATH = "src//test//resources//tokens";
 	    private static final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS);
 	    private static final String CREDENTIALS_FILE_PATH = "/credentials.json";
 
 	   
-	    protected static Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT) throws IOException {
+	    protected static Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT, String appium) throws IOException {
 	        // Load client secrets.
+	    	if (appium!=null && appium.equals("S")) {
+	    		TOKENS_DIRECTORY_PATH="tokens";
+	    	}
 	        InputStream in = SheetsQuickstart.class.getResourceAsStream(CREDENTIALS_FILE_PATH);
 	        if (in == null) {
 	            throw new FileNotFoundException("Resource not found: " + CREDENTIALS_FILE_PATH);

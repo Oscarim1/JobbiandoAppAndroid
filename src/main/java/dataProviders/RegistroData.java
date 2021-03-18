@@ -46,11 +46,11 @@ public class RegistroData extends SheetsQuickstart {
     public static String passAdministrador = "";
     
     
-    public static void dataAdministrador(String... args) throws IOException, GeneralSecurityException {
+    public static void dataAdministrador(String appium,String... args) throws IOException, GeneralSecurityException {
 		
 		final String range = "AdministradorData!A2:K2";
     	final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-    	Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT)).setApplicationName(APPLICATION_NAME).build();
+    	Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT,appium)).setApplicationName(APPLICATION_NAME).build();
         ValueRange response = service.spreadsheets().values().get(SPREEDSHEET_ID, range).execute();
         
         
@@ -72,7 +72,7 @@ public class RegistroData extends SheetsQuickstart {
 		}           
 	}
     
-	public static void datosPrestadores(Boolean uso, String... args) throws IOException, GeneralSecurityException {
+	public static void datosPrestadores(String appium,Boolean uso, String... args) throws IOException, GeneralSecurityException {
 		Integer n=2;
 		Integer m=2;
 		Integer a=null;
@@ -81,7 +81,7 @@ public class RegistroData extends SheetsQuickstart {
 		
 		final String range = "PrestadorData!A"+n+":L"+m+"";
     	final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-    	Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT)).setApplicationName(APPLICATION_NAME).build();
+    	Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT,appium)).setApplicationName(APPLICATION_NAME).build();
         ValueRange response = service.spreadsheets().values().get(SPREEDSHEET_ID, range).execute();
        
         
@@ -132,7 +132,7 @@ public class RegistroData extends SheetsQuickstart {
     	
 	 
 	   
-public static void datosSolicitantes(Boolean uso, String... args) throws IOException, GeneralSecurityException {
+public static void datosSolicitantes(String appium,Boolean uso, String... args) throws IOException, GeneralSecurityException {
 	    	
 	    	
 			Integer n=2;
@@ -144,7 +144,7 @@ public static void datosSolicitantes(Boolean uso, String... args) throws IOExcep
 			
 			final String range = "SolicitanteData!A"+n+":L"+m+"";
 	    	final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-	    	Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT)).setApplicationName(APPLICATION_NAME).build();
+	    	Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT,appium)).setApplicationName(APPLICATION_NAME).build();
 	        ValueRange response = service.spreadsheets().values().get(SPREEDSHEET_ID, range).execute();
 	       
 	        
