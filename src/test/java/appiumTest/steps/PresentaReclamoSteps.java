@@ -36,9 +36,8 @@ public class PresentaReclamoSteps extends BaseTest {
          exp.printStackTrace();
          Thread.sleep(5000);
          
-     }
-	 
-	}
+     }	 
+}
 	
 	@And("Ingresar a cuenta")
 	public void ingresar_a_cuenta() throws Throwable {
