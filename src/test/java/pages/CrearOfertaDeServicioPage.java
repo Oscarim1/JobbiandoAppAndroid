@@ -20,10 +20,10 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 	By btnAgregarServicio=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView");
 	By txtDescripcion=By.xpath("//*[@text='Ingrese descripcion']");
 	By btnCategoria = By.xpath("//*[@class='android.widget.Spinner' and ./*[@text='Categoria : ']]");
-	By btnSeleccionarCategoria=By.xpath("//*[@text='Enseñanza']");
+	By btnSeleccionarCategoria=By.xpath("//*[@text='Servicios de cuidado personal y bienestar']");
 
 	By btnSubCategoria = By.xpath("//*[@class='android.widget.Spinner' and ./*[@text='sub-Categoria : ']]");
-	By btnSeleccionarSubCategoria = By.xpath("//*[@text='clases de matematicas']");	
+	By btnSeleccionarSubCategoria = By.xpath("//*[@text='Masajes']");	
 	By txtPrecio = By.xpath("//*[@text='precio']");
 	By btnFechaCalendario = By.xpath("//*[@text='Fecha Desde']");
 	By btnFechaDesdeAceptar=By.xpath("//*[@text='OK']");
@@ -45,6 +45,7 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 	By btnTake = By.xpath("//*[@resource-id=\"com.android.camera2:id/shutter_button\"]");
 	By btnDone = By.xpath("//*[@resource-id=\"com.android.camera2:id/done_button\"]");
 	By btnPublicar = By.xpath("//*[@text='Publicar']");
+	By btnOk = By.xpath("//*[@text='OK']");
 	
 	public CrearOfertaDeServicioPage(MobileElement elemento) 
 	{
@@ -70,8 +71,11 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 	}
 	public void clickOcultarTeclado() throws InterruptedException
 	{
-		driver.findElement(btnOcultarTeclado).click();
-		Thread.sleep(5000);
+		if(exist(btnOcultarTeclado)!=null) {
+			driver.findElement(btnOcultarTeclado).click();
+			Thread.sleep(5000);
+		}
+		
 	}
 	
 	public void clickEntrar() throws InterruptedException
@@ -98,19 +102,16 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 	}
 	public void clickAgregarServicio() throws InterruptedException {
 		
+		driver.findElement(btnAgregarServicio).click();
+		Thread.sleep(5000);
 		if(exist(btnDontAskAgain) != null) {
 			
 			driver.findElement(btnDontAskAgain).click();
 			Thread.sleep(5000);
 			driver.findElement(btnDeny).click();
-			Thread.sleep(5000);
-			driver.findElement(btnAgregarServicio).click();
-			Thread.sleep(5000);
-			
+			Thread.sleep(5000);			
 		}else {
 			
-			driver.findElement(btnAgregarServicio).click();
-			Thread.sleep(5000);
 		}
 		
 	}
@@ -118,27 +119,34 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 	public void enterDescripcion(String descripcion) throws InterruptedException
 	{
 		driver.findElement(txtDescripcion).sendKeys(descripcion);
-		Thread.sleep(9000);
+		Thread.sleep(5000);
 	}
 	
 	public void clickCategoria() throws InterruptedException{
 		driver.findElement(btnCategoria).click();
-		Thread.sleep(9000);
+		Thread.sleep(5000);
+		
 	}
 	
 	public void clickSeleccionarCategoria() throws InterruptedException{
+		
+		while(exist(btnSeleccionarCategoria) == null) {
+			
+			this.funcionScrollDown(0.8, 0.4);	
+		}
 		driver.findElement(btnSeleccionarCategoria).click();
-		Thread.sleep(9000);
+		Thread.sleep(5000);
+		
 	}
 	
 	public void clickSubCategoria() throws InterruptedException{
 		driver.findElement(btnSubCategoria).click();
-		Thread.sleep(9000);
+		Thread.sleep(5000);
 	}
 	
 	public void clickSeleccionarSubCategoria()throws InterruptedException {
 		driver.findElement(btnSeleccionarSubCategoria).click();
-		Thread.sleep(9000);
+		Thread.sleep(5000);
 	}
 	
 	public void enterPrecio(String precio)throws InterruptedException {
@@ -157,11 +165,13 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 		driver.findElement(btnJornada).click();
 		Thread.sleep(5000);
 		driver.findElement(btnJornadaSeleccionada).click();
-		this.funcionScrollDown(0.9,0.1);
-		Thread.sleep(9000);
+		
 	}
 	
 	public void clickSiguiente() throws InterruptedException {
+		while(exist(btnSiguiente)==null){
+			this.funcionScrollDown(0.8, 0.1);
+		}
 		driver.findElement(btnSiguiente).click();
 		Thread.sleep(5000);
 		
@@ -214,5 +224,8 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 	public void clickPublicar() throws InterruptedException {
 		driver.findElement(btnPublicar).click();
 		Thread.sleep(5000);
+		driver.findElement(btnOk).click();
+		Thread.sleep(5000);
+		
 	}
 }

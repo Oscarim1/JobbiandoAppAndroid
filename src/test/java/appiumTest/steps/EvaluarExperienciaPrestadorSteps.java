@@ -6,6 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
+import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
 
 import pages.EvaluarExperienciaPrestadorPage;
@@ -24,11 +25,10 @@ public class EvaluarExperienciaPrestadorSteps extends BaseTest {
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 		 Thread.sleep(15000);
 		 page = new EvaluarExperienciaPrestadorPage(elemento);
-		 
-		 Thread.sleep(3000);
-		 page.correoPrestador(emailPrestador52);
-		 Thread.sleep(3000);
-		 page.passPrestador(passPrestador);
+		 RegistroData.datosPrestadores(false);
+		 Thread.sleep(10000); 
+		 page.correoPrestador(RegistroData.emailPrestador);	  
+		 page.passPrestador(RegistroData.passPrestador);	
 
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
@@ -73,6 +73,7 @@ public class EvaluarExperienciaPrestadorSteps extends BaseTest {
 		page=new EvaluarExperienciaPrestadorPage(elemento);
 		page.EvaluarExperiencia("Esta es una descripcion");
 		Thread.sleep(5000);
+		driver.quit();
 	}
 
 }

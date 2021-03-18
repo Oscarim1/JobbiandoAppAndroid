@@ -15,7 +15,8 @@ public class SubirAntecedentesPage extends BaseTest {
 	
 	By btnOcultarTeclado=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ImageView");
 	By btnPermitirUbicacionE=By.xpath("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]");
-	By btnEntrarCuenta =By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[4]\"]");
+	By btnNoPermitirUbicacion=By.xpath("//*[@resource-id=\"com.android.packageinstaller:id/permission_deny_button\"]");
+	By btnEntrarCuenta =By.xpath("//*[@text=\"CUENTA\"]");
 	By btnAntecedentes =By.xpath("//*[@text=\"Antecedentes de la cuenta\"]");	
 	By btnTipoDocumento =By.xpath("//*[@resource-id=\"android:id/text1\"]");
 	By btnDocumento =By.xpath("//*[@text=\"Certificado de antecedentes\"]");
@@ -24,9 +25,11 @@ public class SubirAntecedentesPage extends BaseTest {
 	By btnPermitirImagenCamara=By.xpath("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]");
 	
 	By btnElegirFuenteImagen =By.xpath("//*[@text=\"Tomar una Foto\"]");
-	By btnTomarFoto =By.xpath("//*[@resource-id=\"com.android.camera:id/shutter_button\"]");
-	By btnAceptar =By.xpath("//*[@resource-id=\"com.android.camera:id/done_button\"]");
+	By btnTomarFoto =By.xpath("//*[@resource-id=\"com.android.camera2:id/shutter_button\"]");
+	By btnAceptar =By.xpath("//*[@resource-id=\"com.android.camera2:id/done_button\"]");
 	By btnSubirAntecedentes =By.xpath("//*[@text=\"SUBIR ANTECEDENTES\"]");
+	By btnSiSubirAntecedentes =By.xpath("//*[@text=\"SI, SUBIR\"]");
+	By btnOk =By.xpath("//*[@text=\"OK\"]");
 	
 	
 	public SubirAntecedentesPage(MobileElement elemento) throws InterruptedException
@@ -48,8 +51,11 @@ public class SubirAntecedentesPage extends BaseTest {
 	}
 	public void clickOcultarTeclado() throws InterruptedException
 	{
-		driver.findElement(btnOcultarTeclado).click();
-		Thread.sleep(5000);
+		if(exist(btnOcultarTeclado)!=null) {
+			driver.findElement(btnOcultarTeclado).click();
+			Thread.sleep(5000);
+		}
+		
 	}
 	public void clickEntrar() throws InterruptedException
 	{
@@ -58,9 +64,11 @@ public class SubirAntecedentesPage extends BaseTest {
 	}
 	
 	public void clickPermitirUbicacion()throws InterruptedException {
-		driver.findElement(btnPermitirUbicacionE).click();
-		Thread.sleep(9000);
 		
+		if(exist(btnNoPermitirUbicacion)!=null) {
+			driver.findElement(btnNoPermitirUbicacion).click();
+			Thread.sleep(5000);
+		}
 	}
 	
 	public void clickPerfil() throws InterruptedException
@@ -72,6 +80,7 @@ public class SubirAntecedentesPage extends BaseTest {
 	
 	public void clickAntecedentes() throws InterruptedException
 	{
+		this.funcionScrollDown(0.9, 0.1);
 		driver.findElement(btnAntecedentes).click();
 		Thread.sleep(5000);
 		
@@ -112,6 +121,7 @@ public class SubirAntecedentesPage extends BaseTest {
 	}
 	public void clickTomarFoto() throws InterruptedException
 	{
+		Thread.sleep(15000);
 		driver.findElement(btnTomarFoto).click();
 		Thread.sleep(15000);
 	}
@@ -125,6 +135,10 @@ public class SubirAntecedentesPage extends BaseTest {
 	public void clickSubirAntecedentes() throws InterruptedException
 	{
 		driver.findElement(btnSubirAntecedentes).click();
+		Thread.sleep(5000);
+		driver.findElement(btnSiSubirAntecedentes).click();
+		Thread.sleep(5000);
+		driver.findElement(btnOk).click();
 		Thread.sleep(5000);
 	}
 	

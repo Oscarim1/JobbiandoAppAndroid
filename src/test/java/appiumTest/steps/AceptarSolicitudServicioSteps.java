@@ -48,5 +48,6 @@ public class AceptarSolicitudServicioSteps extends BaseTest{
 		page = new AceptarSolicitudServicioPage(elemento);
 		page.clickRealizarSolicitud();
 		page.clickRealizar();
+		driver.quit();
 	}
 }

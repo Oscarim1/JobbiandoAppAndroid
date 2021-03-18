@@ -6,6 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
+import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
 import pages.EvaluarExperienciaSolicitantePage;
 
@@ -19,9 +20,11 @@ public class EvaluarExperienciaSolicitanteSteps extends BaseTest {
 			 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
 			 Thread.sleep(20000);
 			 page = new EvaluarExperienciaSolicitantePage(elemento);		
-			 page.enterCorreo(emailSolicitante);
-			 page.clickOcultarTeclado();	
-			 page.enterContrasena(passSolicitante);
+			 RegistroData.datosSolicitantes(false);
+			 RegistroData.datosPrestadores(false);
+			 page.enterCorreo(RegistroData.emailSolicitante);
+			 page.clickOcultarTeclado();		
+			 page.enterContrasena(RegistroData.passSolicitante);
 			 page.clickOcultarTeclado();
 			 page.clickEntrar();
 	     }catch(Exception exp) {
@@ -63,5 +66,6 @@ public class EvaluarExperienciaSolicitanteSteps extends BaseTest {
 	public void click_en_Enviar_Evaluacion() throws Throwable {
 		page=new EvaluarExperienciaSolicitantePage(elemento);
 		page.clickEnviarEvaluacion();
+		driver.quit();
 	}
 }

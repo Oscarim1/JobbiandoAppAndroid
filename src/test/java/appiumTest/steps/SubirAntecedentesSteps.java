@@ -6,6 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
+import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
 
 import pages.SubirAntecedentesPage;
@@ -20,16 +21,17 @@ public class SubirAntecedentesSteps extends BaseTest{
 	public void completar_login_y_entrar() throws Throwable {
 		 try{			 
 			 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
-			 Thread.sleep(35000);
+			 RegistroData.datosPrestadores(false);
+			 Thread.sleep(10000);
 	     }catch(Exception exp) {
 	         System.out.println(exp.getMessage());
 	         exp.printStackTrace();
 	         Thread.sleep(1000);         
 	     }
 		  page=new SubirAntecedentesPage(elemento);
-		  page.enterCorreo("randomail259@gmailnator.com");
+		  page.enterCorreo(RegistroData.emailPrestador);
 		  
-		  page.enterContrasena(passPrestador);		 
+		  page.enterContrasena(RegistroData.passPrestador);		 
 		  page.clickOcultarTeclado();		 
 		  page.clickEntrar();
 		  
@@ -41,7 +43,7 @@ public class SubirAntecedentesSteps extends BaseTest{
 		if(elementExist("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]") != null ) {
 		page.clickPermitirUbicacion();			
 		}else {}
-	page.clickPerfil();
+		page.clickPerfil();
 		
 	}
 
@@ -70,14 +72,15 @@ public class SubirAntecedentesSteps extends BaseTest{
 		page.clickTomarFoto();
 	
 	}
-	@And("Hacer click en Subir Imagen ")
+	@And("Hacer click en Subir Imagen")
 	public void hacer_click_en_Subir_Imagen() throws Throwable{
 		page.clickAceptar(); 		
 	}
 	@Then("Hacer click en boton Subir Antecedentes")
 	public void hacer_click_en_boton_Subir_Antecedentes() throws Throwable {
 		page = new SubirAntecedentesPage(elemento);
-		page.clickSubirAntecedentes(); 	    
+		page.clickSubirAntecedentes(); 	 
+		driver.quit();
 	}
 
 }

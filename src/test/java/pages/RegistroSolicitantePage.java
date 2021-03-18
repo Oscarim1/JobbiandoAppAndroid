@@ -16,8 +16,8 @@ public class RegistroSolicitantePage extends BaseTest {
 	
 	By txtNombres=By.xpath("//*[@resource-id=\"mat-input-0\"]");
 	By txtApellidos=By.xpath("//*[@resource-id=\"mat-input-1\"]");
-	By txtFechaNacimiento=By.xpath("//*[@resource-id=\"fecha_nacimiento\"]");
-	//By btnCalendario = By.xpath("//*[@text=\"Open calendar\"]");
+	By txtFechaNacimiento = By.xpath("//*[@resource-id=\"mat-input-2\"]");
+	By btnBlock = By.xpath("//*[@text=\"BLOCK\"]");
 	By btnFormulario = By.xpath("//*[@resource-id=\"register-form\"]");
 	By txtCorreo=By.xpath("//*[@resource-id=\"mat-input-3\"]");
 	By txtContrasena=By.xpath("//*[@resource-id=\"password\"]");
@@ -25,7 +25,7 @@ public class RegistroSolicitantePage extends BaseTest {
 	By btnTipoDocumento = By.xpath("//*[@resource-id=\"selectTipo\"]");
 	By btnCedulaDeIdentidadOpcion0 = By.xpath("//*[@resource-id=\"selectTipo\"]");
 	By txtNumeroIdentificador= By.xpath("//*[@resource-id=\"mat-input-6\"]");
-	By txtNumeroSerie= By.xpath("//*[@resource-id=\"numero_serie\"]");
+	By txtNumeroSerie= By.xpath("//*[@resource-id=\"mat-input-7\"]");
 	By txtCalle= By.xpath("//*[@resource-id=\"mat-input-8\"]");
 	By txtDireccion= By.xpath("//*[@resource-id=\"mat-input-9\"]");
 	By txtNombreDireccion= By.xpath("//*[@resource-id=\"mat-input-10\"]");
@@ -38,16 +38,22 @@ public class RegistroSolicitantePage extends BaseTest {
 	}
 	
 	public void clickQuieroSerJobber() throws InterruptedException {
+		Thread.sleep(5000);
 		driver.findElement(btnQuieroSerJobber).click();
-		Thread.sleep(15000);
+		Thread.sleep(10000);
 	}
 	///////////////////////////////////////////////////////////
 	public void enterNombres(String nombres) throws InterruptedException 
 	{	
-		driver.findElement(txtNombres).click();
-		Thread.sleep(5000);
-		driver.findElement(txtNombres).sendKeys(nombres);
-		Thread.sleep(5000);
+		if(exist(btnBlock)==null) {
+			driver.findElement(txtNombres).sendKeys(nombres);
+			Thread.sleep(5000);
+		}else {
+			driver.findElement(btnBlock).click();
+		    Thread.sleep(5000);
+			driver.findElement(txtNombres).sendKeys(nombres);
+			Thread.sleep(5000);
+		}
 	}
 	
 	public void enterApellidos(String apellidos) throws InterruptedException 
@@ -96,7 +102,7 @@ public class RegistroSolicitantePage extends BaseTest {
 	
 	public void enterIdentificador(String numeroSerie) throws InterruptedException 
 	{
-		funcionScrollDown(0.8,0.6);
+		this.funcionScrollDown(0.8,0.6);
 		Thread.sleep(5000);
 		driver.findElement(txtNumeroSerie).sendKeys(numeroSerie);
 		Thread.sleep(5000);
@@ -104,7 +110,7 @@ public class RegistroSolicitantePage extends BaseTest {
 	
 	public void enterCalle(String calle) throws InterruptedException 
 	{
-		funcionScrollDown(0.8,0.6);
+		this.funcionScrollDown(0.8,0.6);
 		Thread.sleep(5000);
 		driver.findElement(txtCalle).sendKeys(calle);
 		Thread.sleep(5000);
@@ -124,9 +130,10 @@ public class RegistroSolicitantePage extends BaseTest {
 	
 	public void enterReferencia(String referencia) throws InterruptedException 
 	{
-		funcionScrollDown(0.8,0.6);
+		this.funcionScrollDown(0.9,0.1);
 		Thread.sleep(5000);
 		driver.findElement(txtReferencia).sendKeys(referencia);
+		System.out.println(referencia);
 		Thread.sleep(5000);
 	}
 	
