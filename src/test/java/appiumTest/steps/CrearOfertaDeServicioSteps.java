@@ -9,6 +9,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
+import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
 
 import pages.CrearOfertaDeServicioPage;
@@ -24,11 +25,13 @@ public class CrearOfertaDeServicioSteps extends BaseTest {
 	 
 	 try{
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
-		 Thread.sleep(25000);
+		 Thread.sleep(10000);
 		 page = new CrearOfertaDeServicioPage(elemento);
-		 page.correoPrestador(emailPrestador); 
+		 RegistroData.datosPrestadores(false);
+		 Thread.sleep(10000); 
+		 page.correoPrestador(RegistroData.emailPrestador);	  
 		 page.clickOcultarTeclado();
-		 page.passPrestador(passPrestador);
+		 page.passPrestador(RegistroData.passPrestador);	
 		 page.clickOcultarTeclado();
 		 page.clickEntrar();
      }catch(Exception exp) {

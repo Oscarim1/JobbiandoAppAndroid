@@ -6,6 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
+import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
 
 import pages.FinalizaTrabajosSolicitudServicioPage;
@@ -24,8 +25,11 @@ public class FinalizaTrabajosSolicitudServicioSteps extends BaseTest {
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 		 Thread.sleep(15000);
 		 page = new FinalizaTrabajosSolicitudServicioPage(elemento);	 
-		 page.correoPrestador(emailPrestador52);	
-		 page.passPrestador(passPrestador);
+		 RegistroData.datosPrestadores(false);
+		 Thread.sleep(10000); 
+		 page.correoPrestador(RegistroData.emailPrestador);	  
+		 page.passPrestador(RegistroData.passPrestador);	
+
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
          exp.printStackTrace();

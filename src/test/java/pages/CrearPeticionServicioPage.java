@@ -24,12 +24,13 @@ public class CrearPeticionServicioPage extends BaseTest{
 	By btnSubCategoria=By.xpath("//*[@text=\"Masajes\"]");
 	By btnAplicarFiltro=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[7]");
 	/////////////////////////////////////Elegir Servicio/////////////////////////////////////////////
-	By btnSeleccionarServicio=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView[2]/android.view.ViewGroup/android.view.ViewGroup");
+	By btnSeleccionarServicio = By.xpath("//*[@text=\"Todo el dia\"]");
 	By btnSolicitarServicio=By.xpath("//*[@text=\"SOLICITAR SERVICIO\"]");	
 	
 	By txtDescripcion=By.xpath("//*[@text=\"ingrese descripcion aqui\"]");	
 	By btnSeleccionarFecha=By.xpath("//*[@text=\"Seleccione fecha para el servicio\"]");
 	By btnOk = By.xpath("//*[@resource-id=\"android:id/button1\"]");
+	By btnOk2 = By.xpath("//*[@text=\"OK\"]");
 	
 	//By btnAceptarFecha=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]");
 	By btnSeleccionarDireccion = By.xpath("//*[@resource-id=\"android:id/text1\"]");
@@ -58,8 +59,11 @@ public class CrearPeticionServicioPage extends BaseTest{
 	}
 	public void clickOcultarTeclado() throws InterruptedException
 	{
-		driver.findElement(btnOcultarTeclado).click();
-		Thread.sleep(5000);
+		if(exist(btnOcultarTeclado)!=null) {
+			driver.findElement(btnOcultarTeclado).click();
+			Thread.sleep(5000);
+		}
+		
 	}
 	public void clickEntrar() throws InterruptedException
 	{
@@ -110,12 +114,18 @@ public class CrearPeticionServicioPage extends BaseTest{
 		
 		
 	}
-	public void clickSeleccionarServicio() throws InterruptedException {
-		
-		this.funcionScrollHorizontal(0.6, 0.1);
-		
-		driver.findElement(btnSeleccionarServicio).click();
-		Thread.sleep(9000);	
+	public void clickSeleccionarServicio(String nombreSolicitante) throws InterruptedException {
+		By btnSeleccionarServicioSolicitante = By.xpath("//*[@text='"+nombreSolicitante+"']");
+		System.out.println(nombreSolicitante);
+		while(exist(btnSeleccionarServicioSolicitante)==null) {
+			this.funcionScrollHorizontal(0.6, 0.1);
+		}
+		System.out.println(btnSeleccionarServicioSolicitante);
+		if(exist(btnSeleccionarServicioSolicitante)!=null) {
+			driver.findElement(btnSeleccionarServicio).click();
+			Thread.sleep(9000);
+		}
+			
 	}
 	
 	
@@ -149,12 +159,10 @@ public class CrearPeticionServicioPage extends BaseTest{
 	}
 	
 	public void clickGenerarPeticion() throws InterruptedException {		
-		if(exist(btnOcultarTeclado2)!=null) {
-			driver.findElement(btnOcultarTeclado2).click();
-			Thread.sleep(3000);	
-		}		
 		
-		driver.findElement(btnSolicitarPeticion).click();
+		driver.findElement(btnSolicitarServicio).click();
+		Thread.sleep(9000);	
+		driver.findElement(btnOk2).click();
 		Thread.sleep(9000);	
 	}
 }

@@ -25,8 +25,7 @@ public class RegistroSolicitanteSteps extends BaseTest {
 	 
 	 try{
 		 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
-		 RegistroData.datosSolicitantes();;
-		 
+		 RegistroData.datosSolicitantes(false);
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
          exp.printStackTrace();
@@ -39,23 +38,24 @@ public class RegistroSolicitanteSteps extends BaseTest {
 	public void ir_al_registro_del_Solicitante() throws Throwable {
 		page = new RegistroSolicitantePage(elemento);
 	    page.clickQuieroSerJobber();
-	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+	    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	}
 
 	@When("Completar el formulario de registro del solicitante")
 	public void completar_el_formulario_de_registro_del_solicitante() throws Throwable {
-		 
-		  page.enterNombres(RegistroData.nombresSolicitante);	   
-		    page.enterApellidos(RegistroData.apellidosSolicitante);	    
-		    page.enterFechaNacimiento("12 de 05 de 1995");	   
-		    page.enterCorreo(RegistroData.emailSolicitante);    
-		    page.enterContrasena(RegistroData.passSolicitante);    
-		    page.clickCedulaDeIdentidad(RegistroData.runSolicitanteNuevo);    
-		    page.enterIdentificador(RegistroData.numSeriePrestador);	    
-		    page.enterCalle(RegistroData.calleSolicitante);	    
-		    page.enterDireccion(RegistroData.ubicacionSolicitante);	    
-		    page.enterNombreDireccion(RegistroData.nombreDirSolicitante);    
-		    page.enterReferencia(RegistroData.refSolicitante); 
+		
+		page=new RegistroSolicitantePage(elemento);
+	    page.enterNombres(RegistroData.nombresSolicitante);
+	    page.enterApellidos(RegistroData.apellidosSolicitante);
+	    page.enterFechaNacimiento("12 de 05 de 1995");	   
+	    page.enterCorreo(RegistroData.emailSolicitante);	    
+	    page.enterContrasena(RegistroData.passSolicitante);	    
+	    page.clickCedulaDeIdentidad(RegistroData.runSolicitanteNuevo);	    
+	    page.enterIdentificador(RegistroData.numSerieSolicitante);	    
+	    page.enterCalle(RegistroData.calleSolicitante);	    
+	    page.enterDireccion(RegistroData.ubicacionSolicitante);	    
+	    page.enterNombreDireccion(RegistroData.nombreDirSolicitante);	    
+	    page.enterReferencia(RegistroData.refSolicitante);	 
 	}
 
 	@Then("hacer click en boton registrar")

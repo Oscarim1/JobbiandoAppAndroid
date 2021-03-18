@@ -105,6 +105,22 @@ public class ConfigFileReader {
 		 throw new RuntimeException("appPackagePrestador no esta especificado en Configuration.properties.");
 	 }
  
+ public String getappPackageNavegator() {
+	 String appPackageNavegator = properties.getProperty("appPackageNavegator");
+	 if(appPackageNavegator != null) 
+		 return appPackageNavegator;
+	 else 
+		 throw new RuntimeException("appPackageNavegator no esta especificado en Configuration.properties.");
+	 }
+ 
+ public String getappActivityNavegator() {
+	 String appActivityNavegator = properties.getProperty("appActivityNavegator");
+	 if(appActivityNavegator != null) 
+		 return appActivityNavegator;
+	 else 
+		 throw new RuntimeException("appPackagePrestador no esta especificado en Configuration.properties.");
+	 }
+ 
  public long getImplicitlyWait() { 
 	 String implicitlyWait = properties.getProperty("implicitlyWait");
 	 if(implicitlyWait != null) 

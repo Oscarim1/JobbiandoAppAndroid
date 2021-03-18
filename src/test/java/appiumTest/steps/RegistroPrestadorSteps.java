@@ -21,7 +21,7 @@ public class RegistroPrestadorSteps extends BaseTest {
 	 
 	 try{
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());	
-		 RegistroData.datosPrestadores();
+		 RegistroData.datosPrestadores(false);
 		 
      }catch(Exception exp) {
          System.out.println(exp.getMessage());

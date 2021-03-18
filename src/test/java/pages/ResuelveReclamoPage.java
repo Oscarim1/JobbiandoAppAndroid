@@ -10,12 +10,20 @@ import io.appium.java_client.MobileElement;
 
 public class ResuelveReclamoPage extends BaseTest {
 	MobileElement elemento=null; 
+	By btnAcepto = By.xpath("//*[@resource-id=\"com.android.chrome:id/terms_accept\"]");
+	By btnNext = By.xpath("//*[@resource-id=\"com.android.chrome:id/next_button\"]");
+	By btnNo = By.xpath("//*[@resource-id=\"com.android.chrome:id/negative_button\"]");
+	By btnSearch = By.xpath("//*[@resource-id=\"com.android.chrome:id/search_box_text\"]");
+	By btnLink = By.xpath("//*[@text=\"app.jobbiando.cl\"]");
+	By btnCerrar = By.xpath("//*[@resource-id=\"com.android.chrome:id/infobar_close_button\"]");
+	
 	By btnOlvideContrasena = By.xpath("//*[@text=\"Olvidaste tu contraseña?\"]");
 	By btnGoBackLogin = By.xpath("//*[@text=\"Go back to login\"]");
-	By txtEmail  = By.xpath("//*[@resource-id=\"mat-input-1\"]");
-	By txtPass  = By.xpath("//*[@resource-id=\"mat-input-2\"]");
+	By txtEmail  = By.xpath("//*[@resource-id=\"mat-input-0\"]");
+	By txtPass  = By.xpath("//*[@resource-id=\"mat-input-1\"]");
 	By btnEntrar  = By.xpath("//*[@resource-id=\"btnEntrar\"]");	
-
+	By btnBlock = By.xpath("//*[@resource-id=\"android:id/button2\"]");
+			
 	By btnBarraLateral = By.className("android.widget.Button");
 	By btnFiltrarReclamo = By.xpath("//*[@text=\"Filtrar Reclamos\"]");	
 	By btnFiltro = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View[3]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[3]/android.widget.EditText");
@@ -37,15 +45,32 @@ public class ResuelveReclamoPage extends BaseTest {
 	
 	public void iniciarSesion() throws InterruptedException {
 		
-		driver.findElement(btnOlvideContrasena).click();
-		Thread.sleep(15000);
-		driver.findElement(btnGoBackLogin).click();
-		Thread.sleep(5000);
+		if(exist(btnAcepto)!=null) {
+			driver.findElement(btnAcepto).click();
+			Thread.sleep(15000);
+			driver.findElement(btnNext).click();
+			Thread.sleep(15000);
+			driver.findElement(btnNo).click();
+			Thread.sleep(15000);
+			driver.findElement(btnSearch).sendKeys("app.jobbiando.cl");
+			Thread.sleep(15000);
+			driver.findElement(btnLink).click();
+			Thread.sleep(15000);
+			driver.findElement(btnCerrar).click();
+			Thread.sleep(15000);
+			
+		}
+		else {
+			driver.findElement(btnOlvideContrasena).click();
+			Thread.sleep(15000);
+			driver.findElement(btnGoBackLogin).click();
+			Thread.sleep(5000);
+		}
 				
 	}
 	
 	public void enterUsernameAdmin(String username) throws InterruptedException {
-		
+		System.out.println(username);
 		driver.findElement(txtEmail).sendKeys(username);
 		Thread.sleep(5000);
 	}
@@ -60,6 +85,14 @@ public class ResuelveReclamoPage extends BaseTest {
 	}
 	
 	public void barraLateral() throws InterruptedException {
+		if(exist(btnBlock)!=null) {
+			driver.findElement(btnBlock).click();
+			Thread.sleep(15000);
+		}
+		if(exist(btnCerrar)!=null) {
+			driver.findElement(btnCerrar).click();
+			Thread.sleep(15000);
+		}
 		
 		driver.findElement(btnBarraLateral).click();
 		Thread.sleep(3000);

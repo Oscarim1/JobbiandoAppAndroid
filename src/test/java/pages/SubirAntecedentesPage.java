@@ -29,7 +29,7 @@ public class SubirAntecedentesPage extends BaseTest {
 	By btnAceptar =By.xpath("//*[@resource-id=\"com.android.camera2:id/done_button\"]");
 	By btnSubirAntecedentes =By.xpath("//*[@text=\"SUBIR ANTECEDENTES\"]");
 	By btnSiSubirAntecedentes =By.xpath("//*[@text=\"SI, SUBIR\"]");
-	By btnOk =By.xpath("//*[@text=\"Ok\"]");
+	By btnOk =By.xpath("//*[@text=\"OK\"]");
 	
 	
 	public SubirAntecedentesPage(MobileElement elemento) throws InterruptedException

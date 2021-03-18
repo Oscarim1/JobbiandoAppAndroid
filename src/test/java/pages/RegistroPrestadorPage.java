@@ -48,11 +48,13 @@ public class RegistroPrestadorPage extends BaseTest {
 	public void enterNombres(String nombres) throws InterruptedException
 	{	
 		if(exist(btnBlock)==null) {
+			System.out.println(nombres+"AQUIII");
 			driver.findElement(txtNombres).sendKeys(nombres);
 			Thread.sleep(5000);
 		}else {
 			driver.findElement(btnBlock).click();
 		    Thread.sleep(5000);
+		    System.out.println(nombres);
 			driver.findElement(txtNombres).sendKeys(nombres);
 			Thread.sleep(5000);
 		}
@@ -121,8 +123,8 @@ public class RegistroPrestadorPage extends BaseTest {
 	{
 		driver.findElement(txtDireccion).sendKeys(direccion);
 		Thread.sleep(5000);
-		driver.findElement(txtDireccion).click();
-		Thread.sleep(5000);
+		//driver.findElement(txtDireccion).click();
+		//Thread.sleep(5000);
 
 	}
 	
