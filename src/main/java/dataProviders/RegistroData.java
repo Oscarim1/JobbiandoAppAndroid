@@ -41,7 +41,7 @@ public class RegistroData extends SheetsQuickstart {
  
     
     
-	public static void datosPrestadores(String... args) throws IOException, GeneralSecurityException {
+	public static void main(String... args) throws IOException, GeneralSecurityException {
 		Integer n=2;
 		Integer m=2;
 		Integer a=null;
@@ -74,7 +74,7 @@ public class RegistroData extends SheetsQuickstart {
      	        	System.out.println("*Datos en la fila "+n+" sin uso previo.");
      	        	System.out.println("*Datos obtenidos.");
     				System.out.printf("*Estado modificado.");
-     	        		 for (int i = 1; i < values.size(); i++) {
+     	        		 for (int i = 0; i < values.size(); i++) {
      		            	 List<Object> row = values.get(i);
      		            	 nombresPrestador=(String) row.get(1);       	 
      		            	 apellidosPrestador=(String) row.get(2);
@@ -87,8 +87,7 @@ public class RegistroData extends SheetsQuickstart {
      		            	 ubicacionPrestador=(String) row.get(9);
      		            	 nombreDirPrestador=(String) row.get(10);
      		            	 refPrestador=(String) row.get(11);
-     		            	
-     		            	
+     		            	System.out.println("*Datos obtenidos."+nombresPrestador);
      	        }
      	    }
           updateValues(service,range);
