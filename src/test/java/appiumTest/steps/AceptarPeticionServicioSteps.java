@@ -22,7 +22,7 @@ public class AceptarPeticionServicioSteps extends BaseTest{
 			 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 			 Thread.sleep(15000);
 			 page = new AceptarPeticionServicioPage(elemento);
-			 RegistroData.dataRegistroPrestador();
+			 RegistroData.datosPrestadores(false);
 			 Thread.sleep(10000); 
 			 page.enterCorreo(RegistroData.emailPrestador);	  
 			   

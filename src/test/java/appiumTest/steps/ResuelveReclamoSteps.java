@@ -26,7 +26,8 @@ public class ResuelveReclamoSteps extends BaseTest {
 		 Thread.sleep(3000);
 		 page = new ResuelveReclamoPage(elemento);
 		 RegistroData.dataAdministrador();
-		 RegistroData.dataRegistroSolicitante();
+		 RegistroData.datosPrestadores(true);
+		 RegistroData.datosSolicitantes(true);
 		 page.iniciarSesion();
 		 page.enterUsernameAdmin(RegistroData.correoAdministrador);
 		 page.enterPassAdmin(RegistroData.passAdministrador);
@@ -75,6 +76,7 @@ public class ResuelveReclamoSteps extends BaseTest {
 		page=new ResuelveReclamoPage(elemento);	    
 	    Thread.sleep(4000);
 	    page.registrar("Se le devolvera el dinero en su totalidad.");
+	    
 	    driver.quit();
 	}
 }

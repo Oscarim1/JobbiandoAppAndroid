@@ -21,7 +21,7 @@ public class SubirAntecedentesSteps extends BaseTest{
 	public void completar_login_y_entrar() throws Throwable {
 		 try{			 
 			 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
-			 RegistroData.dataRegistroPrestador();
+			 RegistroData.datosPrestadores(false);
 			 Thread.sleep(10000);
 	     }catch(Exception exp) {
 	         System.out.println(exp.getMessage());

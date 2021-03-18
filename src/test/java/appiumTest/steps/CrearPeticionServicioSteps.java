@@ -22,8 +22,8 @@ public class CrearPeticionServicioSteps extends BaseTest {
 		 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
 		 Thread.sleep(25000);
 		 page = new CrearPeticionServicioPage(elemento);
-		 RegistroData.dataRegistroSolicitante();
-		 RegistroData.dataRegistroPrestador();
+		 RegistroData.datosSolicitantes(false);
+		 RegistroData.datosPrestadores(false);
 		 page.correoSolicitante(RegistroData.emailSolicitante);
 		 page.clickOcultarTeclado();		
 		 page.passSolicitante(RegistroData.passSolicitante);

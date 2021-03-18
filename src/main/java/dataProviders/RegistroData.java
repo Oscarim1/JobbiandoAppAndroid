@@ -41,12 +41,43 @@ public class RegistroData extends SheetsQuickstart {
  
     
     
-	public static void datosPrestadores(String... args) throws IOException, GeneralSecurityException {
+  //DATOS ADMINISTRADOR
+    public static String correoAdministrador = "";
+    public static String passAdministrador = "";
+    
+    
+    public static void dataAdministrador(String... args) throws IOException, GeneralSecurityException {
+		
+		final String range = "AdministradorData!A2:K2";
+    	final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+    	Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT)).setApplicationName(APPLICATION_NAME).build();
+        ValueRange response = service.spreadsheets().values().get(SPREEDSHEET_ID, range).execute();
+        
+        
+        List<List<Object>> values = response.getValues();
+        
+        if(values == null || values.isEmpty()) {
+        	 System.out.println("No hay datos en la fila =(");
+        }else {
+
+        	 System.out.println("Datos obtenidos correctamente =)");
+             for (int i = 0; i < values.size(); i++) {
+ 				List<Object> row = values.get(i);
+ 				correoAdministrador=(String) row.get(0);
+ 				passAdministrador=(String) row.get(1);
+ 				System.out.println(correoAdministrador);
+ 				System.out.println(passAdministrador);
+
+ 				}
+		}           
+	}
+    
+	public static void datosPrestadores(Boolean uso, String... args) throws IOException, GeneralSecurityException {
 		Integer n=2;
 		Integer m=2;
 		Integer a=null;
 		
-	while(a==null){	
+		while(a==null){	
 		
 		final String range = "PrestadorData!A"+n+":L"+m+"";
     	final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
@@ -74,7 +105,7 @@ public class RegistroData extends SheetsQuickstart {
      	        	System.out.println("*Datos en la fila "+n+" sin uso previo.");
      	        	System.out.println("*Datos obtenidos.");
     				System.out.printf("*Estado modificado.");
-     	        		 for (int i = 1; i < values.size(); i++) {
+     	        		 for (int i = 0; i < values.size(); i++) {
      		            	 List<Object> row = values.get(i);
      		            	 nombresPrestador=(String) row.get(1);       	 
      		            	 apellidosPrestador=(String) row.get(2);
@@ -87,23 +118,27 @@ public class RegistroData extends SheetsQuickstart {
      		            	 ubicacionPrestador=(String) row.get(9);
      		            	 nombreDirPrestador=(String) row.get(10);
      		            	 refPrestador=(String) row.get(11);
-     		            	
+     		            	 System.out.printf(nombresPrestador);
      		            	
      	        }
      	    }
-          updateValues(service,range);
+              	 if(uso) {
+              		 updateValues(service,range);
+              	 }
+          
         }
 	}           
 }
     	
 	 
 	   
-public static void datosSolicitantes(String... args) throws IOException, GeneralSecurityException {
+public static void datosSolicitantes(Boolean uso, String... args) throws IOException, GeneralSecurityException {
 	    	
 	    	
 			Integer n=2;
 			Integer m=2;
 			Integer a=null;
+			System.out.println(uso);
 			
 		while(a==null){	
 			
@@ -133,7 +168,7 @@ public static void datosSolicitantes(String... args) throws IOException, General
 	     	        	System.out.println("Datos en la fila "+n+" sin uso previo, obteniendo... ");
 	     	        	System.out.println("Datos obtenidos correctamente.");
 	    				System.out.printf("Estado modificado correctamente.");
-	     	        		 for (int i = 1; i < values.size(); i++) {
+	     	        		 for (int i = 0; i < values.size(); i++) {
 	     		            	 List<Object> row = values.get(i);
 	     		            	 nombresSolicitante=(String) row.get(1);       	 
 	     		            	 apellidosSolicitante=(String) row.get(2);
@@ -145,11 +180,15 @@ public static void datosSolicitantes(String... args) throws IOException, General
 	     		            	 calleSolicitante=(String) row.get(8);
 	     		            	 ubicacionSolicitante=(String) row.get(9);
 	     		            	 nombreDirSolicitante=(String) row.get(10);
-	     		            	 refSolicitante=(String) row.get(11);   		            	
+	     		            	 refSolicitante=(String) row.get(11);   
+	     		            	 
 	     	         }  		
 	     	    }
 	        }
-	      updateValues(service,range);
+	      if(uso) {
+	    	  updateValues(service,range);
+	      }
+	        
 	    }
 	}    	
 }
