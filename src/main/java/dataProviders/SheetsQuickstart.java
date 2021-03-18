@@ -23,7 +23,7 @@ import java.util.Collections;
 import java.util.List;
 public class SheetsQuickstart {
 		
-		//ID DE LA HOJA DE CÁLCULO
+		//ID DE LA HOJA DE Cï¿½LCULO
 		public static String SPREEDSHEET_ID = "1zXWlJbvdTUX82ahfUdTzjh1i-JlXPQua43gyg_5YX7E";
 		
 		protected static final String APPLICATION_NAME = "Google Sheets API Java Quickstart";	
@@ -52,9 +52,8 @@ public class SheetsQuickstart {
 	    }
 	    
 	    public static void updateValues(Sheets servicio,String rango)throws IOException, GeneralSecurityException{
-				@SuppressWarnings("unchecked")
-				List<List<Object>> valuesReplace = Arrays.asList(
-				        Arrays.<Object>asList("USADO"));
+				
+				List<List<Object>> valuesReplace = Arrays.asList(Arrays.<Object>asList("USADO"));
 				ValueRange body = new ValueRange().setValues(valuesReplace);
 				UpdateValuesResponse result =servicio.spreadsheets().values().update(SPREEDSHEET_ID, rango, body).setValueInputOption("RAW").execute();
 

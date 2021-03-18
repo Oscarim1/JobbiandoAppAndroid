@@ -13,7 +13,7 @@ import io.appium.java_client.MobileElement;
 
 public class RegistroPrestadorPage extends BaseTest {
 	MobileElement elemento=null; 
-	By btnQuieroSerJobber = By.xpath("//*[@text=\"crear cuenta aquí\"]");
+	By btnQuieroSerJobber = By.xpath("//*[@text=\"crear cuenta aquÃ­\"]");
 	
 	By txtNombres=By.xpath("//*[@resource-id=\"mat-input-0\"]");
 	By txtApellidos=By.xpath("//*[@resource-id=\"mat-input-1\"]");

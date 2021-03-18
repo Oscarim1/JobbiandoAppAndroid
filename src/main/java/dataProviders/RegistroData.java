@@ -38,7 +38,7 @@ public class RegistroData extends SheetsQuickstart {
     public static String nombreDirSolicitante = "";
     public static String refSolicitante = "";
     public static String estado="";
-    public static String estadoUsado="USADO";
+ 
     
     
 	public static void datosPrestadores(String... args) throws IOException, GeneralSecurityException {
