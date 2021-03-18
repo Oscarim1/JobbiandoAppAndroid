@@ -33,7 +33,9 @@ public class RealizarPagoSolicitudDesdePeticionPage extends BaseTest {
 	By txtClaveUsuario=By.xpath("//android.widget.EditText[@content-desc=\"password\"]");
 	By btnSeguir=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[1]/android.webkit.WebView/android.webkit.WebView/android.view.View[2]/android.view.View[5]");
 	By btnContinuar2=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[1]/android.webkit.WebView/android.webkit.WebView/android.view.View[1]/android.view.View[3]/android.widget.ListView/android.view.View[17]");
-	By txtAutorizacion=By.xpath("//android.view.View[@content-desc=\"Autorizar nómina\"]/android.widget.TextView");
+	By txtAutorizacion1=By.id("com.khipu.android:id/firstCoordinateField");
+	By txtAutorizacion2=By.id("com.khipu.android:id/secondCoordinateField");	
+	By txtAutorizacion3=By.id("com.khipu.android:id/thirdCoordinateField");
 	By btnSeguir2=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[1]/android.webkit.WebView/android.webkit.WebView/android.view.View[2]/android.view.View[5]/android.view.View");;
 	By btnTerminar=By.xpath("//*[@text='TERMINAR']");
 	
@@ -130,22 +132,25 @@ public class RealizarPagoSolicitudDesdePeticionPage extends BaseTest {
 	 public void enterDatosUsuario(String id,String clave) throws InterruptedException{
 		driver.findElement(txtIdUsuario).sendKeys(id);
 		Thread.sleep(3000);
-		if(driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[1]/android.webkit.WebView/android.webkit.WebView/android.view.View[2]/android.view.View[5]")!=null) {
+		/*if(driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[1]/android.webkit.WebView/android.webkit.WebView/android.view.View[2]/android.view.View[5]")!=null) {
 			
 			driver.findElement(btnOcultarTecladoMovil).click();
-		}
+		}*/
 		driver.findElement(txtClaveUsuario).sendKeys(clave);
 		Thread.sleep(3000);
-		driver.findElement(btnSeguir).click();
-		Thread.sleep(9000);	
 		driver.findElement(btnContinuar).click();
 		Thread.sleep(9000);	
+			
 	 }
 	
-	 public void enterAutorizacion(String auth) throws InterruptedException{
-		driver.findElement(txtAutorizacion).sendKeys(auth);
+	 public void enterAutorizacion(String auth1, String auth2, String auth3) throws InterruptedException{
+		driver.findElement(txtAutorizacion1).sendKeys(auth1);
 		Thread.sleep(3000);	
-		driver.findElement(btnSeguir2).click();
+		driver.findElement(txtAutorizacion2).sendKeys(auth2);
+		Thread.sleep(3000);	
+		driver.findElement(txtAutorizacion3).sendKeys(auth3);
+		Thread.sleep(3000);	
+		driver.findElement(btnContinuar).click();
 		Thread.sleep(9000);	
 	 }
 	 public void clickTerminar() throws InterruptedException{

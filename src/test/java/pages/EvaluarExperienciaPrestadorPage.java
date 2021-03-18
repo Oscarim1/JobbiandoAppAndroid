@@ -97,8 +97,8 @@ public class EvaluarExperienciaPrestadorPage extends BaseTest{
 		Thread.sleep(2000);
 		driver.findElement(btnEnviarEvaluacion).click();
 		Thread.sleep(5000);
-		driver.findElement(btnOk).click();
-		Thread.sleep(5000);
+		/*driver.findElement(btnOk).click();
+		Thread.sleep(5000);*/
 		
 	}
 }

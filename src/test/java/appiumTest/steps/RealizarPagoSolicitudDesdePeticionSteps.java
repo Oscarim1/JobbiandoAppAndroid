@@ -59,9 +59,9 @@ public class RealizarPagoSolicitudDesdePeticionSteps extends BaseTest{
 		 page.clickPagarServicio();
 		 page.enterEmailPagador(RegistroData.emailSolicitante);
 		 page.clickContinuar();
-		 page.enterDatosUsuario(RegistroData.runSolicitante,"1234");
+		 page.enterDatosUsuario("9.123.845-4","1234");
 		 page.clickContinuar();
-		 page.enterAutorizacion("11 22 33");
+		 page.enterAutorizacion("11", "22", "33");
 		
 		
 	}

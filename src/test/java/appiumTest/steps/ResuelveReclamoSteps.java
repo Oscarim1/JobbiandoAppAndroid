@@ -6,6 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
+import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
 
 import pages.ResuelveReclamoPage;
@@ -21,16 +22,16 @@ public class ResuelveReclamoSteps extends BaseTest {
 	public void rellena_el_formulario_de_login_del_admin_y_entrar() throws Throwable {
 	 
 	 try{
-		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
+		 openNavegator(configFileReader.getappPackageNavegator(),configFileReader.getappActivityNavegator());
 		 Thread.sleep(3000);
 		 page = new ResuelveReclamoPage(elemento);
-		 Thread.sleep(4000);
+		 RegistroData.dataAdministrador();
+		 RegistroData.dataRegistroSolicitante();
 		 page.iniciarSesion();
-		 Thread.sleep(3000);
-		 page.enterUsernameAdmin(emailAdmin);
-		 Thread.sleep(3000);
-		 page.enterPassAdmin(passAdmin);
-
+		 page.enterUsernameAdmin(RegistroData.correoAdministrador);
+		 page.enterPassAdmin(RegistroData.passAdministrador);
+		 
+		 
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
          exp.printStackTrace();
@@ -57,8 +58,7 @@ public class ResuelveReclamoSteps extends BaseTest {
 		
 	
 		page=new ResuelveReclamoPage(elemento);	    
-	    Thread.sleep(4000);
-		page.filtroNombre("Dante");
+		page.filtroNombre(RegistroData.nombresSolicitante);
 	 
 	}
 
