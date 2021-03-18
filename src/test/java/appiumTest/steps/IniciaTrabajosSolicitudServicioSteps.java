@@ -7,6 +7,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
+import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
 
 import pages.IniciaTrabajosSolicitudServicioPage;
@@ -24,8 +25,11 @@ public class IniciaTrabajosSolicitudServicioSteps extends BaseTest {
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 		 Thread.sleep(15000);
 		 page = new IniciaTrabajosSolicitudServicioPage(elemento);	
-		 page.correoPrestador(emailPrestador52);	
-		 page.passPrestador(passPrestador);
+		 RegistroData.dataRegistroPrestador();
+		 Thread.sleep(10000); 
+		 page.correoPrestador(RegistroData.emailPrestador);	  
+		 page.passPrestador(RegistroData.passPrestador);	
+
 
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
@@ -35,18 +39,11 @@ public class IniciaTrabajosSolicitudServicioSteps extends BaseTest {
      }
 	 
 	}
-	
-	@And("Ingresar a asignar Servicio")
-	public void ingresar_a_asignar_Servicio() throws Throwable {
-		   page=new IniciaTrabajosSolicitudServicioPage(elemento);
-		  
-		   page.permisosDeny();
-		   page.clickServicio();
-	}
-	
+		
 	@And("Ingresar a pestana Solicitud")
 	public void ingresar_a_pestana_Solicitud() throws Throwable {
 		   page=new IniciaTrabajosSolicitudServicioPage(elemento);
+		   page.permisosDeny();
 		   page.clickSolicitud();
 	}
 

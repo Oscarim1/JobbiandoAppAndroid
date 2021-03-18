@@ -12,14 +12,22 @@ public class RealizarPagoSolicitudDesdePeticionPage extends BaseTest {
 	By txtContrasena =By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.EditText");
 	By btnEntrar = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]");
 	By btnOcultarTeclado=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ImageView");
-	By btnPermitirAccesoUbicacion=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[1]");
+	By btnDeny = By.xpath("//*[@text='DENY']");
+	By btnAllow = By.xpath("//*[@text='ALLOW']");
+	By btnDontAskAgain = By.id("com.android.packageinstaller:id/do_not_ask_checkbox");
+	
 	By btnPestanaSolicitud=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[3]");
 	By btnPestanaEnProceso=By.xpath("//*[@text='En Proceso']");
 	By btnPagarServicio=By.xpath("//*[@text='PAGAR SERVICIO']");
 	By btnPagarServicio2=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[9]");
+	By btnDeny2 = By.id("com.android.packageinstaller:id/permission_deny_button");
+
+	By btnCancelar = By.xpath("//*[@resource-id=\"android:id/button2\"]");
 	By btnClearEmail=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.ListView/android.widget.RelativeLayout/android.widget.TextView");
 	By txtEmailPagador=By.id("com.khipu.android:id/payer_email");
-	By btnContinuar=By.xpath("//*[@text='CONTINUAR']");
+	By btnBanco = By.id("com.khipu.android:id/posBankPicker");
+	By btnDemoBank = By.xpath("//*[@text='DemoBank']"); 
+	By btnContinuar=By.id("com.khipu.android:id/lowerBarButton");
 	By btnOcultarTecladoMovil=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[1]/android.webkit.WebView/android.webkit.WebView/android.view.View[2]/android.view.View[5]");
 	By txtIdUsuario=By.xpath("//android.widget.EditText[@content-desc=\"username\"]");
 	By txtClaveUsuario=By.xpath("//android.widget.EditText[@content-desc=\"password\"]");
@@ -57,34 +65,62 @@ public class RealizarPagoSolicitudDesdePeticionPage extends BaseTest {
 		Thread.sleep(25000);
 	}
 	/////////////////////////LOGIN/////////////////////////////////////////
-	public void clickPestanaSolicitud() throws InterruptedException
-	/////MODIFICAR PARA EMULADOR/////////////
-	{	if(driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[1]") != null) {
-		driver.findElement(btnPermitirAccesoUbicacion).click();
-		Thread.sleep(3000);
-		
-	}else {}
+	public void clickPestanaSolicitud() throws InterruptedException{
+
+		if(exist(btnDeny) != null) {
+
+			driver.findElement(btnDeny).click();
+			Thread.sleep(5000);
+		}else {
+		}
 		driver.findElement(btnPestanaSolicitud).click();
 		Thread.sleep(10000);
+		
 	}
 	public void clickPestanaEnProceso() throws InterruptedException
 	{
-		driver.findElement(btnPestanaEnProceso).click();
-		Thread.sleep(10000);
+		if(exist(btnDontAskAgain) != null) {
+			
+			driver.findElement(btnDontAskAgain).click();
+			Thread.sleep(5000);
+			driver.findElement(btnDeny).click();
+			driver.findElement(btnPestanaEnProceso).click();
+			Thread.sleep(5000);
+			
+		}else {
+			
+			driver.findElement(btnPestanaEnProceso).click();
+			Thread.sleep(5000);
+		}
 	}
 	public void clickPagarServicio() throws InterruptedException
 	{
 		driver.findElement(btnPagarServicio).click();
 		Thread.sleep(20000);
 		this.funcionScrollDown(0.9,0.1);
-		driver.findElement(btnPagarServicio2).click();
+		driver.findElement(btnPagarServicio).click();
 		Thread.sleep(15000);
 		
 	}
 	public void enterEmailPagador(String emailPagador) throws InterruptedException
 	{   
+		if(exist(btnDeny2)!=null) {
+			driver.findElement(btnDeny2).click();
+			Thread.sleep(3000);
+			
+		}
+		if(exist(btnCancelar)!=null) {
+			driver.findElement(btnCancelar).click();
+			Thread.sleep(3000);
+		}
+		
 		driver.findElement(txtEmailPagador).sendKeys(emailPagador);
 		Thread.sleep(3000);
+		driver.findElement(btnBanco).click();
+		Thread.sleep(3000);
+		driver.findElement(btnDemoBank).click();
+		Thread.sleep(3000);
+		
 	}
 	public void clickContinuar() throws InterruptedException
 	{

@@ -6,6 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
+import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
 import pages.RealizarPagoSolicitudDesdePeticionPage;
 
@@ -20,10 +21,12 @@ public class RealizarPagoSolicitudDesdePeticionSteps extends BaseTest{
 			 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
 			 Thread.sleep(20000);
 			 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);		
-			 page.enterCorreo(emailSolicitante);
+			 RegistroData.dataRegistroSolicitante();
+			 page.enterCorreo(RegistroData.emailSolicitante);
 			 page.clickOcultarTeclado();		
-			 page.enterContrasena(passSolicitante);
+			 page.enterContrasena(RegistroData.passSolicitante);
 			 page.clickOcultarTeclado();
+			 
 			 page.clickEntrar();
 	     }catch(Exception exp) {
 	         System.out.println(exp.getMessage());
@@ -54,9 +57,9 @@ public class RealizarPagoSolicitudDesdePeticionSteps extends BaseTest{
 	public void ingresar_datos_de_pago() throws Throwable {
 		 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
 		 page.clickPagarServicio();
-		 page.enterEmailPagador(emailSolicitante);
+		 page.enterEmailPagador(RegistroData.emailSolicitante);
 		 page.clickContinuar();
-		 page.enterDatosUsuario("9.123.845-4","1234");
+		 page.enterDatosUsuario(RegistroData.runSolicitante,"1234");
 		 page.clickContinuar();
 		 page.enterAutorizacion("11 22 33");
 		

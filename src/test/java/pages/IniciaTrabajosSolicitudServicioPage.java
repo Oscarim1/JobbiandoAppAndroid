@@ -17,8 +17,9 @@ public class IniciaTrabajosSolicitudServicioPage extends BaseTest{
 	By btnAllow = By.xpath("//*[@text='ALLOW']");
 	By btnServicioPestana=By.xpath("//*[@text='SERVICIOS']");
 	By btnPeticiones=By.xpath("//*[@text='Peticiones']");
-	By btnEspera=By.xpath("//*[@text='ESPERA']");
-	By btnAceptar = By.xpath("//*[@text='ACEPTAR']");
+	//By btnEspera=By.xpath("//*[@text='ESPERA']");
+	By btnAceptada=By.xpath("//*[@text='ACEPTADA']");
+	//By btnAceptar = By.xpath("//*[@text='ACEPTAR']");
 	By btnSolicitudPestana=By.xpath("//*[@text='SOLICITUD']");
 	By btnSolicitudAceptada = By.xpath("//*[@text='SOLICITUD ACEPTADA']");
 	By btnActualizarEstadoEnCamino = By.xpath("//*[@text='ACTUALIZAR ESTADO A EN CAMINO']");
@@ -90,13 +91,13 @@ public class IniciaTrabajosSolicitudServicioPage extends BaseTest{
 			Thread.sleep(5000);
 			driver.findElement(btnPeticiones).click();
 			Thread.sleep(5000);
-			driver.findElement(btnEspera).click();
+			driver.findElement(btnAceptada).click();
 			Thread.sleep(5000);
 			this.funcionScrollDown(0.9,0.1);
 			Thread.sleep(2000);
-			driver.findElement(btnAceptar).click();
+			driver.findElement(btnAceptada).click();
 			Thread.sleep(5000);
-			driver.findElement(btnAceptar).click();
+			driver.findElement(btnAceptada).click();
 			Thread.sleep(5000);
 			driver.findElement(btnOk).click();
 			
@@ -106,13 +107,13 @@ public class IniciaTrabajosSolicitudServicioPage extends BaseTest{
 			Thread.sleep(5000);
 			driver.findElement(btnPeticiones).click();
 			Thread.sleep(5000);
-			driver.findElement(btnEspera).click();
+			driver.findElement(btnAceptada).click();
 			Thread.sleep(5000);
 			this.funcionScrollDown(0.9,0.1);
 			Thread.sleep(2000);
-			driver.findElement(btnAceptar).click();
+			driver.findElement(btnAceptada).click();
 			Thread.sleep(5000);
-			driver.findElement(btnAceptar).click();
+			driver.findElement(btnAceptada).click();
 			Thread.sleep(5000);
 			driver.findElement(btnOk).click();
 		}
@@ -120,8 +121,20 @@ public class IniciaTrabajosSolicitudServicioPage extends BaseTest{
 	
 	public void clickSolicitud() throws InterruptedException{
 		
-		driver.findElement(btnSolicitudPestana).click();
-		Thread.sleep(5000);
+		if(exist(btnDontAskAgain) != null) {
+			
+			driver.findElement(btnDontAskAgain).click();
+			Thread.sleep(5000);
+			driver.findElement(btnDeny).click();
+			Thread.sleep(5000);
+			driver.findElement(btnSolicitudPestana).click();
+			Thread.sleep(5000);
+			
+		}else {
+			driver.findElement(btnSolicitudPestana).click();
+			Thread.sleep(5000);
+		}
+		
 	}
 	
 	public void clickSeleccionaSolicitud() throws InterruptedException{
