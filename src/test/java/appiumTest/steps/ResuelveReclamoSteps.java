@@ -25,9 +25,9 @@ public class ResuelveReclamoSteps extends BaseTest {
 		 openNavegator(configFileReader.getappPackageNavegator(),configFileReader.getappActivityNavegator());
 		 Thread.sleep(3000);
 		 page = new ResuelveReclamoPage(elemento);
-		 RegistroData.dataAdministrador();
-		 RegistroData.datosPrestadores(true);
-		 RegistroData.datosSolicitantes(true);
+		 RegistroData.dataAdministrador(appiumON);
+		 RegistroData.datosPrestadores(appiumON,true);
+		 RegistroData.datosSolicitantes(appiumON,true);
 		 page.iniciarSesion();
 		 page.enterUsernameAdmin(RegistroData.correoAdministrador);
 		 page.enterPassAdmin(RegistroData.passAdministrador);

@@ -25,8 +25,8 @@ public class PresentaReclamoSteps extends BaseTest {
 		 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
 		 Thread.sleep(15000);
 		 page = new  PresentaReclamoPage(elemento);
-		 RegistroData.datosSolicitantes(false);
-		 RegistroData.datosPrestadores(false);
+		 RegistroData.datosSolicitantes(appiumON,false);
+		 RegistroData.datosPrestadores(appiumON,false);
 		 page.correoSolicitante(RegistroData.emailSolicitante);
 		
 		 page.passSolicitante(RegistroData.passSolicitante);

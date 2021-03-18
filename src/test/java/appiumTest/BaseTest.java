@@ -89,7 +89,7 @@ public class BaseTest {
 		
 	}
 
-	public void openNavegator() throws Exception {
+	public void openNavegator(String rol1,String rol2) throws Exception {
 		
 		try {
 			
@@ -104,8 +104,8 @@ public class BaseTest {
 	        clientCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 	        clientCapabilities.setCapability(MobileCapabilityType.UDID, device);
 	        clientCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
-	        clientCapabilities.setCapability("appPackage","com.android.chrome");
-	        clientCapabilities.setCapability("appActivity","com.google.android.apps.chrome.Main");
+	        clientCapabilities.setCapability("appPackage",rol1);
+	        clientCapabilities.setCapability("appActivity",rol2);
 	        
 	        
 			if (appiumON!=null && appiumON.equals("S")) {

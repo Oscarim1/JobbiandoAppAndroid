@@ -25,7 +25,7 @@ public class RegistroSolicitanteSteps extends BaseTest {
 	 
 	 try{
 		 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
-		 RegistroData.datosSolicitantes(false);
+		 RegistroData.datosSolicitantes(appiumON,false);
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
          exp.printStackTrace();

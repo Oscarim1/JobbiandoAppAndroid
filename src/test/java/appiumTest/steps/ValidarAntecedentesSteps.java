@@ -31,7 +31,7 @@ public class ValidarAntecedentesSteps extends BaseTest {
 		 Thread.sleep(15000);
 		 /*openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 		 Thread.sleep(15000);*/
-		 RegistroData.dataAdministrador();
+		 RegistroData.dataAdministrador(appiumON);
 		 page = new ValidarAntecedentesPage(elemento);
 		 page.iniciarSesion();
 		 page.enterUsernameAdmin(RegistroData.correoAdministrador);
@@ -56,7 +56,7 @@ public class ValidarAntecedentesSteps extends BaseTest {
 	@When("Seleccionar al usuario al que se le validaran los antecedentes")
 	public void seleccionar_al_usuario_al_que_se_le_validaran_los_antecedentes() throws Throwable {
 		page=new ValidarAntecedentesPage(elemento);	
-		RegistroData.datosPrestadores(false);
+		RegistroData.datosPrestadores(appiumON,false);
 		page.filtroNombre(RegistroData.nombresPrestador);
 	 
 	}

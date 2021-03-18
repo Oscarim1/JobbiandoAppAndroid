@@ -20,8 +20,8 @@ public class EvaluarExperienciaSolicitanteSteps extends BaseTest {
 			 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
 			 Thread.sleep(20000);
 			 page = new EvaluarExperienciaSolicitantePage(elemento);		
-			 RegistroData.datosSolicitantes(false);
-			 RegistroData.datosPrestadores(false);
+			 RegistroData.datosSolicitantes(appiumON,false);
+			 RegistroData.datosPrestadores(appiumON,false);
 			 page.enterCorreo(RegistroData.emailSolicitante);
 			 page.clickOcultarTeclado();		
 			 page.enterContrasena(RegistroData.passSolicitante);

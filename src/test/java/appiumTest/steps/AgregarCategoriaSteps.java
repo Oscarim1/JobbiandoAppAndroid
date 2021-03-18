@@ -24,7 +24,7 @@ public class AgregarCategoriaSteps extends BaseTest {
 			 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 			 Thread.sleep(15000);
 			 page=new AgregarCategoriaPage(elemento);
-			 RegistroData.datosPrestadores(false);
+			 RegistroData.datosPrestadores(appiumON,false);
 			 Thread.sleep(10000); 
 			 page.enterCorreo(RegistroData.emailPrestador);	  
 			 page.enterContrasena(RegistroData.passPrestador);	  

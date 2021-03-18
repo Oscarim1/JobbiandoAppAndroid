@@ -27,7 +27,7 @@ public class CrearOfertaDeServicioSteps extends BaseTest {
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 		 Thread.sleep(10000);
 		 page = new CrearOfertaDeServicioPage(elemento);
-		 RegistroData.datosPrestadores(false);
+		 RegistroData.datosPrestadores(appiumON,false);
 		 Thread.sleep(10000); 
 		 page.correoPrestador(RegistroData.emailPrestador);	  
 		 page.clickOcultarTeclado();
