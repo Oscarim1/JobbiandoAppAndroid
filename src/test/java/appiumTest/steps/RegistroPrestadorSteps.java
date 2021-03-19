@@ -33,7 +33,7 @@ public class RegistroPrestadorSteps extends BaseTest {
 	@And("Ir al registro del Prestador")
 	public void ir_al_registro_del_Prestador() throws Throwable {
 		page = new RegistroPrestadorPage(elemento);
-		Thread.sleep(7000);
+		Thread.sleep(20000);
 	    page.clickQuieroSerJobber();
 	    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	}
