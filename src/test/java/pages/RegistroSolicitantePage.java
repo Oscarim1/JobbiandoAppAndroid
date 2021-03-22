@@ -13,7 +13,9 @@ import io.appium.java_client.MobileElement;
 public class RegistroSolicitantePage extends BaseTest {
 	MobileElement elemento=null; 
 	By btnQuieroSerJobber = By.xpath("//*[@text=\"crear cuenta aquí\"]");
-	
+	By btnAccept=By.id("com.android.chrome:id/terms_accept");
+	By btnNext=By.id("com.android.chrome:id/next_button");
+	By btnNoThanks=By.id("com.android.chrome:id/negative_button");
 	By txtNombres=By.xpath("//*[@resource-id=\"mat-input-0\"]");
 	By txtApellidos=By.xpath("//*[@resource-id=\"mat-input-1\"]");
 	By txtFechaNacimiento = By.xpath("//*[@resource-id=\"mat-input-2\"]");
@@ -42,6 +44,29 @@ public class RegistroSolicitantePage extends BaseTest {
 		driver.findElement(btnQuieroSerJobber).click();
 		Thread.sleep(10000);
 	}
+	public void validacionSamsung() throws InterruptedException{
+		
+		if(exist(btnAccept)!=null) {
+			driver.findElement(btnAccept).click();
+			Thread.sleep(5000);
+			driver.findElement(btnNext).click();
+			Thread.sleep(5000);
+			driver.findElement(btnNoThanks).click();
+			Thread.sleep(5000);
+			
+		}
+		else if(exist(btnNext)!=null) {
+			driver.findElement(btnNext).click();
+			Thread.sleep(5000);
+			driver.findElement(btnNoThanks).click();
+			Thread.sleep(5000);
+		}
+		else {
+			
+		}
+		
+	}
+	
 	///////////////////////////////////////////////////////////
 	public void enterNombres(String nombres) throws InterruptedException 
 	{	

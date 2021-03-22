@@ -37,6 +37,7 @@ public class RegistroSolicitanteSteps extends BaseTest {
 	@And("Ir al registro del Solicitante")
 	public void ir_al_registro_del_Solicitante() throws Throwable {
 		page = new RegistroSolicitantePage(elemento);
+		Thread.sleep(30000);
 	    page.clickQuieroSerJobber();
 	    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	}
@@ -45,7 +46,8 @@ public class RegistroSolicitanteSteps extends BaseTest {
 	public void completar_el_formulario_de_registro_del_solicitante() throws Throwable {
 		
 		page=new RegistroSolicitantePage(elemento);
-	    page.enterNombres(RegistroData.nombresSolicitante);
+	    page.validacionSamsung();
+	    page.enterNombres(RegistroData.nombresSolicitante);   
 	    page.enterApellidos(RegistroData.apellidosSolicitante);
 	    page.enterFechaNacimiento("12 de 05 de 1995");	   
 	    page.enterCorreo(RegistroData.emailSolicitante);	    
