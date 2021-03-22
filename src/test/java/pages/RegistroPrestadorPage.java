@@ -15,6 +15,12 @@ public class RegistroPrestadorPage extends BaseTest {
 	MobileElement elemento=null; 
 	By btnQuieroSerJobber = By.xpath("//*[@text=\"crear cuenta aquí\"]");
 	
+	////////////////////VALIDACION CHROME//////////////////////////
+	By btnAccept = By.id("com.android.chrome:id/terms_accept");	
+	By btnNext = By.id("com.android.chrome:id/next_button");
+	By btnNoThanks = By.id("com.android.chrome:id/negative_button");
+	//////////////////FIN VALIDACION CHROME////////////////////////
+	
 	By txtNombres=By.xpath("//*[@resource-id=\"mat-input-0\"]");
 	By txtApellidos=By.xpath("//*[@resource-id=\"mat-input-1\"]");
 	By txtFechaNacimiento=By.xpath("//*[@resource-id=\"fecha_nacimiento\"]");
@@ -44,11 +50,33 @@ public class RegistroPrestadorPage extends BaseTest {
 		driver.findElement(btnQuieroSerJobber).click();			
 		Thread.sleep(5000);
 	}
-	///////////////////////////////////////////////////////////
+	////////////////////////VALIDACION SAMSUNG///////////////////////////////////
+	public void validacionSamsung() throws InterruptedException
+	{	
+		if(exist(btnAccept)!=null) {
+			driver.findElement(btnAccept).click();
+			Thread.sleep(5000);
+			driver.findElement(btnNext).click();
+			Thread.sleep(5000);
+			driver.findElement(btnNoThanks).click();
+			Thread.sleep(5000);
+			
+		}
+		else if(exist(btnNext)!=null) {
+			driver.findElement(btnNext).click();
+			Thread.sleep(5000);
+			driver.findElement(btnNoThanks).click();
+			Thread.sleep(5000);
+		}
+		else {
+			
+		}
+		
+	}
+	
 	public void enterNombres(String nombres) throws InterruptedException
 	{	
 		if(exist(btnBlock)==null) {
-			System.out.println(nombres+"AQUIII");
 			driver.findElement(txtNombres).sendKeys(nombres);
 			Thread.sleep(5000);
 		}else {
