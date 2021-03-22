@@ -196,11 +196,3 @@ public static void datosSolicitantes(String appium,Boolean uso, String... args) 
 	
 		
 		
-		
-		
-
-		
-		
-
-	           
-
