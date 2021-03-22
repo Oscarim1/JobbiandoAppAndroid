@@ -23,7 +23,7 @@ import java.util.Collections;
 import java.util.List;
 public class SheetsQuickstart {
 		
-		//ID DE LA HOJA DE C�LCULO
+		//ID DE LA HOJA DE CALCULO
 		public static String SPREEDSHEET_ID = "1zXWlJbvdTUX82ahfUdTzjh1i-JlXPQua43gyg_5YX7E";
 		
 		protected static final String APPLICATION_NAME = "Google Sheets API Java Quickstart";	
