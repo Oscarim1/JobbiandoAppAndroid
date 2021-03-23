@@ -25,6 +25,7 @@ public class RegistroSolicitanteSteps extends BaseTest {
 	 
 	 try{
 		 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
+		  Thread.sleep(15000);
 		 RegistroData.datosSolicitantes(appiumON,false);
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
