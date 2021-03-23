@@ -23,6 +23,8 @@ public class SubirAntecedentesPage extends BaseTest {
 	By btnImagen =By.className("android.widget.ImageView");
 	By btnPermitirImagen=By.xpath("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]");
 	By btnPermitirImagenCamara=By.xpath("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]");
+	By btnLocation=By.xpath("//*[@resource-id=\"com.android.packageinstaller:id/permission_deny_button\"]");
+	By btnNext=By.xpath("//*[@resource-id=\"com.android.camera2:id/confirm_button\"]");
 	
 	By btnElegirFuenteImagen =By.xpath("//*[@text=\"Tomar una Foto\"]");
 	By btnTomarFoto =By.xpath("//*[@resource-id=\"com.android.camera2:id/shutter_button\"]");
@@ -60,7 +62,7 @@ public class SubirAntecedentesPage extends BaseTest {
 	public void clickEntrar() throws InterruptedException
 	{
 		driver.findElement(btnEntrar).click();
-		Thread.sleep(25000);
+		Thread.sleep(5000);
 	}
 	
 	public void clickPermitirUbicacion()throws InterruptedException {
@@ -118,10 +120,15 @@ public class SubirAntecedentesPage extends BaseTest {
 	{
 		driver.findElement(btnPermitirImagenCamara).click();
 		Thread.sleep(15000);
+		if(exist(btnLocation)!=null) {
+			driver.findElement(btnLocation).click();
+			Thread.sleep(15000);
+			driver.findElement(btnNext).click();
+			Thread.sleep(15000);
+		}
 	}
 	public void clickTomarFoto() throws InterruptedException
 	{
-		Thread.sleep(15000);
 		driver.findElement(btnTomarFoto).click();
 		Thread.sleep(15000);
 	}
