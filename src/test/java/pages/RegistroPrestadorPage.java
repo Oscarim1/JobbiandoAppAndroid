@@ -13,12 +13,24 @@ import io.appium.java_client.MobileElement;
 
 public class RegistroPrestadorPage extends BaseTest {
 	MobileElement elemento=null; 
-	By btnQuieroSerJobber = By.xpath("//*[@text=\"crear cuenta aquí\"]");
+	By btnQuieroSerJobber = By.xpath("//*[@text=\"Quiero ser jobber\"]");
 	
+	////////////////////VALIDACION CHROME//////////////////////////
+	By btnAccept = By.id("com.android.chrome:id/terms_accept");	
+	By btnNext = By.id("com.android.chrome:id/next_button");
+	By btnNoThanks = By.id("com.android.chrome:id/negative_button");
+	//////////////////FIN VALIDACION CHROME////////////////////////
+	By btnAcepto = By.xpath("//*[@resource-id=\"com.android.chrome:id/terms_accept\"]");
+	By btnNo = By.xpath("//*[@resource-id=\"com.android.chrome:id/negative_button\"]");
+	By btnSearch = By.xpath("//*[@resource-id=\"com.android.chrome:id/search_box_text\"]");
+	By btnLink = By.xpath("//*[@text=\"app.jobbiando.cl/registroPrestador\"]");
+	By btnCerrar = By.xpath("//*[@resource-id=\"com.android.chrome:id/infobar_close_button\"]");
+	By btnBlock = By.xpath("//*[@text=\"BLOCK\"]");
+	By btnAllow = By.xpath("//*[@text=\"ALLOW\"]");
 	By txtNombres=By.xpath("//*[@resource-id=\"mat-input-0\"]");
 	By txtApellidos=By.xpath("//*[@resource-id=\"mat-input-1\"]");
 	By txtFechaNacimiento=By.xpath("//*[@resource-id=\"fecha_nacimiento\"]");
-	By btnBlock = By.xpath("//*[@text=\"BLOCK\"]");
+	
 	By btnFormulario = By.xpath("//*[@resource-id=\"register-form\"]");
 	By txtCorreo=By.xpath("//*[@resource-id=\"mat-input-3\"]");
 	By txtContrasena=By.xpath("//*[@resource-id=\"password\"]");
@@ -39,24 +51,77 @@ public class RegistroPrestadorPage extends BaseTest {
 		this.elemento=elemento;
 	}
 	
-	public void clickQuieroSerJobber() throws InterruptedException{
-		Thread.sleep(5000);
-		driver.findElement(btnQuieroSerJobber).click();			
-		Thread.sleep(5000);
+	////////////////////////VALIDACION SAMSUNG///////////////////////////////////
+	public void validacionSamsung() throws InterruptedException
+	{	
+		if(exist(btnAccept)!=null) {
+			driver.findElement(btnAccept).click();
+			Thread.sleep(5000);
+			driver.findElement(btnNext).click();
+			Thread.sleep(5000);
+			driver.findElement(btnNoThanks).click();
+			Thread.sleep(5000);
+			
+		}
+		else if(exist(btnNext)!=null) {
+			driver.findElement(btnNext).click();
+			Thread.sleep(5000);
+			driver.findElement(btnNoThanks).click();
+			Thread.sleep(5000);
+		}
+		else {
+			
+		}
+		
 	}
-	///////////////////////////////////////////////////////////
+public void iniciarSesion() throws InterruptedException {
+		
+		if(exist(btnAcepto)!=null) {
+			driver.findElement(btnAcepto).click();
+			Thread.sleep(15000);
+			driver.findElement(btnNext).click();
+			Thread.sleep(15000);
+			driver.findElement(btnNo).click();
+			Thread.sleep(15000);
+			driver.findElement(btnSearch).sendKeys("app.jobbiando.cl/registroPrestador");
+			Thread.sleep(15000);
+			driver.findElement(btnLink).click();
+			Thread.sleep(15000);
+			if(exist(btnCerrar)!=null) {
+				driver.findElement(btnCerrar).click();
+				Thread.sleep(15000);
+			}
+			
+			
+		}
+		else {
+			driver.findElement(btnSearch).sendKeys("app.jobbiando.cl/registroPrestador");
+			Thread.sleep(15000);
+			driver.findElement(btnLink).click();
+			Thread.sleep(15000);
+			if(exist(btnCerrar)!=null) {
+				driver.findElement(btnCerrar).click();
+				Thread.sleep(3000);
+			}
+			
+		}
+				
+	}
+	
 	public void enterNombres(String nombres) throws InterruptedException
 	{	
 		if(exist(btnBlock)==null) {
-			System.out.println(nombres+"AQUIII");
 			driver.findElement(txtNombres).sendKeys(nombres);
 			Thread.sleep(5000);
+			
 		}else {
 			driver.findElement(btnBlock).click();
-		    Thread.sleep(5000);
+		    Thread.sleep(3000);
+		    driver.findElement(btnCerrar).click();
+			Thread.sleep(3000);
 		    System.out.println(nombres);
 			driver.findElement(txtNombres).sendKeys(nombres);
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 		}
 		
 	}

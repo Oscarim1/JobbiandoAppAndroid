@@ -20,7 +20,8 @@ public class RegistroPrestadorSteps extends BaseTest {
 	public void abrir_app_prestador() throws Throwable {
 	 
 	 try{
-		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());	
+		 //openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());	
+		 openNavegator(configFileReader.getappPackageNavegator(),configFileReader.getappActivityNavegator());
 		 RegistroData.datosPrestadores(appiumON,false);
 		 
      }catch(Exception exp) {
@@ -33,15 +34,15 @@ public class RegistroPrestadorSteps extends BaseTest {
 	@And("Ir al registro del Prestador")
 	public void ir_al_registro_del_Prestador() throws Throwable {
 		page = new RegistroPrestadorPage(elemento);
-		Thread.sleep(20000);
-	    page.clickQuieroSerJobber();
+		Thread.sleep(7000);
+		page.validacionSamsung();
+		page.iniciarSesion();
 	    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	}
 
 	@When("Completar el formulario de registro del prestador")
 	public void completar_el_formulario_de_registro_del_prestador() throws Throwable {	
 		page=new RegistroPrestadorPage(elemento);
-		
 	    page.enterNombres(RegistroData.nombresPrestador);	   
 	    page.enterApellidos(RegistroData.apellidosPrestador);	    
 	    page.enterFechaNacimiento("12 de 05 de 1995");	   
