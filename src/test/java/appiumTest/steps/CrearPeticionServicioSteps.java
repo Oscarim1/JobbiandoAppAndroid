@@ -51,7 +51,7 @@ public class CrearPeticionServicioSteps extends BaseTest {
 	@And("Hacer click en un servicio")
 	public void hacer_click_en_un_servicio() throws Throwable {
 		page = new CrearPeticionServicioPage(elemento);
-		page.clickSeleccionarServicio(RegistroData.nombresPrestador+" "+RegistroData.apellidosPrestador);
+		page.clickSeleccionarServicio(RegistroData.nombresPrestador+" "+RegistroData.apellidosPrestador, RegistroData.precioPrestador);
 		
 	}
 
