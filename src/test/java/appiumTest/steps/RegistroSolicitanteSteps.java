@@ -11,7 +11,6 @@ import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
 import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
-
 import pages.RegistroSolicitantePage;
 
 
@@ -19,46 +18,47 @@ public class RegistroSolicitanteSteps extends BaseTest {
 	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	RegistroSolicitantePage page=null;
 	MobileElement elemento=null;
-	
 	@Given("Abrir app solicitante")
 	public void abrir_app_solicitante() throws Throwable {
 	 
 	 try{
-		 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
-		 RegistroData.datosSolicitantes(appiumON,false);
+		 //openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());	
+		 openNavegator(configFileReader.getappPackageNavegator(),configFileReader.getappActivityNavegator());
+		 RegistroData.datosPrestadores(appiumON,false);
+		 
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
          exp.printStackTrace();
-         Thread.sleep(5000);
-         
+         Thread.sleep(5000);      
      }
 	}
-
+	
 	@And("Ir al registro del Solicitante")
 	public void ir_al_registro_del_Solicitante() throws Throwable {
 		page = new RegistroSolicitantePage(elemento);
-	    page.clickQuieroSerJobber();
+		Thread.sleep(7000);
+		page.validacionSamsung();
+		page.iniciarSesion();
 	    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	}
 
 	@When("Completar el formulario de registro del solicitante")
-	public void completar_el_formulario_de_registro_del_solicitante() throws Throwable {
-		
+	public void completar_el_formulario_de_registro_del_solicitante() throws Throwable {	
 		page=new RegistroSolicitantePage(elemento);
-	    page.enterNombres(RegistroData.nombresSolicitante);
-	    page.enterApellidos(RegistroData.apellidosSolicitante);
+	    page.enterNombres(RegistroData.nombresPrestador);	   
+	    page.enterApellidos(RegistroData.apellidosPrestador);	    
 	    page.enterFechaNacimiento("12 de 05 de 1995");	   
-	    page.enterCorreo(RegistroData.emailSolicitante);	    
-	    page.enterContrasena(RegistroData.passSolicitante);	    
-	    page.clickCedulaDeIdentidad(RegistroData.runSolicitanteNuevo);	    
-	    page.enterIdentificador(RegistroData.numSerieSolicitante);	    
-	    page.enterCalle(RegistroData.calleSolicitante);	    
-	    page.enterDireccion(RegistroData.ubicacionSolicitante);	    
-	    page.enterNombreDireccion(RegistroData.nombreDirSolicitante);	    
-	    page.enterReferencia(RegistroData.refSolicitante);	 
+	    page.enterCorreo(RegistroData.emailPrestador);    
+	    page.enterContrasena(RegistroData.passPrestador);    
+	    page.clickCedulaDeIdentidad(RegistroData.runPrestadorNuevo);    
+	    page.enterIdentificador(RegistroData.numSeriePrestador);	    
+	    page.enterCalle(RegistroData.callePrestador);	    
+	    page.enterDireccion(RegistroData.ubicacionPrestador);	    
+	    page.enterNombreDireccion(RegistroData.nombreDirPrestador);    
+	    page.enterReferencia(RegistroData.refPrestador); 
 	}
 
-	@Then("hacer click en boton registrar")
+	@Then("hacer click en boton registrar solicitante")
 	public void hacer_click_en_boton_registrar_solicitante() throws Throwable {
 		page = new RegistroSolicitantePage(elemento);	
 	    page.clickCrearCuenta();

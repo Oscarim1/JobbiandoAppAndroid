@@ -22,6 +22,7 @@ public class EvaluarExperienciaSolicitanteSteps extends BaseTest {
 			 page = new EvaluarExperienciaSolicitantePage(elemento);		
 			 RegistroData.datosSolicitantes(appiumON,false);
 			 RegistroData.datosPrestadores(appiumON,false);
+			 Thread.sleep(20000);
 			 page.enterCorreo(RegistroData.emailSolicitante);
 			 page.clickOcultarTeclado();		
 			 page.enterContrasena(RegistroData.passSolicitante);

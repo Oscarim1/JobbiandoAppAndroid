@@ -22,7 +22,7 @@ public class EvaluarExperienciaSolicitantePage extends BaseTest {
 	By btnOcultarTeclado2=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView[1]");
 	By btnSeleccionarCriterio=By.xpath("//*[@resource-id=\"android:id/text1\"]");
 	By btnCriterio = By.xpath("//*[@text='Rapidez']");
-	By btnEnviarEvaluacion = By.xpath("//*[@text='ENVIAR EVALUACIÓN']");
+	By btnEnviarEvaluacion = By.xpath("//*[@text='ENVIAR EVALUACIÃ“N']");
 	By btnOk = By.xpath("//*[@text='OK']");
 	//By btnEnviarEvaluacion=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[10]");
 	
@@ -45,11 +45,11 @@ public class EvaluarExperienciaSolicitantePage extends BaseTest {
 	}
 	public void clickOcultarTeclado() throws InterruptedException
 	{
-		/*if(exist(btnOcultarTeclado)!=null) {
+		if(exist(btnOcultarTeclado)!=null) {
 			driver.findElement(btnOcultarTeclado).click();
 		Thread.sleep(5000);
 		}
-		*/
+		
 	}
 	public void clickEntrar() throws InterruptedException
 	{
@@ -58,7 +58,7 @@ public class EvaluarExperienciaSolicitantePage extends BaseTest {
 	}
 	/////////////////////////LOGIN/////////////////////////////////////////
 	public void clickPestanaSolicitud() throws InterruptedException
-	{
+	{Thread.sleep(5000);
 		if(exist(btnDeny) != null) {
 
 			driver.findElement(btnDeny).click();
@@ -66,10 +66,10 @@ public class EvaluarExperienciaSolicitantePage extends BaseTest {
 			driver.findElement(btnPestanaSolicitud).click();
 			Thread.sleep(10000);
 		}else {
-			driver.findElement(btnPestanaSolicitud).click();
-			Thread.sleep(10000);
+			
 		}
-		
+		driver.findElement(btnPestanaSolicitud).click();
+		Thread.sleep(10000);
 	}
 	public void clickPestanaEnProceso() throws InterruptedException
 	{
@@ -103,20 +103,20 @@ public class EvaluarExperienciaSolicitantePage extends BaseTest {
 	}
 	public void enterDescripcion(String descripcion)throws InterruptedException
 	{
-		while(exist(btnEnviarEvaluacion)==null) {
+		if(exist(btnEnviarEvaluacion)==null) {
 			this.funcionScrollDown(0.9,0.1);
 			Thread.sleep(3000);
-		}
+		}else {
 		driver.findElement(txtDescripcion).sendKeys(descripcion);
-		Thread.sleep(3000);
+		Thread.sleep(3000);}
 		
 	}
 	public void clickOcultarTeclado2() throws InterruptedException
 	{
-		/*
+		
 		driver.findElement(btnOcultarTeclado2).click();
 		Thread.sleep(5000);
-		*/
+		
 	}
 	public void clickSeleccionarCriterio() throws InterruptedException
 	{

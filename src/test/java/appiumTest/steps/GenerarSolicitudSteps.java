@@ -6,6 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
+import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
 import pages.GenerarSolicitudPage;
 
@@ -19,10 +20,11 @@ public class GenerarSolicitudSteps extends BaseTest{
 		 try{
 			 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
 			 Thread.sleep(20000);
+			 RegistroData.datosSolicitantes(appiumON,false);
 			 page = new GenerarSolicitudPage(elemento);		
-			 page.enterCorreo(emailSolicitante);
+			 page.enterCorreo(RegistroData.emailSolicitante);
 			 page.clickOcultarTeclado();		
-			 page.enterContrasena(passSolicitante);
+			 page.enterContrasena(RegistroData.passSolicitante);
 			 page.clickOcultarTeclado();
 			 page.clickEntrar();
 	     }catch(Exception exp) {

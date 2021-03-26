@@ -23,7 +23,7 @@ public class EvaluarExperienciaPrestadorSteps extends BaseTest {
 	 
 	 try{
 		 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
-		 Thread.sleep(15000);
+		 Thread.sleep(20000);
 		 page = new EvaluarExperienciaPrestadorPage(elemento);
 		 RegistroData.datosPrestadores(appiumON,false);
 		 Thread.sleep(10000); 

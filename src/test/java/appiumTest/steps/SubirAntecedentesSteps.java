@@ -22,18 +22,18 @@ public class SubirAntecedentesSteps extends BaseTest{
 		 try{			 
 			 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
 			 RegistroData.datosPrestadores(appiumON,false);
-			 Thread.sleep(10000);
+			 Thread.sleep(30000);
+			  page=new SubirAntecedentesPage(elemento);
+			  page.enterCorreo(RegistroData.emailPrestador);
+			  page.enterContrasena(RegistroData.passPrestador);		 
+			  page.clickOcultarTeclado();		 
+			  page.clickEntrar();
 	     }catch(Exception exp) {
 	         System.out.println(exp.getMessage());
 	         exp.printStackTrace();
 	         Thread.sleep(1000);         
 	     }
-		  page=new SubirAntecedentesPage(elemento);
-		  page.enterCorreo(RegistroData.emailPrestador);
-		  
-		  page.enterContrasena(RegistroData.passPrestador);		 
-		  page.clickOcultarTeclado();		 
-		  page.clickEntrar();
+		
 		  
 		  
 	}

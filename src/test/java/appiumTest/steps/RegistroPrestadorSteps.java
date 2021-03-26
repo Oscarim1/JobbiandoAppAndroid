@@ -16,8 +16,8 @@ public class RegistroPrestadorSteps extends BaseTest {
 	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	RegistroPrestadorPage page=null;
 	MobileElement elemento=null;
-	@Given("Abrir app prestador")
-	public void abrir_app_prestador() throws Throwable {
+	@Given("Abrir chrome prestador")
+	public void abrir_chrome_prestador() throws Throwable {
 	 
 	 try{
 		 //openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());	
@@ -34,7 +34,7 @@ public class RegistroPrestadorSteps extends BaseTest {
 	@And("Ir al registro del Prestador")
 	public void ir_al_registro_del_Prestador() throws Throwable {
 		page = new RegistroPrestadorPage(elemento);
-		Thread.sleep(7000);
+		Thread.sleep(20000);
 		page.validacionSamsung();
 		page.iniciarSesion();
 	    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);

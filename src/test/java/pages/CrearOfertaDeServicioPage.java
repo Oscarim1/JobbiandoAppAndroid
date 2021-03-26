@@ -54,13 +54,9 @@ public class CrearOfertaDeServicioPage extends BaseTest {
 	
 	public void correoPrestador(String correoPrestador) throws InterruptedException {
 		System.out.println(correoPrestador);
-		
-		
-		Thread.sleep(5000);
-		driver.findElement(txtCorreo).sendKeys(correoPrestador);
-		
-		Thread.sleep(5000);
-		
+		Thread.sleep(20000);
+		driver.findElement(txtCorreo).sendKeys(correoPrestador);	
+		Thread.sleep(5000);	
 	}
 	
 	public void passPrestador(String passPrestador) throws InterruptedException {

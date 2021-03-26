@@ -16,8 +16,9 @@ public class AceptarSolicitudServicioPage extends BaseTest {
 	By btnPermitirAccesoUbicacion=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[1]");
 	By btnRealizarSolicitud=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[10]/android.widget.TextView");
 	By btnRealizar=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView");	
-	
-	
+	By btnDeny = By.xpath("//*[@text='ALLOW']");
+	By btnSeleccionarUbicacion=By.xpath("//*[@text='Tu ubicación :']");
+	By btnUbicacion=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup\r\n");
 	
 	
 	public AceptarSolicitudServicioPage(MobileElement elemento) throws InterruptedException
@@ -46,16 +47,26 @@ public class AceptarSolicitudServicioPage extends BaseTest {
 	{
 		driver.findElement(btnEntrar).click();
 		Thread.sleep(15000);
+		Thread.sleep(10000);
+		if(exist(btnDeny) != null) {
+
+			driver.findElement(btnDeny).click();
+			Thread.sleep(5000);
+		
+		}else {}
+	}
+	public void clickSeleccionarUbicacion()throws InterruptedException {
+		driver.findElement(btnSeleccionarUbicacion).click();
+		Thread.sleep(9000);
+		
+	}
+	public void clickUbicacion()throws InterruptedException {
+		driver.findElement(btnUbicacion).click();
+		Thread.sleep(9000);
+		
 	}
 	/////////////////////////LOGIN/////////////////////////////////////////
 	public void compararCategorias() throws InterruptedException{
-	/////MODIFICAR PARA EMULADOR/////////////
-		{
-		if(driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[1]") != null) {
-		driver.findElement(btnPermitirAccesoUbicacion).click();
-		Thread.sleep(10000);
-			
-		}else {}
 		
 		String catPrestador= driver.findElement(txtCategoriaPrestador).getAttribute("text");
 		
@@ -70,8 +81,7 @@ public class AceptarSolicitudServicioPage extends BaseTest {
 		driver.findElementByXPath("//*[@text=\""+this.elementExistSolicitud(n)+"\"]").click();
 		Thread.sleep(5000);
 	   }
-	}
-	
+		
 	public void clickRealizarSolicitud()throws InterruptedException{
 		this.funcionScrollDown(0.9,0.1);
 		driver.findElement(btnRealizarSolicitud).click();
