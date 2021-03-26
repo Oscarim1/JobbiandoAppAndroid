@@ -6,6 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
+import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
 import pages.AceptarPeticionServicioPage;
 import pages.AceptarSolicitudServicioPage;
@@ -19,11 +20,12 @@ public class AceptarSolicitudServicioSteps extends BaseTest{
 	public void completar_login_rol_prestador_y_entrar() throws Throwable {
 		try{
 			 openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());
-			 Thread.sleep(15000);
+			 Thread.sleep(20000);
+			 RegistroData.datosPrestadores(appiumON,false);
 			 page = new AceptarSolicitudServicioPage(elemento);
-			 page.enterCorreo(emailPrestador);
+			 page.enterCorreo(RegistroData.emailPrestador);
 			 page.clickOcultarTeclado();
-			 page.enterContrasena(passPrestador);
+			 page.enterContrasena(RegistroData.passPrestador);
 			 page.clickOcultarTeclado();
 			 page.clickEntrar();
 
@@ -39,6 +41,8 @@ public class AceptarSolicitudServicioSteps extends BaseTest{
 	@When("Se selecciona una solicitud de la misma categoria")
 	public void se_selecciona_una_solicitud_de_la_misma_categoria()throws Throwable{
 		page = new AceptarSolicitudServicioPage(elemento);
+		page.clickSeleccionarUbicacion();
+		page.clickUbicacion();
 		page.compararCategorias();
 		
 	}

@@ -34,7 +34,7 @@ public class EvaluarExperienciaPrestadorPage extends BaseTest{
 		System.out.println(correoPrestador);
 		
 		
-		Thread.sleep(5000);
+		Thread.sleep(000);
 		driver.findElement(txtCorreo).sendKeys(correoPrestador);
 		
 	}
@@ -97,8 +97,8 @@ public class EvaluarExperienciaPrestadorPage extends BaseTest{
 		Thread.sleep(2000);
 		driver.findElement(btnEnviarEvaluacion).click();
 		Thread.sleep(5000);
-		/*driver.findElement(btnOk).click();
-		Thread.sleep(5000);*/
+		driver.findElement(btnOk).click();
+		Thread.sleep(5000);
 		
 	}
 }

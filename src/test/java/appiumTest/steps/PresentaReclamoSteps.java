@@ -27,8 +27,7 @@ public class PresentaReclamoSteps extends BaseTest {
 		 page = new  PresentaReclamoPage(elemento);
 		 RegistroData.datosSolicitantes(appiumON,false);
 		 RegistroData.datosPrestadores(appiumON,false);
-		 page.correoSolicitante(RegistroData.emailSolicitante);
-		
+		 page.correoSolicitante(RegistroData.emailSolicitante);	
 		 page.passSolicitante(RegistroData.passSolicitante);
 
      }catch(Exception exp) {
@@ -53,7 +52,7 @@ public class PresentaReclamoSteps extends BaseTest {
 	public void click_solicitudes_terminadas() throws Throwable {
 		   page=new PresentaReclamoPage(elemento);
 		   Thread.sleep(5000);
-		   page.clickSolicitudesTermiandas();
+		   page.clickSolicitudesTerminadas();
 		   Thread.sleep(5000);
 	}
 		

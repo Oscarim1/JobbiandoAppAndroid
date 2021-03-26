@@ -63,14 +63,14 @@ public class PresentaReclamoPage extends BaseTest{
 			Thread.sleep(5000);
 			driver.findElement(btnCuenta).click();
 			
-		}else {
+		}else {}
 			
 			driver.findElement(btnCuenta).click();
 			Thread.sleep(5000);
-		}
-	} 
+	}
 	
-	public void clickSolicitudesTermiandas() throws InterruptedException{
+	
+	public void clickSolicitudesTerminadas() throws InterruptedException{
 		
 		while(exist(btnSolicitudesTerminadas) == null) {
 			this.funcionScrollDown(0.9,0.2);
