@@ -63,7 +63,7 @@ public class CrearOfertaDeServicioSteps extends BaseTest {
 	    page.clickSeleccionarCategoria();	    
 	    page.clickSubCategoria();    
 	    page.clickSeleccionarSubCategoria();	    
-	    page.enterPrecio(precio);	    
+	    page.enterPrecio(RegistroData.precioPrestadorSinComa);	    
 	    page.clickCalendario();	    
 	    page.clickJornada();	    
 	    page.clickSiguiente();	    

@@ -24,6 +24,8 @@ public class RegistroData extends SheetsQuickstart {
     public static String ubicacionPrestador = "";
     public static String nombreDirPrestador = "";
     public static String refPrestador = "";
+    public static String precioPrestador = "";
+    public static String precioPrestadorSinComa = "";
     
     //REGISTRO SOLICITANTE
     public static String nombresSolicitante = "";
@@ -79,7 +81,7 @@ public class RegistroData extends SheetsQuickstart {
 		
 		while(a==null){	
 		
-		final String range = "PrestadorData!A"+n+":L"+m+"";
+		final String range = "PrestadorData!A"+n+":M"+m+"";
     	final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
     	Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT,appium)).setApplicationName(APPLICATION_NAME).build();
         ValueRange response = service.spreadsheets().values().get(SPREEDSHEET_ID, range).execute();
@@ -118,7 +120,10 @@ public class RegistroData extends SheetsQuickstart {
      		            	 ubicacionPrestador=(String) row.get(9);
      		            	 nombreDirPrestador=(String) row.get(10);
      		            	 refPrestador=(String) row.get(11);
+     		            	 precioPrestador=(String) row.get(12);
+     		            	 precioPrestadorSinComa=precioPrestador.replace(",","");
      		            	 System.out.printf(nombresPrestador);
+     		            	 System.out.printf(precioPrestadorSinComa);
      		            	
      	        }
      	    }

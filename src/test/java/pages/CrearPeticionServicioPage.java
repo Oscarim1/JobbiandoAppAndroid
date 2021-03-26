@@ -14,7 +14,7 @@ public class CrearPeticionServicioPage extends BaseTest{
 	By btnEntrar = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]");
 	By btnAllow = By.xpath("//*[@text='ALLOW']");	
 	By btnInicio = By.xpath("//*[@text='INICIO']");
-	By btnSeleccionarUbicacion=By.xpath("//*[@text='Tu ubicación :']");
+	By btnSeleccionarUbicacion=By.xpath("//*[@text='Tu ubicaciÃ³n :']");
 	By btnUbicacion=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup");
 	/////////////////////////////////////Elegir Servicio/////////////////////////////////////////////
 	By btnFiltroServicios=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]");
@@ -114,16 +114,22 @@ public class CrearPeticionServicioPage extends BaseTest{
 		
 		
 	}
-	public void clickSeleccionarServicio(String nombreSolicitante) throws InterruptedException {
+	public void clickSeleccionarServicio(String nombreSolicitante, String precio) throws InterruptedException {
 		By btnSeleccionarServicioSolicitante = By.xpath("//*[@text='"+nombreSolicitante+"']");
+		By btnSeleccionarServicioSolicitantePrecio = By.xpath("//*[@text='CLP "+precio+"']");
 		System.out.println(nombreSolicitante);
+		System.out.println(precio);
 		while(exist(btnSeleccionarServicioSolicitante)==null) {
-			this.funcionScrollHorizontal(0.6, 0.1);
+			this.funcionScrollHorizontal(0.9, 0.1);
+			this.funcionScrollHorizontal(0.9, 0.1);
 		}
 		System.out.println(btnSeleccionarServicioSolicitante);
 		if(exist(btnSeleccionarServicioSolicitante)!=null) {
-			driver.findElement(btnSeleccionarServicio).click();
-			Thread.sleep(9000);
+			if(exist(btnSeleccionarServicioSolicitantePrecio)!=null) {
+				driver.findElement(btnSeleccionarServicioSolicitantePrecio).click();
+				Thread.sleep(9000);
+			}
+			
 		}
 			
 	}
