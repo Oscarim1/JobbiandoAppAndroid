@@ -21,7 +21,7 @@ public class RealizarPagoSolicitudDesdePeticionSteps extends BaseTest{
 			 openApp(configFileReader.getappPackageSolicitante(),configFileReader.getappActivitySolicitante());
 			 Thread.sleep(20000);
 			 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);		
-			 RegistroData.datosPrestadores(appiumON,false);
+			 RegistroData.datosSolicitantes(appiumON,false);
 			 page.enterCorreo(RegistroData.emailSolicitante);
 			 page.clickOcultarTeclado();		
 			 page.enterContrasena(RegistroData.passSolicitante);
