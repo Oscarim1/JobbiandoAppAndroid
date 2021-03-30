@@ -19,6 +19,7 @@ public class RealizarPagoSolicitudDesdePeticionPage extends BaseTest {
 	By btnPestanaSolicitud=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[3]");
 	By btnPestanaEnProceso=By.xpath("//*[@text='En Proceso']");
 	By btnPagarServicio=By.xpath("//*[@text='PAGAR SERVICIO']");
+	By btnKhipu = By.xpath("//*[@text='KHIPU']"); 
 	By btnPagarServicio2=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[9]");
 	By btnDeny2 = By.id("com.android.packageinstaller:id/permission_deny_button");
 
@@ -98,10 +99,13 @@ public class RealizarPagoSolicitudDesdePeticionPage extends BaseTest {
 	public void clickPagarServicio() throws InterruptedException
 	{
 		driver.findElement(btnPagarServicio).click();
-		Thread.sleep(20000);
+		Thread.sleep(10000);
 		this.funcionScrollDown(0.9,0.1);
 		driver.findElement(btnPagarServicio).click();
-		Thread.sleep(15000);
+		Thread.sleep(10000);
+		driver.findElement(btnKhipu).click();
+		Thread.sleep(10000);
+		
 		
 	}
 	public void enterEmailPagador(String emailPagador) throws InterruptedException

@@ -57,7 +57,7 @@ public class ValidarAntecedentesSteps extends BaseTest {
 	public void seleccionar_al_usuario_al_que_se_le_validaran_los_antecedentes() throws Throwable {
 		page=new ValidarAntecedentesPage(elemento);	
 		RegistroData.datosPrestadores(appiumON,false);
-		page.filtroNombre(RegistroData.nombresPrestador);
+		page.filtroNombre(RegistroData.nombresPrestador, RegistroData.apellidosPrestador);
 	 
 	}
 

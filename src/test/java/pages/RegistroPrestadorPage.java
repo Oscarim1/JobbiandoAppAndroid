@@ -1,13 +1,10 @@
 package pages;
 
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import appiumTest.BaseTest;
-
 import io.appium.java_client.MobileElement;
 
 
@@ -31,12 +28,12 @@ public class RegistroPrestadorPage extends BaseTest {
 	By txtApellidos=By.xpath("//*[@resource-id=\"mat-input-1\"]");
 	By txtFechaNacimiento=By.xpath("//*[@resource-id=\"fecha_nacimiento\"]");
 	
-	By btnFormulario = By.xpath("//*[@resource-id=\"register-form\"]");
+	By btnFormulario = By.xpath("//*[@text=\"Crea una cuenta\"]");
 	By txtCorreo=By.xpath("//*[@resource-id=\"mat-input-3\"]");
 	By txtContrasena=By.xpath("//*[@resource-id=\"password\"]");
 	By txtContrasena2=By.xpath("//*[@resource-id=\"mat-input-5\"]");
 	By btnTipoDocumento = By.xpath("//*[@resource-id=\"selectTipo\"]");
-	By btnCedulaDeIdentidadOpcion0 = By.xpath("//*[@resource-id=\"selectTipo\"]");
+	By btnCedulaDeIdentidadOpcion0 = By.xpath("//*[@resource-id=\"optionTipo0\"]");
 	By txtNumeroIdentificador= By.xpath("//*[@resource-id=\"mat-input-6\"]");
 	By txtNumeroSerie= By.xpath("//*[@resource-id=\"numero_serie\"]");
 	By txtCalle= By.xpath("//*[@resource-id=\"mat-input-8\"]");
@@ -151,8 +148,10 @@ public void iniciarSesion() throws InterruptedException {
 	
 	public void enterContrasena(String contrasena) throws InterruptedException 
 	{
+		if(exist(txtCalle)==null) {
+			this.funcionScrollDown(0.8,0.6);
+		}
 		
-		this.funcionScrollDown(0.8,0.6);
 		driver.findElement(txtContrasena).sendKeys(contrasena);
 		Thread.sleep(5000);
 		driver.findElement(txtContrasena2).sendKeys(contrasena);

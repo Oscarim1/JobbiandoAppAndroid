@@ -11,6 +11,7 @@ import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
 
 import pages.RegistroPrestadorPage;
+import pages.SubirAntecedentesPage;
 
 public class RegistroPrestadorSteps extends BaseTest {
 	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
@@ -22,6 +23,7 @@ public class RegistroPrestadorSteps extends BaseTest {
 	 try{
 		 //openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());	
 		 openNavegator(configFileReader.getappPackageNavegator(),configFileReader.getappActivityNavegator());
+		 page=new RegistroPrestadorPage(elemento);
 		 RegistroData.datosPrestadores(appiumON,false);
 		 
      }catch(Exception exp) {

@@ -11,6 +11,7 @@ import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
 import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
+import pages.RegistroPrestadorPage;
 import pages.RegistroSolicitantePage;
 
 
@@ -24,7 +25,8 @@ public class RegistroSolicitanteSteps extends BaseTest {
 	 try{
 		 //openApp(configFileReader.getappPackagePrestador(),configFileReader.getappActivityPrestador());	
 		 openNavegator(configFileReader.getappPackageNavegator(),configFileReader.getappActivityNavegator());
-		 RegistroData.datosPrestadores(appiumON,false);
+		 page=new RegistroSolicitantePage(elemento);
+		 RegistroData.datosSolicitantes(appiumON,false);
 		 
      }catch(Exception exp) {
          System.out.println(exp.getMessage());
@@ -45,17 +47,17 @@ public class RegistroSolicitanteSteps extends BaseTest {
 	@When("Completar el formulario de registro del solicitante")
 	public void completar_el_formulario_de_registro_del_solicitante() throws Throwable {	
 		page=new RegistroSolicitantePage(elemento);
-	    page.enterNombres(RegistroData.nombresPrestador);	   
-	    page.enterApellidos(RegistroData.apellidosPrestador);	    
+	    page.enterNombres(RegistroData.nombresSolicitante);	   
+	    page.enterApellidos(RegistroData.apellidosSolicitante);	    
 	    page.enterFechaNacimiento("12 de 05 de 1995");	   
-	    page.enterCorreo(RegistroData.emailPrestador);    
-	    page.enterContrasena(RegistroData.passPrestador);    
-	    page.clickCedulaDeIdentidad(RegistroData.runPrestadorNuevo);    
-	    page.enterIdentificador(RegistroData.numSeriePrestador);	    
-	    page.enterCalle(RegistroData.callePrestador);	    
-	    page.enterDireccion(RegistroData.ubicacionPrestador);	    
-	    page.enterNombreDireccion(RegistroData.nombreDirPrestador);    
-	    page.enterReferencia(RegistroData.refPrestador); 
+	    page.enterCorreo(RegistroData.emailSolicitante);    
+	    page.enterContrasena(RegistroData.passSolicitante);    
+	    page.clickCedulaDeIdentidad(RegistroData.runSolicitanteNuevo);    
+	    page.enterIdentificador(RegistroData.numSerieSolicitante);	    
+	    page.enterCalle(RegistroData.calleSolicitante);	    
+	    page.enterDireccion(RegistroData.ubicacionSolicitante);	    
+	    page.enterNombreDireccion(RegistroData.nombreDirSolicitante);    
+	    page.enterReferencia(RegistroData.refSolicitante); 
 	}
 
 	@Then("hacer click en boton registrar solicitante")

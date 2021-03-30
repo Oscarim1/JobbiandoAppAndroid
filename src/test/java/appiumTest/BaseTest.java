@@ -45,7 +45,7 @@ public class BaseTest {
 	
 	public void openApp(String rol1,String rol2) throws Exception {
 		 
-	        // Recuperaci?n del fichero de propiedades de la ruta y nombre de la aplicaci?n m?vil
+	        // Recuperacion del fichero de propiedades de la ruta y nombre de la aplicaci?n m?vil
 	        String ipApp=loadproperty.loadProperties(appiumON).getProperty("AppiumServerIP");
 
 	        // Generaci?n de las capabilites a nivel del servicio de Appium
@@ -95,11 +95,11 @@ public class BaseTest {
 			
 			String ipApp=loadproperty.loadProperties(appiumON).getProperty("AppiumServerIP");
 
-	        // Generaci?n de las capabilites a nivel del servicio de Appium
+	        // Generacion de las capabilites a nivel del servicio de Appium
 	        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 	        desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
 
-	        // Generaci?n de las capabilites a nivel de driver
+	        // Generacion de las capabilites a nivel de driver
 	        DesiredCapabilities clientCapabilities = new DesiredCapabilities();
 	        clientCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 	        clientCapabilities.setCapability(MobileCapabilityType.UDID, device);
@@ -122,8 +122,8 @@ public class BaseTest {
         		cap.setCapability("platformName", configFileReader.getPlatformName());
         		cap.setCapability("platformVersion", configFileReader.getPlatformVersion());
         		
-        		cap.setCapability("appPackage","com.android.chrome");
-        		cap.setCapability("appActivity","com.google.android.apps.chrome.Main");
+        		cap.setCapability("appPackage", rol1);
+        		cap.setCapability("appActivity", rol2);
         		
         		
         		URL url=new URL(configFileReader.getApplicationUrl());	
@@ -176,14 +176,14 @@ public class BaseTest {
 			Thread.sleep(3000);
 		}
 		
-		public void funcionScrollHorizontal(Double height_start,Double height_end ) throws InterruptedException {
+		public void funcionScrollHorizontal(Double width_start,Double width_end, Double height) throws InterruptedException {
 			driver.manage().window().getSize();
 			Dimension dimension = driver.manage().window().getSize();
-			int start_x = (int) (dimension.width * height_start);
-			int start_y = (int) (dimension.height * 0.5);
+			int start_x = (int) (dimension.width * width_start);
+			int start_y = (int) (dimension.height * height);
 			
-			int end_x = (int) (dimension.width * height_end);
-			int end_y = (int) (dimension.height * 0.5);
+			int end_x = (int) (dimension.width * width_end);
+			int end_y = (int) (dimension.height * height);
 			
 			TouchAction touch = new TouchAction(driver);
 			touch.press(PointOption.point(start_x, start_y))

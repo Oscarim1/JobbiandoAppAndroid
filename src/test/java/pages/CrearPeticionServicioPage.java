@@ -68,13 +68,13 @@ public class CrearPeticionServicioPage extends BaseTest{
 	public void clickEntrar() throws InterruptedException
 	{
 		driver.findElement(btnEntrar).click();
-		Thread.sleep(30000);
+		Thread.sleep(10000);
 	}
 	public void permisosAllow() throws InterruptedException{
 		if(exist(btnAllow) != null) {
 
 			driver.findElement(btnAllow).click();
-			Thread.sleep(15000);
+			Thread.sleep(10000);
 		}else {
 		}
 		
@@ -86,7 +86,7 @@ public class CrearPeticionServicioPage extends BaseTest{
 	}
 	public void clickSeleccionarUbicacion()throws InterruptedException {
 		driver.findElement(btnSeleccionarUbicacion).click();
-		Thread.sleep(9000);
+		Thread.sleep(5000);
 		
 	}
 	public void clickUbicacion()throws InterruptedException {
@@ -97,7 +97,7 @@ public class CrearPeticionServicioPage extends BaseTest{
 	
 	public void clickFiltroServicios()throws InterruptedException{
 		driver.findElement(btnFiltroServicios).click();
-		Thread.sleep(9000);	
+		Thread.sleep(5000);	
 		driver.findElement(btnFiltroCategoria).click();
 		Thread.sleep(4000);
 		while(exist(btnCategoria)==null) {
@@ -115,22 +115,16 @@ public class CrearPeticionServicioPage extends BaseTest{
 		
 	}
 	public void clickSeleccionarServicio(String nombreSolicitante, String precio) throws InterruptedException {
-		By btnSeleccionarServicioSolicitante = By.xpath("//*[@text='"+nombreSolicitante+"']");
+		//By btnSeleccionarServicioSolicitante = By.xpath("//*[@text='"+nombreSolicitante+"']");
 		By btnSeleccionarServicioSolicitantePrecio = By.xpath("//*[@text='CLP "+precio+"']");
 		System.out.println(nombreSolicitante);
 		System.out.println(precio);
-		while(exist(btnSeleccionarServicioSolicitante)==null) {
-			this.funcionScrollHorizontal(0.9, 0.1);
-			this.funcionScrollHorizontal(0.9, 0.1);
+		while(exist(btnSeleccionarServicioSolicitantePrecio)==null) {
+			//this.funcionScrollHorizontal(0.9, 0.1);
+			this.funcionScrollHorizontal(0.9, 0.1, 0.3);
 		}
-		System.out.println(btnSeleccionarServicioSolicitante);
-		if(exist(btnSeleccionarServicioSolicitante)!=null) {
-			if(exist(btnSeleccionarServicioSolicitantePrecio)!=null) {
-				driver.findElement(btnSeleccionarServicioSolicitantePrecio).click();
-				Thread.sleep(9000);
-			}
-			
-		}
+		driver.findElement(btnSeleccionarServicioSolicitantePrecio).click();
+		Thread.sleep(4000);
 			
 	}
 	

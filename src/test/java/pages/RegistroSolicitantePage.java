@@ -21,22 +21,22 @@ public class RegistroSolicitantePage extends BaseTest {
 	By btnAcepto = By.xpath("//*[@resource-id=\"com.android.chrome:id/terms_accept\"]");
 	By btnNo = By.xpath("//*[@resource-id=\"com.android.chrome:id/negative_button\"]");
 	By btnSearch = By.xpath("//*[@resource-id=\"com.android.chrome:id/search_box_text\"]");
-	By btnLink = By.xpath("//*[@text=\"app.jobbiando.cl/registroPrestador\"]");
+	By btnLink = By.xpath("//*[@text=\"app.jobbiando.cl/registroSolicitante\"]");
 	By btnCerrar = By.xpath("//*[@resource-id=\"com.android.chrome:id/infobar_close_button\"]");
 	By btnBlock = By.xpath("//*[@text=\"BLOCK\"]");
 	By btnAllow = By.xpath("//*[@text=\"ALLOW\"]");
 	By txtNombres=By.xpath("//*[@resource-id=\"mat-input-0\"]");
 	By txtApellidos=By.xpath("//*[@resource-id=\"mat-input-1\"]");
-	By txtFechaNacimiento=By.xpath("//*[@resource-id=\"fecha_nacimiento\"]");
+	By txtFechaNacimiento=By.xpath("//*[@resource-id=\"mat-input-2\"]");
 	
-	By btnFormulario = By.xpath("//*[@resource-id=\"register-form\"]");
+	By btnFormulario = By.xpath("//*[@text=\"Crea una cuenta\"]");
 	By txtCorreo=By.xpath("//*[@resource-id=\"mat-input-3\"]");
 	By txtContrasena=By.xpath("//*[@resource-id=\"password\"]");
 	By txtContrasena2=By.xpath("//*[@resource-id=\"mat-input-5\"]");
 	By btnTipoDocumento = By.xpath("//*[@resource-id=\"selectTipo\"]");
-	By btnCedulaDeIdentidadOpcion0 = By.xpath("//*[@resource-id=\"selectTipo\"]");
+	By btnCedulaDeIdentidadOpcion0 = By.xpath("//*[@resource-id=\"optionTipo0\"]");
 	By txtNumeroIdentificador= By.xpath("//*[@resource-id=\"mat-input-6\"]");
-	By txtNumeroSerie= By.xpath("//*[@resource-id=\"numero_serie\"]");
+	By txtNumeroSerie= By.xpath("//*[@resource-id=\"mat-input-7\"]");
 	By txtCalle= By.xpath("//*[@resource-id=\"mat-input-8\"]");
 	By txtDireccion= By.xpath("//*[@resource-id=\"mat-input-9\"]");
 	By txtNombreDireccion= By.xpath("//*[@resource-id=\"mat-input-10\"]");
@@ -79,7 +79,7 @@ public class RegistroSolicitantePage extends BaseTest {
 			Thread.sleep(15000);
 			driver.findElement(btnNo).click();
 			Thread.sleep(15000);
-			driver.findElement(btnSearch).sendKeys("app.jobbiando.cl/registroPrestador");
+			driver.findElement(btnSearch).sendKeys("app.jobbiando.cl/registroSolicitante");
 			Thread.sleep(15000);
 			driver.findElement(btnLink).click();
 			Thread.sleep(15000);
@@ -91,7 +91,7 @@ public class RegistroSolicitantePage extends BaseTest {
 			
 		}
 		else {
-			driver.findElement(btnSearch).sendKeys("app.jobbiando.cl/registroPrestador");
+			driver.findElement(btnSearch).sendKeys("app.jobbiando.cl/registroSolicitante");
 			Thread.sleep(15000);
 			driver.findElement(btnLink).click();
 			Thread.sleep(15000);
