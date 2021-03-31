@@ -92,7 +92,7 @@ public class PresentaReclamoPage extends BaseTest{
 	public void clickReclamo() throws InterruptedException{
 		
 		while(exist(btnArticulosPerdidos) == null) {
-			this.funcionScrollDown(0.9,0.2);
+			this.funcionScrollDown(0.7,0.2);
 		}
 		driver.findElement(btnArticulosPerdidos).click();
 		Thread.sleep(5000);
