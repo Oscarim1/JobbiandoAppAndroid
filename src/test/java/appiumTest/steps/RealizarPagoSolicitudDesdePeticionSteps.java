@@ -14,6 +14,7 @@ public class RealizarPagoSolicitudDesdePeticionSteps extends BaseTest{
 	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	RealizarPagoSolicitudDesdePeticionPage page=null;
 	MobileElement elemento=null;
+	public String medioPago = "Khipu";
 	
 	@Given("Completar login de solicitante y entrar")
 	public void completar_login_de_solicitante_y_entrar() throws Throwable {
@@ -22,12 +23,16 @@ public class RealizarPagoSolicitudDesdePeticionSteps extends BaseTest{
 			 Thread.sleep(20000);
 			 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);		
 			 RegistroData.datosSolicitantes(appiumON,false);
-			 page.enterCorreo(RegistroData.emailSolicitante);
-			 page.clickOcultarTeclado();		
-			 page.enterContrasena(RegistroData.passSolicitante);
-			 page.clickOcultarTeclado();
+			 System.out.println(RegistroData.medioPagoSolicitante.toString());
+			 if(RegistroData.medioPagoSolicitante.toString().equals("Khipu")) {
+				 page.enterCorreo(RegistroData.emailSolicitante);
+				 page.clickOcultarTeclado();		
+				 page.enterContrasena(RegistroData.passSolicitante);
+				 page.clickOcultarTeclado();
+				 
+				 page.clickEntrar();
+			 }
 			 
-			 page.clickEntrar();
 	     }catch(Exception exp) {
 	         System.out.println(exp.getMessage());
 	         exp.printStackTrace();
@@ -37,39 +42,54 @@ public class RealizarPagoSolicitudDesdePeticionSteps extends BaseTest{
 
 	@And("Entrar en pestana Solicitud")
 	public void entrar_en_pestana_Solicitud() throws Throwable {
-		 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
-		 page.clickPestanaSolicitud();
+		if(RegistroData.medioPagoSolicitante.toString().equals("Khipu")) {
+			page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
+			page.clickPestanaSolicitud();
+		}
+		 
 	}
 
 	@And("Entrar en pestana En Proceso")
 	public void entrar_en_pestana_En_Proceso() throws Throwable {
-		 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
-		 page.clickPestanaEnProceso();
+		 if(RegistroData.medioPagoSolicitante.toString().equals("Khipu")) {
+			 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
+			 page.clickPestanaEnProceso();
+		 }
+		 
 	}
 
 	@And("Hacer click en una solicitud en espera de pago")
 	public void hacer_click_en_una_solicitud_en_espera_de_pago() throws Throwable {
-		 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
-		 page.clickPestanaEnProceso();
+		 if(RegistroData.medioPagoSolicitante.toString().equals("Khipu")) {
+			 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
+			 page.clickPestanaEnProceso();
+		 }
+		 
 	}
 
 	@When("Ingresar datos de pago")
 	public void ingresar_datos_de_pago() throws Throwable {
-		 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
-		 page.clickPagarServicio();
-		 page.enterEmailPagador(RegistroData.emailSolicitante);
-		 page.clickContinuar();
-		 page.enterDatosUsuario("9.123.845-4","1234");
-		 page.clickContinuar();
-		 page.enterAutorizacion("11", "22", "33");
-		
+		 if(RegistroData.medioPagoSolicitante.toString().equals("Khipu")) {
+			 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
+			 page.clickPagarServicio();
+			 page.enterEmailPagador(RegistroData.emailSolicitante);
+			 page.clickContinuar();
+			 page.enterDatosUsuario("9.123.845-4","1234");
+			 page.clickContinuar();
+			 page.enterAutorizacion("11", "22", "33");
+		 }	
 		
 	}
 
 	@Then("Realizar el pago de la solicitud")
 	public void realizar_el_pago_de_la_solicitud() throws Throwable {
-		 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
-		 page.clickTerminar();
-		 driver.quit();
+		if(RegistroData.medioPagoSolicitante.toString().equals("Khipu")) {
+			 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
+			 page.clickTerminar();
+			 driver.quit();
+		}
+		else {
+			System.out.println("Se ha saltado este feature debido a que el medio de pago es"+RegistroData.medioPagoSolicitante.toString());
+		}
 	}
 }

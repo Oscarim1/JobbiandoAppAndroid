@@ -39,6 +39,7 @@ public class RegistroData extends SheetsQuickstart {
     public static String ubicacionSolicitante = "";
     public static String nombreDirSolicitante = "";
     public static String refSolicitante = "";
+    public static String medioPagoSolicitante = "";
     public static String estado="";
  
     
@@ -137,7 +138,7 @@ public class RegistroData extends SheetsQuickstart {
     	
 	 
 	   
-public static void datosSolicitantes(String appium,Boolean uso, String... args) throws IOException, GeneralSecurityException {
+	public static void datosSolicitantes(String appium,Boolean uso, String... args) throws IOException, GeneralSecurityException {
 	    	
 	    	
 			Integer n=2;
@@ -147,7 +148,7 @@ public static void datosSolicitantes(String appium,Boolean uso, String... args) 
 			
 		while(a==null){	
 			
-			final String range = "SolicitanteData!A"+n+":L"+m+"";
+			final String range = "SolicitanteData!A"+n+":M"+m+"";
 	    	final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
 	    	Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT,appium)).setApplicationName(APPLICATION_NAME).build();
 	        ValueRange response = service.spreadsheets().values().get(SPREEDSHEET_ID, range).execute();
@@ -186,7 +187,7 @@ public static void datosSolicitantes(String appium,Boolean uso, String... args) 
 	     		            	 ubicacionSolicitante=(String) row.get(9);
 	     		            	 nombreDirSolicitante=(String) row.get(10);
 	     		            	 refSolicitante=(String) row.get(11);   
-	     		            	 
+	     		            	 medioPagoSolicitante=(String) row.get(12); 
 	     	         }  		
 	     	    }
 	        }

@@ -65,7 +65,7 @@ public class AceptarSolicitudServicioPage extends BaseTest {
 		Thread.sleep(9000);
 		
 	}
-	/////////////////////////LOGIN/////////////////////////////////////////
+
 	public void compararCategorias() throws InterruptedException{
 		
 		String catPrestador= driver.findElement(txtCategoriaPrestador).getAttribute("text");

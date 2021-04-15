@@ -110,11 +110,12 @@ public class RealizarPagoSolicitudDesdePeticionPage extends BaseTest {
 	}
 	public void enterEmailPagador(String emailPagador) throws InterruptedException
 	{   
-		if(exist(btnDeny2)!=null) {
-			driver.findElement(btnDeny2).click();
-			Thread.sleep(3000);
-			
+		//Thread.sleep(25000);
+		while(exist(btnCancelar)==null) {
+			Thread.sleep(10000);
+			System.out.println("aun no termina de cargar khipu");
 		}
+		
 		if(exist(btnCancelar)!=null) {
 			driver.findElement(btnCancelar).click();
 			Thread.sleep(3000);
