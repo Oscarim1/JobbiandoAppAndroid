@@ -48,16 +48,16 @@ public class RegistroSolicitanteSteps extends BaseTest {
 	public void completar_el_formulario_de_registro_del_solicitante() throws Throwable {	
 		page=new RegistroSolicitantePage(elemento);
 	    page.enterNombres(RegistroData.nombresSolicitante);	   
-	    page.enterApellidos(RegistroData.apellidosSolicitante);	    
-	    page.enterFechaNacimiento("12 de 05 de 1995");	   
+	    page.enterApellidos(RegistroData.apellidosSolicitante);	       
 	    page.enterCorreo(RegistroData.emailSolicitante);    
+	    page.enterFechaNacimiento("12 de 05 de 1995");
 	    page.enterContrasena(RegistroData.passSolicitante);    
 	    page.clickCedulaDeIdentidad(RegistroData.runSolicitanteNuevo);    
-	    page.enterIdentificador(RegistroData.numSerieSolicitante);	    
-	    page.enterCalle(RegistroData.calleSolicitante);	    
-	    page.enterDireccion(RegistroData.ubicacionSolicitante);	    
-	    page.enterNombreDireccion(RegistroData.nombreDirSolicitante);    
-	    page.enterReferencia(RegistroData.refSolicitante); 
+	    //page.enterIdentificador(RegistroData.numSerieSolicitante);	    
+	    //page.enterCalle(RegistroData.calleSolicitante);	    
+	    //page.enterDireccion(RegistroData.ubicacionSolicitante);	    
+	    //page.enterNombreDireccion(RegistroData.nombreDirSolicitante);    
+	    //page.enterReferencia(RegistroData.refSolicitante); 
 	}
 
 	@Then("hacer click en boton registrar solicitante")

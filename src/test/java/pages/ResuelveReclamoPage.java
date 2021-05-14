@@ -14,7 +14,9 @@ public class ResuelveReclamoPage extends BaseTest {
 	By btnNext = By.xpath("//*[@resource-id=\"com.android.chrome:id/next_button\"]");
 	By btnNo = By.xpath("//*[@resource-id=\"com.android.chrome:id/negative_button\"]");
 	By btnSearch = By.xpath("//*[@resource-id=\"com.android.chrome:id/search_box_text\"]");
-	By btnLink = By.xpath("//*[@text=\"app.jobbiando.cl\"]");
+	//By btnLink = By.xpath("//*[@text=\"app.jobbiando.cl\"]");
+	By btnLink = By.xpath("//*[@text=\"testing.jobbiando.cl/login\"]");
+	
 	By btnCerrar = By.xpath("//*[@resource-id=\"com.android.chrome:id/infobar_close_button\"]");
 	
 	By btnOlvideContrasena = By.xpath("//*[@text=\"Olvidaste tu contraseña?\"]");
@@ -52,7 +54,7 @@ public class ResuelveReclamoPage extends BaseTest {
 			Thread.sleep(20000);
 			driver.findElement(btnNo).click();
 			Thread.sleep(20000);
-			driver.findElement(btnSearch).sendKeys("app.jobbiando.cl");
+			driver.findElement(btnSearch).sendKeys("testing.jobbiando.cl/login");
 			Thread.sleep(15000);
 			driver.findElement(btnLink).click();
 			Thread.sleep(15000);

@@ -20,7 +20,9 @@ public class RegistroPrestadorPage extends BaseTest {
 	By btnAcepto = By.xpath("//*[@resource-id=\"com.android.chrome:id/terms_accept\"]");
 	By btnNo = By.xpath("//*[@resource-id=\"com.android.chrome:id/negative_button\"]");
 	By btnSearch = By.xpath("//*[@resource-id=\"com.android.chrome:id/search_box_text\"]");
-	By btnLink = By.xpath("//*[@text=\"app.jobbiando.cl/registroPrestador\"]");
+	By btnLink = By.xpath("//*[@text=\"testing.jobbiando.cl/registroPrestador\"]");
+	//By btnLink = By.xpath("//*[@text=\"app.jobbiando.cl/registroPrestador\"]");
+	
 	By btnCerrar = By.xpath("//*[@resource-id=\"com.android.chrome:id/infobar_close_button\"]");
 	By btnBlock = By.xpath("//*[@text=\"BLOCK\"]");
 	By btnAllow = By.xpath("//*[@text=\"ALLOW\"]");
@@ -80,7 +82,10 @@ public void iniciarSesion() throws InterruptedException {
 			Thread.sleep(15000);
 			driver.findElement(btnNo).click();
 			Thread.sleep(15000);
-			driver.findElement(btnSearch).sendKeys("app.jobbiando.cl/registroPrestador");
+			//Descomentar para produccion
+			//driver.findElement(btnSearch).sendKeys("app.jobbiando.cl/registroPrestador");
+			//Thread.sleep(15000);
+			driver.findElement(btnSearch).sendKeys("testing.jobbiando.cl/registroPrestador");
 			Thread.sleep(15000);
 			driver.findElement(btnLink).click();
 			Thread.sleep(15000);
@@ -92,7 +97,7 @@ public void iniciarSesion() throws InterruptedException {
 			
 		}
 		else {
-			driver.findElement(btnSearch).sendKeys("app.jobbiando.cl/registroPrestador");
+			driver.findElement(btnSearch).sendKeys("testing.jobbiando.cl/registroPrestador");
 			Thread.sleep(15000);
 			driver.findElement(btnLink).click();
 			Thread.sleep(15000);

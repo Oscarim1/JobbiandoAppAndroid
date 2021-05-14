@@ -21,16 +21,17 @@ public class RegistroSolicitantePage extends BaseTest {
 	By btnAcepto = By.xpath("//*[@resource-id=\"com.android.chrome:id/terms_accept\"]");
 	By btnNo = By.xpath("//*[@resource-id=\"com.android.chrome:id/negative_button\"]");
 	By btnSearch = By.xpath("//*[@resource-id=\"com.android.chrome:id/search_box_text\"]");
-	By btnLink = By.xpath("//*[@text=\"app.jobbiando.cl/registroSolicitante\"]");
+	By btnLink = By.xpath("//*[@text=\"testing.jobbiando.cl/registroSolicitante\"]");
 	By btnCerrar = By.xpath("//*[@resource-id=\"com.android.chrome:id/infobar_close_button\"]");
 	By btnBlock = By.xpath("//*[@text=\"BLOCK\"]");
 	By btnAllow = By.xpath("//*[@text=\"ALLOW\"]");
 	By txtNombres=By.xpath("//*[@resource-id=\"mat-input-0\"]");
 	By txtApellidos=By.xpath("//*[@resource-id=\"mat-input-1\"]");
-	By txtFechaNacimiento=By.xpath("//*[@resource-id=\"mat-input-2\"]");
+	By txtCorreo=By.xpath("//*[@resource-id=\"mat-input-2\"]");
+	By txtFechaNacimiento=By.xpath("//*[@resource-id=\"mat-input-3\"]");
 	
 	By btnFormulario = By.xpath("//*[@text=\"Crea una cuenta\"]");
-	By txtCorreo=By.xpath("//*[@resource-id=\"mat-input-3\"]");
+	
 	By txtContrasena=By.xpath("//*[@resource-id=\"password\"]");
 	By txtContrasena2=By.xpath("//*[@resource-id=\"mat-input-5\"]");
 	By btnTipoDocumento = By.xpath("//*[@resource-id=\"selectTipo\"]");
@@ -79,8 +80,11 @@ public class RegistroSolicitantePage extends BaseTest {
 			Thread.sleep(15000);
 			driver.findElement(btnNo).click();
 			Thread.sleep(15000);
-			driver.findElement(btnSearch).sendKeys("app.jobbiando.cl/registroSolicitante");
+			//driver.findElement(btnSearch).sendKeys("app.jobbiando.cl/registroSolicitante");
+			//Thread.sleep(15000);
+			driver.findElement(btnSearch).sendKeys("testing.jobbiando.cl/registroSolicitante");
 			Thread.sleep(15000);
+			
 			driver.findElement(btnLink).click();
 			Thread.sleep(15000);
 			if(exist(btnCerrar)!=null) {
@@ -91,7 +95,9 @@ public class RegistroSolicitantePage extends BaseTest {
 			
 		}
 		else {
-			driver.findElement(btnSearch).sendKeys("app.jobbiando.cl/registroSolicitante");
+			//driver.findElement(btnSearch).sendKeys("app.jobbiando.cl/registroSolicitante");
+			//Thread.sleep(15000);
+			driver.findElement(btnSearch).sendKeys("testing.jobbiando.cl/registroSolicitante");
 			Thread.sleep(15000);
 			driver.findElement(btnLink).click();
 			Thread.sleep(15000);
@@ -128,6 +134,13 @@ public class RegistroSolicitantePage extends BaseTest {
 		Thread.sleep(5000);
 	}
 	
+	public void enterCorreo(String correo) throws InterruptedException
+	{
+		driver.findElement(txtCorreo).sendKeys(correo);
+		Thread.sleep(5000);
+	}
+	
+	
 	public void enterFechaNacimiento(String fechaNacimiento) throws InterruptedException 
 	{
 		driver.findElement(txtFechaNacimiento).sendKeys(fechaNacimiento);
@@ -139,11 +152,6 @@ public class RegistroSolicitantePage extends BaseTest {
 		Thread.sleep(3000);
 	}
 	
-	public void enterCorreo(String correo) throws InterruptedException
-	{
-		driver.findElement(txtCorreo).sendKeys(correo);
-		Thread.sleep(5000);
-	}
 	
 	public void enterContrasena(String contrasena) throws InterruptedException 
 	{
