@@ -52,10 +52,10 @@ public class RegistroPrestadorSteps extends BaseTest {
 	    page.enterContrasena(RegistroData.passPrestador);    
 	    page.clickCedulaDeIdentidad(RegistroData.runPrestadorNuevo);    
 	    page.enterIdentificador(RegistroData.numSeriePrestador);	    
-	    page.enterCalle(RegistroData.callePrestador);	    
-	    page.enterDireccion(RegistroData.ubicacionPrestador);	    
-	    page.enterNombreDireccion(RegistroData.nombreDirPrestador);    
-	    page.enterReferencia(RegistroData.refPrestador); 
+	    //page.enterCalle(RegistroData.callePrestador);	    
+	    //page.enterDireccion(RegistroData.ubicacionPrestador);	    
+	    //page.enterNombreDireccion(RegistroData.nombreDirPrestador);    
+	    //page.enterReferencia(RegistroData.refPrestador); 
 	}
 
 	@Then("click en boton registrar prestador")
