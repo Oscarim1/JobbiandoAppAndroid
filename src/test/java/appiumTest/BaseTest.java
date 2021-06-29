@@ -34,25 +34,17 @@ public class BaseTest {
 	public String device = System.getProperty("device");
 	public PropertyLoader loadproperty = new PropertyLoader();
 
-	// HARDCODE VALUES
-	public String emailAdmin = "camilatoro200@gmail.com";
-	public String passAdmin = "190858111";
-	public String precio = "10000";
-	public String emailPrestador52 = "randomail52@gmailnator.com";
-	public String emailSolicitante = "randomail13@gmailnator.com";
-	public String passSolicitante = "Hola1234";
-
 	public void openApp(String rol1, String rol2) throws Exception {
 
-		// Recuperacion del fichero de propiedades de la ruta y nombre de la aplicaci?n
-		// m?vil
+		// Recuperacion del fichero de propiedades de la ruta y nombre de la aplicacion
+		// movil
 		String ipApp = loadproperty.loadProperties(appiumON).getProperty("AppiumServerIP");
 
-		// Generaci?n de las capabilites a nivel del servicio de Appium
+		// Generacion de las capabilites a nivel del servicio de Appium
 		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 		desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
 
-		// Generaci?n de las capabilites a nivel de driver
+		// Generacion de las capabilites a nivel de driver
 		DesiredCapabilities clientCapabilities = new DesiredCapabilities();
 		clientCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 		clientCapabilities.setCapability(MobileCapabilityType.UDID, device);
@@ -192,7 +184,6 @@ public class BaseTest {
 		} catch (Exception e) {
 			return null;
 		}
-
 	}
 
 	public MobileElement exist(By element) {

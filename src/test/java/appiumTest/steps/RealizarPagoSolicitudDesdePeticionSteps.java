@@ -1,5 +1,4 @@
 package appiumTest.steps;
-
 import appiumTest.BaseTest;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -29,42 +28,34 @@ public class RealizarPagoSolicitudDesdePeticionSteps extends BaseTest{
 				 page.clickOcultarTeclado();		
 				 page.enterContrasena(RegistroData.passSolicitante);
 				 page.clickOcultarTeclado();
-				 
 				 page.clickEntrar();
 			 }
-			 
 	     }catch(Exception exp) {
 	         System.out.println(exp.getMessage());
 	         exp.printStackTrace();
 	         Thread.sleep(5000);   
 	     	}
 	}
-
 	@And("Entrar en pestana Solicitud")
 	public void entrar_en_pestana_Solicitud() throws Throwable {
 		if(RegistroData.medioPagoSolicitante.toString().equals("Khipu")) {
 			page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
 			page.clickPestanaSolicitud();
 		}
-		 
 	}
-
 	@And("Entrar en pestana En Proceso")
 	public void entrar_en_pestana_En_Proceso() throws Throwable {
 		 if(RegistroData.medioPagoSolicitante.toString().equals("Khipu")) {
 			 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
 			 page.clickPestanaEnProceso();
 		 }
-		 
 	}
-
 	@And("Hacer click en una solicitud en espera de pago")
 	public void hacer_click_en_una_solicitud_en_espera_de_pago() throws Throwable {
 		 if(RegistroData.medioPagoSolicitante.toString().equals("Khipu")) {
 			 page = new RealizarPagoSolicitudDesdePeticionPage(elemento);
 			 page.clickPestanaEnProceso();
 		 }
-		 
 	}
 
 	@When("Ingresar datos de pago")
@@ -78,9 +69,7 @@ public class RealizarPagoSolicitudDesdePeticionSteps extends BaseTest{
 			 page.clickContinuar();
 			 page.enterAutorizacion("11", "22", "33");
 		 }	
-		
 	}
-
 	@Then("Realizar el pago de la solicitud")
 	public void realizar_el_pago_de_la_solicitud() throws Throwable {
 		if(RegistroData.medioPagoSolicitante.toString().equals("Khipu")) {

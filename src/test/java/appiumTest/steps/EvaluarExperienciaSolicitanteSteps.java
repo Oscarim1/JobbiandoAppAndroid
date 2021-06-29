@@ -1,5 +1,4 @@
 package appiumTest.steps;
-
 import appiumTest.BaseTest;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -34,25 +33,21 @@ public class EvaluarExperienciaSolicitanteSteps extends BaseTest {
 	         Thread.sleep(5000);   
 	     	}
 	}
-
 	@And("Click en la pestana Solicitud")
 	public void click_en_la_pestana_Solicitud() throws Throwable {
 		 page = new EvaluarExperienciaSolicitantePage(elemento);	
 		 page.clickPestanaSolicitud();
 	}
-
 	@And("Click en la pestana En Proceso")
 	public void click_en_la_pestana_En_Proceso() throws Throwable {
 		 page = new EvaluarExperienciaSolicitantePage(elemento);	
 		 page.clickPestanaEnProceso();
 	}
-
 	@And("Click en boton Evaluar Experiencia")
 	public void click_en_boton_Evaluar_Experiencia() throws Throwable {
 		 page = new EvaluarExperienciaSolicitantePage(elemento);	
 		 page.clickEvaluarExperiencia();
 	}
-
 	@When("Completen datos de evaluacion")
 	public void completen_datos_de_evaluacion() throws Throwable {
 		page=new EvaluarExperienciaSolicitantePage(elemento);	
@@ -62,7 +57,6 @@ public class EvaluarExperienciaSolicitanteSteps extends BaseTest {
 		page.clickCriterio();
 		page.clickEnviarEvaluacion();
 	}
-
 	@Then("Click en Enviar Evaluacion")
 	public void click_en_Enviar_Evaluacion() throws Throwable {
 		page=new EvaluarExperienciaSolicitantePage(elemento);

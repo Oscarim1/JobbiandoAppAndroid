@@ -1,13 +1,10 @@
 package pages;
-
 import org.openqa.selenium.By;
-
 import appiumTest.BaseTest;
 import io.appium.java_client.MobileElement;
 
 public class EvaluarExperienciaSolicitantePage extends BaseTest {
 	MobileElement elemento=null;
-	
 	By txtCorreo =By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.EditText");
 	By txtContrasena =By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.EditText");
 	By btnEntrar = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]");
@@ -17,15 +14,12 @@ public class EvaluarExperienciaSolicitantePage extends BaseTest {
 	By btnPestanaSolicitud=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[3]");
 	By btnPestanaEnProceso=By.xpath("//*[@text='En Proceso']");
 	By btnEvaluarExperiencia=By.xpath("//*[@text='EVALUAR EXPERIENCIA']");
-	//By btnEvaluarExperiencia2=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[9]");
 	By txtDescripcion =By.xpath("//*[@class='android.widget.EditText']");
 	By btnOcultarTeclado2=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView[1]");
 	By btnSeleccionarCriterio=By.xpath("//*[@resource-id=\"android:id/text1\"]");
 	By btnCriterio = By.xpath("//*[@text='Rapidez']");
 	By btnEnviarEvaluacion = By.xpath("//*[@text='ENVIAR EVALUACIÓN']");
 	By btnOk = By.xpath("//*[@text='OK']");
-	//By btnEnviarEvaluacion=By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[10]");
-	
 	
 	public EvaluarExperienciaSolicitantePage(MobileElement elemento) throws InterruptedException
 	{
@@ -37,7 +31,6 @@ public class EvaluarExperienciaSolicitantePage extends BaseTest {
 		driver.findElement(txtCorreo).sendKeys(correo);
 		Thread.sleep(3000);
 	}
-
 	public void enterContrasena(String contrasena) throws InterruptedException
 	{
 		driver.findElement(txtContrasena).sendKeys(contrasena);
@@ -48,8 +41,7 @@ public class EvaluarExperienciaSolicitantePage extends BaseTest {
 		if(exist(btnOcultarTeclado)!=null) {
 			driver.findElement(btnOcultarTeclado).click();
 		Thread.sleep(5000);
-		}
-		
+		}	
 	}
 	public void clickEntrar() throws InterruptedException
 	{
@@ -60,13 +52,12 @@ public class EvaluarExperienciaSolicitantePage extends BaseTest {
 	public void clickPestanaSolicitud() throws InterruptedException
 	{Thread.sleep(5000);
 		if(exist(btnDeny) != null) {
-
 			driver.findElement(btnDeny).click();
 			Thread.sleep(5000);
 			driver.findElement(btnPestanaSolicitud).click();
 			Thread.sleep(10000);
 		}else {
-			
+			//no hara nada
 		}
 		driver.findElement(btnPestanaSolicitud).click();
 		Thread.sleep(10000);
@@ -74,21 +65,16 @@ public class EvaluarExperienciaSolicitantePage extends BaseTest {
 	public void clickPestanaEnProceso() throws InterruptedException
 	{
 		if(exist(btnDontAskAgain) != null) {
-			
 			driver.findElement(btnDontAskAgain).click();
 			Thread.sleep(5000);
 			driver.findElement(btnDeny).click();
 			Thread.sleep(5000);
 			driver.findElement(btnPestanaEnProceso).click();
 			Thread.sleep(10000);
-			
 		}else {
-			
 			driver.findElement(btnPestanaEnProceso).click();
 			Thread.sleep(10000);
 		}
-		
-	
 	}
 	public void clickEvaluarExperiencia() throws InterruptedException
 	{
@@ -109,14 +95,11 @@ public class EvaluarExperienciaSolicitantePage extends BaseTest {
 		}else {
 		driver.findElement(txtDescripcion).sendKeys(descripcion);
 		Thread.sleep(3000);}
-		
 	}
 	public void clickOcultarTeclado2() throws InterruptedException
 	{
-		
 		driver.findElement(btnOcultarTeclado2).click();
 		Thread.sleep(5000);
-		
 	}
 	public void clickSeleccionarCriterio() throws InterruptedException
 	{
@@ -134,8 +117,5 @@ public class EvaluarExperienciaSolicitantePage extends BaseTest {
 		Thread.sleep(5000);
 		driver.findElement(btnOk).click();
 		Thread.sleep(5000);
-		
 	}
-	
-	
 }

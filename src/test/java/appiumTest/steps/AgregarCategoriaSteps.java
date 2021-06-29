@@ -1,5 +1,4 @@
 package appiumTest.steps;
-
 import appiumTest.BaseTest;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -9,15 +8,10 @@ import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
 import pages.AgregarCategoriaPage;
 
-
-
 public class AgregarCategoriaSteps extends BaseTest {
-	
-
 	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	AgregarCategoriaPage page=null;
 	MobileElement elemento=null;
-	
 	@Given("Para categorias Completar Login y entrar")
 	public void para_categorias_Completar_Login_y_entrar() throws Throwable {
 		try{			 
@@ -34,22 +28,17 @@ public class AgregarCategoriaSteps extends BaseTest {
 	         exp.printStackTrace();
 	         Thread.sleep(1000);         
 	     }
-		
-		 
 	}
-
 	@When("Hacer click en Agregar")
 	public void hacer_click_en_Agregar() throws Throwable {
 	    page=new AgregarCategoriaPage(elemento);
 	    page.permisosAllow();
 	    page.clickAgregar();    
 	}
-
 	@Then("Seleccionar una categoria")
 	public void seleccionar_una_categoria() throws Throwable {
 		page=new AgregarCategoriaPage(elemento);
 	    page.clickAgregarCategoria(); 
 	    driver.quit();
 	}
-	
 }

@@ -1,17 +1,10 @@
 package pages;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import appiumTest.BaseTest;
 import io.appium.java_client.MobileElement;
-
-
 public class RegistroPrestadorPage extends BaseTest {
 	MobileElement elemento=null; 
 	By btnQuieroSerJobber = By.xpath("//*[@text=\"Quiero ser jobber\"]");
-	
 	////////////////////VALIDACION CHROME//////////////////////////
 	By btnAccept = By.id("com.android.chrome:id/terms_accept");	
 	By btnNext = By.id("com.android.chrome:id/next_button");
@@ -21,15 +14,12 @@ public class RegistroPrestadorPage extends BaseTest {
 	By btnNo = By.xpath("//*[@resource-id=\"com.android.chrome:id/negative_button\"]");
 	By btnSearch = By.xpath("//*[@resource-id=\"com.android.chrome:id/search_box_text\"]");
 	By btnLink = By.xpath("//*[@text=\"testing.jobbiando.cl/registroPrestador\"]");
-	//By btnLink = By.xpath("//*[@text=\"app.jobbiando.cl/registroPrestador\"]");
-	
 	By btnCerrar = By.xpath("//*[@resource-id=\"com.android.chrome:id/infobar_close_button\"]");
 	By btnBlock = By.xpath("//*[@text=\"BLOCK\"]");
 	By btnAllow = By.xpath("//*[@text=\"ALLOW\"]");
 	By txtNombres=By.xpath("//*[@resource-id=\"mat-input-0\"]");
-	By txtApellidos=By.xpath("//*[@resource-id=\"mat-input-1\"]");
+	By txtApellidos=By.xpath("//*[@resource-id=\"mat-input-\"]");//aca
 	By txtFechaNacimiento=By.xpath("//*[@resource-id=\"fecha_nacimiento\"]");
-	
 	By btnFormulario = By.xpath("//*[@text=\"Crea una cuenta\"]");
 	By txtCorreo=By.xpath("//*[@resource-id=\"mat-input-3\"]");
 	By txtContrasena=By.xpath("//*[@resource-id=\"password\"]");
@@ -44,12 +34,10 @@ public class RegistroPrestadorPage extends BaseTest {
 	By txtReferencia= By.xpath("//*[@resource-id=\"mat-input-11\"]");
 	By btnRegistrar= By.xpath("//*[@resource-id=\"btnSaveRegistro\"]"); 
 	
-	
 	public RegistroPrestadorPage(MobileElement elemento) 
 	{
 		this.elemento=elemento;
 	}
-	
 	////////////////////////VALIDACION SAMSUNG///////////////////////////////////
 	public void validacionSamsung() throws InterruptedException
 	{	
@@ -60,7 +48,6 @@ public class RegistroPrestadorPage extends BaseTest {
 			Thread.sleep(5000);
 			driver.findElement(btnNoThanks).click();
 			Thread.sleep(5000);
-			
 		}
 		else if(exist(btnNext)!=null) {
 			driver.findElement(btnNext).click();
@@ -69,12 +56,10 @@ public class RegistroPrestadorPage extends BaseTest {
 			Thread.sleep(5000);
 		}
 		else {
-			
+			//no hara nada
 		}
-		
 	}
-public void iniciarSesion() throws InterruptedException {
-		
+	public void iniciarSesion() throws InterruptedException {
 		if(exist(btnAcepto)!=null) {
 			driver.findElement(btnAcepto).click();
 			Thread.sleep(15000);
@@ -84,7 +69,6 @@ public void iniciarSesion() throws InterruptedException {
 			Thread.sleep(15000);
 			//Descomentar para produccion
 			//driver.findElement(btnSearch).sendKeys("app.jobbiando.cl/registroPrestador");
-			//Thread.sleep(15000);
 			driver.findElement(btnSearch).sendKeys("testing.jobbiando.cl/registroPrestador");
 			Thread.sleep(15000);
 			driver.findElement(btnLink).click();
@@ -93,8 +77,6 @@ public void iniciarSesion() throws InterruptedException {
 				driver.findElement(btnCerrar).click();
 				Thread.sleep(15000);
 			}
-			
-			
 		}
 		else {
 			driver.findElement(btnSearch).sendKeys("testing.jobbiando.cl/registroPrestador");
@@ -105,17 +87,13 @@ public void iniciarSesion() throws InterruptedException {
 				driver.findElement(btnCerrar).click();
 				Thread.sleep(3000);
 			}
-			
-		}
-				
+		}	
 	}
-	
 	public void enterNombres(String nombres) throws InterruptedException
 	{	
 		if(exist(btnBlock)==null) {
 			driver.findElement(txtNombres).sendKeys(nombres);
 			Thread.sleep(5000);
-			
 		}else {
 			driver.findElement(btnBlock).click();
 		    Thread.sleep(3000);
@@ -125,15 +103,12 @@ public void iniciarSesion() throws InterruptedException {
 			driver.findElement(txtNombres).sendKeys(nombres);
 			Thread.sleep(3000);
 		}
-		
 	}
-	
 	public void enterApellidos(String apellidos) throws InterruptedException
 	{
 		driver.findElement(txtApellidos).sendKeys(apellidos);
 		Thread.sleep(5000);
 	}
-	
 	public void enterFechaNacimiento(String fechaNacimiento) throws InterruptedException 
 	{
 		driver.findElement(txtFechaNacimiento).sendKeys(fechaNacimiento);
@@ -144,25 +119,21 @@ public void iniciarSesion() throws InterruptedException {
 		driver.findElement(btnFormulario).click();
 		Thread.sleep(3000);
 	}
-	
 	public void enterCorreo(String correo) throws InterruptedException
 	{
 		driver.findElement(txtCorreo).sendKeys(correo);
 		Thread.sleep(5000);
 	}
-	
 	public void enterContrasena(String contrasena) throws InterruptedException 
 	{
 		if(exist(txtCalle)==null) {
 			this.funcionScrollDown(0.8,0.6);
 		}
-		
 		driver.findElement(txtContrasena).sendKeys(contrasena);
 		Thread.sleep(5000);
 		driver.findElement(txtContrasena2).sendKeys(contrasena);
 		Thread.sleep(5000);
 	}
-	
 	public void clickCedulaDeIdentidad(String numeroIdentificador)throws InterruptedException {
 		driver.findElement(btnTipoDocumento).click();
 		Thread.sleep(5000);
@@ -172,7 +143,7 @@ public void iniciarSesion() throws InterruptedException {
 		Thread.sleep(5000);
 	}
 	
-	public void enterIdentificador(String numeroSerie) throws InterruptedException 
+	/*public void enterIdentificador(String numeroSerie) throws InterruptedException 
 	{
 		this.funcionScrollDown(0.8,0.6);
 		Thread.sleep(5000);
@@ -209,17 +180,12 @@ public void iniciarSesion() throws InterruptedException {
 		Thread.sleep(5000);
 		driver.findElement(txtReferencia).sendKeys(referencia);
 		Thread.sleep(5000);
-	}
+	}*/
 	
 	public void clickCrearCuenta() throws InterruptedException {
 		
 		this.funcionScrollDown(0.9,0.1);
 		driver.findElement(btnRegistrar).click();
-		System.out.println("AQUIII");
 		Thread.sleep(5000);
 	}
-	
 }
-
-	
-	

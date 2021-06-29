@@ -1,5 +1,4 @@
 package appiumTest.steps;
-
 import appiumTest.BaseTest;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -8,15 +7,12 @@ import cucumber.api.java.en.When;
 import dataProviders.ConfigFileReader;
 import dataProviders.RegistroData;
 import io.appium.java_client.MobileElement;
-
 import pages.SubirAntecedentesPage;
 
 public class SubirAntecedentesSteps extends BaseTest{
 	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	SubirAntecedentesPage page=null;
 	MobileElement elemento=null;
-	
-	
 	@Given("Completar login y entrar")
 	public void completar_login_y_entrar() throws Throwable {
 		 try{			 
@@ -33,18 +29,14 @@ public class SubirAntecedentesSteps extends BaseTest{
 	         exp.printStackTrace();
 	         Thread.sleep(1000);         
 	     }
-		
-		  
-		  
 	}
 	@And("Hacer click en pestana Cuenta")
 	public void hacer_click_en_pestana_Cuenta() throws Throwable{
 		page = new SubirAntecedentesPage(elemento);
 		if(elementExist("//*[@resource-id=\"com.android.packageinstaller:id/permission_allow_button\"]") != null ) {
-		page.clickPermitirUbicacion();			
+			page.clickPermitirUbicacion();			
 		}else {}
 		page.clickPerfil();
-		
 	}
 
 	@And("Hacer click en pestana Enviar Antecedentes")
@@ -54,7 +46,6 @@ public class SubirAntecedentesSteps extends BaseTest{
 	    page.clickTipoDocumento(); 
 	    page.clickDocumento();
 	}
-
 	@When("Hacer click en Selecionar Imagen")
 	public void hacer_click_en_Selecionar_Imagen() throws Throwable {
 		page = new SubirAntecedentesPage(elemento);
@@ -70,7 +61,6 @@ public class SubirAntecedentesSteps extends BaseTest{
 				page.clickPermitirImagenCamara();					
 				}else {}
 		page.clickTomarFoto();
-	
 	}
 	@And("Hacer click en Subir Imagen")
 	public void hacer_click_en_Subir_Imagen() throws Throwable{
@@ -82,5 +72,4 @@ public class SubirAntecedentesSteps extends BaseTest{
 		page.clickSubirAntecedentes(); 	 
 		driver.quit();
 	}
-
 }

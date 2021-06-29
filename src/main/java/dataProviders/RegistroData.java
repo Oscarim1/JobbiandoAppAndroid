@@ -80,31 +80,25 @@ public class RegistroData extends SheetsQuickstart {
 		Integer m=2;
 		Integer a=null;
 		
-		while(a==null){	
-		
-		final String range = "PrestadorData!A"+n+":M"+m+"";
-    	final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-    	Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT,appium)).setApplicationName(APPLICATION_NAME).build();
-        ValueRange response = service.spreadsheets().values().get(SPREEDSHEET_ID, range).execute();
-       
-        
-        List<List<Object>> values = response.getValues();
-        if(values == null || values.isEmpty()) {
-        	System.out.println("No hay datos existentes!");
-    	 }
-        else {
+		while(a==null){
+			final String range = "PrestadorData!A"+n+":M"+m+"";
+	    	final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+	    	Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT,appium)).setApplicationName(APPLICATION_NAME).build();
+	        ValueRange response = service.spreadsheets().values().get(SPREEDSHEET_ID, range).execute();
+	          
+	        List<List<Object>> values = response.getValues();
+	        if(values == null || values.isEmpty()) {
+	        	System.out.println("No hay datos existentes!");
+	        }
+	        else {
       	        List<Object> validarUso = values.get(0); 
               	estado=(String) validarUso.get(0);
-            
               	 if(estado.matches("USADO")) {
-              		 
      	        	n++;
      	        	m++;
      	        	 System.out.println("No hay datos disponibles.Buscando el la fila "+n+"...");
-     	        	
      	        }else {
      	        	a=1;
-     	        	
      	        	System.out.println("*Datos en la fila "+n+" sin uso previo.");
      	        	System.out.println("*Datos obtenidos.");
     				System.out.printf("*Estado modificado.");
@@ -125,13 +119,11 @@ public class RegistroData extends SheetsQuickstart {
      		            	 precioPrestadorSinComa=precioPrestador.replace(",","");
      		            	 System.out.printf(nombresPrestador);
      		            	 System.out.printf(precioPrestadorSinComa);
-     		            	
+     	        		 }
      	        }
-     	    }
               	 if(uso) {
               		 updateValues(service,range);
               	 }
-          
         }
 	}           
 }
@@ -139,38 +131,30 @@ public class RegistroData extends SheetsQuickstart {
 	 
 	   
 	public static void datosSolicitantes(String appium,Boolean uso, String... args) throws IOException, GeneralSecurityException {
-	    	
-	    	
 			Integer n=2;
 			Integer m=2;
 			Integer a=null;
 			System.out.println(uso);
 			
 		while(a==null){	
-			
 			final String range = "SolicitanteData!A"+n+":M"+m+"";
 	    	final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
 	    	Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT,appium)).setApplicationName(APPLICATION_NAME).build();
 	        ValueRange response = service.spreadsheets().values().get(SPREEDSHEET_ID, range).execute();
 	       
-	        
 	        List<List<Object>> values = response.getValues();
 	        if(values == null || values.isEmpty()) {
-	      
+	        	System.out.printf("No se han encontrado datos :(.");
         	 }
 	        else {
 	      	        List<Object> validarUso = values.get(0); 
 	              	estado=(String) validarUso.get(0);
-	            
 	              	 if(estado.matches("USADO")) {
-	              		 
 	     	        	n++;
 	     	        	m++;
 	     	        	 System.out.println("No hay datos disponibles.Buscando en la fila "+n+"...");
-	     	        	
 	     	        }else {
 	     	        	a=1;
-	     	        	
 	     	        	System.out.println("Datos en la fila "+n+" sin uso previo, obteniendo... ");
 	     	        	System.out.println("Datos obtenidos correctamente.");
 	    				System.out.printf("Estado modificado correctamente.");
@@ -194,7 +178,6 @@ public class RegistroData extends SheetsQuickstart {
 	      if(uso) {
 	    	  updateValues(service,range);
 	      }
-	        
 	    }
 	}    	
 }

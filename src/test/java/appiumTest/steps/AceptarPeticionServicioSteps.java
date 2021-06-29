@@ -1,5 +1,4 @@
 package appiumTest.steps;
-
 import appiumTest.BaseTest;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -11,11 +10,9 @@ import io.appium.java_client.MobileElement;
 import pages.AceptarPeticionServicioPage;
 
 public class AceptarPeticionServicioSteps extends BaseTest{
-
 	static ConfigFileReader configFileReader= new ConfigFileReader(appiumON);
 	AceptarPeticionServicioPage page=null;
 	MobileElement elemento=null;
-	
 	@Given("Completar login del prestador y entrar")
 	public void completar_login_del_prestador_y_entrar() throws Throwable {
 		 try{
@@ -25,40 +22,32 @@ public class AceptarPeticionServicioSteps extends BaseTest{
 			 RegistroData.datosPrestadores(appiumON,false);
 			 Thread.sleep(10000); 
 			 page.enterCorreo(RegistroData.emailPrestador);	  
-			   
 			 page.clickOcultarTeclado();
 			 page.enterContrasena(RegistroData.passPrestador);	
 			 page.clickOcultarTeclado();
 			 page.clickEntrar();
-			 
-
 	     }catch(Exception exp) {
 	         System.out.println(exp.getMessage());
 	         exp.printStackTrace();
 	         Thread.sleep(5000);
-	         
 	     }
 	}
-
 	@And("Ingresar a pestana Servicios")
 	public void ingresar_a_pestana_Servicios() throws Throwable {
 		 page = new AceptarPeticionServicioPage(elemento);
 		 page.permisosDeny();
 		 page.clickPestanaServicios();
 	}
-
 	@And("Ingresar a pestana Peticiones")
 	public void ingresar_a_pestana_Peticiones() throws Throwable {
 		 page = new AceptarPeticionServicioPage(elemento);
 		 page.clickPestanapeticiones();
 	}
-
 	@When("Se seleccione una peticion")
 	public void se_seleccione_una_peticion() throws Throwable {
 		 page = new AceptarPeticionServicioPage(elemento);
 		 page.clickPeticion();
 	}
-
 	@Then("Hacer click en boton aceptar peticion")
 	public void hacer_click_en_boton_aceptar_peticion() throws Throwable {
 		 page = new AceptarPeticionServicioPage(elemento);

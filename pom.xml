@@ -22,7 +22,11 @@
 		    <artifactId>google-api-client</artifactId>
 		    <version>1.19.0</version>
 		</dependency>-->
-			
+		
+		<!-- Para reportes -->
+		
+		<!-- Fin Para reportes -->
+		
 		<dependency>
 		    <groupId>com.google.oauth-client</groupId>
 		    <artifactId>google-oauth-client-jetty</artifactId>

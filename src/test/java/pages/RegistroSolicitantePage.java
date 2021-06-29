@@ -1,14 +1,7 @@
 package pages;
-
-
-
 import org.openqa.selenium.By;
-
-
 import appiumTest.BaseTest;
-
 import io.appium.java_client.MobileElement;
-
 
 public class RegistroSolicitantePage extends BaseTest {
 	MobileElement elemento=null; 
@@ -29,9 +22,7 @@ public class RegistroSolicitantePage extends BaseTest {
 	By txtApellidos=By.xpath("//*[@resource-id=\"mat-input-1\"]");
 	By txtCorreo=By.xpath("//*[@resource-id=\"mat-input-2\"]");
 	By txtFechaNacimiento=By.xpath("//*[@resource-id=\"mat-input-3\"]");
-	
 	By btnFormulario = By.xpath("//*[@text=\"Crea una cuenta\"]");
-	
 	By txtContrasena=By.xpath("//*[@resource-id=\"password\"]");
 	By txtContrasena2=By.xpath("//*[@resource-id=\"mat-input-5\"]");
 	By btnTipoDocumento = By.xpath("//*[@resource-id=\"selectTipo\"]");
@@ -43,7 +34,6 @@ public class RegistroSolicitantePage extends BaseTest {
 	By txtNombreDireccion= By.xpath("//*[@resource-id=\"mat-input-10\"]");
 	By txtReferencia= By.xpath("//*[@resource-id=\"mat-input-11\"]");
 	By btnRegistrar= By.xpath("//*[@resource-id=\"btnSaveRegistro\"]"); 
-	
 	
 	public RegistroSolicitantePage(MobileElement elemento) 
 	{
@@ -67,9 +57,8 @@ public class RegistroSolicitantePage extends BaseTest {
 			Thread.sleep(5000);
 		}
 		else {
-			
+			//no hara nada
 		}
-		
 	}
 	public void iniciarSesion() throws InterruptedException {
 		
@@ -84,15 +73,12 @@ public class RegistroSolicitantePage extends BaseTest {
 			//Thread.sleep(15000);
 			driver.findElement(btnSearch).sendKeys("testing.jobbiando.cl/registroSolicitante");
 			Thread.sleep(15000);
-			
 			driver.findElement(btnLink).click();
 			Thread.sleep(15000);
 			if(exist(btnCerrar)!=null) {
 				driver.findElement(btnCerrar).click();
 				Thread.sleep(15000);
 			}
-			
-			
 		}
 		else {
 			//driver.findElement(btnSearch).sendKeys("app.jobbiando.cl/registroSolicitante");
@@ -105,17 +91,13 @@ public class RegistroSolicitantePage extends BaseTest {
 				driver.findElement(btnCerrar).click();
 				Thread.sleep(3000);
 			}
-			
-		}
-				
+		}		
 	}
-	
 	public void enterNombres(String nombres) throws InterruptedException
 	{	
 		if(exist(btnBlock)==null) {
 			driver.findElement(txtNombres).sendKeys(nombres);
 			Thread.sleep(5000);
-			
 		}else {
 			driver.findElement(btnBlock).click();
 		    Thread.sleep(3000);
@@ -125,22 +107,17 @@ public class RegistroSolicitantePage extends BaseTest {
 			driver.findElement(txtNombres).sendKeys(nombres);
 			Thread.sleep(3000);
 		}
-		
 	}
-	
 	public void enterApellidos(String apellidos) throws InterruptedException
 	{
 		driver.findElement(txtApellidos).sendKeys(apellidos);
 		Thread.sleep(5000);
 	}
-	
 	public void enterCorreo(String correo) throws InterruptedException
 	{
 		driver.findElement(txtCorreo).sendKeys(correo);
 		Thread.sleep(5000);
 	}
-	
-	
 	public void enterFechaNacimiento(String fechaNacimiento) throws InterruptedException 
 	{
 		driver.findElement(txtFechaNacimiento).sendKeys(fechaNacimiento);
@@ -151,11 +128,8 @@ public class RegistroSolicitantePage extends BaseTest {
 		driver.findElement(btnFormulario).click();
 		Thread.sleep(3000);
 	}
-	
-	
 	public void enterContrasena(String contrasena) throws InterruptedException 
 	{
-		
 		this.funcionScrollDown(0.8,0.6);
 		driver.findElement(txtContrasena).sendKeys(contrasena);
 		Thread.sleep(5000);
@@ -171,7 +145,7 @@ public class RegistroSolicitantePage extends BaseTest {
 		driver.findElement(txtNumeroIdentificador).sendKeys(numeroIdentificador);
 		Thread.sleep(5000);
 	}
-	
+	/*
 	public void enterIdentificador(String numeroSerie) throws InterruptedException 
 	{
 		this.funcionScrollDown(0.8,0.6);
@@ -210,14 +184,10 @@ public class RegistroSolicitantePage extends BaseTest {
 		driver.findElement(txtReferencia).sendKeys(referencia);
 		Thread.sleep(5000);
 	}
-	
+	*/
 	public void clickCrearCuenta() throws InterruptedException {
-		
 		this.funcionScrollDown(0.9,0.1);
 		driver.findElement(btnRegistrar).click();
-		System.out.println("AQUIII");
 		Thread.sleep(5000);
 	}
-	
 }
-

@@ -60,9 +60,5 @@ public class SheetsQuickstart {
 				ValueRange body = new ValueRange().setValues(valuesReplace);
 				UpdateValuesResponse result =servicio.spreadsheets().values().update(SPREEDSHEET_ID, rango, body).setValueInputOption("RAW").execute();
 
-	}
-	    
-
-	  
-	
+	}	
 }
